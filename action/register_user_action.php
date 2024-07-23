@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     // Sanitize inputs
     $first_name = mysqli_real_escape_string($mysqli, $_POST["firstName"]);
     $last_name = mysqli_real_escape_string($mysqli, $_POST["lastName"]);
-    $email = mysqli_real_escape_string($mysqli, $_POST["username"]);
+    $email = mysqli_real_escape_string($mysqli, $_POST["email"]);
     $pass_1 = $_POST["password"];
     $pass_2 = $_POST["confirmPassword"];    
     $hash = password_hash($pass_2, PASSWORD_DEFAULT); 
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 
    
     if ($stmt->execute()) {
-        header("Location:../login/login.php");
+        header("Location:../login/login_admin.php");
         exit(); 
     } else {
         die("Error: ". $mysqli->error);
