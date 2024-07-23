@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
                 $_SESSION["user_role"] = $q_result["role_id"];
                 
              
-                header("Location: ../vieww/dashboard.php");
+                header("Location: ../view/dashboard.php");
                 exit();
             } else {
               
