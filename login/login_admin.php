@@ -113,7 +113,7 @@
 
             <div class="form-group">
                 <label for="email">Authorized personnel only</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your phone number"
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
                     required>
             </div>
             <br>
