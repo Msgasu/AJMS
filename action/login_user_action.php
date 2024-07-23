@@ -5,7 +5,7 @@ include "../settings/connection.php";
 $errors = array();
 
 if(isset($_POST['submit'])){
-    
+    // test
     $username = $_POST["username"];
     $password = $_POST["password"];
     
