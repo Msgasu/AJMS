@@ -12,8 +12,8 @@ if (isset($_POST['submit'])) {
     $hash = password_hash($pass_2, PASSWORD_DEFAULT); 
 
     // Prepare and bind parameters
-    $stmt = $mysqli->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $first_name, $last_name, $email, $phone, $hash);
+    $stmt = $mysqli->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`,`role_id`) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $first_name, $last_name, $email, $phone, $hash,1);
 
    
     if ($stmt->execute()) {
