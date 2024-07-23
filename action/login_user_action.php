@@ -6,7 +6,7 @@ $errors = array();
 
 if(isset($_POST['submit'])){
     // test
-    $username = $_POST["username"];
+    $username = $_POST["email"];
     $password = $_POST["password"];
     
   
