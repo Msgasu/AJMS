@@ -93,22 +93,23 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Eg: goku@gmail.com" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Eg: goku@ashesi.edu.gh" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
                     </div>
+                    
                 </div>
             </div>
             <div class="btn-container">
@@ -130,6 +131,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
     <script>
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             const password = document.getElementById('password').value;

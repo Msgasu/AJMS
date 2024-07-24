@@ -100,7 +100,7 @@ input[type="email"], input[type="password"]{
         <br>
         
         <div class="header">
-            <h2>Admin Panel</h2>
+            <h2>AJMS Student Portal</h2>
         </div>
         <br>
        
