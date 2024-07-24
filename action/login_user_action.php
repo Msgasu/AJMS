@@ -31,8 +31,7 @@ if(isset($_POST['submit'])){
                 $_SESSION["user_id"] = $q_result["pid"];
                 $_SESSION["user_role"] = $q_result["role_id"];
                 
-             
-                header("Location: ../view/dashboard.php");
+                header("Location: ../view/admin_dashboard.php");
                 exit();
             } else {
               
