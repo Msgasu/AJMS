@@ -43,7 +43,7 @@
             align-items: center;
         }
         .footer img {
-            height:75px;
+            height: 75px;
             width: 110px;
             margin: 0;
         }
@@ -55,7 +55,6 @@
         }
         .footer .title {
             margin-left: 10px;
-            
         }
         .footer .right {
             display: flex;
@@ -66,6 +65,13 @@
             height: 60px;
             border-left: 1px solid white;
             margin: 0 10px;
+        }
+        .invalid-feedback {
+            display: none;
+            color: red;
+        }
+        .is-invalid ~ .invalid-feedback {
+            display: block;
         }
     </style>
 </head>
@@ -108,23 +114,23 @@
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        <div class="invalid-feedback">Passwords do not match.</div>
                     </div>
-                    
                 </div>
             </div>
             <div class="btn-container">
-                <button type="submit" name= "submit" class="btn btn-custom">Sign Up</button>
+                <button type="submit" name="submit" class="btn btn-custom">Sign Up</button>
             </div>
         </form>
     </div>
     <div class="footer">
         <div class="left">
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title"><h1 style="font-size:x-large;">AJMS</h1></div>
+            <div class="title"><h1 style="font-size: x-large;">AJMS</h1></div>
         </div>
         <div class="right">
             <div class="line"></div>
-            <div class="text"><h1 style="font-size:x-large; font-style:italic;font-weight: 400;">Ashesi Judicial <br>Committee</h1></div>
+            <div class="text"><h1 style="font-size: x-large; font-style: italic; font-weight: 400;">Ashesi Judicial <br>Committee</h1></div>
         </div>
     </div>
 
@@ -137,8 +143,11 @@
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
             if (password !== confirmPassword) {
-                alert('Passwords do not match.');
+                const confirmPasswordField = document.getElementById('confirmPassword');
+                confirmPasswordField.classList.add('is-invalid');
                 event.preventDefault();
+            } else {
+                document.getElementById('confirmPassword').classList.remove('is-invalid');
             }
         });
     </script>
