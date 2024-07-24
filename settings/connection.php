@@ -4,7 +4,7 @@ if (!defined('HOST')) {
     define("HOST", "localhost");
 }
 if (!defined('DB_NAME')) {
-    define("DB_NAME", "AJMS");
+    define("DB_NAME", "ajms");
 }
 if (!defined('USERNAME')) {
     define("USERNAME", "root");
