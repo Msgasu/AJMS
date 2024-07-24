@@ -108,7 +108,7 @@
         </div>
         <br>
 
-        <form action="../action/login_user_action.php" method="POST" id="loginForm">
+        <form action="../view/admin_dashboard.php" method="POST" id="loginForm">
 
 
             <div class="form-group">
