@@ -12,14 +12,16 @@ if (isset($_POST['submit'])) {
     $hash = password_hash($pass_2, PASSWORD_DEFAULT); 
 
     // Prepare and bind parameters
-    $stmt = $mysqli->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`,`role_id`) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $first_name, $last_name, $email, $phone, $hash,1);
+    $stmt = $mysqli->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`) VALUES (?, ?, ?, ?, ?)");
+    $role_id = 1; // Default role ID
+    $stmt->bind_param("ssssi", $first_name, $last_name, $email, $hash, $role_id);
 
    
     if ($stmt->execute()) {
         header("Location:../login/login_admin.php");
         exit(); 
     } else {
+        echo ("user not registered, somethings' wrong");
         die("Error: ". $mysqli->error);
     }
 

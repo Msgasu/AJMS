@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="btn-container">
-                <button type="submit" class="btn btn-custom">Sign Up</button>
+                <button type="submit" name= "submit" class="btn btn-custom">Sign Up</button>
             </div>
         </form>
     </div>
