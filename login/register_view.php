@@ -67,6 +67,13 @@
             border-left: 1px solid white;
             margin: 0 10px;
         }
+        .invalid-feedback {
+            display: none;
+            color: red;
+        }
+        .is-invalid ~ .invalid-feedback {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -108,6 +115,7 @@
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        <div class="invalid-feedback">Passwords do not match.</div>
                     </div>
                     
                 </div>
@@ -137,8 +145,11 @@
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
             if (password !== confirmPassword) {
-                alert('Passwords do not match.');
+                const confirmPasswordField = document.getElementById('confirmPassword');
+                confirmPasswordField.classList.add('is-invalid');
                 event.preventDefault();
+            } else {
+                document.getElementById('confirmPassword').classList.remove('is-invalid');
             }
         });
     </script>
