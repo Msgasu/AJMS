@@ -101,7 +101,7 @@
         }
 
         .card-custom {
-            border-radius: 15px;
+            border-radius: 0 px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -140,10 +140,7 @@
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-custom">
         <div class="sidebar-sticky">
-            <div class="text-center my-4">
-                <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo" class="img-fluid">
-                <h4>AJMS</h4>
-            </div>
+            
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
@@ -179,11 +176,7 @@
         <div class="card-body equal-space">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Submitted Cases</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">John Doe</button>
-                    </div>
-                </div>
+                
             </div>
 
             <!-- Cards -->
