@@ -47,14 +47,53 @@
            font-weight: bold;
         }
 
-    .list-group-item {
-        margin-bottom: 10px;
-    }
+        .list-group-item {
+            margin-bottom: 10px;
+        }
+
+        /* New header styles */
+        .header {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #dc3545;
+        }
+
+        .header .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .user-info img {
+            border-radius: 50%;
+            height: 40px;
+            margin-left: 10px;
+        }
     </style>
-
-
 </head>
 <body>
+    <!-- Header -->
+    <div class="header">
+        <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
+        <div class="title">AJMS</div>
+        <div class="user-info">
+            <span>John Doe</span>
+            <img src="user-profile-image.jpg" alt="User Profile Image">
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
@@ -77,8 +116,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span>Case stmt</span>
-                            </a>
+                                <span>Case stmt</                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
