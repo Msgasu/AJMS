@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-size: .875rem;
@@ -54,12 +55,13 @@
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            margin-bottom: 10px;
         }
 
         .sidebar-sticky {
             position: relative;
             top: 0;
-            height: calc(100vh - 70px);
+            height: calc(100vh - 80px);
             padding-top: .5rem;
             overflow-x: hidden;
             overflow-y: auto;
@@ -78,11 +80,16 @@
             color: #007bff;
         }
 
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+
         .content {
             margin-top: 70px;
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px;
+            margin-bottom: 20px;
         }
 
         .notifications {
@@ -93,6 +100,7 @@
             padding: 10px;
             background-color: #f8f9fa;
             box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
+            margin-bottom: 10px;
         }
 
         .notifications h2 {
@@ -101,7 +109,7 @@
         }
 
         .card-custom {
-            border-radius: 0 px;
+            border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -140,30 +148,34 @@
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-custom">
         <div class="sidebar-sticky">
-            
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
+                        <i class="fas fa-home"></i>
                         <span>Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
+                        <i class="fas fa-users"></i>
                         <span>Meeting</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
+                        <i class="fas fa-file-alt"></i>
                         <span>Case stmt</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
+                        <i class="fas fa-lightbulb"></i>
                         <span>Recommender</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
+                        <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
                     </a>
                 </li>
@@ -176,7 +188,6 @@
         <div class="card-body equal-space">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Submitted Cases</h1>
-                
             </div>
 
             <!-- Cards -->
