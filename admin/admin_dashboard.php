@@ -3,202 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f4f4f9;
-        }
-        .sidebar {
-            background-color: #2c3e50;
-            min-height: 100vh;
-        }
-        .sidebar .nav-link {
-            color: white;
-            font-size: 1.1em;
-        }
-        .sidebar .nav-link:hover {
-            background-color: #34495e;
-        }
-        .navbar {
-            background-color: indianred;
-        }
-        .navbar-brand {
-            color: white;
-            font-weight: bold;
-        }
-        .navbar-brand:hover {
-            color: white;
-        }
-        .card {
-            margin: 20px 0;
-        }
-        .card-header {
-            background-color: #ecf0f1;
-            font-weight: bold;
-        }
-        .notifications {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        .notification-item {
-            margin-bottom: 15px;
-        }
-        .btn-custom {
-            background-color: #27ae60;
-            color: white;
-        }
-        .badge-urgent {
-            background-color: red;
-        }
-        .badge-reviewed {
-            background-color: orange;
-        }
-        .badge-adv {
-            background-color: blue;
-        }
-        .notification-title {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-    </style>
+    <title>AJMS Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div class="sidebar p-3">
-            <div class="text-center mb-4">
-                <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo" class="img-fluid">
-                <h3 class="text-white">AJMS</h3>
-            </div>
-            <nav class="nav flex-column">
-                <a class="nav-link" href="#">Home</a>
-                <a class="nav-link" href="#">Meeting</a>
-                <a class="nav-link" href="#">Case stmt</a>
-                <a class="nav-link" href="#">Recommender</a>
-                <a class="nav-link" href="#">Logout</a>
-            </nav>
-        </div>
-
-        <!-- Main content -->
-        <div class="flex-grow-1">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">AJMS</a>
-                <div class="ml-auto">
-                    <span class="navbar-text text-white">John Doe</span>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <div class="text-center my-4">
+                        <img src="logo.png" alt="Ashesi University Logo" class="img-fluid">
+                        <h4>AJMS</h4>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span>Meeting</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span>Case stmt</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span>Recommender</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <h3 class="my-4">Submitted Cases</h3>
-                        <div class="row" id="casesContainer">
-                            <!-- Cards will be inserted here by JavaScript -->
+            <!-- Main Content -->
+            <main role="main" class="col-md-8 ml-sm-auto col-lg-8 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Submitted Cases</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">John Doe</button>
                         </div>
                     </div>
-                    <!-- Notifications -->
-                    <div class="col-lg-3">
-                        <div class="notifications">
-                            <h5 class="mb-4">Notifications</h5>
-                            <div id="notificationsContainer">
-                                <!-- Notifications will be inserted here by JavaScript -->
+                </div>
+
+                <!-- Cards -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-white bg-danger">
+                                URGENT
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Meeting with Victim</h5>
+                                <p class="card-text">Case of Theft</p>
+                                <p class="card-text">Submitted: 2023-12-05</p>
+                                <p class="card-text">Victim: John Smith</p>
+                                <button type="button" class="btn btn-success">Book meeting</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-white bg-warning">
+                                REVIEWED
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Cheating Case</h5>
+                                <p class="card-text">Case: Exam Fudging</p>
+                                <p class="card-text">Submitted: 2023-11-20</p>
+                                <p class="card-text">Victim: Jane Doe</p>
+                                <button type="button" class="btn btn-secondary">Dismiss</button>
+                                <button type="button" class="btn btn-success">Submit to Dean</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header text-white bg-success">
+                                ADV
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Accusation</h5>
+                                <p class="card-text">Case: Misconduct</p>
+                                <p class="card-text">Submitted: 2023-10-12</p>
+                                <p class="card-text">Victim: Mark Smith</p>
+                                <button type="button" class="btn btn-success">Submit to Dean</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
+
+            <!-- Notifications -->
+            <aside class="col-md-2 ml-sm-auto col-lg-2 px-4">
+                <div class="pt-3 pb-2 mb-3 border-bottom">
+                    <h2>Notifications</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div>
+                                <strong>Today</strong>
+                                <p>Meetings with involved parties</p>
+                                <p>Committee Meeting</p>
+                                <p>Deliberation meeting</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <strong>Yesterday</strong>
+                                <p>Submitted Case to Dean</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <strong>December 22, 2024</strong>
+                                <p>Case Verdict</p>
+                                <p>Sending out email</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Sample data
-        const cases = [
-            {
-                status: 'urgent',
-                title: 'Meeting with Victim',
-                description: 'Case of theft, case: 0004, victim: Ken',
-                action: 'Book meeting',
-                actionClass: 'btn-custom'
-            },
-            {
-                status: 'reviewed',
-                title: 'Cheating Case',
-                description: 'Case: 0005, perpetrator: John',
-                action: 'Dismiss',
-                actionClass: 'btn-custom'
-            },
-            {
-                status: 'adv',
-                title: 'Misconduct',
-                description: 'Case: 0006, perpetrator: Mike',
-                action: 'Submit to Dean',
-                actionClass: 'btn-custom'
-            }
-        ];
-
-        const notifications = [
-            {
-                date: 'Today',
-                items: ['Meetings with involved parties', 'Committee Meeting', 'Deliberation meeting']
-            },
-            {
-                date: 'Yesterday',
-                items: ['Submitted Case to Dean']
-            },
-            {
-                date: 'December 22, 2024',
-                items: ['Case Verdict', 'Sending out email']
-            }
-        ];
-
-        // Function to render cases
-        function renderCases(cases) {
-            const container = document.getElementById('casesContainer');
-            container.innerHTML = '';
-            cases.forEach(caseItem => {
-                const card = document.createElement('div');
-                card.className = 'col-md-6 col-lg-4';
-                card.innerHTML = `
-                    <div class="card">
-                        <div class="card-header badge-${caseItem.status} text-white">${caseItem.status.toUpperCase()}</div>
-                        <div class="card-body">
-                            <h5 class="card-title">${caseItem.title}</h5>
-                            <p class="card-text">${caseItem.description}</p>
-                            <button class="btn ${caseItem.actionClass}">${caseItem.action}</button>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Function to render notifications
-        function renderNotifications(notifications) {
-            const container = document.getElementById('notificationsContainer');
-            container.innerHTML = '';
-            notifications.forEach(notification => {
-                const notificationDiv = document.createElement('div');
-                notificationDiv.className = 'notification-item';
-                notificationDiv.innerHTML = `
-                    <p class="notification-title">${notification.date}</p>
-                    ${notification.items.map(item => `<p>${item}</p>`).join('')}
-                `;
-                container.appendChild(notificationDiv);
-            });
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCases(cases);
-            renderNotifications(notifications);
-        });
-    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
