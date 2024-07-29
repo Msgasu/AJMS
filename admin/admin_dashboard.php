@@ -55,13 +55,13 @@
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            margin-bottom: 10px;
+            height: calc(100vh - 80px);
         }
 
         .sidebar-sticky {
             position: relative;
             top: 0;
-            height: calc(100vh - 80px);
+            height: 100%;
             padding-top: .5rem;
             overflow-x: hidden;
             overflow-y: auto;
@@ -89,7 +89,8 @@
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px;
-            margin-bottom: 20px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
         }
 
         .notifications {
@@ -100,7 +101,8 @@
             padding: 10px;
             background-color: #f8f9fa;
             box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
-            margin-bottom: 10px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
         }
 
         .notifications h2 {
