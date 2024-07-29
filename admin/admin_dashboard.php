@@ -10,6 +10,42 @@
         body {
             font-size: .875rem;
         }
+        .header{
+            background: #000;
+            color: white;
+            padding: 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height:75px;
+            width: 110px;
+            margin: 0;
+        }
+        .header .left {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+        .header .title {
+            margin-left: 10px;
+            
+        }
+        .header .right {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .header .right .line {
+            height: 60px;
+            border-left: 1px solid white;
+            margin: 0 10px;
+        }
     
         .sidebar {
             position: fixed;
@@ -56,6 +92,20 @@
 </head>
 <body>
     <div class="container-fluid">
+    <div class="header">
+        <div class="left">
+            <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
+            <div class="title">
+                <h1 style="font-size:x-large;">AJMS</h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="line"></div>
+            <div class="text">
+                <h1 style="font-size:x-large; font-style:italic;font-weight: 400;">Ashesi Judicial <br>Committee</h1>
+            </div>
+        </div>
+    </div>
         <div class="row">
             <!-- Sidebar -->
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
