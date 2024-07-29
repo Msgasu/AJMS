@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 
     // Prepare and bind parameters
     $stmt = $mysqli->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`) VALUES (?, ?, ?, ?, ?)");
-    $role_id = 2; // Default role ID
+    $role_id = 1; // Default role ID
     $stmt->bind_param("ssssi", $first_name, $last_name, $email, $hash, $role_id);
 
    
