@@ -60,6 +60,10 @@
         .badge-adv {
             background-color: blue;
         }
+        .notification-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -183,7 +187,7 @@
                 const notificationDiv = document.createElement('div');
                 notificationDiv.className = 'notification-item';
                 notificationDiv.innerHTML = `
-                    <p class="mb-1">${notification.date}</p>
+                    <p class="notification-title">${notification.date}</p>
                     ${notification.items.map(item => `<p>${item}</p>`).join('')}
                 `;
                 container.appendChild(notificationDiv);
@@ -198,4 +202,3 @@
     </script>
 </body>
 </html>
-
