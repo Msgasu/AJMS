@@ -93,7 +93,8 @@
             <img src="user-profile-image.jpg" alt="User Profile Image">
         </div>
     </div>
-
+    <br>
+    <br>
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
