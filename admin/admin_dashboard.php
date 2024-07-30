@@ -139,6 +139,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
+            height: calc(10vh - 70px);
         }
 
         .card-header.bg-indigo-red {
