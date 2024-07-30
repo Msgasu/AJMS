@@ -138,8 +138,8 @@
         .card-custom {
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 100px;
-            
+            margin-bottom: 50px;
+            height: calc(100vh - 70px);
         }
 
         .card-header.bg-indigo-red {
@@ -179,7 +179,7 @@
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
-
+    <br>
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-custom">
         <div class="sidebar-sticky">
