@@ -26,8 +26,15 @@
         }
 
         .header img {
-            height: 60px;
-            width: 50px;
+            height: 75px;
+            width: 110px;
+            margin: 0;
+        }
+        .header .left {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
         }
 
         .header .title {
@@ -140,8 +147,10 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-        <div class="title">AJMS</div>
+        <div class="left">
+            <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
+            <div class="title">AJMS</div>
+    </div>
         <div class="user-info">
             <span>John Doe</span>
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
