@@ -37,6 +37,12 @@
             color: #dc3545;
             margin-left: 20px;
         }
+        .header .left {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
 
         .header .user-info {
             display: flex;
@@ -146,8 +152,10 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-        <div class="title">AJMS</div>
+        <div class="left">
+            <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
+            <div class="title">AJMS</div>
+        </div>
         <div class="user-info">
             <span>John Doe</span>
             <img src="user-profile-image.jpg" alt="User Profile Image">
