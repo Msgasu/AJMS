@@ -26,7 +26,8 @@
         }
 
         .header img {
-            height: 40px;
+            height: 60px;
+            width: 50px;
         }
 
         .header .title {
@@ -41,9 +42,9 @@
         }
 
         .header .user-info img {
-            border-radius: 50%;
+            border-radius: 0%;
             height: 40px;
-            margin-left: 10px;
+            margin-left: 0px;
         }
 
         .sidebar {
