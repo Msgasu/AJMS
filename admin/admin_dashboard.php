@@ -9,7 +9,8 @@
     <style>
         body {
             font-size: .875rem;
-            background-color: indianred;
+            background-color: #A44C4C;
+            ;
         }
 
         .header {
