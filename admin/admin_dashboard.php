@@ -144,7 +144,7 @@
         <div class="title">AJMS</div>
         <div class="user-info">
             <span>John Doe</span>
-            <img src="user-profile-image.jpg" alt="User Profile Image">
+            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
    
