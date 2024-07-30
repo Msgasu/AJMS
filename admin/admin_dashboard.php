@@ -41,9 +41,9 @@
         }
 
         .header .user-info img {
-            border-radius: 50%;
-            height: 40px;
-            margin-left: 10px;
+            height: 75px;
+            width: 110px;
+            margin: 0;
         }
 
         .sidebar {
