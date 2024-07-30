@@ -25,6 +25,13 @@
             z-index: 1030;
         }
 
+        .header img {
+            height: 75px;
+            width: 110px;
+            margin: 0;
+            padding: 0;
+        }
+
         .header .left {
             display: flex;
             align-items: center;
@@ -42,20 +49,12 @@
         .header .user-info {
             display: flex;
             align-items: center;
-            margin:0;
         }
 
         .header .user-info img {
             border-radius: 0%;
             height: 40px;
-            margin-left: 0px;
-            padding: 0;
-        }
-
-        .header img {
-            height: 75px;
-            width: 110px;
-            margin: 0;
+            margin-left: 10px;
             padding: 0;
         }
 
@@ -161,6 +160,8 @@
             <img src="../images/user_profile_img" alt="User Profile Image">
         </div>
     </div>
+
+
 
 
    
