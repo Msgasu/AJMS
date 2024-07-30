@@ -40,10 +40,11 @@
             align-items: center;
         }
 
-        .header img {
+        .img {
             height: 75px;
-            width: 110px;
+            width: 100px;
             margin: 0;
+            position: fixed;
         }
 
         .sidebar {
