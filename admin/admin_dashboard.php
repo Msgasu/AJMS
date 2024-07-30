@@ -6,7 +6,7 @@
     <title>AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
+      <style>
         body {
             font-size: .875rem;
             background-color: indianred;
@@ -41,9 +41,9 @@
         }
 
         .header .user-info img {
-            height: 75px;
-            width: 110px;
-            margin: 0;
+            border-radius: 50%;
+            height: 40px;
+            margin-left: 10px;
         }
 
         .sidebar {
