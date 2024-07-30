@@ -138,7 +138,7 @@
         .card-custom {
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
 
         .card-header.bg-indigo-red {
