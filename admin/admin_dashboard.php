@@ -53,13 +53,19 @@
         .header .user-info img {
             border-radius: 0%;
             height: 40px;
-            margin-left: 10px;
             padding: 0;
         }
+        
         .header .user-info .line {
-            height: 60px;
+            height: 40px;
             border-left: 1px solid grey;
-            margin: 0 10px;
+            margin: 0 15px;
+        }
+
+        .header .user-info span {
+            font-weight: bold;
+            color: grey;
+            margin-right: 10px;
         }
 
         .sidebar {
@@ -160,16 +166,12 @@
             <div class="title"><h1 style="font-size:x-large;">AJMS</h1></div>
         </div>
         <div class="user-info">
+            <span>John Doe</span>
             <div class="line"></div>
-            <span style= "font-weight:heavy; color:solid grey;">John Doe</span>
             <img src="../images/user_profile_img" alt="User Profile Image">
         </div>
     </div>
 
-
-
-
-   
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-custom">
         <div class="sidebar-sticky">
@@ -280,23 +282,26 @@
                 <li class="list-group-item">
                     <div>
                         <strong>Yesterday</strong>
-                        <p>Submitted Case to Dean</p>
+                        <p>Scheduled for Dean's approval</p>
+                        <p>Cases submitted to JEC</p>
+                        <p>Follow-ups with victims</p>
                     </div>
                 </li>
                 <li class="list-group-item">
                     <div>
-                        <strong>December 22, 2024</strong>
-                        <p>Case Verdict</p>
-                        <p>Sending out email</p>
+                        <strong>Last Week</strong>
+                        <p>Student misconduct</p>
+                        <p>Case reviews by committee</p>
+                        <p>Meeting with the accused</p>
                     </div>
                 </li>
             </ul>
         </div>
     </aside>
 
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
