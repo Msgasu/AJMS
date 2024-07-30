@@ -40,7 +40,7 @@
 
         .header .title {
             font-size: 24px;
-            font-weight: bold;
+            
             color: #dc3545;
             margin-left: 10px;
         }
@@ -51,6 +51,7 @@
         }
 
         .header .user-info img {
+            margin-right: 10px;
             border-radius: 30%;
             height: 40px;
             width: 80px;
