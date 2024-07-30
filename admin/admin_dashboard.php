@@ -26,8 +26,8 @@
         }
 
         .header img {
-            height: 75px;
-            width: 100px;
+            height: 70px;
+            width: 90px;
             margin: 0;
         }
 
