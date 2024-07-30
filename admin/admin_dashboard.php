@@ -6,7 +6,7 @@
     <title>AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-      <style>
+    <style>
         body {
             font-size: .875rem;
             background-color: indianred;
@@ -25,11 +25,6 @@
             z-index: 1030;
         }
 
-        .header img {
-            height: 75px;
-            width: 110px;
-            margin: 0;
-        }
         .header .left {
             display: flex;
             align-items: center;
@@ -41,6 +36,7 @@
             font-size: 24px;
             font-weight: bold;
             color: #dc3545;
+            margin-left: 10px;
         }
 
         .header .user-info {
@@ -51,7 +47,14 @@
         .header .user-info img {
             border-radius: 0%;
             height: 40px;
-            margin-left: 0px;
+            margin-left: 10px;
+            padding: 0;
+        }
+
+        .header img {
+            height: 75px;
+            width: 110px;
+            margin: 0;
             padding: 0;
         }
 
@@ -151,12 +154,14 @@
         <div class="left">
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">AJMS</div>
-    </div>
+        </div>
         <div class="user-info">
             <span>John Doe</span>
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
+            <img src="../images/user_profile_img" alt="User Profile Image">
         </div>
     </div>
+
+
    
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-custom">
