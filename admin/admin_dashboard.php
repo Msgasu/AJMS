@@ -27,7 +27,7 @@
 
         .header img {
             height: 75px;
-            width: 110px;
+            width: 100px;
             margin: 0;
         }
 
@@ -40,7 +40,7 @@
 
         .header .title {
             font-size: 24px;
-            
+            font-weight: bold;
             color: indianred;
             margin-left: 10px;
         }
