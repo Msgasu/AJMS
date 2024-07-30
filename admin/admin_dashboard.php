@@ -13,7 +13,7 @@
         }
 
         .header {
-            background-color: #f8f9fa;
+            background-color: indianred;
             display: flex;
             justify-content: space-between;
             align-items: center;
