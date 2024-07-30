@@ -13,11 +13,11 @@
         }
 
         .header {
-            background-color: indianred;
+            background-color: #f8f9fa;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 0;
             border-bottom: 1px solid #dee2e6;
             position: fixed;
             top: 0;
@@ -29,7 +29,6 @@
             height: 75px;
             width: 110px;
             margin: 0;
-            padding: 0;
         }
 
         .header .left {
@@ -56,6 +55,11 @@
             height: 40px;
             margin-left: 10px;
             padding: 0;
+        }
+        .header .user-info .line {
+            height: 60px;
+            border-left: 1px solid white;
+            margin: 0 10px;
         }
 
         .sidebar {
@@ -156,6 +160,7 @@
             <div class="title">AJMS</div>
         </div>
         <div class="user-info">
+            <div class="line"></div>
             <span>John Doe</span>
             <img src="../images/user_profile_img" alt="User Profile Image">
         </div>
