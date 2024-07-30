@@ -53,6 +53,7 @@
         .header .user-info img {
             border-radius: 30%;
             height: 40px;
+            width: 80px;
             padding: 0;
         }
         
@@ -169,7 +170,7 @@
             <div class="line"></div>
             <span>John Doe</span>
             
-            <img src="../images/user_profile_img" alt="User Profile Image">
+            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
 
