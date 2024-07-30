@@ -40,7 +40,7 @@
             align-items: center;
         }
 
-        .header .user-info img {
+        .header img {
             height: 75px;
             width: 110px;
             margin: 0;
