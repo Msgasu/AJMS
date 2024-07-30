@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,6 @@
         body {
             font-size: .875rem;
             background-color: #A44C4C;
-            ;
         }
 
         .header {
@@ -42,7 +42,7 @@
         .header .title {
             font-size: 24px;
             font-weight: bold;
-            color: #D00C0C; 
+            color: #D00C0C;
             margin-left: 10px;
         }
 
@@ -58,7 +58,7 @@
             width: 80px;
             padding: 0;
         }
-        
+
         .header .user-info .line {
             height: 40px;
             border-left: 1px solid grey;
@@ -80,7 +80,7 @@
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(200vh - 200px);
+            height: calc(100vh - 70px);
         }
 
         .sidebar-sticky {
@@ -114,7 +114,7 @@
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px;
-            height: calc(200vh - 200px);
+            height: calc(100vh - 70px);
             overflow-y: auto;
         }
 
@@ -126,7 +126,7 @@
             padding: 10px;
             background-color: #f8f9fa;
             box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(200vh - 200px);
+            height: calc(100vh - 70px);
             overflow-y: auto;
         }
 
@@ -138,6 +138,7 @@
         .card-custom {
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
         .card-header.bg-indigo-red {
@@ -161,17 +162,19 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <div class="header">
         <div class="left">
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title"><h1 style= "font-weight: bolder">AJMS</h1></div>
+            <div class="title">
+                <h1 style="font-weight: bolder">AJMS</h1>
+            </div>
         </div>
         <div class="user-info">
             <div class="line"></div>
             <span>John Doe</span>
-            
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
@@ -266,6 +269,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm card-custom">
+                        <div class="card-header bg-indigo-red">
+                            URGENT
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Meeting with Victim</h5>
+                            <p class="card-text">Case of Theft</p>
+                            <p class="card-text">Submitted: 2023-12-05</p>
+                            <p class="card-text">Victim: John Smith</p>
+                            <button type="button" class="btn btn-success">Book meeting</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -286,17 +303,16 @@
                 <li class="list-group-item">
                     <div>
                         <strong>Yesterday</strong>
-                        <p>Scheduled for Dean's approval</p>
-                        <p>Cases submitted to JEC</p>
-                        <p>Follow-ups with victims</p>
+                        <p>Submitted Case to Dean</p>
+                        <p>Student ID 12345684</p>
                     </div>
                 </li>
                 <li class="list-group-item">
                     <div>
-                        <strong>Last Week</strong>
-                        <p>Student misconduct</p>
-                        <p>Case reviews by committee</p>
-                        <p>Meeting with the accused</p>
+                        <strong>December 22, 2024</strong>
+                        <p>Case Verdict</p>
+                        <p>Start 11</p>
+                        <p>Student ID 12345684</p>
                     </div>
                 </li>
             </ul>
@@ -307,5 +323,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
 
+</html>
