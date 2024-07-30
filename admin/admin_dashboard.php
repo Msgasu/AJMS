@@ -58,7 +58,7 @@
         }
         .header .user-info .line {
             height: 60px;
-            border-left: 1px solid black;
+            border-left: 1px solid grey;
             margin: 0 10px;
         }
 
@@ -157,11 +157,11 @@
     <div class="header">
         <div class="left">
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title">AJMS</div>
+            <div class="title"><h1 style="font-size:x-large;">AJMS</h1></div>
         </div>
         <div class="user-info">
             <div class="line"></div>
-            <span>John Doe</span>
+            <span style= "font-weight:heavy; color:solid grey;">John Doe</span>
             <img src="../images/user_profile_img" alt="User Profile Image">
         </div>
     </div>
