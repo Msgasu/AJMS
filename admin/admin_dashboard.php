@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +16,9 @@
         .header {
             background-color: #f8f9fa;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            padding: 10px 20px;
+            padding: 10px 0;
             border-bottom: 1px solid #dee2e6;
             position: fixed;
             top: 0;
@@ -26,37 +27,41 @@
         }
 
         .header img {
-            height: 40px;
+            height: 50px;
+            margin-left: 20px;
         }
 
         .header .title {
             font-size: 24px;
             font-weight: bold;
             color: #dc3545;
+            margin-left: 20px;
         }
 
         .header .user-info {
             display: flex;
             align-items: center;
+            margin-left: auto;
+            margin-right: 20px;
         }
 
-        .img {
-            height: 75px;
-            width: 100px;
-            margin: 0;
-            position: fixed;
+        .header .user-info img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
         }
 
         .sidebar {
             position: fixed;
             top: 70px;
             bottom: 0;
-            left: 20px;
+            left: 0;
             z-index: 100;
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(100vh - 80px);
+            height: calc(100vh - 70px);
         }
 
         .sidebar-sticky {
@@ -87,10 +92,10 @@
 
         .content {
             margin-top: 70px;
-            margin-left: 260px;
+            margin-left: 240px;
             margin-right: 280px;
             padding: 20px;
-            height: calc(100vh - 80px);
+            height: calc(100vh - 70px);
             overflow-y: auto;
         }
 
@@ -102,7 +107,7 @@
             padding: 10px;
             background-color: #f8f9fa;
             box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(100vh - 80px);
+            height: calc(100vh - 70px);
             overflow-y: auto;
         }
 
@@ -137,6 +142,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <div class="header">
@@ -147,7 +153,7 @@
             <img src="user-profile-image.jpg" alt="User Profile Image">
         </div>
     </div>
-   
+
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-custom">
         <div class="sidebar-sticky">
@@ -273,8 +279,8 @@
     </aside>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
