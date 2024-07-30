@@ -42,12 +42,13 @@
         .header .user-info {
             display: flex;
             align-items: center;
+            margin:0;
         }
 
         .header .user-info img {
             border-radius: 0%;
             height: 40px;
-            margin-left: 10px;
+            margin-left: 0px;
             padding: 0;
         }
 
