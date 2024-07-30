@@ -51,7 +51,7 @@
         }
 
         .header .user-info img {
-            border-radius: 0%;
+            border-radius: 30%;
             height: 40px;
             padding: 0;
         }
@@ -163,11 +163,12 @@
     <div class="header">
         <div class="left">
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title"><h1 style="font-size:x-large;">AJMS</h1></div>
+            <div class="title"><h1 style="font-size:x-large; font-weight:heavy;">AJMS</h1></div>
         </div>
         <div class="user-info">
-            <span>John Doe</span>
             <div class="line"></div>
+            <span>John Doe</span>
+            
             <img src="../images/user_profile_img" alt="User Profile Image">
         </div>
     </div>
