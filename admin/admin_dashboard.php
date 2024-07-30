@@ -52,6 +52,7 @@
             border-radius: 0%;
             height: 40px;
             margin-left: 0px;
+            padding: 0;
         }
 
         .sidebar {
