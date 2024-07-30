@@ -165,7 +165,7 @@
     <div class="header">
         <div class="left">
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title"><h1 style="font-size:x-large; font-weight:heavy;">AJMS</h1></div>
+            <div class="title"><h1>AJMS</h1></div>
         </div>
         <div class="user-info">
             <div class="line"></div>
