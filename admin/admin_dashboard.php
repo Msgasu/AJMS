@@ -41,7 +41,7 @@
         .header .title {
             font-size: 24px;
             font-weight: bold;
-            color: indianred;
+            color: darkred;
             margin-left: 10px;
         }
 
