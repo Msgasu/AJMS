@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: indianred;
+            background-color: #A44C4C;
             
         }
 
@@ -27,7 +27,7 @@
         }
 
         .btn-custom {
-            background-color: indianred;
+            background-color: #A44C4C;
             color: white;
             width: 300px;
             font-size: large;
