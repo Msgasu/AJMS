@@ -13,7 +13,7 @@
         }
 
         .header {
-            background-color: #f8f9fa;
+            background-color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -58,7 +58,7 @@
         }
         .header .user-info .line {
             height: 60px;
-            border-left: 1px solid white;
+            border-left: 1px solid black;
             margin: 0 10px;
         }
 
