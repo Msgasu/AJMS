@@ -110,11 +110,12 @@
         }
 
         .content {
-            margin-top: 70px;
+            padding-top: 20px;  /* Adjust padding-top to create space */
+            padding-bottom: 20px; /* Adjust padding-bottom to create space */
+            margin-top: 70px; /* Keep margin-top to push the content below the header */
             margin-left: 260px;
             margin-right: 280px;
-            padding: 20px;
-            height: calc(100vh - 70px);
+            height: calc(100vh - 90px); /* Adjust height to account for the padding */
             overflow-y: auto;
         }
 
@@ -139,7 +140,6 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
-            
         }
 
         .card-header.bg-indigo-red {
