@@ -142,6 +142,12 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
+           
+        }
+        .card-special {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
             margin-top: 50px;
         }
 
@@ -184,7 +190,7 @@
     </div>
 
     <!-- Sidebar in a Card -->
-    <div class="card sidebar card-custom">
+    <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -222,7 +228,7 @@
     </div>
 
     <!-- Main Content in a Card -->
-    <main role="main" class="content card card-custom">
+    <main role="main" class="content card card-special">
         <div class="card-body equal-space">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Submitted Cases</h1>
@@ -278,7 +284,7 @@
     </main>
 
     <!-- Notifications Section in a Card -->
-    <div class="card notifications card-custom">
+    <div class="card notifications card-special">
         <div class="card-body">
             <h2>Notifications</h2>
             <ul class="list-group list-group-flush">
