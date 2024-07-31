@@ -75,7 +75,7 @@
 
         .sidebar {
             position: fixed;
-            top: 58 px;
+            top: 60px;
             bottom: 0;
             left: 20px;
             z-index: 100;
