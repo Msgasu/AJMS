@@ -139,7 +139,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
-            height: calc(100vh - 70px);
+            
         }
 
         .card-header.bg-indigo-red {
@@ -179,7 +179,7 @@
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
-    <br>
+
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-custom">
         <div class="sidebar-sticky">
@@ -217,7 +217,7 @@
             </ul>
         </div>
     </div>
-    <br>
+
     <!-- Main Content in a Card -->
     <main role="main" class="content card card-custom">
         <div class="card-body equal-space">
@@ -287,7 +287,7 @@
             </div>
         </div>
     </main>
-    <br>
+
     <!-- Notifications in a Card -->
     <aside class="notifications card card-custom">
         <div class="card-body">
@@ -319,7 +319,6 @@
             </ul>
         </div>
     </aside>
-    <br>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
