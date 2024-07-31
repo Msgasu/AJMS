@@ -112,11 +112,11 @@
         }
 
         .content {
-            margin-top: 100px;
+            margin-top: 90px;
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px 0;
-            height: calc(88vh - 25px);
+            height: calc(89.2vh - 25px);
             overflow-y: auto;
             display: flex;
             flex-direction: column;
