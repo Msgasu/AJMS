@@ -116,7 +116,7 @@
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px 0;
-            height: calc(100vh - 100px);
+            height: calc(87vh - 30px);
             overflow-y: auto;
             display: flex;
             flex-direction: column;
