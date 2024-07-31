@@ -104,7 +104,7 @@
         }
 
         .sidebar .nav-link.active {
-            color: #007bff;
+            color: #007bff; 
         }
 
         .sidebar .nav-link i {
