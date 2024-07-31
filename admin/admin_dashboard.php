@@ -133,6 +133,8 @@
             width: 250px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
+            font-size: 1rem; /* Increase font size */
+            background-color: #f8f9fa;
         }
 
         .notifications h2 {
@@ -160,11 +162,14 @@
 
         .list-group-item {
             border: none;
+            font-size: 1rem; /* Increase font size */
+            padding: 10px 0; /* Add padding for better spacing */
         }
 
         .list-group-item strong {
             display: block;
             margin-bottom: 5px;
+            font-size: 1.1rem; /* Increase font size */
         }
 
         .equal-space {
@@ -300,7 +305,7 @@
 
     <!-- Notifications Section in a Card -->
     <div class="card notifications card-special ">
-        <div class="card-body">
+        <div class="card-body scrollable-notifications">
             <h2>Notifications</h2>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -330,5 +335,6 @@
 </body>
 
 </html>
+
 
 
