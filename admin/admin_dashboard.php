@@ -82,7 +82,7 @@
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(90vh - 30px);
+            height: calc(89.5vh - 30px);
         }
 
         .sidebar-sticky {
@@ -116,7 +116,7 @@
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px 0;
-            height: calc(88vh - 25px);
+            height: calc(89.2vh - 25px);
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -132,7 +132,7 @@
             padding: 10px;
             width: 250px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(90vh - 30px);
+            height: calc(89.5vh - 30px);
         }
 
         .notifications h2 {
