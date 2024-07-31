@@ -180,145 +180,145 @@
         </div>
     </div>
     <br>
-    <!-- Sidebar in a Card -->
-    <div class="card sidebar card-custom">
-        <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-users"></i>
-                        <span>Meeting</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
-                        <span>Case stmt</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-lightbulb"></i>
-                        <span>Recommender</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Logout</span>
-                    </a>
-                </li>
-            </ul>
+    <div>
+        <!-- Sidebar in a Card -->
+        <div class="card sidebar card-custom">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-users"></i>
+                            <span>Meeting</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Case stmt</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Recommender</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <!-- Main Content in a Card -->
+         <main role="main" class="content card card-custom">
+            <div class="card-body equal-space">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Submitted Cases</h1>
+                </div>
+                
+                <!-- Cards -->
+                 <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm card-custom">
+                            <div class="card-header bg-indigo-red">
+                                URGENT
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Meeting with Victim</h5>
+                                <p class="card-text">Case of Theft</p>
+                                <p class="card-text">Submitted: 2023-12-05</p>
+                                <p class="card-text">Victim: John Smith</p>
+                                <button type="button" class="btn btn-success">Book meeting</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm card-custom">
+                            <div class="card-header bg-indigo-red">
+                                REVIEWED
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Cheating Case</h5>
+                                <p class="card-text">Case: Exam Fudging</p>
+                                <p class="card-text">Submitted: 2023-11-20</p>
+                                <p class="card-text">Victim: Jane Doe</p>
+                                <button type="button" class="btn btn-secondary">Dismiss</button>
+                                <button type="button" class="btn btn-success">Submit to Dean</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm card-custom">
+                            <div class="card-header bg-indigo-red">
+                                ADV
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Accusation</h5>
+                                <p class="card-text">Case: Misconduct</p>
+                                <p class="card-text">Submitted: 2023-10-12</p>
+                                <p class="card-text">Victim: Mark Smith</p>
+                                <button type="button" class="btn btn-success">Submit to Dean</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm card-custom">
+                            <div class="card-header bg-indigo-red">
+                                URGENT
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Meeting with Victim</h5>
+                                <p class="card-text">Case of Theft</p>
+                                <p class="card-text">Submitted: 2023-12-05</p>
+                                <p class="card-text">Victim: John Smith</p>
+                                <button type="button" class="btn btn-success">Book meeting</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Notifications in a Card -->
+         <aside class="notifications card card-custom">
+            <div class="card-body">
+                <h2>Notifications</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Today</strong>
+                            <p>Meetings with involved parties</p>
+                            <p>Committee Meeting</p>
+                            <p>Deliberation meeting</p>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong>Yesterday</strong>
+                            <p>Submitted Case to Dean</p>
+                            <p>Student ID 12345684</p>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong>December 22, 2024</strong>
+                            <p>Case Verdict</p>
+                            <p>Start 11</p>
+                            <p>Student ID 12345684</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
     </div>
-
-    <!-- Main Content in a Card -->
-    <main role="main" class="content card card-custom">
-        <div class="card-body equal-space">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Submitted Cases</h1>
-            </div>
-
-            <!-- Cards -->
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            URGENT
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Meeting with Victim</h5>
-                            <p class="card-text">Case of Theft</p>
-                            <p class="card-text">Submitted: 2023-12-05</p>
-                            <p class="card-text">Victim: John Smith</p>
-                            <button type="button" class="btn btn-success">Book meeting</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            REVIEWED
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Cheating Case</h5>
-                            <p class="card-text">Case: Exam Fudging</p>
-                            <p class="card-text">Submitted: 2023-11-20</p>
-                            <p class="card-text">Victim: Jane Doe</p>
-                            <button type="button" class="btn btn-secondary">Dismiss</button>
-                            <button type="button" class="btn btn-success">Submit to Dean</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            ADV
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Accusation</h5>
-                            <p class="card-text">Case: Misconduct</p>
-                            <p class="card-text">Submitted: 2023-10-12</p>
-                            <p class="card-text">Victim: Mark Smith</p>
-                            <button type="button" class="btn btn-success">Submit to Dean</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            URGENT
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Meeting with Victim</h5>
-                            <p class="card-text">Case of Theft</p>
-                            <p class="card-text">Submitted: 2023-12-05</p>
-                            <p class="card-text">Victim: John Smith</p>
-                            <button type="button" class="btn btn-success">Book meeting</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Notifications in a Card -->
-    <aside class="notifications card card-custom">
-        <div class="card-body">
-            <h2>Notifications</h2>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div>
-                        <strong>Today</strong>
-                        <p>Meetings with involved parties</p>
-                        <p>Committee Meeting</p>
-                        <p>Deliberation meeting</p>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div>
-                        <strong>Yesterday</strong>
-                        <p>Submitted Case to Dean</p>
-                        <p>Student ID 12345684</p>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div>
-                        <strong>December 22, 2024</strong>
-                        <p>Case Verdict</p>
-                        <p>Start 11</p>
-                        <p>Student ID 12345684</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </aside>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
