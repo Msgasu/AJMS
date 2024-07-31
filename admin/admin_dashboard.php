@@ -75,7 +75,7 @@
 
         .sidebar {
             position: fixed;
-            top: 57px;
+            top: 56px;
             bottom: 0;
             left: 20px;
             z-index: 100;
@@ -125,7 +125,7 @@
 
         .notifications {
             position: fixed;
-            top: 57px;
+            top: 56px;
             bottom: 0;
             right: 20px;
             z-index: 100;
