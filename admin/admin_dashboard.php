@@ -127,13 +127,11 @@
             position: fixed;
             top: 70px;
             right: 20px;
-            width: 220px;
+            width: 250px;
             padding: 10px;
             background-color: #f8f9fa;
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
             height: calc(87vh - 30px);
-            overflow-y: auto;
-
         }
 
         .notifications h2 {
@@ -300,7 +298,7 @@
     </main>
 
     <!-- Notifications Section in a Card -->
-    <div class="card notifications card-special scrollable-notifications">
+    <div class="card notifications card-special ">
         <div class="card-body">
             <h2>Notifications</h2>
             <ul class="list-group list-group-flush">
