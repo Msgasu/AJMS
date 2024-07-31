@@ -125,13 +125,14 @@
 
         .notifications {
             position: fixed;
-            top: 70px;
-            right: 20px;
-            width: 250px;
-            padding: 10px;
-            background-color: #f8f9fa;
-            box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(87vh - 30px);
+            top: 60px;
+            bottom: 0;
+            left: 20px;
+            z-index: 100;
+            padding: 0;
+            width: 220px;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            height: calc(90vh - 30px);
         }
 
         .notifications h2 {
