@@ -82,7 +82,7 @@
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(100vh - 50px);
+            height: calc(100vh - 30px);
         }
 
         .sidebar-sticky {
