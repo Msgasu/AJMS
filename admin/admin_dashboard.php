@@ -110,7 +110,7 @@
         }
 
         .content {
-            margin-top: 70px;
+            margin-top: 100px;
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px 0;
