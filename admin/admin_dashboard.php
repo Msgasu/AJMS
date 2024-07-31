@@ -75,14 +75,14 @@
 
         .sidebar {
             position: fixed;
-            top: 56px;
+            top: 55px;
             bottom: 0;
             left: 20px;
             z-index: 100;
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(89.5vh - 30px);
+            height: calc(90vh - 30px);
         }
 
         .sidebar-sticky {
@@ -125,14 +125,14 @@
 
         .notifications {
             position: fixed;
-            top: 56px;
+            top: 55px;
             bottom: 0;
             right: 20px;
             z-index: 100;
             padding: 10px;
             width: 250px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(89.5vh - 30px);
+            height: calc(90vh - 30px);
         }
 
         .notifications h2 {
