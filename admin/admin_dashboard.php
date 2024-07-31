@@ -75,14 +75,14 @@
 
         .sidebar {
             position: fixed;
-            top: 70px;
-            bottom: 0;
+            top: 100px;
+            bottom: 20px;
             left: 20px;
             z-index: 100;
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(100vh - 50px);
+            height: calc(100vh - 120px); /* Adjusted for header and margin */
         }
 
         .sidebar-sticky {
@@ -116,7 +116,7 @@
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px 0;
-            height: calc(100vh - 100px);
+            height: calc(100vh - 120px); /* Adjusted for header and margin */
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -125,13 +125,13 @@
 
         .notifications {
             position: fixed;
-            top: 70px;
+            top: 100px;
             right: 20px;
             width: 250px;
             padding: 10px;
             background-color: #f8f9fa;
             box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(100vh - 70px);
+            height: calc(100vh - 120px); /* Adjusted for header and margin */
         }
 
         .notifications h2 {
@@ -173,12 +173,12 @@
         }
 
         .scrollable-card {
-            height: 500px; /* Adjust as needed */
+            height: 100%;
             overflow-y: auto;
         }
 
         .scrollable-notifications {
-            height: calc(100vh - 90px);
+            height: 100%;
             overflow-y: auto;
         }
     </style>
@@ -237,9 +237,6 @@
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
 
     <!-- Main Content in a Card -->
     <main role="main" class="content card card-special">
