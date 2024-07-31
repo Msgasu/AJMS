@@ -131,7 +131,7 @@
             padding: 10px;
             background-color: #f8f9fa;
             box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(100vh - 70px);
+            height: calc(87vh - 30px);
         }
 
         .notifications h2 {
