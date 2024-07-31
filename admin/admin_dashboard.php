@@ -75,7 +75,7 @@
 
         .sidebar {
             position: fixed;
-            top: 60px;
+            top: 59px;
             bottom: 0;
             left: 20px;
             z-index: 100;
@@ -116,7 +116,7 @@
             margin-left: 260px;
             margin-right: 280px;
             padding: 20px 0;
-            height: calc(89vh - 30px);
+            height: calc(89.5vh - 30px);
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -125,7 +125,7 @@
 
         .notifications {
             position: fixed;
-            top: 60px;
+            top: 59px;
             bottom: 0;
             right: 20px;
             z-index: 100;
