@@ -110,13 +110,15 @@
         }
 
         .content {
-            padding-top: 20px;  /* Adjust padding-top to create space */
-            padding-bottom: 20px; /* Adjust padding-bottom to create space */
-            margin-top: 70px; /* Keep margin-top to push the content below the header */
+            margin-top: 70px;
             margin-left: 260px;
             margin-right: 280px;
-            height: calc(100vh - 90px); /* Adjust height to account for the padding */
+            padding: 20px 0;
+            height: calc(100vh - 70px);
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .notifications {
@@ -270,59 +272,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            URGENT
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Meeting with Victim</h5>
-                            <p class="card-text">Case of Theft</p>
-                            <p class="card-text">Submitted: 2023-12-05</p>
-                            <p class="card-text">Victim: John Smith</p>
-                            <button type="button" class="btn btn-success">Book meeting</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
 
-    <!-- Notifications in a Card -->
-    <aside class="notifications card card-custom">
+    <!-- Notifications Section in a Card -->
+    <div class="card notifications card-custom">
         <div class="card-body">
             <h2>Notifications</h2>
-            <ul class="list-group">
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <div>
-                        <strong>Today</strong>
-                        <p>Meetings with involved parties</p>
-                        <p>Committee Meeting</p>
-                        <p>Deliberation meeting</p>
-                    </div>
+                    <strong>Today</strong>
+                    <span>Meetings with involved parties</span>
+                    <span>Committee Meeting</span>
+                    <span>Deliberation meeting</span>
                 </li>
                 <li class="list-group-item">
-                    <div>
-                        <strong>Yesterday</strong>
-                        <p>Submitted Case to Dean</p>
-                        <p>Student ID 12345684</p>
-                    </div>
+                    <strong>Yesterday</strong>
+                    <span>Submitted Case to Dean</span>
+                    <span>Student ID 12345684</span>
                 </li>
                 <li class="list-group-item">
-                    <div>
-                        <strong>December 22, 2024</strong>
-                        <p>Case Verdict</p>
-                        <p>Start 11</p>
-                        <p>Student ID 12345684</p>
-                    </div>
+                    <strong>December 22, 2024</strong>
+                    <span>Case Verdict</span>
+                    <span>Start 11</span>
+                    <span>Student ID 12345684</span>
                 </li>
             </ul>
         </div>
-    </aside>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
+
