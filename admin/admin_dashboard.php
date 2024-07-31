@@ -183,7 +183,7 @@
     </div>
 
     <!-- Sidebar in a Card -->
-    <div class="card sidebar card-custom">
+    <div class="content card sidebar card-custom">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -277,7 +277,7 @@
     </main>
 
     <!-- Notifications Section in a Card -->
-    <div class="card notifications card-custom">
+    <div class="content card notifications card-custom">
         <div class="card-body">
             <h2>Notifications</h2>
             <ul class="list-group list-group-flush">
