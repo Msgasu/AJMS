@@ -326,7 +326,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
-                        <div class="case-card-header" style="background-image: ../images/Ashesi.jpg;">
+                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
+
                             <span>URGENT</span>
                         </div>
                         <div class="case-card-body">
