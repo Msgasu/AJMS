@@ -127,7 +127,7 @@
 
         .content {
             margin-top: 110px;
-            margin-left: 260px;
+            margin-left: 255px;
             margin-right: 280px;
             padding: 20px 0;
             height: calc(89.2vh - 25px);
