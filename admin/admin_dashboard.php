@@ -234,7 +234,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i>
-                        <span>Case stmt</span>
+                        <span>Case statements</span>
                     </a>
                 </li>
                 <li class="nav-item">
