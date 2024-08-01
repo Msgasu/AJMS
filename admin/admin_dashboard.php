@@ -183,6 +183,38 @@
             overflow-y: auto;
         }
 
+        .card-custom {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .card-special {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+
+        
+
+        .list-group-item {
+            border: none;
+        }
+
+        .list-group-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .equal-space {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        
+
         .case-card-header {
             height: 150px;
             background-size: cover;
