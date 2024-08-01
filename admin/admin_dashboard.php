@@ -83,6 +83,8 @@
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
+            background-color: white;
+            border-radius: 15px;
         }
 
         .sidebar-sticky {
@@ -97,24 +99,35 @@
         .sidebar .nav-link {
             font-weight: 500;
             color: #333;
-            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 5px 10px;
         }
 
         .sidebar .nav-link:hover {
             color: #007bff;
+            background-color: #f8f9fa;
         }
 
         .sidebar .nav-link.active {
-            color: #007bff; 
+            color: #007bff;
+            background-color: #e9ecef;
         }
 
         .sidebar .nav-link i {
             margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .sidebar .nav-link span {
+            font-size: 1.1rem; /* Increase font size */
         }
 
         .content {
             margin-top: 110px;
-            margin-left: 260px;
+            margin-left: 255px;
             margin-right: 280px;
             padding: 20px 0;
             height: calc(89.2vh - 25px);
@@ -161,7 +174,6 @@
 
         .list-group-item {
             border: none;
-            padding: 10px 0;
         }
 
         .list-group-item strong {
@@ -183,22 +195,6 @@
         .scrollable-notifications {
             height: calc(100vh - 90px);
             overflow-y: auto;
-        }
-
-        .notification-item {
-            display: flex;
-            align-items: center;
-            padding: 5px 0;
-        }
-
-        .notification-item i {
-            margin-right: 10px;
-            color: #007bff;
-        }
-
-        .notification-item span {
-            font-size: 0.9rem;
-            color: #333;
         }
     </style>
 </head>
@@ -238,7 +234,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i>
-                        <span>Case stmt</span>
+                        <span>Case statements</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -291,23 +287,23 @@
                         <div class="card-body">
                             <h5 class="card-title">Cheating Case</h5>
                             <p class="card-text">Case: Exam Fudging</p>
-                            <p class="card-text">Submitted: 2023-11-30</p>
-                            <p class="card-text">Accused: Jane Doe</p>
-                            <button type="button" class="btn btn-warning">Send Verdict</button>
+                            <p class="card-text">Submitted: 2023-11-20</p>
+                            <p class="card-text">Victim: Jane Doe</p>
+                            <button type="button" class="btn btn-success">Submit to Dean</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
                         <div class="card-header bg-indigo-red">
-                            PENDING
+                            ADV
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Assignment Plagiarism</h5>
-                            <p class="card-text">Case: Homework Duplication</p>
-                            <p class="card-text">Submitted: 2023-11-25</p>
-                            <p class="card-text">Accused: Bob Johnson</p>
-                            <button type="button" class="btn btn-primary">Review Case</button>
+                            <h5 class="card-title">Accusation</h5>
+                            <p class="card-text">Case: Misconduct</p>
+                            <p class="card-text">Submitted: 2023-10-12</p>
+                            <p class="card-text">Victim: Mark Smith</p>
+                            <button type="button" class="btn btn-success">Submit to Dean</button>
                         </div>
                     </div>
                 </div>
@@ -315,40 +311,36 @@
         </div>
     </main>
 
-    <!-- Notifications Sidebar -->
+    <!-- Notifications Section in a Card -->
     <div class="card notifications card-special">
-        <div class="sidebar-sticky scrollable-notifications">
+        <div class="card-body">
             <h2>Notifications</h2>
-            <ul class="list-group">
-                <li class="list-group-item notification-item">
-                    <i class="fas fa-calendar-check"></i>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>Today</strong>
                     <span>Meetings with involved parties</span>
-                </li>
-                <li class="list-group-item notification-item">
-                    <i class="fas fa-users"></i>
                     <span>Committee Meeting</span>
-                </li>
-                <li class="list-group-item notification-item">
-                    <i class="fas fa-gavel"></i>
                     <span>Deliberation meeting</span>
                 </li>
-                <li class="list-group-item notification-item">
-                    <i class="fas fa-file-upload"></i>
-                    <span>Submitted Case to Dean<br><small>BSIT 1A<br>Student ID 1235124514</small></span>
+                <li class="list-group-item">
+                    <strong>Yesterday</strong>
+                    <span>Submitted Case to Dean</span>
+                    <span>Student ID 12345684</span>
                 </li>
-                <li class="list-group-item notification-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Case Verdict<br><small>BSIT 1A<br>Student ID 1235124514</small></span>
-                </li>
-                <li class="list-group-item notification-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Sending out email<br><small>BSIT 1A<br>Student ID 1235124514</small></span>
+                <li class="list-group-item">
+                    <strong>December 22, 2024</strong>
+                    <span>Case Verdict</span>
+                    <span>Start 11</span>
+                    <span>Student ID 12345684</span>
                 </li>
             </ul>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
-
 
