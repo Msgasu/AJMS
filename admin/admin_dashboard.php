@@ -250,7 +250,7 @@
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-home"></i><br>
                         <span> Home</span>
                     </a>
                 </li>
