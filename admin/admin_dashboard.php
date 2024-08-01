@@ -117,7 +117,7 @@
         }
 
         .sidebar .nav-link i {
-            margin-right: 10px;
+            margin-right: 20px;
             font-size: 1.2rem;
         }
 
