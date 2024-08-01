@@ -317,7 +317,7 @@
     
     <!-- Main Content in a Card -->
     <main role="main" class="content card card-special">
-        <div class="card-body equal-space scrollable-card">
+        <div class="card-body equal-space scrollable-notifications">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Submitted Cases</h1>
             </div>
