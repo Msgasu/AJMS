@@ -251,31 +251,31 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
                         <i class="fas fa-home"></i>
-                        <span>Home</span>
+                        <span> Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-users"></i>
-                        <span>Meeting</span>
+                        <span> Meeting</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i>
-                        <span>Case statements</span>
+                        <span> Case statements</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-lightbulb"></i>
-                        <span>Recommender</span>
+                        <span> Recommender</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-sign-out-alt"></i>
-                        <span>Logout</span>
+                        <span> Logout</span>
                     </a>
                 </li>
             </ul>
