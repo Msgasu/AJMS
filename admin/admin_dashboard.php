@@ -183,47 +183,45 @@
             overflow-y: auto;
         }
 
-        .card-custom {
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-        }
-
-        .card-special {
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-            margin-top: 30px;
-        }
-
-        .card-header.bg-indigo-red {
-            background: linear-gradient(to right, indigo, red);
+        .case-card-header {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
             color: white;
-        }
-
-        .list-group-item {
-            border: none;
-        }
-
-        .list-group-item strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .equal-space {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
         }
 
-        .scrollable-card {
-            height: 500px; /* Adjust as needed */
-            overflow-y: auto;
+        .case-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
-        .scrollable-notifications {
-            height: calc(100vh - 90px);
-            overflow-y: auto;
+        .case-card-header span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .case-card-body {
+            padding: 10px;
+        }
+
+        .case-card-body p {
+            margin: 5px 0;
+        }
+
+        .case-card-body button {
+            width: 100%;
         }
     </style>
 </head>
@@ -296,43 +294,49 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            URGENT
+                        <div class="case-card-header" style="background-image: url('https://example.com/image1.jpg');">
+                            <span>URGENT</span>
                         </div>
-                        <div class="card-body">
+                        <div class="case-card-body">
                             <h5 class="card-title">Meeting with Victim</h5>
-                            <p class="card-text">Case of Theft</p>
-                            <p class="card-text">Submitted: 2023-12-05</p>
-                            <p class="card-text">Victim: John Smith</p>
-                            <button type="button" class="btn btn-success">Book meeting</button>
+                            <p>Case of theft,</p>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success">Book meeting</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            REVIEWED
+                        <div class="case-card-header" style="background-image: url('https://example.com/image2.jpg');">
+                            <span>URGENT</span>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Cheating Case</h5>
-                            <p class="card-text">Case: Exam Fudging</p>
-                            <p class="card-text">Submitted: 2023-11-20</p>
-                            <p class="card-text">Victim: Jane Doe</p>
-                            <button type="button" class="btn btn-success">Submit to Dean</button>
+                        <div class="case-card-body">
+                            <h5 class="card-title">Meeting with Victim</h5>
+                            <p>Case of theft,</p>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success">Book meeting</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            ADV
+                        <div class="case-card-header" style="background-image: url('https://example.com/image3.jpg');">
+                            <span>URGENT</span>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Accusation</h5>
-                            <p class="card-text">Case: Misconduct</p>
-                            <p class="card-text">Submitted: 2023-10-12</p>
-                            <p class="card-text">Victim: Mark Smith</p>
-                            <button type="button" class="btn btn-success">Submit to Dean</button>
+                        <div class="case-card-body">
+                            <h5 class="card-title">Meeting with Victim</h5>
+                            <p>Case of theft,</p>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success">Book meeting</button>
                         </div>
                     </div>
                 </div>
