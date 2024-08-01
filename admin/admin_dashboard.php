@@ -292,9 +292,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
-                        <br>
-                        <span> Case statements</span>
+                        <i class="fas fa-file-alt"><span> Case statements</span> </i>
+                        
+                        
                     </a>
                 </li>
                 <li class="nav-item">
