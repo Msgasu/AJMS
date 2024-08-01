@@ -152,6 +152,33 @@
         .notifications h2 {
             font-size: 1.25rem;
             font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .notifications .list-group-item {
+            border: none;
+            padding: 0.5rem 0;
+        }
+
+        .notifications .list-group-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item span {
+            display: block;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item i {
+            margin-right: 5px;
+            color: #555;
+        }
+
+        .scrollable-notifications {
+            height: calc(90vh - 110px); /* Adjusted height */
+            overflow-y: auto;
         }
 
         .card-custom {
@@ -200,146 +227,83 @@
 </head>
 
 <body>
-    <!-- Header -->
     <div class="header">
         <div class="left">
-            <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title">
-                <h1 style="font-weight: bolder">AJMS</h1>
-            </div>
+            <img src="https://example.com/logo.png" alt="Ashesi University Logo">
+            <span class="title">AJMS Dashboard</span>
         </div>
         <div class="user-info">
-            <div class="line"></div>
-            <span>John Doe</span>
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
+            <img src="https://example.com/user.png" alt="User Profile Image">
+            <span class="line"></span>
+            <span>Welcome, User</span>
         </div>
     </div>
 
-    <!-- Sidebar in a Card -->
-    <div class="card sidebar card-special">
+    <nav class="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
                         <i class="fas fa-home"></i>
-                        <span>Home</span>
+                        <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-users"></i>
-                        <span>Meeting</span>
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
-                        <span>Case statements</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-lightbulb"></i>
-                        <span>Recommender</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Logout</span>
+                        <i class="fas fa-tasks"></i>
+                        <span>Tasks</span>
                     </a>
                 </li>
             </ul>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    
-    <!-- Main Content in a Card -->
-    <main role="main" class="content card card-special">
-        <div class="card-body equal-space scrollable-card">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Submitted Cases</h1>
-            </div>
+    </nav>
 
-            <!-- Cards -->
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            URGENT
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Meeting with Victim</h5>
-                            <p class="card-text">Case of Theft</p>
-                            <p class="card-text">Submitted: 2023-12-05</p>
-                            <p class="card-text">Victim: John Smith</p>
-                            <button type="button" class="btn btn-success">Book meeting</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            REVIEWED
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Cheating Case</h5>
-                            <p class="card-text">Case: Exam Fudging</p>
-                            <p class="card-text">Submitted: 2023-11-20</p>
-                            <p class="card-text">Victim: Jane Doe</p>
-                            <button type="button" class="btn btn-success">Submit to Dean</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="card-header bg-indigo-red">
-                            ADV
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Accusation</h5>
-                            <p class="card-text">Case: Misconduct</p>
-                            <p class="card-text">Submitted: 2023-10-12</p>
-                            <p class="card-text">Victim: Mark Smith</p>
-                            <button type="button" class="btn btn-success">Submit to Dean</button>
-                        </div>
-                    </div>
-                </div>
+    <div class="content">
+        <!-- Main content goes here -->
+        <div class="card card-custom">
+            <div class="card-body">
+                <h2>Dashboard Content</h2>
+                <p>Your main content goes here...</p>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Notifications Section in a Card -->
     <div class="card notifications card-special">
-        <div class="card-body">
+        <div class="card-body scrollable-notifications">
             <h2>Notifications</h2>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     <strong>Today</strong>
-                    <span>Meetings with involved parties</span>
-                    <span>Committee Meeting</span>
-                    <span>Deliberation meeting</span>
+                    <span><i class="fas fa-user-friends"></i> Meetings with involved parties</span><br>
+                    <span><i class="fas fa-calendar-alt"></i> Committee Meeting</span><br>
+                    <span><i class="fas fa-clock"></i> Deliberation meeting</span>
                 </li>
                 <li class="list-group-item">
                     <strong>Yesterday</strong>
-                    <span>Submitted Case to Dean</span>
-                    <span>Student ID 12345684</span>
+                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span><br>
+                    <span>BSIT 1A<br>Student ID 1235124614</span>
                 </li>
                 <li class="list-group-item">
                     <strong>December 22, 2024</strong>
-                    <span>Case Verdict</span>
-                    <span>Start 11</span>
-                    <span>Student ID 12345684</span>
+                    <span><i class="fas fa-gavel"></i> Case Verdict</span><br>
+                    <span>BSIT 1A<br>Student ID 1235124614</span><br>
+                    <span><i class="fas fa-envelope"></i> Sending out email</span><br>
+                    <span>BSIT 1A<br>Student ID 1235124614</span>
                 </li>
             </ul>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
 
 </html>
