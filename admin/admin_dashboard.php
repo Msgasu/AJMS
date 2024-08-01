@@ -326,7 +326,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
-                        <div class="case-card-header" style="background-image: url('https://example.com/image1.jpg');">
+                        <div class="case-card-header" style="background-image: ../images/Ashesi.jpg;">
                             <span>URGENT</span>
                         </div>
                         <div class="case-card-body">
@@ -342,7 +342,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
-                        <div class="case-card-header" style="background-image: url('https://example.com/image2.jpg');">
+                        <div class="case-card-header" style="background-image: ../images/Ashesi.jpg;">
                             <span>URGENT</span>
                         </div>
                         <div class="case-card-body">
@@ -358,7 +358,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
-                        <div class="case-card-header" style="background-image: url('https://example.com/image3.jpg');">
+                        <div class="case-card-header" style="background-image: ../images/Ashesi.jpg;">
                             <span>URGENT</span>
                         </div>
                         <div class="case-card-body">
