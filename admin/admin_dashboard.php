@@ -117,7 +117,7 @@
         }
 
         .sidebar .nav-link i {
-            margin-right: 20px;
+            margin-right: 10px;
             font-size: 1.2rem;
         }
 
@@ -250,7 +250,7 @@
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
-                        <i class="fas fa-home"></i><br>
+                        <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
                 </li>
@@ -352,15 +352,15 @@
                 </li>
                 <li class="list-group-item">
                     <strong>Yesterday</strong>
-                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span><br>
-                    <span>BSIT 1A<br>Student ID 1235124614</span>
+                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
+                    <span>Details<br>Student ID 83342025</span><br>
                 </li>
                 <li class="list-group-item">
                     <strong>December 22, 2024</strong>
-                    <span><i class="fas fa-gavel"></i> Case Verdict</span><br>
-                    <span>BSIT 1A<br>Student ID 1235124614</span><br>
-                    <span><i class="fas fa-envelope"></i> Sending out email</span><br>
-                    <span>BSIT 1A<br>Student ID 1235124614</span>
+                    <span><i class="fas fa-gavel"></i> Case Verdict</span>
+                    <span>Details<br>Student ID 83342025</span><br>
+                    <span><i class="fas fa-envelope"></i> Sending out email</span>
+                    <span>Details<br>Student ID 83342025</span>
                 </li>
             </ul>
         </div>
