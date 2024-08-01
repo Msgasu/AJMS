@@ -125,6 +125,7 @@
             font-size: 1.1rem; /* Increase font size */
         }
 
+
         .content {
             margin-top: 110px;
             margin-left: 255px;
@@ -149,9 +150,37 @@
             height: calc(90vh - 30px);
         }
 
+        
         .notifications h2 {
             font-size: 1.25rem;
             font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .notifications .list-group-item {
+           border: none;
+           padding: 0.5rem 0;
+        }
+
+        .notifications .list-group-item strong {
+           display: block;
+           margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item span {
+           display: block;
+           font-size: 0.875rem;
+           margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item i {
+            margin-right: 5px;
+            color: #555;
+        }
+
+        .scrollable-notifications {
+            height: calc(90vh - 110px); /* Adjusted height */
+            overflow-y: auto;
         }
 
         .card-custom {
