@@ -293,6 +293,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i>
+                        <br>
                         <span> Case statements</span>
                     </a>
                 </li>
