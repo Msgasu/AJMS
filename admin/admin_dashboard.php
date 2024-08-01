@@ -121,6 +121,10 @@
             font-size: 1.2rem;
         }
 
+        .sidebar .nav-link span {
+            font-size: 1.1rem; /* Increase font size */
+        }
+
         .content {
             margin-top: 110px;
             margin-left: 260px;
@@ -230,7 +234,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i>
-                        <span>Case statements</span>
+                        <span>Case stmt</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -285,7 +289,6 @@
                             <p class="card-text">Case: Exam Fudging</p>
                             <p class="card-text">Submitted: 2023-11-20</p>
                             <p class="card-text">Victim: Jane Doe</p>
-                            <button type="button" class="btn btn-secondary">Dismiss</button>
                             <button type="button" class="btn btn-success">Submit to Dean</button>
                         </div>
                     </div>
@@ -309,7 +312,7 @@
     </main>
 
     <!-- Notifications Section in a Card -->
-    <div class="card notifications card-special ">
+    <div class="card notifications card-special">
         <div class="card-body">
             <h2>Notifications</h2>
             <ul class="list-group list-group-flush">
@@ -340,3 +343,4 @@
 </body>
 
 </html>
+
