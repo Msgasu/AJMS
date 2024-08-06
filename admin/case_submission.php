@@ -72,7 +72,12 @@
             color: grey;
             margin-right: 10px;
         }
-       
+        .menu-icon {
+            
+            cursor: pointer;
+            padding: 0 15px;
+            margin-left: auto;
+        }
         
 
         .sidebar {
