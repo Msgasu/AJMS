@@ -175,8 +175,8 @@
             margin-bottom: 5px;
         }
 
-        .scrollable-notifications {
-            height: calc(90vh - 30px); /* Adjusted height */
+        .sidebar-container .scrollable-notifications {
+            height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
 
@@ -298,20 +298,24 @@
 
 
     <main class="main-container">
-        <div class="sidebar-container  scrollable-notifications ">
-            <h3>Upcoming Meetings</h3>
-            <div id="upcomingCalendar" class="calendar-container"></div>
-            <div class="meeting-item">
-                <h5>Meeting with Party C</h5>
-                <p>Student ID: 123456789</p>
-                <p>December 9, 2024</p>
-                <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-            </div>
-            <div class="meeting-item">
-                <h5>Meeting with Party D</h5>
-                <p>Student ID: 123456789</p>
-                <p>December 10, 2024</p>
-                <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+        <div class="sidebar-container">
+            <div class="card-body scrollable-notifications">
+               <h3>Upcoming Meetings</h3>
+               <div id="upcomingCalendar" class="calendar-container"></div>
+                    <div class="meeting-item">
+                      <h5>Meeting with Party C</h5>
+                     <p>Student ID: 123456789</p>
+                     <p>December 9, 2024</p>
+                     <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                    </div>
+                </div>
+            
+                <div class="meeting-item">
+                    <h5>Meeting with Party D</h5>
+                    <p>Student ID: 123456789</p>
+                    <p>December 10, 2024</p>
+                    <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                </div>
             </div>
         </div>
         <div class="content">
