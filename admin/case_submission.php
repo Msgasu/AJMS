@@ -365,7 +365,7 @@
                 </div>
             </div>
             <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
-            <button type="submit" class="submit-button mt-3">Submit</button>
+            <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
         </form>
     </div>
 
