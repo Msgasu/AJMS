@@ -32,3 +32,15 @@ CREATE TABLE statements (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(pid) -- Add foreign key constraint
 );
+
+-- Create a table for admins
+CREATE TABLE admins (
+    admin_id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) UNIQUE -- Store admin emails
+);
+
+-- Insert admin users 
+INSERT INTO admins (email) VALUES
+('esther.gasu@ashesi.edu.gh'),
+('david.ebo@ashesi.edu.gh');
+
