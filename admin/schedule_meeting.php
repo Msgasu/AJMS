@@ -183,7 +183,7 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: calc(100vh - 120px);
+            height: calc(89.2vh - 25px);
             overflow-y: auto;
         }
 
