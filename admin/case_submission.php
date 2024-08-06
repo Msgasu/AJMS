@@ -222,9 +222,11 @@
             background-color: lightgrey;
             border: 1px solid #ccc;
             padding: 10px;
-            position: relative; /* Required for positioning icons */
+            
         }
-
+        .textarea-wrapper {
+            position: relative; /* Positioning context for child elements */
+        }
         .report-form .submit-button {
             background-color: #28a745;
             color: white;
@@ -350,11 +352,12 @@
     <br>
     <!-- Main Content in a Card -->
 <main role="main" class="content card card-special">
+
     <div class="card-body equal-space scrollable-notifications">
         <div class="report-form">
             <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
             <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
-            <div class="textarea-container">
+            <div class="textarea-wrapper">
                 <textarea placeholder="Type your complaint or report here..."></textarea>
                 <div class="icon-container">
                     <i class="fas fa-trash-alt icon-delete"></i>
@@ -366,6 +369,8 @@
         </div>
     </div>
 </main>
+
+
 
     <div class="card notifications card-special">
         <div class="card-body scrollable-notifications">
