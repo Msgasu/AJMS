@@ -415,6 +415,7 @@
             // For now, this just shows the time slots without any specific filtering
         }
     });
+}
 
     // Function to toggle the sidebar
          function toggleSidebar() {
