@@ -7,6 +7,7 @@
     <title>AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <style>
         html, body {
             font-size: .875rem;
@@ -72,19 +73,12 @@
             color: grey;
             margin-right: 10px;
         }
-        .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-            
-            margin-left: 10px;
-        }
-        
 
         .sidebar {
             position: fixed;
-            top: 72px;
+            top: 55px;
             bottom: 0;
-            left: -220px; /* Initially hidden */
+            left: 20px;
             z-index: 100;
             padding: 0;
             width: 220px;
@@ -92,11 +86,6 @@
             height: calc(90vh - 30px);
             background-color: white;
             border-radius: 15px;
-            transition: left 0.3s ease;
-        }
-
-        .sidebar.open {
-            left: 15px; /* Show sidebar */
         }
 
         .sidebar-sticky {
@@ -136,112 +125,144 @@
         .sidebar .nav-link span {
             font-size: 1.1rem; /* Increase font size */
         }
-        
-    
-        .sidebar-container {
-            position: fixed;
-            top: 70px;
-            bottom: 0;
-            left: 20px;
-            z-index: 100;
-            padding: 0;
-            width: 220px;
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(90vh - 30px);
-            background-color: white;
-            border-radius: 15px;
-        }
 
-        .sidebar-container h3 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .sidebar-container .meeting-item {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar-container .meeting-item h5 {
-            font-size: 1rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
 
         .content {
-            margin-top: 90px;
-            margin-left: 270px;
-            margin-right: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: calc(100vh - 120px);
+            margin-top: 110px;
+            margin-left: 255px;
+            margin-right: 280px;
+            padding: 20px 0;
+            height: calc(89.2vh - 25px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .notifications {
+            position: fixed;
+            top: 55px;
+            bottom: 0;
+            right: 20px;
+            z-index: 100;
+            padding: 10px;
+            width: 250px;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            height: calc(90vh - 30px);
+        }
+
+        
+        .notifications h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .notifications .list-group-item {
+           border: none;
+           padding: 0.5rem 0;
+        }
+
+        .notifications .list-group-item strong {
+           display: block;
+           margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item span {
+           display: block;
+           font-size: 0.875rem;
+           margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item i {
+            margin-right: 5px;
+            color: #555;
+        }
+
+        .scrollable-notifications {
+            height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
 
-        .content h3 {
-            font-size: 1.3rem;
+        .card-custom {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .card-special {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+
+        
+
+        .list-group-item {
+            border: none;
+        }
+
+        .list-group-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .equal-space {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        
+
+        .case-card-header {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-
+            font-size: 1.2rem;
+            position: relative;
         }
 
-        .calendar-container {
-            margin-bottom: 20px;
+        .case-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
-        .time-slots h4 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 100px;
-            margin-left: 100px;
-            width: 200px;
+        .case-card-header span {
+            position: relative;
+            z-index: 2;
         }
 
-        .time-slots button {
-            margin-bottom: 10px;
+        .case-card-body {
+            padding: 10px;
         }
 
-        .btn-outline-primary {
-            margin-top: 10px;
-            margin-left: 100px;
-            margin-bottom: 10px;
-            color: #b42f2f;
-            border-color: #b42f2f;
-            width: 200px;
+        .case-card-body p {
+            margin: 5px 0;
         }
 
-        .btn-outline-primary:hover {
-            background-color: #b42f2f;
-            color: #ffffff;
-
-        }
-
-        .btn-primary {
-            background-color: #b42f2f;
-            border-color: #b42f2f;
-            width: 200px;
-            margin-left: 100px;
-        }
-
-        .btn-primary:hover {
-            background-color: #a02626;
-            border-color: #a02626;
+        .case-card-body button {
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
-<div class="header">
+    <!-- Header -->
+    <div class="header">
         <div class="left">
-            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
@@ -254,8 +275,8 @@
         </div>
     </div>
 
-        <!-- Sidebar in a Card -->
-        <div class="card sidebar" id="sidebar">
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -272,7 +293,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-file-alt"> </i>
+                        
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -282,78 +304,127 @@
                         <span> Recommender</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/logout.php">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span> Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
     <br>
     <br>
     <br>
-
-
-    <main class="main-container">
-        <div class="sidebar-container">
-            <h3>Upcoming Meetings</h3>
-            <div id="upcomingCalendar" class="calendar-container"></div>
-            <div class="meeting-item">
-                <h5>Meeting with Party C</h5>
-                <p>Student ID: 123456789</p>
-                <p>December 9, 2024</p>
-                <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+    
+    <!-- Main Content in a Card -->
+    <main role="main" class="content card card-special">
+        <div class="card-body equal-space scrollable-notifications">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Submitted Cases</h1>
             </div>
-            <div class="meeting-item">
-                <h5>Meeting with Party D</h5>
-                <p>Student ID: 123456789</p>
-                <p>December 10, 2024</p>
-                <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-            </div>
-        </div>
-        <div class="content">
-            <button class="btn btn-link" onclick="history.back()">&lt; back</button>
-            <h3>Schedule a meeting</h3>
-            <div style="display: flex; width: 80%;  ">
-                <div id="bookingCalendar" class="calendar-container"></div>
-                <div class="time-slots">
-                    <h4>Mon 8th December</h4>
-                    <button class="btn btn-outline-primary">8:00am - 9:00am</button>
-                    <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
-                    <button class="btn btn-outline-primary">10:00am - 11:00am</button>
-                    <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
-                    <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
-                    <button class="btn btn-primary confirm-btn">Confirm</button>
+
+            <!-- Cards -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm card-custom">
+                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
+
+                            <span>URGENT</span>
+                        </div>
+                        <div class="case-card-body">
+                            <h5 class="card-title">Meeting with Victim</h5>
+                            <p>Case of theft,</p>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm card-custom">
+                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
+                            <span>URGENT</span>
+                        </div>
+                        <div class="case-card-body">
+                            <h5 class="card-title">Meeting with Victim</h5>
+                            <p>Case of theft,</p>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm card-custom">
+                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
+                            <span>URGENT</span>
+                        </div>
+                        <div class="case-card-body">
+                            <h5 class="card-title">Meeting with Victim</h5>
+                            <p>Case of theft,</p>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm card-custom">
+                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
+                            <span>URGENT</span>
+                        </div>
+                        <div class="case-card-body">
+                            <h5 class="card-title">Meeting with Victim</h5>
+                            <p>Case of theft,</p>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
     </main>
 
+    <div class="card notifications card-special">
+        <div class="card-body scrollable-notifications">
+            <h2>Notifications</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>Today</strong>
+                    <span><i class="fas fa-user-friends"></i> Meetings with involved parties</span><br>
+                    <span><i class="fas fa-calendar-alt"></i> Committee Meeting</span><br>
+                    <span><i class="fas fa-clock"></i> Deliberation meeting</span>
+                </li>
+                <li class="list-group-item">
+                    <strong>Yesterday</strong>
+                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
+                    <span>Details<br>Student ID 83342025</span><br>
+                </li>
+                <li class="list-group-item">
+                    <strong>December 22, 2024</strong>
+                    <span><i class="fas fa-gavel"></i> Case Verdict</span>
+                    <span>Details<br>Student ID 83342025</span><br>
+                    <span><i class="fas fa-envelope"></i> Sending out email</span>
+                    <span>Details<br>Student ID 83342025</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#upcomingCalendar').fullCalendar({
-                defaultView: 'month',
-                events: [{
-                        title: 'Meeting with Party C',
-                        start: '2024-12-09T10:00:00'
-                    },
-                    {
-                        title: 'Meeting with Party D',
-                        start: '2024-12-10T14:00:00'
-                    }
-                ]
-            });
-
-            $('#bookingCalendar').fullCalendar({
-                defaultView: 'month'
-            });
-        });
-         // Function to toggle the sidebar
-         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
-
 </html>
+
