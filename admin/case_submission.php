@@ -138,8 +138,6 @@
             font-size: 1.1rem; /* Increase font size */
         }
         
-    
-
         .content {
             margin-top: 110px;
             margin-left: 255px;
@@ -164,7 +162,6 @@
             height: calc(90vh - 30px);
         }
 
-        
         .notifications h2 {
             font-size: 1.25rem;
             font-weight: bold;
@@ -172,19 +169,19 @@
         }
 
         .notifications .list-group-item {
-           border: none;
-           padding: 0.5rem 0;
+            border: none;
+            padding: 0.5rem 0;
         }
 
         .notifications .list-group-item strong {
-           display: block;
-           margin-bottom: 0.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .notifications .list-group-item span {
-           display: block;
-           font-size: 0.875rem;
-           margin-bottom: 0.5rem;
+            display: block;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
         }
 
         .notifications .list-group-item i {
@@ -196,11 +193,11 @@
             height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
+
         .report-form {
             background-color: transparent;
             border-radius: 15px;
             padding: 20px;
-            
         }
 
         .report-form textarea {
@@ -223,13 +220,12 @@
             border-radius: 10px;
             cursor: pointer;
         }
+
         .report-form .note {
             color: red;
             margin-top: 10px;
             margin-left: 25px;
-            
         }
-
 
         .card-custom {
             border-radius: 15px;
@@ -243,8 +239,6 @@
             margin-bottom: 50px;
             margin-top: 30px;
         }
-
-        
 
         .list-group-item {
             border: none;
@@ -263,7 +257,7 @@
 
         @media (max-width: 768px) {
             .menu-icon {
-                display: block;
+                display: block !important;
             }
 
             .content {
@@ -271,8 +265,6 @@
                 margin-right: 20px;
             }
         }
-
-        
     </style>
 </head>
 
@@ -294,7 +286,7 @@
     </div>
 
     <!-- Sidebar in a Card -->
-    <div class="card sidebar card-special">
+    <div class="card sidebar card-special" id="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -311,82 +303,72 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"> </i>
-                        
+                        <i class="fas fa-file-alt"></i>
                         <span> Case statements</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-lightbulb"></i>
-                        <span> Recommender</span>
+                        <i class="fas fa-calendar"></i>
+                        <span> Hearing Scheduling</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span> Logout</span>
+                        <i class="fas fa-cogs"></i>
+                        <span> Settings</span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    
-    <!-- Main Content in a Card -->
-    <main role="main" class="content card card-special">
-        <div class="card-body equal-space scrollable-notifications">
-            <div class="report-form">
-                <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
-                <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
-                <textarea placeholder="Type your complaint or report here..."></textarea>
-                <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
-                <button class="submit-button mt-3">Submit</button>
-                
+
+    <!-- Content Area -->
+    <div class="content">
+        <div class="report-form">
+            <textarea placeholder="Enter report details here..."></textarea>
+            <button class="submit-button">Submit</button>
+            <div class="note">Note: Ensure all fields are correctly filled.</div>
+        </div>
+        <div class="equal-space">
+            <div class="card card-custom">
+                <div class="card-body">
+                    <h5 class="card-title">Notifications</h5>
+                    <div class="notifications">
+                        <h2>Recent Notifications</h2>
+                        <div class="scrollable-notifications list-group">
+                            <a href="#" class="list-group-item">
+                                <strong>Meeting Scheduled</strong>
+                                <span>Meeting with the Academic Committee at 10 AM.</span>
+                                <i class="fas fa-calendar-day"></i>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <strong>New Case Statement</strong>
+                                <span>Case statement for student disciplinary action added.</span>
+                                <i class="fas fa-file-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
-
-    <div class="card notifications card-special">
-        <div class="card-body scrollable-notifications">
-            <h2>Notifications</h2>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <strong>Today</strong>
-                    <span><i class="fas fa-user-friends"></i> Meetings with involved parties</span><br>
-                    <span><i class="fas fa-calendar-alt"></i> Committee Meeting</span><br>
-                    <span><i class="fas fa-clock"></i> Deliberation meeting</span>
-                </li>
-                <li class="list-group-item">
-                    <strong>Yesterday</strong>
-                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
-                    <span>Details<br>Student ID 83342025</span><br>
-                </li>
-                <li class="list-group-item">
-                    <strong>December 22, 2024</strong>
-                    <span><i class="fas fa-gavel"></i> Case Verdict</span>
-                    <span>Details<br>Student ID 83342025</span><br>
-                    <span><i class="fas fa-envelope"></i> Sending out email</span>
-                    <span>Details<br>Student ID 83342025</span>
-                </li>
-            </ul>
-        </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            } else {
+                sidebar.classList.add('open');
+            }
         }
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
+
 </html>
-
-
 
