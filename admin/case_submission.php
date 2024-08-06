@@ -294,7 +294,7 @@
     </div>
 
     <!-- Sidebar in a Card -->
-    <div class="card sidebar card-special">
+    <div class="card sidebar" id="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -311,8 +311,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"> </i>
-                        
+                        <i class="fas fa-file-alt"></i>
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -320,12 +319,6 @@
                     <a class="nav-link" href="#">
                         <i class="fas fa-lightbulb"></i>
                         <span> Recommender</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span> Logout</span>
                     </a>
                 </li>
             </ul>
