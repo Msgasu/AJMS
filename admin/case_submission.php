@@ -158,7 +158,7 @@
             right: 20px;
             z-index: 100;
             padding: 10px;
-            width: 250px;
+            width: 260px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
         }
