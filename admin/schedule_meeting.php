@@ -202,7 +202,7 @@
 
         .calendar-container {
             margin-bottom: 20px;
-            margin-left: 30px;
+            
         }
 
         .time-slots h4 {
