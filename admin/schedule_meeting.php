@@ -326,20 +326,22 @@
             </div>
         </div>
         <div class="content">
-            <button class="btn btn-link" onclick="history.back()">&lt; back</button>
-            <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
-            <div style="display: flex; width: 100%; margin-bottom:0;  ">
-                <div id="bookingCalendar" class="calendar"></div>
-                <div class="time-slots">
-                    <h4>Available Time Slots</h4>
-                    <button class="btn btn-outline-primary">8:00am - 9:00am</button>
-                    <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
-                    <button class="btn btn-outline-primary">10:00am - 11:00am</button>
-                    <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
-                    <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
-                    <button class="btn btn-primary confirm-btn">Confirm</button>
+            <div class="card-body scrollable-notifications">
+                <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
+                <div style="display: flex; width: 100%; margin-bottom:0;  ">
+                    <div id="bookingCalendar" class="calendar"></div>
+                    <div class="time-slots">
+                        <h4>Available Time Slots</h4>
+                        <button class="btn btn-outline-primary">8:00am - 9:00am</button>
+                        <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
+                        <button class="btn btn-outline-primary">10:00am - 11:00am</button>
+                        <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
+                        <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
+                        <button class="btn btn-primary confirm-btn">Confirm</button>
+                    </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
