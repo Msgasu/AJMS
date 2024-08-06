@@ -86,7 +86,7 @@
             top: 72px;
             bottom: 0;
             left: -220px; /* Initially hidden */
-            z-index: 100;
+            z-index: 1050; 
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
@@ -146,7 +146,7 @@
             left: 20px; 
             z-index: 100;
             padding: 10px;
-            width: 270px;
+            width: 290px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
             background-color: white;
@@ -176,20 +176,20 @@
         }
 
         .scrollable-notifications {
-            height: calc(95vh - 110px); /* Adjusted height */
+            height: calc(97vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
 
         .content {
             margin-top: 90px;
-            margin-left: 310px;
+            margin-left: 330px;
             margin-right: 20px;
             padding: 20px;
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             height: calc(89.2vh - 25px);
-            overflow-y: auto;
+           
         }
 
         .content h3 {
@@ -202,18 +202,21 @@
 
         .calendar-container {
             margin-bottom: 20px;
+            
         }
+        
 
         .time-slots h4 {
             font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 100px;
-            margin-left: 100px;
+            margin-bottom: 30px;
+            margin-left: 122px;
             width: 200px;
         }
 
         .time-slots button {
             margin-bottom: 10px;
+            width: 230px;
         }
 
         .btn-outline-primary {
@@ -319,20 +322,22 @@
             </div>
         </div>
         <div class="content">
-            <button class="btn btn-link" onclick="history.back()">&lt; back</button>
-            <h2>Schedule a meeting</h2>
-            <div style="display: flex; width: 80%;  ">
-                <div id="bookingCalendar" class="calendar-container"></div>
-                <div class="time-slots">
-                    <h4>Mon 8th December</h4>
-                    <button class="btn btn-outline-primary">8:00am - 9:00am</button>
-                    <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
-                    <button class="btn btn-outline-primary">10:00am - 11:00am</button>
-                    <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
-                    <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
-                    <button class="btn btn-primary confirm-btn">Confirm</button>
+            <div class="card-body scrollable-notifications">
+                <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
+                <div style="display: flex; width: 100%; margin-bottom:0;  ">
+                    <div id="bookingCalendar" class="calendar-container"></div>
+                    <div class="time-slots">
+                        <h4>Available Time Slots</h4>
+                        <button class="btn btn-outline-primary">8:00am - 9:00am</button>
+                        <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
+                        <button class="btn btn-outline-primary">10:00am - 11:00am</button>
+                        <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
+                        <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
+                        <button class="btn btn-primary confirm-btn">Confirm</button>
+                    </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
