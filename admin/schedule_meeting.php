@@ -143,7 +143,7 @@
             position: fixed;
             top: 80px;
             bottom: 0;
-            left: 20px;
+            left: 20px; 
             z-index: 100;
             padding: 0;
             width: 220px;
