@@ -202,7 +202,7 @@
             font-size: medium;
             width: 20%;
             border: none;
-            padding: 10px 20px;
+            
             margin-left: 20px;
             border-radius: 10px;
             cursor: pointer;
