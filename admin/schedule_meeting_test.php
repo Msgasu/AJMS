@@ -239,8 +239,7 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <div class="header">
+<div class="header">
         <div class="left">
             <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
@@ -255,8 +254,8 @@
         </div>
     </div>
 
-    <!-- Sidebar in a Card -->
-    <div class="card sidebar" id="sidebar">
+        <!-- Sidebar in a Card -->
+        <div class="card sidebar" id="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -286,7 +285,9 @@
             </ul>
         </div>
     </div>
-    <!-- Main Content in a Card -->
+    <br>
+    <br>
+    <br>
 
 
     <main class="main-container">
@@ -329,12 +330,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
-        // Function to toggle the sidebar
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
-        
         $(document).ready(function() {
             $('#upcomingCalendar').fullCalendar({
                 defaultView: 'month',
@@ -353,7 +348,11 @@
                 defaultView: 'month'
             });
         });
-         
+         // Function to toggle the sidebar
+         function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
     </script>
 </body>
 
