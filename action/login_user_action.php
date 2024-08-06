@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../settings/connection.php"; // Ensure the path is correct
+include "../settings/connection.php"; 
 
 $errors = array();
 
@@ -27,9 +27,9 @@ if (isset($_POST['submit'])) {
                 
                 // Redirect based on user role
                 if ($_SESSION["user_role"] == 1) {
-                    header("Location: ../view/admin_dashboard.php");
+                    header("Location: ../admin/admin_dashboard.php");
                 } else {
-                    header("Location: ../view/student_dashboard.php"); // Adjust as necessary
+                    header("Location: ../admin/student_dashboard.php"); // Adjust as necessary
                 }
                 exit();
             } else {
