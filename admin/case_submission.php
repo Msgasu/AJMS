@@ -338,7 +338,7 @@
             
                 
                     
-            <span style="font-size: 14px">
+            <span style="font-size: 16px">
                 "Know your rights... <br>
                 <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span><br>
                 Ever found yourself thinking,<br>
@@ -348,7 +348,7 @@
                 Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. <br>
                 It's your guide to making informed choices and staying on the right side of the rules"<br>
             </span>
-                   
+            <button class="submit-button mt-3">Submit</button>      
             
                
               
