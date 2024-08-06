@@ -73,11 +73,19 @@
             margin-right: 10px;
         }
 
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0 15px;
+            margin-left: auto;
+        }
+
         .sidebar {
             position: fixed;
             top: 55px;
             bottom: 0;
-            left: 20px;
+            left: -220px; /* Initially hidden */
             z-index: 100;
             padding: 0;
             width: 220px;
@@ -85,6 +93,11 @@
             height: calc(90vh - 30px);
             background-color: white;
             border-radius: 15px;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.open {
+            left: 20px; /* Show sidebar */
         }
 
         .sidebar-sticky {
@@ -124,7 +137,8 @@
         .sidebar .nav-link span {
             font-size: 1.1rem; /* Increase font size */
         }
-
+        
+    
 
         .content {
             margin-top: 110px;
@@ -247,7 +261,16 @@
             gap: 20px;
         }
 
-        
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .content {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
 
         
     </style>
@@ -257,6 +280,7 @@
     <!-- Header -->
     <div class="header">
         <div class="left">
+            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
@@ -350,6 +374,12 @@
             </ul>
         </div>
     </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
