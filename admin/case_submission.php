@@ -200,7 +200,7 @@
             background-color: #28a745;
             color: white;
             font-size: medium;
-            width: 20%;
+            width: 40%;
             border: none;
             padding: 5px 5px;
             margin-left: 20px;
