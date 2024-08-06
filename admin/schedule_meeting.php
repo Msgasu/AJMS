@@ -176,7 +176,7 @@
         }
 
         .scrollable-notifications {
-            height: calc(50vh - 110px); /* Adjusted height */
+            height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
 
@@ -308,7 +308,7 @@
                      <p>December 9, 2024</p>
                      <button class="btn btn-success btn-sm">Send out meeting invitation</button>
                     </div>
-                </div>
+                
             
                 <div class="meeting-item">
                     <h5>Meeting with Party D</h5>
