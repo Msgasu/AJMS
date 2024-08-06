@@ -320,7 +320,7 @@
         </div>
         <div class="content">
             <button class="btn btn-link" onclick="history.back()">&lt; back</button>
-            <h2>Schedule a meeting</h2>
+            <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
             <div style="display: flex; width: 80%;  ">
                 <div id="bookingCalendar" class="calendar-container"></div>
                 <div class="time-slots">
