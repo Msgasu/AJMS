@@ -304,6 +304,31 @@
             cursor: pointer;
             font-size: 1.2rem;
         }
+
+
+        .image-preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .image-preview-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+        }
         
     </style>
 </head>
@@ -361,19 +386,25 @@
     <br>
     <!-- Main Content in a Card -->
 
+
     <main role="main" class="content card card-special">
         <div class="card-body equal-space scrollable-notifications">
             <form class="report-form" method="post" action="../action/submit_case_action.php" enctype="multipart/form-data">
                 <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
                 <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
-                <div class="textarea-wrapper">
-                    <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
-                    <div class="icon-container">
-                        <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i></label>
-                        <input type="file" id="file-upload" class="file-input" name="document">
-                        <i class="fas fa-trash-alt icon-delete"></i>
+                    
+                    <div class="textarea-wrapper">
+                        <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
+                        <div class="icon-container">
+                            <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i></label>
+                            <input type="file" id="file-upload" class="file-input" name="document">
+                        </div>
+                        <div class="image-preview-container" id="image-preview" style="display: none;">
+                            <img id="preview-img" src="" alt="Image Preview">
+                            <button type="button" class="delete-button" id="delete-file">Delete Image</button>
+                        </div>
                     </div>
-                </div>
+
                 <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
                 <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
             </form>
@@ -406,17 +437,33 @@
     </div>
 
     <script>
-       // Function to trigger file input click
-       document.querySelector('.attach-label').addEventListener('click', function () {
+               // Function to trigger file input click
+               document.querySelector('.attach-label').addEventListener('click', function () {
             document.getElementById('file-upload').click();
         });
 
-        // Optional: handle file selection (e.g., show selected file name)
+        // Handle file selection and image preview
         document.getElementById('file-upload').addEventListener('change', function () {
-            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
-            console.log('Selected file:', fileName); // You can display the file name or handle it as needed
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const previewImg = document.getElementById('preview-img');
+                    previewImg.src = e.target.result;
+                    document.getElementById('image-preview').style.display = 'flex';
+                    document.getElementById('delete-file').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
         });
 
+        // Handle image deletion
+        document.getElementById('delete-file').addEventListener('click', function () {
+            document.getElementById('file-upload').value = ''; // Clear the file input
+            document.getElementById('preview-img').src = ''; // Clear the image source
+            document.getElementById('image-preview').style.display = 'none'; // Hide the image preview
+            this.style.display = 'none'; // Hide the delete button
+        });
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
@@ -428,6 +475,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <!-- <script src="../js/case_submission.js" ></script> -->
 </body>
 
 </html>
