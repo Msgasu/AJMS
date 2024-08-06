@@ -304,6 +304,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="profile_page.php">
+                        <i class="fas fa-user"></i>
+                        <span> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="../login/logout.php">
                         <i class="fas fa-sign-out-alt"></i>
                         <span> Logout</span>
