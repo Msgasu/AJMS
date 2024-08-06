@@ -66,6 +66,7 @@
             font-weight: bold;
             color: grey;
         }
+        
         .sidebar {
             position: fixed;
             top: 72px;
@@ -298,6 +299,11 @@
                 defaultView: 'month'
             });
         });
+         // Function to toggle the sidebar
+         function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
     </script>
 </body>
 
