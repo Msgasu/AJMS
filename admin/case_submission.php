@@ -285,7 +285,7 @@
 
         .icon-delete, .icon-url {
            color: #333;
-           font-size: 1.2rem; /* Adjust size as needed */
+           font-size: 1.6rem; /* Adjust size as needed */
            cursor: pointer;
         }
 
