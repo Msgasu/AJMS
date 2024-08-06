@@ -354,21 +354,21 @@
 <main role="main" class="content card card-special">
 
     <div class="card-body equal-space scrollable-notifications">
-        <div class="report-form">
+        <form class="report-form" method="post" action="../action/submit_case_action.php" method="POST">
             <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
             <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
             <div class="textarea-wrapper">
-                <textarea placeholder="Type your complaint or report here..."></textarea>
+                <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
                 <div class="icon-container">
                     <i class="fas fa-link icon-url"></i>
                     <i class="fas fa-trash-alt icon-delete"></i>
-                    
                 </div>
             </div>
             <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
-            <button class="submit-button mt-3">Submit</button>
-        </div>
+            <button type="submit" class="submit-button mt-3">Submit</button>
+        </form>
     </div>
+
 </main>
 
 
