@@ -283,6 +283,32 @@
             gap: 10px; /* Space between icons */
         }
 
+
+
+        /* Style for the label to act as a button */
+        .attach-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #007bff; /* Icon color */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Hide the file input but make it accessible */
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+
         .icon-delete, .icon-url {
            color: #333;
            font-size: 1.7rem; /* Adjust size as needed */
@@ -293,18 +319,7 @@
            color: #007bff; /* Change color on hover */
         }
 
-      /* Hidden file input */
-               .file-input {
-            display: none;
-        }
-
-        /* Label to trigger file input */
-        .attach-label {
-            color: #007bff;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
+     
 
         .image-preview-container {
             display: flex;
@@ -393,17 +408,20 @@
                 <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
                 <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
                     
-                    <div class="textarea-wrapper">
-                        <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
-                        <div class="icon-container">
-                            <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i></label>
-                            <input type="file" id="file-upload" class="file-input" name="document">
-                        </div>
-                        <div class="image-preview-container" id="image-preview" style="display: none;">
-                            <img id="preview-img" src="" alt="Image Preview">
-                            <button type="button" class="delete-button" id="delete-file">Delete Image</button>
-                        </div>
-                    </div>
+                <div class="textarea-wrapper">
+            <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
+            <div class="icon-container">
+                <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i>
+</label>
+                <input type="file" id="file-upload" class="file-input" name="document">
+            </div>
+            <div class="image-preview-container" id="image-preview" style="display: none;">
+                <img id="preview-img" src="" alt="Image Preview">
+                <button type="button" class="delete-button" id="delete-file">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
 
                 <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
                 <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
@@ -437,8 +455,9 @@
     </div>
 
     <script>
-               // Function to trigger file input click
-               document.querySelector('.attach-label').addEventListener('click', function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        // Handle file input click
+        document.querySelector('.attach-label').addEventListener('click', function () {
             document.getElementById('file-upload').click();
         });
 
@@ -465,11 +484,14 @@
             this.style.display = 'none'; // Hide the delete button
         });
 
+        // Function to toggle the sidebar
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
         }
-    </script>
+    });
+</script>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
