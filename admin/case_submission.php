@@ -222,6 +222,7 @@
             background-color: lightgrey;
             border: 1px solid #ccc;
             padding: 10px;
+            position: relative; /* Required for positioning icons */
         }
 
         .report-form .submit-button {
@@ -271,6 +272,23 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+        }
+        .icon-container {
+            position: absolute;
+            bottom: 10px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
+            display: flex;
+            gap: 10px; /* Space between icons */
+        }
+
+        .icon-delete, .icon-url {
+           color: #333;
+           font-size: 1.2rem; /* Adjust size as needed */
+           cursor: pointer;
+        }
+
+        .icon-delete:hover, .icon-url:hover {
+           color: #007bff; /* Change color on hover */
         }
 
        
@@ -330,20 +348,24 @@
     <br>
     <br>
     <br>
-    
     <!-- Main Content in a Card -->
-    <main role="main" class="content card card-special">
-        <div class="card-body equal-space scrollable-notifications">
-            <div class="report-form">
-                <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
-                <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
+<main role="main" class="content card card-special">
+    <div class="card-body equal-space scrollable-notifications">
+        <div class="report-form">
+            <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
+            <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
+            <div class="textarea-container">
                 <textarea placeholder="Type your complaint or report here..."></textarea>
-                <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
-                <button class="submit-button mt-3">Submit</button>
-                
+                <div class="icon-container">
+                    <i class="fas fa-trash-alt icon-delete"></i>
+                    <i class="fas fa-link icon-url"></i>
+                </div>
             </div>
+            <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
+            <button class="submit-button mt-3">Submit</button>
         </div>
-    </main>
+    </div>
+</main>
 
     <div class="card notifications card-special">
         <div class="card-body scrollable-notifications">
