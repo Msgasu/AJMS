@@ -201,11 +201,11 @@
         }
 
         .calendar-container {
-            margin-bottom: 0px;
+            margin-bottom: 20px;
             
         }
         .calendar {
-            margin-bottom: 0px;
+            
             width: 800%; /* Adjust the width as needed */
             height: 1200px; /* Adjust the height as needed */
         }
