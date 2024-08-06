@@ -161,6 +161,7 @@
             width: 260px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
+            
         }
 
         
