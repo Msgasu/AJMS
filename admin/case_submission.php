@@ -201,6 +201,7 @@
         .report-form .submit-button {
             background-color: #28a745;
             color: white;
+            width: 50%;
             border: none;
             padding: 10px 20px;
             margin-left: 300px;
