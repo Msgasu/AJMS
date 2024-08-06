@@ -177,7 +177,7 @@
 
         .content {
             margin-top: 90px;
-            margin-left: 270px;
+            margin-left: 290px;
             margin-right: 20px;
             padding: 20px;
             background-color: white;
@@ -237,6 +237,7 @@
             background-color: #a02626;
             border-color: #a02626;
         }
+      
     </style>
 </head>
 
