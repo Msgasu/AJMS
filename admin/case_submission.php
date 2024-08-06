@@ -195,6 +195,19 @@
             height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
+
+        .scrollable-notifications .submit-button{
+            background-color: #28a745;
+            color: white;
+            font-size: medium;
+            width: 30%;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 240px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
         .report-form {
             background-color: transparent;
             border-radius: 15px;
@@ -338,7 +351,7 @@
             
                 
                     
-            <span style="font-size: 15 px">
+            <span style="font-size:15 px">
                 "Know your rights... <br>
                 <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span><br>
                 Ever found yourself thinking,<br>
