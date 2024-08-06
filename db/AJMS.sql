@@ -29,7 +29,6 @@ CREATE TABLE statements (
     user_id INT, -- Foreign key to reference the user who filled the form
     statement_description TEXT, -- For text descriptions
     document_url VARCHAR(255), -- For storing URLs of documents
-    video_url VARCHAR(255), -- For storing URLs of videos
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(pid) -- Add foreign key constraint
 );
