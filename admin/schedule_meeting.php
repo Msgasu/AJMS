@@ -141,14 +141,16 @@
     
         .sidebar-container {
             position: fixed;
-            top: 55px;
+            top: 70px;
             bottom: 0;
             left: 20px;
             z-index: 100;
-            padding: 10px;
-            width: 260px;
+            padding: 0;
+            width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
+            background-color: white;
+            border-radius: 15px;
         }
 
         .sidebar-container h3 {
@@ -173,15 +175,15 @@
         }
 
         .content {
-            margin-top: 110px;
-            margin-left: 20px;
-            margin-right: 300px;
-            padding: 20px 0;
-            height: calc(89.2vh - 25px);
+            margin-top: 90px;
+            margin-left: 270px;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: calc(100vh - 120px);
             overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .content h3 {
