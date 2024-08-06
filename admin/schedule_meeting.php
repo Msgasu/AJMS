@@ -201,9 +201,8 @@
         }
 
         .calendar-container {
-            margin-bottom: 10px;
-            width: 100%; /* Adjust the width as needed */
-            height: 500px; /* Adjust the height as needed */
+            margin-bottom: 20px;
+            
         }
 
         .time-slots h4 {
