@@ -191,7 +191,7 @@
 
         .report-form textarea {
             width: 100%;
-            height: 210px;
+            height: 300px;
             border-radius: 10px;
             border: 1px solid #ccc;
             padding: 10px;
