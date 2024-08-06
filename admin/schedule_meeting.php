@@ -175,6 +175,11 @@
             margin-bottom: 5px;
         }
 
+        .scrollable-notifications {
+            height: calc(90vh - 110px); /* Adjusted height */
+            overflow-y: auto;
+        }
+
         .content {
             margin-top: 90px;
             margin-left: 310px;
@@ -293,7 +298,7 @@
 
 
     <main class="main-container">
-        <div class="sidebar-container">
+        <div class="sidebar-container scrollable-notifications">
             <h3>Upcoming Meetings</h3>
             <div id="upcomingCalendar" class="calendar-container"></div>
             <div class="meeting-item">
