@@ -334,27 +334,25 @@
 
     <div class="card notifications card-special">
         <div class="card-body scrollable-notifications">
-            <h2>Notifications</h2>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <strong>Today</strong>
-                    <span><i class="fas fa-user-friends"></i> Meetings with involved parties</span><br>
-                    <span><i class="fas fa-calendar-alt"></i> Committee Meeting</span><br>
-                    <span><i class="fas fa-clock"></i> Deliberation meeting</span>
-                </li>
-                <li class="list-group-item">
-                    <strong>Yesterday</strong>
-                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
-                    <span>Details<br>Student ID 83342025</span><br>
-                </li>
-                <li class="list-group-item">
-                    <strong>December 22, 2024</strong>
-                    <span><i class="fas fa-gavel"></i> Case Verdict</span>
-                    <span>Details<br>Student ID 83342025</span><br>
-                    <span><i class="fas fa-envelope"></i> Sending out email</span>
-                    <span>Details<br>Student ID 83342025</span>
-                </li>
-            </ul>
+            <h2>Know Your Rights</h2>
+            
+                
+                    
+            <span>
+                "Know your rights...
+                <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span>
+                Ever found yourself thinking,
+                'But I didn't know it was against the rules'?
+                It's time to <span style="color: red; font-weight: bold;">take charge</span>.
+                Your student handbook holds the key to understanding what's expected of you and what's not.
+                Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. 
+                It's your guide to making informed choices and staying on the right side of the rules"
+            </span>
+                   
+            
+               
+              
+          
         </div>
     </div>
     <script>
