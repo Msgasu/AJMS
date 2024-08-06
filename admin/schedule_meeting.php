@@ -126,7 +126,7 @@
 
         .sidebar-container {
             position: fixed;
-            top: 55px;
+            top: 70px;
             bottom: 0;
             left: 20px;
             z-index: 100;
@@ -227,6 +227,7 @@
 <body>
     <div class="header">
         <div class="left">
+            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
