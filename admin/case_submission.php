@@ -74,12 +74,13 @@
         }
 
         .menu-icon {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 0 15px;
-            margin-left: auto;
+          display: block; /* Make it visible for testing */
+          font-size: 24px;
+          cursor: pointer;
+          padding: 0 15px;
+          margin-left: auto;
         }
+        
 
         .sidebar {
             position: fixed;
