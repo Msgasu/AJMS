@@ -82,7 +82,7 @@
 
         .sidebar {
             position: fixed;
-            top: 65px;
+            top: 66px;
             bottom: 0;
             left: -220px; /* Initially hidden */
             z-index: 100;
