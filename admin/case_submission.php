@@ -75,7 +75,7 @@
         .menu-icon {
             
             cursor: pointer;
-            padding: 0 15px;
+            
             margin-left: auto;
         }
         
