@@ -304,7 +304,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="../login/login_admin.php">
                         <i class="fas fa-sign-out-alt"></i>
                         <span> Logout</span>
                     </a>
