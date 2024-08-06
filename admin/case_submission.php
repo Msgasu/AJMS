@@ -196,7 +196,7 @@
             overflow-y: auto;
         }
 
-        .scrollable-notifications .submit-button{
+        .submit-button{
             background-color: #28a745;
             color: white;
             font-size: medium;
