@@ -318,7 +318,7 @@
                        <p>Student ID: 123456789</p>
                       <p>December 10, 2024</p>
                       <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-                    </div>
+                </div>
             </div>
         </div>
         <div class="content">
@@ -348,17 +348,15 @@
     <script>
        <script>
        $(document).ready(function() {
-    // Sample events data
-    var events = [
-        {
+          // Sample events data
+           var events = [
+            {
             title: 'Meeting with Party C',
-            start: '2024-12-09T10:00:00',
-            studentId: '123456789'
+            start: '2024-12-09T10:00:00'
         },
         {
             title: 'Meeting with Party D',
-            start: '2024-12-10T14:00:00',
-            studentId: '123456789'
+            start: '2024-12-10T14:00:00'
         }
     ];
 
@@ -368,14 +366,14 @@
         events: events,
         dayClick: function(date) {
             // Get the clicked date
-            var clickedDate = date.format('YYYY-MM-DD');
+            var clickedDate = date.format();
             
             // Filter events for the clicked date
             var filteredEvents = events.filter(function(event) {
-                return moment(event.start).format('YYYY-MM-DD') === clickedDate;
+                return moment(event.start).isSame(clickedDate, 'day');
             });
 
-            // Display the filtered events in the sidebar
+            // Display the filtered events
             showEvents(filteredEvents);
         }
     });
@@ -385,44 +383,24 @@
         var eventsHtml = '';
         if (events.length > 0) {
             events.forEach(function(event) {
-                eventsHtml += `<div class="meeting-item">
+                eventsHtml += `<div class="event-item">
                                    <h5>${event.title}</h5>
-                                   <p>Student ID: ${event.studentId}</p>
-                                   <p>${moment(event.start).format('MMMM Do YYYY')}</p>
-                                   <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                                   <p>${moment(event.start).format('MMMM Do YYYY, h:mm a')}</p>
                                  </div>`;
             });
         } else {
-            eventsHtml = '<p>No meetings for this day.</p>';
+            eventsHtml = '<p>No events for this day.</p>';
         }
 
         // Display the events
-        $('.scrollable-notifications').html(eventsHtml);
+        $('#eventsContainer').html(eventsHtml);
+        $('#events').show();
     }
-
-    $(document).ready(function() {
-    // Initialize the booking calendar
-    $('#bookingCalendar').fullCalendar({
-        defaultView: 'month',
-        dayClick: function(date) {
-            // Get the clicked date
-            var clickedDate = date.format('YYYY-MM-DD');
-            
-            // Show the time slots section
-            $('#timeSlots').show();
-
-            // You can further customize this to load or show specific time slots based on the clicked date
-            // For now, this just shows the time slots without any specific filtering
-        }
-    });
-}
-
     // Function to toggle the sidebar
          function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
         }
-
     </script>
 </body>
 
