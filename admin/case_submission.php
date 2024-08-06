@@ -203,7 +203,7 @@
             width: 95%;
             border: none;
             padding: 5px 5px;
-            margin-left: 15px;
+            margin-left: 12px;
             border-radius: 10px;
             cursor: pointer;
         }
@@ -231,7 +231,7 @@
             width: 30%;
             border: none;
             padding: 10px 20px;
-            margin-left: 330px;
+            margin-left: 370px;
             border-radius: 10px;
             cursor: pointer;
         }
