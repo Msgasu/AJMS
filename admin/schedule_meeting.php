@@ -146,7 +146,7 @@
             left: 20px; 
             z-index: 100;
             padding: 0;
-            width: 220px;
+            width: 250px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
             background-color: white;
