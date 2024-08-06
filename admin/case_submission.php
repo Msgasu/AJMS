@@ -72,12 +72,7 @@
             color: grey;
             margin-right: 10px;
         }
-        .menu-icon {
-            font-size: 30px; /* Adjust to your preferred size */
-            cursor: pointer;
-            padding: 0 15px;
-            margin-left: auto;
-        }
+       
         
 
         .sidebar {
