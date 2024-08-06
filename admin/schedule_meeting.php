@@ -298,7 +298,7 @@
 
 
     <main class="main-container">
-        <div class="sidebar-container scrollable-notifications">
+        <div class="sidebar-container card-body scrollable-notifications ">
             <h3>Upcoming Meetings</h3>
             <div id="upcomingCalendar" class="calendar-container"></div>
             <div class="meeting-item">
