@@ -200,10 +200,10 @@
             background-color: #28a745;
             color: white;
             font-size: medium;
-            width: 40%;
+            width: 60%;
             border: none;
             padding: 5px 5px;
-            margin-left: 20px;
+            margin-left: 28px;
             border-radius: 10px;
             cursor: pointer;
         }
@@ -231,14 +231,14 @@
             width: 30%;
             border: none;
             padding: 10px 20px;
-            margin-left: 300px;
+            margin-left: 310px;
             border-radius: 10px;
             cursor: pointer;
         }
         .report-form .note {
             color: red;
             margin-top: 10px;
-            margin-left: 35px;
+            margin-left: 50px;
             
         }
 
