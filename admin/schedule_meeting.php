@@ -141,12 +141,12 @@
     
         .sidebar-container {
             position: fixed;
-            top: 80px;
+            top: 90px;
             bottom: 0;
             left: 20px; 
             z-index: 100;
-            padding: 0;
-            width: 250px;
+            padding: 10px;
+            width: 270px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
             background-color: white;
@@ -177,7 +177,7 @@
 
         .content {
             margin-top: 90px;
-            margin-left: 270px;
+            margin-left: 310px;
             margin-right: 20px;
             padding: 20px;
             background-color: white;
@@ -237,6 +237,7 @@
             background-color: #a02626;
             border-color: #a02626;
         }
+      
     </style>
 </head>
 
