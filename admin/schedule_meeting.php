@@ -328,7 +328,7 @@
         <div class="content">
             <button class="btn btn-link" onclick="history.back()">&lt; back</button>
             <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
-            <div style="display: flex; width: 100%;  ">
+            <div style="display: flex; width: 100%; margin-bottom:0;  ">
                 <div id="bookingCalendar" class="calendar"></div>
                 <div class="time-slots">
                     <h4>Available Time Slots</h4>
