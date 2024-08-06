@@ -269,11 +269,6 @@ background-color: #28a745;
 background-color: #dc3545;
 }
 
-.case-description {
-position: relative;
-max-height: 100px;
-overflow: hidden;
-}
 
 .read-more {
 color: #007bff;
@@ -309,14 +304,20 @@ margin-top: 10px;
     border-radius: 5px;
 }
 
-.case-description {
-    position: relative;
-    max-height: 100px;
-    overflow: hidden;
-}
-
 .more-text {
     display: block;
+}
+
+.case-description {
+    position: relative;
+    max-height: 100px; /* Initial height for collapsed text */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.case-description.expanded {
+    max-height: 500px; /* Height when expanded */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .read-more {
@@ -325,6 +326,7 @@ margin-top: 10px;
     display: block;
     margin-top: 10px;
 }
+
 
 .media-container {
     margin-top: 10px;
