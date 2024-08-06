@@ -73,7 +73,7 @@
             margin-right: 10px;
         }
         .menu-icon {
-            
+            font-size: 24px;
             cursor: pointer;
             
             margin-left: auto;
