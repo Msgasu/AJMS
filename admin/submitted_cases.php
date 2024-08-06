@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include '../functions/fetch_submitted_cases.php'?>
 
 <head>
     <meta charset="UTF-8">
@@ -248,6 +249,37 @@
             font-size: 0.875rem;
             color: #555;
         }
+
+        .case-widget .status-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.case-widget .status-button {
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 0.875rem;
+    color: white;
+    text-align: center;
+    flex: 1;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.case-widget .submitted {
+    background-color: #007bff;
+}
+
+.case-widget .reviewed {
+    background-color: #28a745;
+}
+
+.case-widget .dean {
+    background-color: #dc3545;
+}
+
     </style>
 </head>
 
@@ -314,6 +346,7 @@
     <main role="main" class="content">
         <!-- Profile Header -->
         <div class="profile-header">
+            <!-- Profile information can be uncommented and used if needed -->
             <!-- <img src="../images/ashesi_logo.jpeg" alt="Profile Picture">
             <h2>John Doe</h2>
             <p>Email: john.doe@example.com</p>
@@ -322,44 +355,17 @@
             <button type="button" class="btn btn-primary">Edit Profile</button> -->
         </div>
 
-<!-- Submitted Cases Card -->
-<div class="card">
-    <div class="card-header">
-        Submitted Cases
-    </div>
-    <div class="card-body">
-        <!-- Case Widget Example -->
-        <div class="case-widget">
-            <h5>Case #1</h5>
-            <p class="case-description">This is a description of case #1. It provides details about the case submitted.</p>
-            <div class="case-meta">
-                <span>Date: August 6, 2024</span>
-                <span>Status: Pending</span>
+        <!-- Submitted Cases Card -->
+        <div class="card">
+            <div class="card-header">
+                Submitted Cases
             </div>
-            <div class="status-buttons">
-                <button class="status-button submitted">Submitted</button>
-                <button class="status-button reviewed">Reviewed</button>
-                <button class="status-button dean">Dean</button>
+            
+            <?php
+              fetchSubmittedCases($con);
+              ?>
             </div>
         </div>
-
-        <!-- More Case Widgets -->
-        <div class="case-widget">
-            <h5>Case #2</h5>
-            <p class="case-description">This is a description of case #2. It provides details about the case submitted.</p>
-            <div class="case-meta">
-                <span>Date: August 5, 2024</span>
-                <span>Status: Completed</span>
-            </div>
-            <div class="status-buttons">
-                <button class="status-button submitted">Submitted</button>
-                <button class="status-button reviewed">Reviewed</button>
-                <button class="status-button dean">Dean</button>
-            </div>
-        </div>
-    </div>
-</div>
-
     </main>
 
     <!-- JS & Bootstrap -->
