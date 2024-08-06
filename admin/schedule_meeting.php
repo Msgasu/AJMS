@@ -88,7 +88,7 @@
             left: -220px; /* Initially hidden */
             z-index: 100;
             padding: 0;
-            width: 220px;
+            width: 250px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
             background-color: white;
@@ -182,7 +182,7 @@
 
         .content {
             margin-top: 90px;
-            margin-left: 310px;
+            margin-left: 330px;
             margin-right: 20px;
             padding: 20px;
             background-color: white;
