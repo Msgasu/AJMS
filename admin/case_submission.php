@@ -334,11 +334,11 @@
 
     <div class="card notifications card-special">
         <div class="card-body scrollable-notifications">
-            <h2>Know Your Rights</h2>
+            <h2>Know Your Rights👇🏽</h2>
             
                 
                     
-            <span style="font-size: 16px">
+            <span style="font-size: 14.5 px">
                 "Know your rights... <br>
                 <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span><br>
                 Ever found yourself thinking,<br>
