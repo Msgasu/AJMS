@@ -313,11 +313,11 @@
                     </div>
                 
             
-                   <div class="meeting-item">
-                      <h5>Meeting with Party D</h5>
-                       <p>Student ID: 123456789</p>
-                      <p>December 10, 2024</p>
-                      <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                <div class="meeting-item">
+                    <h5>Meeting with Party D</h5>
+                    <p>Student ID: 123456789</p>
+                    <p>December 10, 2024</p>
+                    <button class="btn btn-success btn-sm">Send out meeting invitation</button>
                 </div>
             </div>
         </div>
@@ -326,7 +326,7 @@
                 <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
                 <div style="display: flex; width: 100%; margin-bottom:0;  ">
                     <div id="bookingCalendar" class="calendar-container"></div>
-                    <div class="time-slots" id="timeSlots" style="display: none;">
+                    <div class="time-slots">
                         <h4>Available Time Slots</h4>
                         <button class="btn btn-outline-primary">8:00am - 9:00am</button>
                         <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
@@ -346,57 +346,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
-       <script>
-       $(document).ready(function() {
-          // Sample events data
-           var events = [
-            {
-            title: 'Meeting with Party C',
-            start: '2024-12-09T10:00:00'
-        },
-        {
-            title: 'Meeting with Party D',
-            start: '2024-12-10T14:00:00'
-        }
-    ];
-
-    // Initialize the upcoming calendar
-    $('#upcomingCalendar').fullCalendar({
-        defaultView: 'month',
-        events: events,
-        dayClick: function(date) {
-            // Get the clicked date
-            var clickedDate = date.format();
-            
-            // Filter events for the clicked date
-            var filteredEvents = events.filter(function(event) {
-                return moment(event.start).isSame(clickedDate, 'day');
+        $(document).ready(function() {
+            $('#upcomingCalendar').fullCalendar({
+                defaultView: 'month',
+                events: [{
+                        title: 'Meeting with Party C',
+                        start: '2024-12-09T10:00:00'
+                    },
+                    {
+                        title: 'Meeting with Party D',
+                        start: '2024-12-10T14:00:00'
+                    }
+                ]
             });
 
-            // Display the filtered events
-            showEvents(filteredEvents);
-        }
-    });
-
-    function showEvents(events) {
-        // Create HTML for events
-        var eventsHtml = '';
-        if (events.length > 0) {
-            events.forEach(function(event) {
-                eventsHtml += `<div class="event-item">
-                                   <h5>${event.title}</h5>
-                                   <p>${moment(event.start).format('MMMM Do YYYY, h:mm a')}</p>
-                                 </div>`;
+            $('#bookingCalendar').fullCalendar({
+                defaultView: 'month'
             });
-        } else {
-            eventsHtml = '<p>No events for this day.</p>';
-        }
-
-        // Display the events
-        $('#eventsContainer').html(eventsHtml);
-        $('#events').show();
-    }
-    // Function to toggle the sidebar
+        });
+         // Function to toggle the sidebar
          function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
