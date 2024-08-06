@@ -125,6 +125,7 @@
             font-size: 1.1rem; /* Increase font size */
         }
 
+
         .content {
             margin-top: 110px;
             margin-left: 255px;
@@ -135,12 +136,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-        }
-
-        .card-custom {
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
         }
 
         .notifications {
@@ -155,6 +150,7 @@
             height: calc(90vh - 30px);
         }
 
+        
         .notifications h2 {
             font-size: 1.25rem;
             font-weight: bold;
@@ -162,19 +158,19 @@
         }
 
         .notifications .list-group-item {
-            border: none;
-            padding: 0.5rem 0;
+           border: none;
+           padding: 0.5rem 0;
         }
 
         .notifications .list-group-item strong {
-            display: block;
-            margin-bottom: 0.5rem;
+           display: block;
+           margin-bottom: 0.5rem;
         }
 
         .notifications .list-group-item span {
-            display: block;
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
+           display: block;
+           font-size: 0.875rem;
+           margin-bottom: 0.5rem;
         }
 
         .notifications .list-group-item i {
@@ -186,7 +182,6 @@
             height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
-
         .report-form {
             background-color: white;
             border-radius: 15px;
@@ -210,39 +205,84 @@
             border-radius: 10px;
             cursor: pointer;
         }
-
         .report-form .note {
             color: red;
             margin-top: 10px;
             font-weight: bold;
         }
 
-        .rights-card {
-            background-color: white;
+
+        .card-custom {
             border-radius: 15px;
-            padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
         }
 
-        .rights-card h5 {
-            font-weight: bold;
-            margin-bottom: 10px;
+        .card-special {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            margin-top: 30px;
         }
 
-        .rights-card p {
-            margin-bottom: 0;
-        }
+        
 
-        .view-handbook {
-            background-color: #28a745;
-            color: white;
+        .list-group-item {
             border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
+        }
+
+        .list-group-item strong {
             display: block;
-            margin-top: 10px;
-            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .equal-space {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        
+
+        .case-card-header {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .case-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .case-card-header span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .case-card-body {
+            padding: 10px;
+        }
+
+        .case-card-body p {
+            margin: 5px 0;
+        }
+
+        .case-card-body button {
+            width: 100%;
         }
     </style>
 </head>
@@ -264,7 +304,7 @@
     </div>
 
     <!-- Sidebar in a Card -->
-    <div class="card sidebar">
+    <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -301,58 +341,55 @@
             </ul>
         </div>
     </div>
-
+    <br>
+    <br>
+    <br>
+    
     <!-- Main Content in a Card -->
-    <main role="main" class="content">
-        <div class="report-form">
-            <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
-            <p>Type out your report or complaint in the text box below. You can also add images and audio.</p>
-            <textarea placeholder="Type your complaint or report here..."></textarea>
-            <button class="submit-button mt-3">Submit</button>
-            <p class="note">Please Note: The reports will only be seen by authorized personnel.</p>
-        </div>
-
-        <div class="rights-card mt-5">
-            <h5>Know Your Rights</h5>
-            <p>You have the right to file a complaint without fear of retaliation.</p>
-            <a href="#" class="view-handbook mt-3">View Handbook</a>
+    <main role="main" class="content card card-special">
+        <div class="card-body equal-space scrollable-notifications">
+            <div class="report-form">
+                <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
+                <p>Type out your report or complaint in the text box below. You can also add images and audio.</p>
+                <textarea placeholder="Type your complaint or report here..."></textarea>
+                <button class="submit-button mt-3">Submit</button>
+                <p class="note">Please Note: The reports will only be seen by authorized personnel.</p>
+            </div>
         </div>
     </main>
 
-    <!-- Notifications in a Card -->
-    <div class="card notifications">
-        <h2>Notifications</h2>
-        <div class="scrollable-notifications">
-            <ul class="list-group">
+    <div class="card notifications card-special">
+        <div class="card-body scrollable-notifications">
+            <h2>Notifications</h2>
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <strong>Case Update</strong>
-                    <span>Your recent case has been updated. Click to view more.</span>
-                    <i class="fas fa-eye"></i>
+                    <strong>Today</strong>
+                    <span><i class="fas fa-user-friends"></i> Meetings with involved parties</span><br>
+                    <span><i class="fas fa-calendar-alt"></i> Committee Meeting</span><br>
+                    <span><i class="fas fa-clock"></i> Deliberation meeting</span>
                 </li>
                 <li class="list-group-item">
-                    <strong>Meeting Reminder</strong>
-                    <span>Remember to attend the meeting on Monday at 10 AM.</span>
-                    <i class="fas fa-calendar-alt"></i>
+                    <strong>Yesterday</strong>
+                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
+                    <span>Details<br>Student ID 83342025</span><br>
                 </li>
                 <li class="list-group-item">
-                    <strong>New Recommendation</strong>
-                    <span>You have a new recommendation. Click to view details.</span>
-                    <i class="fas fa-lightbulb"></i>
-                </li>
-                <li class="list-group-item">
-                    <strong>System Maintenance</strong>
-                    <span>The system will be down for maintenance on Friday at 8 PM.</span>
-                    <i class="fas fa-tools"></i>
-                </li>
-                <li class="list-group-item">
-                    <strong>New Message</strong>
-                    <span>You have received a new message from admin.</span>
-                    <i class="fas fa-envelope"></i>
+                    <strong>December 22, 2024</strong>
+                    <span><i class="fas fa-gavel"></i> Case Verdict</span>
+                    <span>Details<br>Student ID 83342025</span><br>
+                    <span><i class="fas fa-envelope"></i> Sending out email</span>
+                    <span>Details<br>Student ID 83342025</span>
                 </li>
             </ul>
         </div>
     </div>
-</body>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
 </html>
+
+
 
