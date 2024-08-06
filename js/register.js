@@ -7,7 +7,8 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     const namePattern = /^[A-Za-z\s'-]+$/;
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+
 
     let valid = true;
 
@@ -23,10 +24,10 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         alert('Invalid email address');
         valid = false;
     }
-    if (!passwordPattern.test(password)) {
-        alert('Password must be at least 8 characters long and contain both letters and numbers');
-        valid = false;
-    }
+    // if (!passwordPattern.test(password)) {
+    //     alert('Password must be at least 8 characters long and contain both letters and numbers');
+    //     valid = false;
+    // }
     if (password !== confirmPassword) {
         const confirmPasswordField = document.getElementById('confirmPassword');
         confirmPasswordField.classList.add('is-invalid');

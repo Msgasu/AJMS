@@ -27,17 +27,22 @@
                 <div class="form-container p-4">
                     <h2>Do You Have Any Complaints or Cases to Report?</h2>
                     <p>Type out your report or complaint in the text box below. You can also add images and audio.</p>
-                    <form id="caseForm">
-                        <textarea id="report" class="form-control mb-3" placeholder="Type here...." required></textarea>
-                        <div class="attachment d-flex justify-content-between align-items-center mb-3">
-                            <button type="button" id="addFile" class="btn btn-link p-0"><i class="fas fa-paperclip"></i></button>
-                            <button type="button" id="deleteFile" class="btn btn-link p-0"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                        <div class="note text-center py-2 mb-3">
-                            <strong>NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</strong>
-                        </div>
-                        <button type="submit" class="btn btn-success btn-block">Submit</button>
-                    </form>
+
+
+                    <!-- form action -->
+                        <form id="caseForm" action="../action/submit_case_action.php" method="POST">
+                            <textarea id="report" name="report" class="form-control mb-3" placeholder="Type here...." required></textarea>
+                            <div class="attachment d-flex justify-content-between align-items-center mb-3">
+                                <button type="button" id="addFile" class="btn btn-link p-0"><i class="fas fa-paperclip"></i></button>
+                                <button type="button" id="deleteFile" class="btn btn-link p-0"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                            <div class="note text-center py-2 mb-3">
+                                <strong>NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</strong>
+                            </div>
+
+                            <button type="submit" name="submit" class="btn btn-success btn-block">Submit</button>
+                        </form>
+
                 </div>
             </section>
             <section class="col-md-4">

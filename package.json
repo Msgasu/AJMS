@@ -1,0 +1,19 @@
+{
+  "name": "ajms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ajms",
+    "project",
+    "AJC"
+  ],
+  "author": "Team Mega",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "firebase": "^10.12.5"
+  }
+}

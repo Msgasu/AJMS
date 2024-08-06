@@ -1,5 +1,5 @@
 <?php
-// Check if constants are not defined before defining them
+// Define constants for database connection
 if (!defined('HOST')) {
     define("HOST", "localhost");
 }
@@ -13,10 +13,11 @@ if (!defined('PASSWORD')) {
     define("PASSWORD", "");
 }
 
-// secure
-$mysqli = new mysqli(HOST, USERNAME, PASSWORD, DB_NAME);
+// Create connection using constants
+$con = new mysqli(HOST, USERNAME, PASSWORD, DB_NAME);
+
 // Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
 }
-?> 
+?>
