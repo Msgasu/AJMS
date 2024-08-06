@@ -176,7 +176,7 @@
         }
 
         .scrollable-notifications {
-            height: calc(90vh - 110px); /* Adjusted height */
+            height: calc(50vh - 110px); /* Reduced height */
             overflow-y: auto;
         }
 
@@ -305,66 +305,53 @@
                     <div class="meeting-item">
                       <h5>Meeting with Party C</h5>
                      <p>Student ID: 123456789</p>
-                     <p>December 9, 2024</p>
-                     <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                     <p>Location: Room 101</p>
+                     <p>Time: 10:00 AM - 11:00 AM</p>
                     </div>
-                </div>
-            
-                <div class="meeting-item">
-                    <h5>Meeting with Party D</h5>
-                    <p>Student ID: 123456789</p>
-                    <p>December 10, 2024</p>
-                    <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-                </div>
+                    
+                    
+                 </div>
             </div>
-        </div>
         <div class="content">
-            <button class="btn btn-link" onclick="history.back()">&lt; back</button>
-            <h3>Schedule a meeting</h3>
-            <div style="display: flex; width: 80%;  ">
-                <div id="bookingCalendar" class="calendar-container"></div>
-                <div class="time-slots">
-                    <h4>Mon 8th December</h4>
-                    <button class="btn btn-outline-primary">8:00am - 9:00am</button>
-                    <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
-                    <button class="btn btn-outline-primary">10:00am - 11:00am</button>
-                    <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
-                    <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
-                    <button class="btn btn-primary confirm-btn">Confirm</button>
-                </div>
-            </div>
+        <h3> Schedule a Hearing </h3>
+        
+         <div class="time-slots">
+            <h4> Available Slots </h4>
+                <button class="btn btn-outline-primary">Monday, 2nd August, 2024</button>
+                <button class="btn btn-outline-primary">Tuesday, 3rd August, 2024</button>
+                <button class="btn btn-outline-primary">Wednesday, 4th August, 2024</button>
+                <button class="btn btn-outline-primary">Thursday, 5th August, 2024</button>
+                <button class="btn btn-outline-primary">Friday, 6th August, 2024</button>
+                <button class="btn btn-primary">Confirm</button>
+          </div>
+         </div>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#upcomingCalendar').fullCalendar({
-                defaultView: 'month',
-                events: [{
-                        title: 'Meeting with Party C',
-                        start: '2024-12-09T10:00:00'
-                    },
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: [
                     {
-                        title: 'Meeting with Party D',
-                        start: '2024-12-10T14:00:00'
+                        title: 'Meeting with Party C',
+                        start: '2024-08-02T10:00:00',
+                        end: '2024-08-02T11:00:00'
                     }
                 ]
             });
-
-            $('#bookingCalendar').fullCalendar({
-                defaultView: 'month'
-            });
         });
-         // Function to toggle the sidebar
-         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
     </script>
 </body>
-
 </html>
