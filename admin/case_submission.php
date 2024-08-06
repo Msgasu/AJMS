@@ -339,14 +339,14 @@
                 
                     
             <span>
-                "Know your rights...
-                <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span>
-                Ever found yourself thinking,
-                'But I didn't know it was against the rules'?
-                It's time to <span style="color: red; font-weight: bold;">take charge</span>.
-                Your student handbook holds the key to understanding what's expected of you and what's not.
-                Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. 
-                It's your guide to making informed choices and staying on the right side of the rules"
+                "Know your rights... <br>
+                <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span><br>
+                Ever found yourself thinking,<br>
+                'But I didn't know it was against the rules'?<br>
+                It's time to <span style="color: red; font-weight: bold;">take charge</span>.<br>
+                Your student handbook holds the key to understanding what's expected of you and what's not.<br>
+                Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. <br>
+                It's your guide to making informed choices and staying on the right side of the rules"<br>
             </span>
                    
             
