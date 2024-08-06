@@ -203,15 +203,15 @@
             color: white;
             border: none;
             padding: 10px 20px;
-            margin-left: 500px;
+            margin-left: 300px;
             border-radius: 10px;
             cursor: pointer;
         }
         .report-form .note {
             color: red;
             margin-top: 10px;
-            margin-left: 20px;
-            font-weight: bold;
+            margin-left: 25px;
+            
         }
 
 
