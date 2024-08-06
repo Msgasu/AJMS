@@ -108,7 +108,7 @@
         </div>
         <br>
 
-        <form action="../view/admin_dashboard.php" method="POST" id="loginForm">
+        <form action="../action/login_user_action.php" method="POST" id="loginForm">
 
 
             <div class="form-group">
@@ -150,7 +150,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/login.js"></script>
+    <!-- <script src="../js/login.js"></script> -->
     <script>
         document.getElementById('registerForm').addEventListener('submit', function (event) {
             const password = document.getElementById('password').value;
