@@ -76,7 +76,7 @@
             font-size: 24px;
             cursor: pointer;
             
-            margin-left: auto;
+            margin-left: 10px;
         }
         
 
