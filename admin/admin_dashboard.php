@@ -338,7 +338,7 @@
                             <p>Year: Class of 2026</p>
                             <p>Suspect: Male</p>
                             <p>Year: 2026</p>
-                            <button class="btn btn-success">Book meeting</button>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
                         </div>
                     </div>
                 </div>
@@ -354,7 +354,7 @@
                             <p>Year: Class of 2026</p>
                             <p>Suspect: Male</p>
                             <p>Year: 2026</p>
-                            <button class="btn btn-success">Book meeting</button>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
                         </div>
                     </div>
                 </div>
@@ -370,7 +370,7 @@
                             <p>Year: Class of 2026</p>
                             <p>Suspect: Male</p>
                             <p>Year: 2026</p>
-                            <button class="btn btn-success">Book meeting</button>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
                         </div>
                     </div>
                 </div>
@@ -386,7 +386,7 @@
                             <p>Year: Class of 2026</p>
                             <p>Suspect: Male</p>
                             <p>Year: 2026</p>
-                            <button class="btn btn-success">Book meeting</button>
+                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
                         </div>
                     </div>
                 </div>
