@@ -203,7 +203,7 @@
             width: 60%;
             border: none;
             padding: 5px 5px;
-            margin-left: 28px;
+            margin-left: 34px;
             border-radius: 10px;
             cursor: pointer;
         }
@@ -231,14 +231,14 @@
             width: 30%;
             border: none;
             padding: 10px 20px;
-            margin-left: 310px;
+            margin-left: 330px;
             border-radius: 10px;
             cursor: pointer;
         }
         .report-form .note {
             color: red;
             margin-top: 10px;
-            margin-left: 50px;
+            margin-left: 70px;
             
         }
 
