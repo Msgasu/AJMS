@@ -66,30 +66,86 @@
             font-weight: bold;
             color: grey;
         }
-
-
         .sidebar {
             position: fixed;
-            top: 70px;
+            top: 72px;
             bottom: 0;
-            left: 20px;
+            left: -220px; /* Initially hidden */
             z-index: 100;
-            padding: 20px;
-            width: 250px;
+            padding: 0;
+            width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            height: calc(90vh - 30px);
             background-color: white;
             border-radius: 15px;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.open {
+            left: 15px; /* Show sidebar */
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: 100%;
+            padding-top: .5rem;
+            overflow-x: hidden;
             overflow-y: auto;
         }
 
-        .sidebar h3 {
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: #333;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 5px 10px;
+        }
+
+        .sidebar .nav-link:hover {
+            color: #007bff;
+            background-color: #f8f9fa;
+        }
+
+        .sidebar .nav-link.active {
+            color: #007bff;
+            background-color: #e9ecef;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .sidebar .nav-link span {
+            font-size: 1.1rem; /* Increase font size */
+        }
+
+
+        .sidebar-container {
+            position: fixed;
+            top: 55px;
+            bottom: 0;
+            left: 20px;
+            z-index: 100;
+            padding: 0;
+            width: 220px;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            height: calc(90vh - 30px);
+            background-color: white;
+            border-radius: 15px;
+        }
+
+        .sidebar-container h3 {
             font-size: 1.25rem;
             font-weight: bold;
             margin-bottom: 20px;
             color: #333;
         }
 
-        .sidebar .meeting-item {
+        .sidebar-container .meeting-item {
             background-color: #f8f9fa;
             border-radius: 10px;
             padding: 10px;
@@ -97,7 +153,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .sidebar .meeting-item h5 {
+        .sidebar-container .meeting-item h5 {
             font-size: 1rem;
             font-weight: bold;
             margin-bottom: 5px;
@@ -105,7 +161,7 @@
 
         .content {
             margin-top: 90px;
-            margin-left: 300px;
+            margin-left: 270px;
             margin-right: 20px;
             padding: 20px;
             background-color: white;
@@ -184,7 +240,7 @@
 
 
     <main class="main-container">
-        <div class="sidebar">
+        <div class="sidebar-container">
             <h3>Upcoming Meetings</h3>
             <div id="upcomingCalendar" class="calendar-container"></div>
             <div class="meeting-item">
