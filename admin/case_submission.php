@@ -193,6 +193,7 @@
             width: 100%;
             height: 300px;
             border-radius: 10px;
+            background-color: lightgrey;
             border: 1px solid #ccc;
             padding: 10px;
         }
