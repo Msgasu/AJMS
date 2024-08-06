@@ -354,7 +354,7 @@
                 <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
                 <p>Type out your report or complaint in the text box below. You can also add images and audio.</p>
                 <textarea placeholder="Type your complaint or report here..."></textarea>
-                <p style="font-weight: bolder" class="note">PLEASE NOTE: THE REPORTS WILL ONLY BE SEEN BY AUTHORIZED PERSONNEL.</p>
+                <h5 style="font-weight: bolder" class="note">PLEASE NOTE: THE REPORTS WILL ONLY BE SEEN BY AUTHORIZED PERSONNEL.</h5>
                 <button class="submit-button mt-3">Submit</button>
                 
             </div>
