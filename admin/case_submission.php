@@ -75,7 +75,7 @@
 
         .menu-icon {
           
-          font-size: 20px;
+          font-size: 5px;
           cursor: pointer;
           padding: 0 15px;
           margin-left: auto;
