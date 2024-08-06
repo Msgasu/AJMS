@@ -1,5 +1,4 @@
 <?php
-
 include "../settings/connection.php";
 
 // Start the session
@@ -17,14 +16,14 @@ if (isset($_POST['submit'])) {
         die('User not logged in.');
     }
 
-    // Handle file upload
+    // Handle file uploads
     $document_url = null;
-    $video_url = null;
+    $targetDir = '../assets/';
 
+    // Handle document upload
     if (isset($_FILES['document']) && $_FILES['document']['error'] == 0) {
         $document = $_FILES['document'];
         $documentName = basename($document['name']);
-        $targetDir = '../assets/';
         $targetFile = $targetDir . $documentName;
 
         // Move the uploaded file to the target directory
@@ -35,26 +34,27 @@ if (isset($_POST['submit'])) {
         }
     }
 
+    // Handle video upload
     if (isset($_FILES['video']) && $_FILES['video']['error'] == 0) {
         $video = $_FILES['video'];
         $videoName = basename($video['name']);
-        $targetDir = '../assets/';
         $targetFile = $targetDir . $videoName;
 
         // Move the uploaded file to the target directory
         if (move_uploaded_file($video['tmp_name'], $targetFile)) {
-            $video_url = $targetFile; // Store the path in the database
+            $document_url = $targetFile; // Store the path in the document_url column
         } else {
             die('Video upload failed.');
         }
     }
 
     // Prepare and execute SQL query using MySQLi
-    $stmt = $con->prepare('INSERT INTO statements (user_id, statement_description, document_url, video_url) VALUES (?, ?, ?, ?)');
-    $stmt->bind_param('isss', $user_id, $statement_description, $document_url, $video_url);
+    $stmt = $con->prepare('INSERT INTO statements (user_id, statement_description, document_url) VALUES (?, ?, ?)');
+    $stmt->bind_param('iss', $user_id, $statement_description, $document_url);
 
     if ($stmt->execute()) {
-        echo 'Report submitted successfully!';
+        header("Location: ../student/student_dashboard.php");
+            exit();
     } else {
         echo 'Error: ' . $stmt->error;
     }
