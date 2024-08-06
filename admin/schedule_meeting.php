@@ -175,7 +175,7 @@
             margin-bottom: 5px;
         }
 
-        .sidebar-container .scrollable-notifications {
+        .scrollable-notifications {
             height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
