@@ -203,13 +203,14 @@
             color: white;
             border: none;
             padding: 10px 20px;
-            margin-left: 100px;
+            margin-left: 500px;
             border-radius: 10px;
             cursor: pointer;
         }
         .report-form .note {
             color: red;
             margin-top: 10px;
+            margin-left: 20px;
             font-weight: bold;
         }
 
@@ -246,46 +247,7 @@
 
         
 
-        .case-card-header {
-            height: 150px;
-            background-size: cover;
-            background-position: center;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: relative;
-        }
-
-        .case-card-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .case-card-header span {
-            position: relative;
-            z-index: 2;
-        }
-
-        .case-card-body {
-            padding: 10px;
-        }
-
-        .case-card-body p {
-            margin: 5px 0;
-        }
-
-        .case-card-body button {
-            width: 100%;
-        }
+        
     </style>
 </head>
 
@@ -354,7 +316,7 @@
                 <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
                 <p>Type out your report or complaint in the text box below. You can also add images and audio.</p>
                 <textarea placeholder="Type your complaint or report here..."></textarea>
-                <h5 style="font-weight: bolder" class="note">PLEASE NOTE: THE REPORTS WILL ONLY BE SEEN BY AUTHORIZED PERSONNEL.</h5>
+                <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
                 <button class="submit-button mt-3">Submit</button>
                 
             </div>
