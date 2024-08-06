@@ -20,10 +20,32 @@ function fetchSubmittedCases($con) {
             $document_url = htmlspecialchars($row['document_url']);
             $created_at = htmlspecialchars($row['created_at']);
             $user_name = htmlspecialchars($row['user_name']);
-    
+
+            // Add Read More functionality
+            $short_description = substr($description, 0, 100); // Show first 100 chars
+            $full_description = $description;
+            $is_long_text = strlen($description) > 100;
+
             echo '<div class="case-widget">';
             echo '<h5>Case #' . $case_id . '</h5>';
-            echo '<p class="case-description">' . $description . '</p>';
+            echo '<p class="case-description">';
+            echo $short_description;
+            if ($is_long_text) {
+                echo '<span class="more-text" style="display: none;">' . $full_description . '</span>';
+                echo '<a href="#" class="read-more" onclick="toggleText(this); return false;">Read More</a>';
+            }
+            echo '</p>';
+            
+            // Display the document (image or video)
+            if ($document_url) {
+                $file_ext = pathinfo($document_url, PATHINFO_EXTENSION);
+                if (in_array($file_ext, ['jpg', 'jpeg', 'png'])) {
+                    echo '<img src="' . $document_url . '" alt="Uploaded Document" class="document-preview">';
+                } elseif (in_array($file_ext, ['mp4', 'mov'])) {
+                    echo '<video controls class="document-preview"><source src="' . $document_url . '" type="video/' . $file_ext . '">Your browser does not support the video tag.</video>';
+                }
+            }
+            
             echo '<div class="case-meta">';
             echo '<span>Date: ' . $created_at . '</span>';
             echo '<span>User: ' . $user_name . '</span>';
@@ -39,6 +61,7 @@ function fetchSubmittedCases($con) {
         echo '<p>No cases submitted yet.</p>';
     }
 }
+
 
 // Call the function
 // fetchSubmittedCases($con);
