@@ -206,8 +206,8 @@
         }
         .calendar {
             margin-bottom: 10px;
-            width: 500%; /* Adjust the width as needed */
-            height: 900px; /* Adjust the height as needed */
+            width: 800%; /* Adjust the width as needed */
+            height: 1200px; /* Adjust the height as needed */
         }
 
         .time-slots h4 {
