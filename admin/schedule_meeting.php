@@ -86,7 +86,7 @@
             top: 72px;
             bottom: 0;
             left: -220px; /* Initially hidden */
-            z-index: 100;
+            z-index: 1050; 
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
