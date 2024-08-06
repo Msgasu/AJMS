@@ -74,11 +74,11 @@
         }
 
         .menu-icon {
-             height: 70px;
-             width: 90px;
-             cursor: pointer;
-             padding: 0 15px;
-             margin-left: auto;
+          display: block; /* Make it visible for testing */
+          font-size: 10px;
+          cursor: pointer;
+          padding: 0 15px;
+          margin-left: auto;
         }
         
 
