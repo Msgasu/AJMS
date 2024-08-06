@@ -203,7 +203,7 @@
             width: 95%;
             border: none;
             padding: 5px 5px;
-            margin-left: 12px;
+            margin-left: 10px;
             border-radius: 10px;
             cursor: pointer;
         }
