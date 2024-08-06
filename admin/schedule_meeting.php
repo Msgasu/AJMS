@@ -151,6 +151,7 @@
             height: calc(90vh - 30px);
             background-color: white;
             border-radius: 15px;
+            overflow-y: auto;
         }
 
         .sidebar-container h3 {
