@@ -446,7 +446,10 @@
                 Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. <br>
                 It's your guide to making informed choices and staying on the right side of the rules"<br>
             </span>
-            <button class="submit-button mt-3">View Handbook</button>      
+            <a href="https://www.ashesi.edu.gh/wp-content/uploads/2010/11/Ashesi_StudentHandbook_2019-2020-compressed.pdf" class="submit-button-wrapper">
+                <button class="submit-button mt-3">View Handbook</button>
+            </a>
+                
             
                
               
