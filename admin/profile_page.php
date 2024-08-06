@@ -201,40 +201,42 @@
         </div>
     </div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">
+                    <a class="nav-link active" href="../admin/admin_dashboard.php"">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="meetings.php">
+                    <a class="nav-link" href="#">
                         <i class="fas fa-users"></i>
                         <span> Meeting</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cases.php">
-                        <i class="fas fa-file-alt"></i>
+                    <a class="nav-link" href="../admin/submitted_cases.php">
+                        <i class="fas fa-file-alt"> </i>
+                        
                         <span> Case statements</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="recommender.php">
+                    <a class="nav-link" href="#">
                         <i class="fas fa-lightbulb"></i>
                         <span> Recommender</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="profile_page.php">
+                    <a class="nav-link" href="profile_page.php">
                         <i class="fas fa-user"></i>
                         <span> Profile</span>
                     </a>
                 </li>
+                <li class="nav-item">
                 <li class="nav-item">
                     <a class="nav-link" href="../login/logout.php">
                         <i class="fas fa-sign-out-alt"></i>
@@ -244,6 +246,10 @@
             </ul>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+
 
     <!-- Main Content -->
     <main role="main" class="content">
