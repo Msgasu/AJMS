@@ -338,7 +338,7 @@
             
                 
                     
-            <span style="font-size: 24px">
+            <span style="font-size: 14px">
                 "Know your rights... <br>
                 <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span><br>
                 Ever found yourself thinking,<br>
