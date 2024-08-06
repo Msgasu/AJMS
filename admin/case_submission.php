@@ -72,15 +72,7 @@
             color: grey;
             margin-right: 10px;
         }
-
-        .menu-icon {
-          height: 70px;
-          width: 90px;
-          font-size: 5px;
-          cursor: pointer;
-          padding: 0 15px;
-          margin-left: auto;
-        }
+       
         
 
         .sidebar {
