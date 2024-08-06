@@ -44,7 +44,7 @@ function fetchSubmittedCases($con) {
             } elseif (preg_match('/\.(mp4|avi|mov)$/i', $document_url)) {
                 echo '<video controls class="media-file"><source src="' . $document_url . '" type="video/mp4">Your browser does not support the video tag.</video>';
             } else {
-                echo '<p>Unsupported file type.</p>';
+                echo '<p>No files submitted</p>';
             }
             echo '</div>';
            
