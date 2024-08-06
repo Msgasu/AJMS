@@ -330,7 +330,7 @@
                             <p>Year: Class of 2026</p>
                             <p>Suspect: Male</p>
                             <p>Year: 2026</p>
-                            <button class="btn btn-success" onclick="location.href='#'">View Progress</button>
+                            <button class="btn btn-success" onclick="location.href='view_progress.php'">View Progress</button>
                         </div>
                     </div>
                 </div>
