@@ -96,7 +96,7 @@
         }
 
         .sidebar.open {
-            left: 20px; /* Show sidebar */
+            left: 15px; /* Show sidebar */
         }
 
         .sidebar-sticky {
