@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Meeting</title>
+    <title>AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <style>
-        html,
-        body {
+        html, body {
             font-size: .875rem;
             background-color: #A44C4C;
-            overflow: hidden;
-            /* Prevent general scrollbar */
+            overflow: hidden; /* Prevent general scrollbar */
             height: 100%;
         }
 
@@ -74,7 +73,6 @@
             color: grey;
             margin-right: 10px;
         }
-        
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
@@ -140,20 +138,17 @@
             font-size: 1.1rem; /* Increase font size */
         }
         
-
-
+    
         .sidebar-container {
             position: fixed;
-            top: 70px;
+            top: 55px;
             bottom: 0;
             left: 20px;
             z-index: 100;
-            padding: 0;
-            width: 220px;
+            padding: 10px;
+            width: 260px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
-            background-color: white;
-            border-radius: 15px;
         }
 
         .sidebar-container h3 {
@@ -178,15 +173,15 @@
         }
 
         .content {
-            margin-top: 90px;
-            margin-left: 270px;
-            margin-right: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: calc(100vh - 120px);
+            margin-top: 110px;
+            margin-left: 20px;
+            margin-right: 300px;
+            padding: 20px 0;
+            height: calc(89.2vh - 25px);
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .content h3 {
