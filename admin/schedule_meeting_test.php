@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Meeting</title>
+    <title>AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        html,
-        body {
+        html, body {
             font-size: .875rem;
             background-color: #A44C4C;
-            overflow: hidden;
-            /* Prevent general scrollbar */
+            overflow: hidden; /* Prevent general scrollbar */
             height: 100%;
         }
 
@@ -74,7 +72,6 @@
             color: grey;
             margin-right: 10px;
         }
-        
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
@@ -140,8 +137,7 @@
             font-size: 1.1rem; /* Increase font size */
         }
         
-
-
+    
         .sidebar-container {
             position: fixed;
             top: 70px;
@@ -243,7 +239,8 @@
 </head>
 
 <body>
-<div class="header">
+    <!-- Header -->
+    <div class="header">
         <div class="left">
             <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
@@ -257,6 +254,42 @@
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
+
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar" id="sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <i class="fas fa-home"></i>
+                        <span> Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users"></i>
+                        <span> Meeting</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-file-alt"></i>
+                        <span> Case statements</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-lightbulb"></i>
+                        <span> Recommender</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Main Content in a Card -->
 
 
     <main class="main-container">
