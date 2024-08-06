@@ -22,31 +22,32 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 0;
             border-bottom: 1px solid #dee2e6;
             position: fixed;
             top: 0;
             width: 100%;
-            height: 70px;
             z-index: 1030;
+        }
+
+        .header img {
+            height: 70px;
+            width: 90px;
+            margin: 0;
         }
 
         .header .left {
             display: flex;
             align-items: center;
-        }
-
-        .header img {
-            height: 50px;
-            width: auto;
-            margin-right: 10px;
-        }
-
-        .header .title h1 {
-            font-size: 24px;
-            font-weight: bolder;
-            color: #D00C0C;
+            padding: 0;
             margin: 0;
+        }
+
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #D00C0C;
+            margin-left: 10px;
         }
 
         .header .user-info {
@@ -56,17 +57,32 @@
 
         .header .user-info img {
             margin-right: 10px;
-            border-radius: 50%;
+            border-radius: 30%;
             height: 40px;
-            width: 40px;
-            /* Adjust size as needed */
+            width: 80px;
+            padding: 0;
+        }
+
+        .header .user-info .line {
+            height: 40px;
+            border-left: 1px solid grey;
+            margin: 0 15px;
         }
 
         .header .user-info span {
             font-weight: bold;
             color: grey;
+            margin-right: 10px;
         }
         
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            
+            margin-left: 10px;
+        }
+        
+
         .sidebar {
             position: fixed;
             top: 72px;
@@ -123,6 +139,7 @@
         .sidebar .nav-link span {
             font-size: 1.1rem; /* Increase font size */
         }
+        
 
 
         .sidebar-container {
@@ -226,7 +243,7 @@
 </head>
 
 <body>
-    <div class="header">
+<div class="header">
         <div class="left">
             <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
@@ -235,8 +252,9 @@
             </div>
         </div>
         <div class="user-info">
-            <img src="path_to_profile_image.png" alt="Profile Image" class="profile-image">
+            <div class="line"></div>
             <span>John Doe</span>
+            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
 
