@@ -214,7 +214,7 @@
 
         .time-slots button {
             margin-bottom: 10px;
-            width: 90px;
+            width: 200px;
         }
 
         .btn-outline-primary {
