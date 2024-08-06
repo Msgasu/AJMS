@@ -270,12 +270,34 @@ background-color: #dc3545;
 }
 
 
-.read-more {
-color: #007bff;
-cursor: pointer;
-display: block;
-margin-top: 10px;
+.case-widget {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensure the content is not overflowing */
+    transition: max-height 0.5s ease; /* Smooth transition for expanding */
+    max-height: 5000px; /* Set a reasonable default height */
 }
+
+.case-widget.expanded {
+    max-height: none; /* Allow unlimited height when expanded */
+}
+
+.case-description {
+    overflow: hidden;
+}
+
+.case-description.expanded {
+    max-height: none; 
+}
+
+.read-more {
+    color: #007bff;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+}
+
 
 .document-preview {
 max-width: 100%;
@@ -297,34 +319,8 @@ display: block;
 margin-top: 10px;
 }
 
-.case-widget {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
 .more-text {
     display: block;
-}
-
-.case-description {
-    position: relative;
-    max-height: 100px; /* Initial height for collapsed text */
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.case-description.expanded {
-    max-height: 500px; /* Height when expanded */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.read-more {
-    color: #007bff;
-    cursor: pointer;
-    display: block;
-    margin-top: 10px;
 }
 
 
