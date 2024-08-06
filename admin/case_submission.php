@@ -262,16 +262,7 @@
             gap: 20px;
         }
 
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
-
-            .content {
-                margin-left: 20px;
-                margin-right: 20px;
-            }
-        }
+       
 
         
     </style>
