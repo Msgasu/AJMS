@@ -207,13 +207,14 @@
         .time-slots h4 {
             font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 100px;
+            margin-bottom: 30px;
             margin-left: 100px;
             width: 200px;
         }
 
         .time-slots button {
             margin-bottom: 10px;
+            width: 90px;
         }
 
         .btn-outline-primary {
@@ -324,7 +325,7 @@
             <div style="display: flex; width: 80%;  ">
                 <div id="bookingCalendar" class="calendar-container"></div>
                 <div class="time-slots">
-                    <h4>Mon 8th December</h4>
+                    <h4>Available Time Slots</h4>
                     <button class="btn btn-outline-primary">8:00am - 9:00am</button>
                     <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
                     <button class="btn btn-outline-primary">10:00am - 11:00am</button>
