@@ -141,8 +141,8 @@
 
         .content {
             margin-top: 110px;
-            margin-left: 100px;
-            margin-right: 220px;
+            margin-left: 20px;
+            margin-right: 300px;
             padding: 20px 0;
             height: calc(89.2vh - 25px);
             overflow-y: auto;
