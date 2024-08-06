@@ -1,5 +1,5 @@
 <?php
-include "../settings/connection.php"; // Ensure the path is correct
+include "../settings/connection.php"; 
 
 if (isset($_POST['submit'])) { 
 
