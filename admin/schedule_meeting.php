@@ -176,7 +176,7 @@
         }
 
         .scrollable-notifications {
-            height: calc(90vh - 30px); /* Adjusted height */
+            height: calc(95vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
 
@@ -207,13 +207,14 @@
         .time-slots h4 {
             font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 100px;
+            margin-bottom: 30px;
             margin-left: 100px;
             width: 200px;
         }
 
         .time-slots button {
             margin-bottom: 10px;
+            width: 200px;
         }
 
         .btn-outline-primary {
@@ -298,29 +299,33 @@
 
 
     <main class="main-container">
-        <div class="sidebar-container  scrollable-notifications ">
-            <h3>Upcoming Meetings</h3>
-            <div id="upcomingCalendar" class="calendar-container"></div>
-            <div class="meeting-item">
-                <h5>Meeting with Party C</h5>
-                <p>Student ID: 123456789</p>
-                <p>December 9, 2024</p>
-                <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-            </div>
-            <div class="meeting-item">
-                <h5>Meeting with Party D</h5>
-                <p>Student ID: 123456789</p>
-                <p>December 10, 2024</p>
-                <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+        <div class="sidebar-container">
+            <div class="card-body scrollable-notifications">
+               <h3>Upcoming Meetings</h3>
+               <div id="upcomingCalendar" class="calendar-container"></div>
+                    <div class="meeting-item">
+                      <h5>Meeting with Party C</h5>
+                     <p>Student ID: 123456789</p>
+                     <p>December 9, 2024</p>
+                     <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                    </div>
+                
+            
+                <div class="meeting-item">
+                    <h5>Meeting with Party D</h5>
+                    <p>Student ID: 123456789</p>
+                    <p>December 10, 2024</p>
+                    <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                </div>
             </div>
         </div>
         <div class="content">
             <button class="btn btn-link" onclick="history.back()">&lt; back</button>
-            <h3>Schedule a meeting</h3>
+            <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
             <div style="display: flex; width: 80%;  ">
                 <div id="bookingCalendar" class="calendar-container"></div>
                 <div class="time-slots">
-                    <h4>Mon 8th December</h4>
+                    <h4>Available Time Slots</h4>
                     <button class="btn btn-outline-primary">8:00am - 9:00am</button>
                     <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
                     <button class="btn btn-outline-primary">10:00am - 11:00am</button>
