@@ -201,10 +201,10 @@
         .report-form .submit-button {
             background-color: #28a745;
             color: white;
-            width: 50%;
+            width: 30%;
             border: none;
             padding: 10px 20px;
-            margin-left: 300px;
+            margin-left: 200px;
             border-radius: 10px;
             cursor: pointer;
         }
