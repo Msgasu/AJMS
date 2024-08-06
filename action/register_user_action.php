@@ -16,13 +16,23 @@ if (isset($_POST['submit'])) {
         die("Passwords do not match.");
     }
 
-    // Prepare and bind parameters
+    // Check if the email is in the admins table
+    $checkAdminStmt = $con->prepare("SELECT email FROM admins WHERE email = ?");
+    $checkAdminStmt->bind_param("s", $email);
+    $checkAdminStmt->execute();
+    $checkAdminStmt->store_result();
+    
+    // Set role_id based on the result
+    $role_id = ($checkAdminStmt->num_rows > 0) ? 1 : 2; // 1 for admin, 2 for user
+    $checkAdminStmt->close();
+
+    // Prepare and bind parameters for user insertion
     $stmt = $con->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`) VALUES (?, ?, ?, ?, ?)");
-    $role_id = 1; // Default role ID
     $stmt->bind_param("ssssi", $first_name, $last_name, $email, $hash, $role_id);
 
     // Execute the statement
     if ($stmt->execute()) {
+        // Redirect based on role_id
         if ($role_id == 1) {
             header("Location: ../login/login_admin.php");
             exit(); 
