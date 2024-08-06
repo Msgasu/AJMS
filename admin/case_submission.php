@@ -361,7 +361,7 @@
                 Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. <br>
                 It's your guide to making informed choices and staying on the right side of the rules"<br>
             </span>
-            <button class="submit-button mt-3">Submit</button>      
+            <button class="submit-button mt-3">View Handbook</button>      
             
                
               
