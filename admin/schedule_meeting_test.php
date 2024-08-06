@@ -286,9 +286,6 @@
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
     <!-- Main Content in a Card -->
 
 
@@ -332,6 +329,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
+        // Function to toggle the sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+        
         $(document).ready(function() {
             $('#upcomingCalendar').fullCalendar({
                 defaultView: 'month',
@@ -350,11 +353,7 @@
                 defaultView: 'month'
             });
         });
-         // Function to toggle the sidebar
-         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
+         
     </script>
 </body>
 
