@@ -204,7 +204,7 @@
             width: 30%;
             border: none;
             padding: 10px 20px;
-            margin-left: 230px;
+            margin-left: 240px;
             border-radius: 10px;
             cursor: pointer;
         }
