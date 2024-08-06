@@ -36,14 +36,17 @@ function fetchSubmittedCases($con) {
             }
             echo '</p>';
             
-            // Display the document (image or video)
+            // Add a button to view the file
             if ($document_url) {
+                echo '<button class="view-file-button" onclick="toggleMedia(this)">View Attached File</button>';
+                echo '<div class="media-container" style="display: none;">';
                 $file_ext = pathinfo($document_url, PATHINFO_EXTENSION);
                 if (in_array($file_ext, ['jpg', 'jpeg', 'png'])) {
                     echo '<img src="' . $document_url . '" alt="Uploaded Document" class="document-preview">';
                 } elseif (in_array($file_ext, ['mp4', 'mov'])) {
                     echo '<video controls class="document-preview"><source src="' . $document_url . '" type="video/' . $file_ext . '">Your browser does not support the video tag.</video>';
                 }
+                echo '</div>';
             }
             
             echo '<div class="case-meta">';
