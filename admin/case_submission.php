@@ -200,10 +200,10 @@
             background-color: #28a745;
             color: white;
             font-size: medium;
-            width: 100%;
+            width: 95%;
             border: none;
             padding: 5px 5px;
-            margin-left: 20px;
+            margin-left: 15px;
             border-radius: 10px;
             cursor: pointer;
         }
