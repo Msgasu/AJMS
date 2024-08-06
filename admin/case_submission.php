@@ -338,7 +338,7 @@
             
                 
                     
-            <h5>
+            <span style="font-size: 24px">
                 "Know your rights... <br>
                 <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span><br>
                 Ever found yourself thinking,<br>
@@ -347,7 +347,7 @@
                 Your student handbook holds the key to understanding what's expected of you and what's not.<br>
                 Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. <br>
                 It's your guide to making informed choices and staying on the right side of the rules"<br>
-            </h5>
+            </span>
                    
             
                
