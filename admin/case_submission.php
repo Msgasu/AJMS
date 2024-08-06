@@ -293,8 +293,17 @@
            color: #007bff; /* Change color on hover */
         }
 
-       
+      /* Hidden file input */
+               .file-input {
+            display: none;
+        }
 
+        /* Label to trigger file input */
+        .attach-label {
+            color: #007bff;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
         
     </style>
 </head>
@@ -351,26 +360,25 @@
     <br>
     <br>
     <!-- Main Content in a Card -->
-<main role="main" class="content card card-special">
 
-    <div class="card-body equal-space scrollable-notifications">
-        <form class="report-form" method="post" action="../action/submit_case_action.php" method="POST">
-            <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
-            <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
-            <div class="textarea-wrapper">
-                <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
-                <div class="icon-container">
-                    <i class="fas fa-link icon-url"></i>
-                    <i class="fas fa-trash-alt icon-delete"></i>
+    <main role="main" class="content card card-special">
+        <div class="card-body equal-space scrollable-notifications">
+            <form class="report-form" method="post" action="../action/submit_case_action.php" enctype="multipart/form-data">
+                <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
+                <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
+                <div class="textarea-wrapper">
+                    <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
+                    <div class="icon-container">
+                        <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i></label>
+                        <input type="file" id="file-upload" class="file-input" name="document">
+                        <i class="fas fa-trash-alt icon-delete"></i>
+                    </div>
                 </div>
-            </div>
-            <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
-            <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
-        </form>
-    </div>
-
-</main>
-
+                <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
+                <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
+            </form>
+        </div>
+    </main>
 
 
     <div class="card notifications card-special">
@@ -396,7 +404,20 @@
           
         </div>
     </div>
+
     <script>
+       // Function to trigger file input click
+       document.querySelector('.attach-label').addEventListener('click', function () {
+            document.getElementById('file-upload').click();
+        });
+
+        // Optional: handle file selection (e.g., show selected file name)
+        document.getElementById('file-upload').addEventListener('change', function () {
+            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+            console.log('Selected file:', fileName); // You can display the file name or handle it as needed
+        });
+
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
