@@ -280,6 +280,40 @@
     background-color: #dc3545;
 }
 
+.case-description {
+    position: relative;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.read-more {
+    color: #007bff;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+
+.document-preview {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.case-widget img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.case-widget video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+
     </style>
 </head>
 
