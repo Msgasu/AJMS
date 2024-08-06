@@ -74,10 +74,11 @@
         }
 
         .menu-icon {
-          
-          cursor: pointer;
-          padding: 0 15px;
-          margin-left: auto;
+             height: 70px;
+             width: 90px;
+             cursor: pointer;
+             padding: 0 15px;
+             margin-left: auto;
         }
         
 
