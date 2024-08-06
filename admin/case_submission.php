@@ -200,7 +200,7 @@
             background-color: #28a745;
             color: white;
             font-size: medium;
-            width: 60%;
+            width: 100%;
             border: none;
             padding: 5px 5px;
             margin-left: 34px;
@@ -238,7 +238,7 @@
         .report-form .note {
             color: red;
             margin-top: 10px;
-            margin-left: 70px;
+            margin-left: 90px;
             
         }
 
