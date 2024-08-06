@@ -141,7 +141,7 @@
     
         .sidebar-container {
             position: fixed;
-            top: 85px;
+            top: 90px;
             bottom: 0;
             left: 20px; 
             z-index: 100;
