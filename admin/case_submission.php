@@ -285,7 +285,7 @@
 
         .icon-delete, .icon-url {
            color: #333;
-           font-size: 1.6rem; /* Adjust size as needed */
+           font-size: 1.7rem; /* Adjust size as needed */
            cursor: pointer;
         }
 
@@ -360,8 +360,9 @@
             <div class="textarea-wrapper">
                 <textarea placeholder="Type your complaint or report here..."></textarea>
                 <div class="icon-container">
-                    <i class="fas fa-trash-alt icon-delete"></i>
                     <i class="fas fa-link icon-url"></i>
+                    <i class="fas fa-trash-alt icon-delete"></i>
+                    
                 </div>
             </div>
             <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
