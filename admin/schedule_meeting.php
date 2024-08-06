@@ -176,7 +176,7 @@
         }
 
         .scrollable-notifications {
-            height: calc(90vh - 110px); /* Reduced height */
+            height: calc(100vh - 110px); /* Reduced height */
             overflow-y: auto;
         }
 
