@@ -200,7 +200,7 @@
             </nav>
 
             <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
-                <span>Case of theft....Page can be changed if initially idea was different</span>
+                <span>Case of theft....Page can be changed if initial idea was different</span>
             </div>
             <div class="case-card-body">
                 <h5 class="card-title">Case of theft</h5>
