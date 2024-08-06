@@ -9,3 +9,13 @@ function toggleText(link) {
     }
 }
 
+function toggleMedia(button) {
+    var mediaContainer = button.nextElementSibling;
+    if (mediaContainer.style.display === "none") {
+        mediaContainer.style.display = "block";
+        button.textContent = "Hide Attached File";
+    } else {
+        mediaContainer.style.display = "none";
+        button.textContent = "View Attached File";
+    }
+}
