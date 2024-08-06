@@ -210,7 +210,7 @@
             font-size: 1.25rem;
             font-weight: bold;
             margin-bottom: 30px;
-            margin-left: 120px;
+            margin-left: 122px;
             width: 200px;
         }
 
