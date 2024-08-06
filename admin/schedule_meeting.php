@@ -204,11 +204,7 @@
             margin-bottom: 20px;
             
         }
-        .calendar {
-            
-            width: 800%; /* Adjust the width as needed */
-            height: 1200px; /* Adjust the height as needed */
-        }
+        
 
         .time-slots h4 {
             font-size: 1.25rem;
@@ -329,7 +325,7 @@
             <div class="card-body scrollable-notifications">
                 <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
                 <div style="display: flex; width: 100%; margin-bottom:0;  ">
-                    <div id="bookingCalendar" class="calendar"></div>
+                    <div id="bookingCalendar" class="calendar-container"></div>
                     <div class="time-slots">
                         <h4>Available Time Slots</h4>
                         <button class="btn btn-outline-primary">8:00am - 9:00am</button>
