@@ -183,14 +183,14 @@
             overflow-y: auto;
         }
         .report-form {
-            background-color: white;
+            background-color: transparent;
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
         }
 
         .report-form textarea {
-            width: 100%;
+            width: 150%;
             height: 150px;
             border-radius: 10px;
             border: 1px solid #ccc;
