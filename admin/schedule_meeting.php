@@ -202,19 +202,20 @@
 
         .calendar-container {
             margin-bottom: 20px;
+            margin-left: 30px;
         }
 
         .time-slots h4 {
             font-size: 1.25rem;
             font-weight: bold;
             margin-bottom: 30px;
-            margin-left: 100px;
+            margin-left: 150px;
             width: 200px;
         }
 
         .time-slots button {
             margin-bottom: 10px;
-            width: 200px;
+            width: 230px;
         }
 
         .btn-outline-primary {
