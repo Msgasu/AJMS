@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJMS Dashboard</title>
+    <title>Book Meeting</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <style>
-        html, body {
+        html,
+        body {
             font-size: .875rem;
             background-color: #A44C4C;
-            overflow: hidden; /* Prevent general scrollbar */
+            overflow: hidden;
+            /* Prevent general scrollbar */
             height: 100%;
         }
 
@@ -72,6 +74,7 @@
             color: grey;
             margin-right: 10px;
         }
+        
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
@@ -137,7 +140,8 @@
             font-size: 1.1rem; /* Increase font size */
         }
         
-    
+
+
         .sidebar-container {
             position: fixed;
             top: 70px;
