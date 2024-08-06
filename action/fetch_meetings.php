@@ -2,7 +2,7 @@
 include '../settings/connection';
 
 $sql = "SELECT * FROM meetings";
-$result = $conn->query($sql);
+$result = $con->query($sql);
 
 $meetings = array();
 
