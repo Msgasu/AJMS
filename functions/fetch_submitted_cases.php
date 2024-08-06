@@ -36,19 +36,18 @@ function fetchSubmittedCases($con) {
             }
             echo '</p>';
             
-            // Add a button to view the file
-            if ($document_url) {
-                echo '<button class="view-file-button" onclick="toggleMedia(this)">View Attached File</button>';
-                echo '<div class="media-container" style="display: none;">';
-                $file_ext = pathinfo($document_url, PATHINFO_EXTENSION);
-                if (in_array($file_ext, ['jpg', 'jpeg', 'png'])) {
-                    echo '<img src="' . $document_url . '" alt="Uploaded Document" class="document-preview">';
-                } elseif (in_array($file_ext, ['mp4', 'mov'])) {
-                    echo '<video controls class="document-preview"><source src="' . $document_url . '" type="video/' . $file_ext . '">Your browser does not support the video tag.</video>';
-                }
-                echo '</div>';
+            // Add media container
+            echo '<button class="view-file-button" onclick="toggleMedia(this)">View Attached File</button>';
+            echo '<div class="media-container" style="display: none;">';
+            if (preg_match('/\.(jpeg|jpg|png)$/i', $document_url)) {
+                echo '<img src="' . $document_url . '" alt="Attached File" class="media-file">';
+            } elseif (preg_match('/\.(mp4|avi|mov)$/i', $document_url)) {
+                echo '<video controls class="media-file"><source src="' . $document_url . '" type="video/mp4">Your browser does not support the video tag.</video>';
+            } else {
+                echo '<p>Unsupported file type.</p>';
             }
-            
+            echo '</div>';
+           
             echo '<div class="case-meta">';
             echo '<span>Date: ' . $created_at . '</span>';
             echo '<span>User: ' . $user_name . '</span>';
@@ -65,9 +64,6 @@ function fetchSubmittedCases($con) {
     }
 }
 
-
 // Call the function
 // fetchSubmittedCases($con);
-
-
 ?>
