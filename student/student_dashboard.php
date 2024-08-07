@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -248,8 +249,9 @@
         }
     </style>
 </head>
+
 <body>
-<div class="header">
+    <div class="header">
         <div class="left">
             <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
@@ -324,9 +326,10 @@
                     <div id="bookingCalendar" class="calendar-container"></div>
                     <div class="time-slots" id="timeslots">
                         <h4>Available Time Slots</h4>
-                        <!-- Calendly inline widget begin -->
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a44c4c" style="min-width:320px;height:700px;"></div>
+
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min?hide_gdpr_banner=1" style="min-width:1000px;height:700px;"></div>
                         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
                         <!-- Calendly inline widget end -->
                     </div>
                 </div>
@@ -411,4 +414,5 @@
         </script>
     </main>
 </body>
+
 </html>
