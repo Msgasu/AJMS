@@ -277,13 +277,25 @@
             gap: 20px;
         }
         .card-custom {
-            height:120px;
+            height: 120px;
             border-radius: 15px;
-            background-color: #e9ecef;
+            background-color: #f5f5f5; /* Greyish white background */
             padding: 40px;
             text-align: center;
+            position: relative;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px; /* Red line design */
+            background-color: #ff4d4d; /* Red color */
+            border-radius: 15px 15px 0 0; /* Rounded corners for the line */
         }
 
         .card-custom:hover {
