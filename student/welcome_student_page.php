@@ -110,15 +110,16 @@
                     
                     <form id="welcomeForm">
                         <div class="form-group">
-                            <label for="roleSelect">Are you a Witness or a Victim?</label>
+                            <label for="roleSelect" style="font-size:15px;"><em>Are you a Witness, Victim or the accused?</em></label>
                             <select class="form-control" id="roleSelect" required>
                                 <option value="" disabled selected>Select Role</option>
                                 <option value="witness">Witness</option>
                                 <option value="victim">Victim</option>
+                                <option value="victim">Accused</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="studentId">Student ID</label>
+                            <label for="studentId"style="font-size:15px;"><em>Student ID</em></label>
                             <input type="text" class="form-control" id="studentId" placeholder="Enter your student ID" required>
                         </div>
                         <div class="text-center">
