@@ -120,7 +120,7 @@
 
         .content {
             margin-left: 240px;
-            margin-top: -86px;
+            margin-top: -84px;
             padding: 20px;
             height: calc(100vh - 55px);
             overflow-y: auto;
