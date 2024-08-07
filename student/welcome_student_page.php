@@ -110,7 +110,7 @@
                     
                     <form id="welcomeForm">
                         <div class="form-group">
-                            <label for="roleSelect" style="font-size:12px;">Are you a Witness, Victim or the accused?</label>
+                            <label for="roleSelect" style="font-size:12px;"><em>Are you a Witness, Victim or the accused?</em></label>
                             <select class="form-control" id="roleSelect" required>
                                 <option value="" disabled selected>Select Role</option>
                                 <option value="witness">Witness</option>
