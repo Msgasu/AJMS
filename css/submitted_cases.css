@@ -107,7 +107,7 @@ html, body {
 }
 
 .content {
-    margin-left: 230px;
+    margin-left: 210px;
     padding: 20px;
     height: calc(100vh - 55px);
     overflow-y: auto;
