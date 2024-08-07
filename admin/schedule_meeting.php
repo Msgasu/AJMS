@@ -362,7 +362,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="bookingForm" action="../action/schedule_meeting_action.php" method="POST">
+                        <form action="../action/schedule_meeting_action.php" method="POST" id="bookingForm">
                             <div class="form-group">
                                 <label for="appointmentDate">Date</label>
                                 <input type="text" class="form-control" id="appointmentDate" readonly>
@@ -418,7 +418,7 @@
 
                 // Handle form submission
                 $('#bookingForm').submit(function(e) {
-                    e.preventDefault();
+                    //e.preventDefault();
                     var date = $('#appointmentDate').val();
                     var time = $('#appointmentTime').val();
                     var location = $('#appointmentLoc').val();
