@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -301,6 +303,7 @@
             <div class="card-body scrollable-notifications">
                 <h3>Upcoming Meetings</h3>
                 <!-- <div id="upcomingCalendar" class="calendar-container"></div> -->
+               
                 <div class="meeting-item">
                     <h5>Meeting 1</h5>
                     <p>Date: 2023-07-25</p>
@@ -326,6 +329,7 @@
                     <div class="time-slots" id="timeslots">
                         <h4>Available Time Slots</h4>
                         <!-- Time slots will be dynamically populated here -->
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua" style="min-width:320px;height:630px;"></div>
                     </div>
                 </div>
             </div>
@@ -372,7 +376,7 @@
             $(document).ready(function() {
                 // Fetch available time slots from the Calendly API
                 $.ajax({
-                    url: '../action/fetch_timeslots.php',
+                    url: 'fetch_timeslots.php',
                     method: 'GET',
                     success: function(response) {
                         var timeSlots = JSON.parse(response);
