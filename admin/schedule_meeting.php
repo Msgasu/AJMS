@@ -325,7 +325,7 @@
                 <div style="display: flex; width: 100%; margin-bottom:0;">
                     <div id="bookingCalendar" class="calendar-container"></div>
                     <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min?hide_gdpr_banner=1&primary_color=a44c4c" style="min-width:1000px;height:700px;"></div>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min?primary_color=a44c4c" style="min-width:1000px;height:700px;"></div>
                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                     <!-- Calendly inline widget end -->
                 </div>
