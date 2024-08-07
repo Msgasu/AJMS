@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,7 +81,6 @@
 
             margin-left: 10px;
         }
-
 
         .sidebar {
             position: fixed;
@@ -251,8 +249,9 @@
         }
     </style>
 </head>
+
 <body>
-<div class="header">
+    <div class="header">
         <div class="left">
             <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
@@ -303,7 +302,6 @@
             <div class="card-body scrollable-notifications">
                 <h3>Upcoming Meetings</h3>
                 <!-- <div id="upcomingCalendar" class="calendar-container"></div> -->
-               
                 <div class="meeting-item">
                     <h5>Meeting 1</h5>
                     <p>Date: 2023-07-25</p>
@@ -326,12 +324,13 @@
                 <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
                 <div style="display: flex; width: 100%; margin-bottom:0;">
                     <div id="bookingCalendar" class="calendar-container"></div>
-                    <div class="time-slots" id="timeslots">
-                        <h4>Available Time Slots</h4>
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min" style="min-width:320px;height:630px;"></div>
-                    </div>
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min?hide_gdpr_banner=1&primary_color=a44c4c" style="min-width:1000px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly inline widget end -->
                 </div>
             </div>
+        </div>
         </div>
 
         <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
@@ -412,4 +411,5 @@
         </script>
     </main>
 </body>
+
 </html>
