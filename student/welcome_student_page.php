@@ -24,7 +24,7 @@
         .modal-content {
             border-radius: 15px;
             margin: auto;
-            background-color: #A44C4C;
+            
         }
         
         .modal-header {
