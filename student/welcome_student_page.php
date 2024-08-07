@@ -38,7 +38,7 @@
         }
 
         .modal-title {
-            font-size: 1.7rem;
+            font-size: 1.9rem;
             color: #333;
             
         }
