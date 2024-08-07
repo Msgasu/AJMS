@@ -302,7 +302,7 @@
             <div class="card-body scrollable-notifications">
                 <h3>Upcoming Meetings</h3>
                 <!-- <div id="upcomingCalendar" class="calendar-container"></div> -->
-                <div class="meeting-item">
+                <!-- <div class="meeting-item">
                     <h5>Meeting 1</h5>
                     <p>Date: 2023-07-25</p>
                     <p>Time: 10:00 AM - 11:00 AM</p>
@@ -316,7 +316,7 @@
                     <h5>Meeting 3</h5>
                     <p>Date: 2023-07-27</p>
                     <p>Time: 9:00 AM - 10:00 AM</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="content">
@@ -371,43 +371,38 @@
                 $('.sidebar').toggleClass('open');
             }
 
-            $(document).ready(function() {
-                // Fetch available time slots from the Calendly API
-                $.ajax({
-                    url: 'fetch_timeslots.php',
-                    method: 'GET',
-                    success: function(response) {
-                        var timeSlots = JSON.parse(response);
-                        // Populate the time slots into the HTML
-                        timeSlots.forEach(function(slot) {
-                            $('#timeslots').append('<button class="btn btn-outline-primary">' + slot.start_time + ' - ' + slot.end_time + '</button>');
-                        });
-                    },
-                    error: function(error) {
-                        console.log('Error fetching time slots:', error);
-                    }
-                });
-
-                // Handle form submission
-                $('#bookingForm').submit(function(e) {
-                    e.preventDefault();
-                    var date = $('#appointmentDate').val();
-                    var time = $('#appointmentTime').val();
-                    var location = $('#appointmentLoc').val();
-
-                    // Append the new appointment to the timeslots
-                    $('#timeslots').append(
-                        '<div class="meeting-item">' +
-                        '<p><strong>Date:</strong> ' + date + '</p>' +
-                        '<p><strong>Time:</strong> ' + time + '</p>' +
-                        '<p><strong>Location:</strong> ' + location + '</p>' +
-                        '</div>'
-                    );
-
-                    // Hide the modal
-                    $('#bookingModal').modal('hide');
-                });
+            function fetchUpcomingMeetings() {
+            $.ajax({
+                url: 'https://api.calendly.com/scheduled_events',
+                method: 'GET',
+                headers: {
+                    'Authorization': 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzIzMDYwNTQ0LCJqdGkiOiI2MDVmZTBhMy01MzkwLTRjMjYtYmE5NC0xZDU3NjllNWE0MzIiLCJ1c2VyX3V1aWQiOiJlYmE0NDA1OC03MGE4LTQ3MTgtOTFlNi1mZWExODA0Mjc4MzQifQ.8uUl0IXUFIvJKT95gzrExx591IChP3Z_M2VyYbzu2u8Wd3pUHYmTvCZkxGlXzfgzsK-OaHv_dspStlPekXKfFg',
+                    'Content-Type': 'application/json'
+                },
+                success: function (response) {
+                    const events = response.collection;
+                    let meetingsHtml = '';
+                    events.forEach(event => {
+                        meetingsHtml += `
+                            <div class="meeting-item">
+                                <h5>${event.name}</h5>
+                                <p>Date: ${new Date(event.start_time).toLocaleDateString()}</p>
+                                <p>Time: ${new Date(event.start_time).toLocaleTimeString()} - ${new Date(event.end_time).toLocaleTimeString()}</p>
+                            </div>
+                        `;
+                    });
+                    $('#meetings-container').html(meetingsHtml);
+                },
+                error: function (error) {
+                    console.error('Error fetching meetings:', error);
+                }
             });
+        }
+
+        $(document).ready(function () {
+            fetchUpcomingMeetings();
+        });
+    </script>
         </script>
     </main>
 </body>
