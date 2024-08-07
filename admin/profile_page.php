@@ -323,21 +323,22 @@
             </div>
             <div class="user-info-container">
                 <div class="user-info-item">
-                    <label for="emailVerification">Username</label>
-                    <span class="pending">Joh</span>
+                    <label for="emailVerification">First Name</label>
+                    <span class="pending">John</span>
+                </div>
+                <div class="user-info-item">
+                    <label for="emailVerification">Last Name</label>
+                    <span class="pending">Doe</span>
                 </div>
                 <div class="user-info-item">
                     <label for="contact">Contact:</label>
                     <span>+987 6789 9876 456</span>
                 </div>
                 <div class="user-info-item">
-                    <label for="mobileVerification">Mobile Verification:</label>
-                    <span class="active">Active</span>
+                    <label for="mobileVerification">Email</label>
+                    <span class="active">johndoe45@gmail.com</span>
                 </div>
-                <div class="user-info-item">
-                    <label for="status">Status:</label>
-                    <span class="active">Active</span>
-                </div>
+                
             </div>
             <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
         </div>
