@@ -19,6 +19,7 @@
             display: flex;
             align-items: center;
             min-height: calc(100% - 1rem);
+            background-color: #B35B5B;
         }
 
         .modal-content {
@@ -61,7 +62,7 @@
 
 <body>
     <!-- Modal HTML -->
-    <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
