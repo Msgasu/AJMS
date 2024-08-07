@@ -19,3 +19,8 @@ function toggleMedia(button) {
         button.textContent = "View Attached File";
     }
 }
+// Function to toggle the sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+}
