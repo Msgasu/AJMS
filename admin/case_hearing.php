@@ -320,10 +320,10 @@
             <div class="container">
                 <div class="card-container">
                     <div class="card-custom">
-                        <h3>View report of complainant</h3>
+                        <h4>View report of complainant</h4>
                     </div>
                     <div class="card-custom">
-                        <h3>View report of accused party</h3>
+                        <h4>View report of accused party</h4>
                     </div>
                     <div class="card-custom">
                         <h4>View report of witness</h4>
