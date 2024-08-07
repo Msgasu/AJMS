@@ -262,42 +262,29 @@
         </div>
     </div>
 
-    <!-- Sidebar in a Card -->
+    <!-- Sidebar -->
     <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../admin/admin_dashboard.php">
+                    <a class="nav-link active" href="#">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="case_submission.php">
                         <i class="fas fa-users"></i>
-                        <span> Meeting</span>
+                        <span> Submit Case</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../admin/submitted_cases.php">
+                    <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"> </i>
                         
-                        <span> Case statements</span>
+                        <span> Submit statements</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../admin/recommender_system.php">
-                        <i class="fas fa-lightbulb"></i>
-                        <span> Recommender</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile_page.php">
-                        <i class="fas fa-user"></i>
-                        <span> Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
                 <li class="nav-item">
                     <a class="nav-link" href="../login/logout.php">
                         <i class="fas fa-sign-out-alt"></i>
@@ -307,9 +294,7 @@
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
+
     <!-- Main Content -->
     <main class="content">
         <div class="profile-header">
@@ -334,7 +319,6 @@
                     <label for="emailVerification">Last Name</label>
                     <span class="pending">Doe</span>
                 </div>
-
                 <div class="user-info-item">
                     <label for="mobileVerification">Email</label>
                     <span class="active">johndoe45@gmail.com</span>

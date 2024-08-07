@@ -346,6 +346,18 @@
             cursor: pointer;
             display: none; /* Initially hidden */
         }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
         
     </style>
 </head>
@@ -424,8 +436,7 @@
                 <div class="textarea-wrapper">
             <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
             <div class="icon-container">
-                <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i>
-</label>
+                <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i></label>
                 <input type="file" id="file-upload" class="file-input" name="document">
             </div>
             <div class="image-preview-container" id="image-preview" style="display: none;">
@@ -436,6 +447,17 @@
             </div>
         </div>
 
+       
+        
+       
+            <div class="form-group">
+                <label for="emailCount">Number of Emails</label>
+                <input type="number" class="form-control" id="emailCount" min="1" placeholder="Enter number of emails" required>
+            </div>
+            <div id="emailInputs"></div>
+            
+        
+    
                 <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
                 <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
             </form>
@@ -506,6 +528,31 @@
             sidebar.classList.toggle('open');
         }
     });
+    
+        document.getElementById('emailCount').addEventListener('input', function() {
+            const emailCount = parseInt(this.value);
+            const emailInputsContainer = document.getElementById('emailInputs');
+            emailInputsContainer.innerHTML = '';
+
+            for (let i = 1; i <= emailCount; i++) {
+                const formGroup = document.createElement('div');
+                formGroup.className = 'form-group';
+
+                const label = document.createElement('label');
+                label.innerText = `Email ${i}`;
+                formGroup.appendChild(label);
+
+                const input = document.createElement('input');
+                input.type = 'email';
+                input.className = 'form-control';
+                input.placeholder = `Email ${i}`;
+                input.required = true;
+                formGroup.appendChild(input);
+
+                emailInputsContainer.appendChild(formGroup);
+            }
+        });
+
 </script>
 
 
