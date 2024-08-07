@@ -142,7 +142,7 @@
             margin-left: 20px;
             margin-right: 20px;
             padding: 20px 0;
-            height: calc(100vh - 70px); /* Adjusted height to fill viewport */
+            height:calc(89.2vh - 25px);
             display: flex;
             justify-content: center;
             align-items: stretch; /* Ensure children fill available height */
