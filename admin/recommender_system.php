@@ -159,6 +159,7 @@
             position: relative;
             box-sizing: border-box;
             padding-bottom: 10px; /* Added padding to make room for bottom elements */
+            overflow-y:auto;
         }
 
         .report-form .back-button {
