@@ -60,23 +60,21 @@ html, body {
     position: fixed;
     top: 55px;
     bottom: 0;
-    left: 20px;
-    z-index: 100;
-    padding: 0;
+    left: 0;
     width: 220px;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    height: calc(90vh - 30px);
+    height: calc(100vh - 55px);
     background-color: white;
-    border-radius: 15px;
+    border-right: 1px solid #dee2e6;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .sidebar-sticky {
     position: relative;
-    top: 0;
     height: 100%;
     padding-top: .5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 .sidebar .nav-link {
@@ -86,7 +84,7 @@ html, body {
     align-items: center;
     padding: 10px 15px;
     border-radius: 10px;
-    margin: 5px 10px;
+    margin: 5px 0;
 }
 
 .sidebar .nav-link:hover {
@@ -105,11 +103,11 @@ html, body {
 }
 
 .sidebar .nav-link span {
-    font-size: 1.1rem; /* Increase font size */
+    font-size: 1.1rem;
 }
 
 .content {
-    margin-left: 50px;
+    margin-left: 240px;
     padding: 20px;
     height: calc(100vh - 55px);
     overflow-y: auto;
@@ -210,13 +208,6 @@ html, body {
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #004085;
-}
-
-.menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-    
-    margin-left: 10px;
 }
 
 .case-widget {

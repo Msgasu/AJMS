@@ -15,7 +15,7 @@
     <!-- Header -->
     <div class="header">
         <div class="left">
-            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
+            
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
@@ -27,12 +27,12 @@
         </div>
     </div>
 
-     <!-- Sidebar in a Card -->
-     <div class="card sidebar" id="sidebar">
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="../admin/admin_dashboard.php"">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
@@ -44,8 +44,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
+                    <a class="nav-link" href="../admin/submitted_cases.php">
+                        <i class="fas fa-file-alt"> </i>
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -55,10 +55,22 @@
                         <span> Recommender</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile_page.php">
+                        <i class="fas fa-user"></i>
+                        <span> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/logout.php">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span> Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
-   
     <br>
     <br>
     <br>
@@ -108,13 +120,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/submitted_cases.js"></script>
-    <script>
-        // Function to toggle the sidebar
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
-    </script>  
 </body>
 
 </html>
