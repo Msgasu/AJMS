@@ -45,6 +45,6 @@ if (isset($_POST['submit'])) {
     }
 }
 
-header("Location: ../login/login.php");
+header("Location: ../login/login_admin.php");
 exit();
 ?>
