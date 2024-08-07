@@ -76,10 +76,8 @@
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
-            
             margin-left: 10px;
         }
-        
 
         .sidebar {
             position: fixed;
@@ -137,8 +135,7 @@
         .sidebar .nav-link span {
             font-size: 1.1rem; /* Increase font size */
         }
-        
-    
+
         .sidebar-container {
             position: fixed;
             top: 90px;
@@ -189,7 +186,6 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             height: calc(89.2vh - 25px);
-           
         }
 
         .content h3 {
@@ -197,14 +193,11 @@
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
-
         }
 
         .calendar-container {
             margin-bottom: 20px;
-            
         }
-        
 
         .time-slots h4 {
             font-size: 1.25rem;
@@ -231,7 +224,6 @@
         .btn-outline-primary:hover {
             background-color: #b42f2f;
             color: #ffffff;
-
         }
 
         .btn-primary {
@@ -245,7 +237,6 @@
             background-color: #a02626;
             border-color: #a02626;
         }
-      
     </style>
 </head>
 
@@ -265,8 +256,8 @@
         </div>
     </div>
 
-        <!-- Sidebar in a Card -->
-        <div class="card sidebar" id="sidebar">
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar" id="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -296,138 +287,105 @@
             </ul>
         </div>
     </div>
-   
-    
-
 
     <main class="main-container">
         <div class="sidebar-container">
             <div class="card-body scrollable-notifications">
                <h3>Upcoming Meetings</h3>
-               <div id="upcomingCalendar" class="calendar-container"></div>
-                    <div class="meeting-item">
-                      <h5>Meeting with Party C</h5>
-                     <p>Student ID: 123456789</p>
-                     <p>December 9, 2024</p>
-                     <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-                    </div>
-                
-            
-                <div class="meeting-item">
-                    <h5>Meeting with Party D</h5>
-                    <p>Student ID: 123456789</p>
-                    <p>December 10, 2024</p>
-                    <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-                </div>
-            </div>
-        </div>
-        <div class="content">
-            <div class="card-body scrollable-notifications">
-                <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
-                <div style="display: flex; width: 100%; margin-bottom:0;  ">
-                    <div id="bookingCalendar" class="calendar-container"></div>
-                    <div class="time-slots">
-                        <h4>Available Time Slots</h4>
-                        <button class="btn btn-outline-primary">8:00am - 9:00am</button>
-                        <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
-                        <button class="btn btn-outline-primary">10:00am - 11:00am</button>
-                        <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
-                        <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
-                        <button class="btn btn-primary confirm-btn">Confirm</button>
-                    </div>
-                </div>
+               <div id="upcoming-meetings">
+                   <!-- Meeting items will be dynamically added here -->
+               </div>
             </div>
         </div>
 
+        <div class="content">
+            <h3>Meeting Scheduler</h3>
+            <div id="calendar" class="calendar-container"></div>
+
+            <!-- Time Slots and Booking Form -->
+            <div class="time-slots">
+                <h4>Select a Time Slot</h4>
+                <button class="btn btn-outline-primary" onclick="selectTimeSlot('09:00 AM - 10:00 AM')">09:00 AM - 10:00 AM</button>
+                <button class="btn btn-outline-primary" onclick="selectTimeSlot('10:00 AM - 11:00 AM')">10:00 AM - 11:00 AM</button>
+                <button class="btn btn-outline-primary" onclick="selectTimeSlot('11:00 AM - 12:00 PM')">11:00 AM - 12:00 PM</button>
+                <!-- Add more time slots as needed -->
+            </div>
+            
+            <button class="btn btn-primary" data-toggle="modal" data-target="#bookingModal">Book Selected Slot</button>
+
             <!-- Booking Modal -->
-    <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="bookingModalLabel">Book Appointment</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="bookingForm">
-                        <div class="form-group">
-                            <label for="appointmentDate">Date</label>
-                            <input type="text" class="form-control" id="appointmentDate" readonly>
+            <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="bookingModalLabel">Confirm Your Booking</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="form-group">
-                            <label for="appointmentTime">Time</label>
-                            <input type="text" class="form-control" id="appointmentTime" readonly>
+                        <div class="modal-body">
+                            <p id="selected-time-slot">Selected Time Slot: <strong></strong></p>
+                            <form id="booking-form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                            </form>
                         </div>
-                        <!-- Add more form fields as needed -->
-                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#upcomingCalendar').fullCalendar({
-                defaultView: 'month',
-                events: [{
-                        title: 'Meeting with Party C',
-                        start: '2024-12-09T10:00:00'
-                    },
-                    {
-                        title: 'Meeting with Party D',
-                        start: '2024-12-10T14:00:00'
-                    }
-                ]
-            });
-
-            $('#bookingCalendar').fullCalendar({
-                defaultView: 'month'
-            });
-        });
-         // Function to toggle the sidebar
-         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
-
-        $(document).ready(function () {
-            // Initialize the calendar
             $('#calendar').fullCalendar({
                 header: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                defaultView: 'month',
-                selectable: true,
-                selectHelper: true,
-                select: function (start, end) {
-                    var selectedDate = moment(start).format('YYYY-MM-DD');
-                    $('#appointmentDate').val(selectedDate);
-                    $('#bookingModal').modal('show');
-                }
-            });
-
-            // Toggle sidebar
-            function toggleSidebar() {
-                document.getElementById('sidebar').classList.toggle('open');
-            }
-
-            // Handle form submission
-            $('#bookingForm').submit(function (e) {
-                e.preventDefault();
-                // Process booking here
-                alert('Booking confirmed for ' + $('#appointmentDate').val() + ' at ' + $('#appointmentTime').val());
-                $('#bookingModal').modal('hide');
+                editable: true,
+                droppable: true,
+                events: [
+                    {
+                        title: 'Meeting',
+                        start: '2024-08-07T10:00:00',
+                        end: '2024-08-07T11:00:00'
+                    }
+                ]
             });
         });
+
+        function selectTimeSlot(slot) {
+            $('#selected-time-slot strong').text(slot);
+        }
+
+        $('#booking-form').submit(function(event) {
+            event.preventDefault();
+            // Handle form submission logic here
+            alert('Booking confirmed!');
+            $('#bookingModal').modal('hide');
+        });
+
+        function toggleSidebar() {
+            $('#sidebar').toggleClass('open');
+        }
     </script>
 </body>
 
