@@ -436,8 +436,7 @@
                 <div class="textarea-wrapper">
             <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
             <div class="icon-container">
-                <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i>
-</label>
+                <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i></label>
                 <input type="file" id="file-upload" class="file-input" name="document">
             </div>
             <div class="image-preview-container" id="image-preview" style="display: none;">
@@ -448,8 +447,8 @@
             </div>
         </div>
 
-        <div class="container">
-        <h2 class="text-center">Dynamic Email Input Form</h2>
+       
+        
        
             <div class="form-group">
                 <label for="emailCount">Number of Emails</label>
