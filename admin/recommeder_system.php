@@ -54,14 +54,6 @@
             align-items: center;
         }
 
-        .header .user-info img {
-            margin-right: 10px;
-            border-radius: 30%;
-            height: 40px;
-            width: 80px;
-            padding: 0;
-        }
-
         .header .user-info .line {
             height: 40px;
             border-left: 1px solid grey;
@@ -71,7 +63,13 @@
         .header .user-info span {
             font-weight: bold;
             color: grey;
-            margin-right: 10px;
+            margin: 0 10px;
+        }
+
+        .header .user-info img {
+            border-radius: 30%;
+            height: 40px;
+            width: 80px;
         }
 
         .menu-icon {
@@ -139,8 +137,8 @@
 
         .content {
             margin-top: 70px;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 10px; /* Reduced margin */
+            margin-right: 10px; /* Reduced margin */
             padding: 20px 0;
             height: calc(100vh - 70px); /* Adjusted height to fill viewport */
             display: flex;
@@ -153,7 +151,7 @@
             background-color: white;
             border-radius: 15px;
             padding: 20px;
-            width: 48%; /* Made box longer */
+            width: 95%; /* Increased width to fill page nicely */
             height: 102%; /* Fill available height */
             display: flex;
             flex-direction: column;
@@ -181,6 +179,7 @@
 
         .report-form .note span {
             color: black; /* Changed color to black for the specified part */
+            font-style: italic; /* Italicized the text */
         }
 
         .report-form .textarea-wrapper {
@@ -225,7 +224,7 @@
             background-color: white;
             border-radius: 15px;
             padding: 20px;
-            width: 48%; /* Made box longer */
+            width: 95%; /* Increased width to fill page nicely */
             height: 102%; /* Fill available height */
             display: flex;
             flex-direction: column;
@@ -236,18 +235,76 @@
             box-sizing: border-box;
         }
         
-        .textarea-icons {
+        .textarea-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .textarea-wrapper .icon-container {
             position: absolute;
-            bottom: 10px; /* Align icons at the bottom of the textarea */
-            right: 10px; /* Align icons to the right of the textarea */
+            bottom: 10px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
             display: flex;
             gap: 10px; /* Space between icons */
         }
 
-        .textarea-icons i {
-            font-size: 18px;
+        .textarea-wrapper .attach-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
+            font-size: 1.5rem;
+            color: #007bff; /* Icon color */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .textarea-wrapper .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .textarea-wrapper .icon-url {
             color: #333;
+            font-size: 1.7rem; /* Adjust size as needed */
+            cursor: pointer;
+        }
+
+        .textarea-wrapper .icon-url:hover {
+            color: #007bff; /* Change color on hover */
+        }
+
+        .textarea-wrapper .image-preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .textarea-wrapper .image-preview-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .textarea-wrapper .delete-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+        }
+
+        .textarea-wrapper .delete-button:hover {
+            background-color: #c82333; /* Darker red on hover */
         }
     </style>
 </head>
@@ -262,9 +319,9 @@
             </div>
         </div>
         <div class="user-info">
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
             <div class="line"></div>
             <span>John Doe</span>
+            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
 
@@ -273,15 +330,9 @@
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                        <i class="fas fa-home"></i>
-                        <span> Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-users"></i>
-                        <span> Meeting</span>
+                        <i class="fas fa-home"></i>
+                        <span> Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -306,19 +357,27 @@
             <a href="#" class="back-button">&larr; back</a>
             <div class="note">
                 <strong>Note:</strong> This is only a recommendation system that gives verdicts based on similar cases and sanctions from the handbook. Please do well to investigate further before handing out the verdict.<br><br>
-               <span>
-                Type out statements below<br>
-             or attach a copy of statement
+                <span>
+                    <i>Type out statements below</i><br>
+                    or attach a copy of statement
                 </span>
             </div>
             <div class="textarea-wrapper">
                 <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
-                <div class="textarea-icons">
-                    <i class="fas fa-file-signature"></i> <!-- Updated icon to curly-like -->
-                    <i class="fas fa-trash-alt"></i>
+                <div class="icon-container">
+                    <label for="file-upload" class="attach-label">
+                        <i class="fas fa-link icon-url"></i>
+                    </label>
+                    <input type="file" id="file-upload" class="file-input" name="document">
+                </div>
+                <div class="image-preview-container" id="image-preview" style="display: none;">
+                    <img id="preview-img" src="" alt="Image Preview">
+                    <button type="button" class="delete-button" id="delete-file">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
                 </div>
             </div>
-            <button class="submit-button">Submit</button>
+            <button class="submit-button" type="submit" name="submit">Submit</button>
             <div class="white-space"></div> <!-- For white space at the bottom -->
         </div>
         <div class="suggested-verdict">
@@ -331,6 +390,32 @@
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
         }
+
+        // JavaScript to handle file upload preview and delete functionality
+        const fileInput = document.getElementById('file-upload');
+        const imagePreviewContainer = document.getElementById('image-preview');
+        const previewImg = document.getElementById('preview-img');
+        const deleteFileButton = document.getElementById('delete-file');
+
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    previewImg.src = reader.result;
+                    imagePreviewContainer.style.display = 'flex'; // Show preview
+                    deleteFileButton.style.display = 'block'; // Show delete button
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        deleteFileButton.addEventListener('click', () => {
+            previewImg.src = '';
+            imagePreviewContainer.style.display = 'none'; // Hide preview
+            deleteFileButton.style.display = 'none'; // Hide delete button
+            fileInput.value = ''; // Clear file input
+        });
     </script>
 </body>
 </html>
