@@ -255,7 +255,7 @@
             padding: 20px;
         }
 
-        .card-custom h4 {
+        .card-custom p {
             margin: 0;
             font-weight: bold;
             font-size: 30px;
