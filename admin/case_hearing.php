@@ -277,7 +277,7 @@
             gap: 20px;
         }
         .card-custom {
-            height:50px;
+            height:100px;
             border-radius: 15px;
             background-color: #e9ecef;
             padding: 20px;
