@@ -89,7 +89,7 @@
         <!-- Submitted Cases Card -->
         <div class="card">
             <div class="card-header">
-                Submitted Cases
+                <h4>Submitted Cases</h4>
             </div>
             <div class="card-body">
                 <table class="table table-striped">

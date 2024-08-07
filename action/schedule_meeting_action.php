@@ -1,19 +1,26 @@
 <?php
 include '../settings/connection.php';
+include '../admin/schedule_meeting.php';
 
-$title = $_POST['title'];
-$user_id = $_POST['user_id'];
-$date = $_POST['date'];
-$time = $_POST['time'];
-$location = $_POST['location'];
+$date = $_POST['appointmentDate'];
+$time = $_POST['appointmentTime'];
+$location = $_POST['appointmentLoc'];
+$userId = 1; // Replace this with the actual user ID who is scheduling the meeting
 
-$sql = "INSERT INTO meetings (title, user_id, date, time, location) VALUES ('$title', '$user_id', '$date', '$time', '$location')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Meeting scheduled successfully";
+$stmt = $conn->prepare("INSERT INTO meetings (title, user_id, date, time, location) VALUES (?, ?, ?, ?, ?)");
+$title = "Meeting"; 
+$stmt->bind_param("sisss", $title, $userId, $date, $time, $location);
+
+// Execute the statement
+if ($stmt->execute()) {
+    echo "New meeting scheduled successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $con->error;
+    echo "Error: " . $stmt->error;
 }
 
-$conn->close();
+// Close connections
+$stmt->close();
+$con->close();
 ?>
+Key Points:
