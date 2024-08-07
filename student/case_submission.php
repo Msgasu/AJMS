@@ -235,7 +235,7 @@
             width: 30%;
             border: none;
             padding: 10px 20px;
-            margin-left: 345px;
+            margin-left: 335px;
             border-radius: 10px;
             cursor: pointer;
         }
