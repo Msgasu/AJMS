@@ -328,7 +328,7 @@
                     <div id="bookingCalendar" class="calendar-container"></div>
                     <div class="time-slots" id="timeslots">
                         <h4>Available Time Slots</h4>
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua" style="min-width:320px;height:630px;"></div>
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min" style="min-width:320px;height:630px;"></div>
                     </div>
                 </div>
             </div>
