@@ -331,10 +331,6 @@
                     <span class="pending">Doe</span>
                 </div>
                 <div class="user-info-item">
-                    <label for="contact">Contact:</label>
-                    <span>+987 6789 9876 456</span>
-                </div>
-                <div class="user-info-item">
                     <label for="mobileVerification">Email</label>
                     <span class="active">johndoe45@gmail.com</span>
                 </div>
