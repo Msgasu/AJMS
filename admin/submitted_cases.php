@@ -15,7 +15,7 @@
     <!-- Header -->
     <div class="header">
         <div class="left">
-            <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
+            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
