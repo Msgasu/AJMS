@@ -301,24 +301,25 @@
 
 
     <main class="main-container">
-        <div class="sidebar-container">
+    <div class="sidebar-container">
             <div class="card-body scrollable-notifications">
                <h3>Upcoming Meetings</h3>
-               <div id="upcomingCalendar" class="calendar-container"></div>
+              <!-- <div id="upcomingCalendar" class="calendar-container"></div> -->
                     <div class="meeting-item">
-                      <h5>Meeting with Party C</h5>
-                     <p>Student ID: 123456789</p>
-                     <p>December 9, 2024</p>
-                     <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+                        <h5>Meeting 1</h5>
+                        <p>Date: 2023-07-25</p>
+                        <p>Time: 10:00 AM - 11:00 AM</p>
                     </div>
-                
-            
-                <div class="meeting-item">
-                    <h5>Meeting with Party D</h5>
-                    <p>Student ID: 123456789</p>
-                    <p>December 10, 2024</p>
-                    <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-                </div>
+                    <div class="meeting-item">
+                        <h5>Meeting 2</h5>
+                        <p>Date: 2023-07-26</p>
+                        <p>Time: 2:00 PM - 3:00 PM</p>
+                    </div>
+                    <div class="meeting-item">
+                        <h5>Meeting 3</h5>
+                        <p>Date: 2023-07-27</p>
+                        <p>Time: 9:00 AM - 10:00 AM</p>
+                    </div>
             </div>
         </div>
         <div class="content">
@@ -345,7 +346,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="bookingModalLabel">Book Appointment</h5>
+                    <h5 class="modal-title" id="bookingModalLabel">Select Available Time Slots</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -358,10 +359,10 @@
                         </div>
                         <div class="form-group">
                             <label for="appointmentTime">Time</label>
-                            <input type="text" class="form-control" id="appointmentTime" readonly>
+                            <input type="text" class="form-control" id="appointmentTime" >
                         </div>
                         <!-- Add more form fields as needed -->
-                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                        <button type="submit" class="btn btn-primary">Confirm </button>
                     </form>
                 </div>
             </div>
