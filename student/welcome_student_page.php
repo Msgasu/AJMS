@@ -27,7 +27,7 @@
             border-radius: 15px;
             margin: auto;
             padding: 20px;
-            width:100%;
+            width:200%;
         }
         
         .modal-header {
