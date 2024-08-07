@@ -23,6 +23,10 @@ CREATE TABLE users (
     FOREIGN KEY (role_id) REFERENCES roles(rid)
 );
 
+ALTER TABLE users ADD COLUMN first_login BOOLEAN DEFAULT TRUE;
+ALTER TABLE users ADD COLUMN student_id VARCHAR(20) DEFAULT NULL;
+ALTER TABLE users ADD COLUMN participant VARCHAR(20) DEFAULT NULL;
+
 
 -- Create a table for statuses
 CREATE TABLE status (
@@ -35,7 +39,7 @@ INSERT INTO status (status_name) VALUES ('pending'), ('completed'), ('dismissed'
 
 
 -- Create a table for statements with a reference to the users table
-CREATE TABLE statements (
+CREATE TABLE cases (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT, -- Foreign key to reference the user who filled the form
     statement_description TEXT, -- For text descriptions
