@@ -67,7 +67,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="../admin/recommender_system.php">
                         <i class="fas fa-lightbulb"></i>
                         <span> Recommender</span>
                     </a>
@@ -88,7 +88,7 @@
             </ul>
         </div>
     </div>
-
+    
     
 
     <!-- Main Content -->
