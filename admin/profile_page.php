@@ -150,12 +150,29 @@
             margin: 0;
         }
 
-        .profile-header .profile-picture img {
+        .profile-header .profile-picture {
+            position: relative;
             width: 150px;
             height: 150px;
+        }
+
+        .profile-header .profile-picture img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             border: 2px solid #dee2e6;
             border-radius: 50%;
+        }
+
+        .profile-header .profile-picture .camera-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
         }
 
         .profile-header .user-details h2 {
@@ -189,7 +206,6 @@
             padding: 10px 20px;
         }
 
-        /* Additional CSS for the new layout */
         .user-info-container {
             display: flex;
             flex-wrap: wrap;
@@ -223,6 +239,10 @@
 
         .user-info-container .user-info-item.active span {
             color: #2ecc71; /* Green color for active items */
+        }
+
+        .profile-picture input[type="file"] {
+            display: none;
         }
     </style>
 </head>
@@ -264,4 +284,77 @@
                         <span> Case statements</span>
                     </a>
                 </li>
-                <li class="nav-item
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-lightbulb"></i>
+                        <span> Recommender</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile_page.php">
+                        <i class="fas fa-user"></i>
+                        <span> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/logout.php">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span> Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="../images/ashesi_logo.jpeg" alt="User Profile Image" id="profileImage">
+                <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <input type="file" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
+            </div>
+            <div class="user-details text-center mb-4">
+                <h2 class="mb-1">John Doe</h2>
+                <p class="text-muted">Email: johndoe45@gmail.com</p>
+                <p class="text-muted">Role: User</p>
+            </div>
+            <div class="user-info-container">
+                <div class="user-info-item">
+                    <label for="emailVerification">Username</label>
+                    <span class="pending">Joh</span>
+                </div>
+                <div class="user-info-item">
+                    <label for="contact">Contact:</label>
+                    <span>+987 6789 9876 456</span>
+                </div>
+                <div class="user-info-item">
+                    <label for="mobileVerification">Mobile Verification:</label>
+                    <span class="active">Active</span>
+                </div>
+                <div class="user-info-item">
+                    <label for="status">Status:</label>
+                    <span class="active">Active</span>
+                </div>
+            </div>
+            <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('profileImage');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
