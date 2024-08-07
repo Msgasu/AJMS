@@ -328,7 +328,6 @@
                     <div id="bookingCalendar" class="calendar-container"></div>
                     <div class="time-slots" id="timeslots">
                         <h4>Available Time Slots</h4>
-                        <!-- Time slots will be dynamically populated here -->
                         <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua" style="min-width:320px;height:630px;"></div>
                     </div>
                 </div>
