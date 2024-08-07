@@ -357,7 +357,7 @@
         <div class="report-form">
             <a href="#" class="back-button">&larr; back</a>
             <div class="note">
-                <strong>Note:</strong> This is only a recommendation system that gives verdicts based on similar cases and sanctions from the handbook. Please do well to investigate further before handing out the verdict.<br><br>
+                <strong><i>Note :This is only a recommendation system that gives verdicts based on similar cases and sanctions from the handbook. Please do well to investigate further before handing out the verdict.</strong></i><br><br>
                 <span>
                     <i>Type out statements below</i><br>
                     or attach a copy of statement
