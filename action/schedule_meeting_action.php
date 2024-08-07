@@ -7,9 +7,9 @@ $time = $_POST['appointmentTime'];
 $location = $_POST['appointmentLoc'];
 $userId = 1; // Replace this with the actual user ID who is scheduling the meeting
 
-// Prepare and bind
+
 $stmt = $conn->prepare("INSERT INTO meetings (title, user_id, date, time, location) VALUES (?, ?, ?, ?, ?)");
-$title = "Meeting"; // You can change this as needed
+$title = "Meeting"; 
 $stmt->bind_param("sisss", $title, $userId, $date, $time, $location);
 
 // Execute the statement
