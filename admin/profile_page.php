@@ -70,21 +70,23 @@
             position: fixed;
             top: 55px;
             bottom: 0;
-            left: 0;
+            left: 20px;
+            z-index: 100;
+            padding: 0;
             width: 220px;
-            height: calc(100vh - 55px);
-            background-color: white;
-            border-right: 1px solid #dee2e6;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            border-radius: 0 0 15px 15px;
-            padding: 10px;
-            box-sizing: border-box;
+            height: calc(90vh - 30px);
+            background-color: white;
+            border-radius: 15px;
         }
 
         .sidebar-sticky {
             position: relative;
+            top: 0;
             height: 100%;
             padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         .sidebar .nav-link {
@@ -94,7 +96,7 @@
             align-items: center;
             padding: 10px 15px;
             border-radius: 10px;
-            margin: 5px 0;
+            margin: 5px 10px;
         }
 
         .sidebar .nav-link:hover {
@@ -113,7 +115,7 @@
         }
 
         .sidebar .nav-link span {
-            font-size: 1.1rem;
+            font-size: 1.1rem; /* Increase font size */
         }
 
         .content {
