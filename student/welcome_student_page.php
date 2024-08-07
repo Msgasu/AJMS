@@ -10,7 +10,7 @@
 
         html, body {
             font-size: .875rem;
-            background-color: #B35B5B;
+            background-color: #A44C4C;
             height: 100%;
             margin: 0;
             overflow: hidden;
@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             min-height: calc(100% - 1rem);
-            background-color: #B35B5B;
+            background-color: #A44C4C;
         }
 
         .modal-content {
@@ -94,7 +94,7 @@
 
 <body>
     <!-- Modal HTML -->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true" style="background-color: #A44C4C;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
