@@ -263,12 +263,11 @@
         }
 
         .back-button {
-            color: #ff4d4d; /* Red color */
-            font-size: 1.5rem; /* Larger font size */
+            color: #A44C4C; /* Red color */
+            font-size: 1rem; /* Larger font size */
             text-decoration: none; /* Remove underline */
         }
         .back-button:hover {
-            background-color: #ff4d4d; /* Red background on hover */
             color: #fff; /* White text on hover */
         }
         
