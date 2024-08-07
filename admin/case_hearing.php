@@ -277,6 +277,7 @@
             gap: 20px;
         }
         .card-custom {
+            height:500px;
             border-radius: 15px;
             background-color: #e9ecef;
             padding: 20px;
@@ -373,7 +374,7 @@
                         <p>View report of accused party</p>
                     </div>
                     <div class="card-custom">
-                        <p>View report of accused party</p>
+                        <p>View report of witness</p>
                     </div>
                 </div>
             </div>  
