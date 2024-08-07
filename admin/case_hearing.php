@@ -259,7 +259,7 @@
         .card-custom p {
             margin: 0;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .back-button {
