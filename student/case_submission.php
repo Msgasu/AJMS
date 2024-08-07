@@ -358,7 +358,9 @@
         .form-group {
             margin-bottom: 15px;
         }
-        
+        .form-control {
+            border-radius: 15px;
+        }
     </style>
 </head>
 
@@ -446,13 +448,10 @@
                 </button>
             </div>
         </div>
-
-       
-        
-       
+        <br>
             <div class="form-group">
-                <label for="emailCount"><em>Enter the number of emails for involved parties.</em></label>
-                <input type="number" class="form-control" id="emailCount" min="1" placeholder="Enter number of emails" required>
+                <label for="emailCount" style="font-weight: bolder"><em>Enter the number of emails for involved parties.</em></label>
+                <input type="number" class="form-control" id="emailCount" min="1" placeholder="Number of emails" required>
             </div>
             <div id="emailInputs"></div>
             
@@ -493,65 +492,78 @@
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Handle file input click
-        document.querySelector('.attach-label').addEventListener('click', function () {
-            document.getElementById('file-upload').click();
-        });
 
-        // Handle file selection and image preview
-        document.getElementById('file-upload').addEventListener('change', function () {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const previewImg = document.getElementById('preview-img');
-                    previewImg.src = e.target.result;
-                    document.getElementById('image-preview').style.display = 'flex';
-                    document.getElementById('delete-file').style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            }
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    // Handle file input click
+    document.querySelector('.attach-label').addEventListener('click', function () {
+        document.getElementById('file-upload').click();
+    });
 
-        // Handle image deletion
-        document.getElementById('delete-file').addEventListener('click', function () {
-            document.getElementById('file-upload').value = ''; // Clear the file input
-            document.getElementById('preview-img').src = ''; // Clear the image source
-            document.getElementById('image-preview').style.display = 'none'; // Hide the image preview
-            this.style.display = 'none'; // Hide the delete button
-        });
-
-        // Function to toggle the sidebar
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
+    // Handle file selection and image preview
+    document.getElementById('file-upload').addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const previewImg = document.getElementById('preview-img');
+                previewImg.src = e.target.result;
+                document.getElementById('image-preview').style.display = 'flex';
+                document.getElementById('delete-file').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
         }
     });
-    
-        document.getElementById('emailCount').addEventListener('input', function() {
-            const emailCount = parseInt(this.value);
-            const emailInputsContainer = document.getElementById('emailInputs');
-            emailInputsContainer.innerHTML = '';
 
-            for (let i = 1; i <= emailCount; i++) {
-                const formGroup = document.createElement('div');
-                formGroup.className = 'form-group';
+    // Handle image deletion
+    document.getElementById('delete-file').addEventListener('click', function () {
+        document.getElementById('file-upload').value = ''; // Clear the file input
+        document.getElementById('preview-img').src = ''; // Clear the image source
+        document.getElementById('image-preview').style.display = 'none'; // Hide the image preview
+        this.style.display = 'none'; // Hide the delete button
+    });
 
-                const label = document.createElement('label');
-                label.innerText = `Email ${i}`;
-                formGroup.appendChild(label);
+    // Handle email inputs dynamically
+    const emailCountInput = document.getElementById('emailCount');
+    const emailInputsContainer = document.getElementById('emailInputs');
 
-                const input = document.createElement('input');
-                input.type = 'email';
-                input.className = 'form-control';
-                input.placeholder = `Email ${i}`;
-                input.required = true;
-                formGroup.appendChild(input);
+    emailCountInput.addEventListener('input', function() {
+        const emailCount = parseInt(this.value);
+        emailInputsContainer.innerHTML = '';
 
-                emailInputsContainer.appendChild(formGroup);
-            }
-        });
+        if (isNaN(emailCount) || emailCount < 1) {
+            return; // Do nothing if the count is not a valid number or less than 1
+        }
+
+        for (let i = 1; i <= emailCount; i++) {
+            const formGroup = document.createElement('div');
+            formGroup.className = 'form-group';
+
+            const label = document.createElement('label');
+            label.innerText = `Email ${i}`;
+            formGroup.appendChild(label);
+
+            const input = document.createElement('input');
+            input.type = 'email';
+            input.name = 'emails[]'; // Use array notation to handle multiple values
+            input.className = 'form-control';
+            input.placeholder = `Email ${i}`;
+            input.required = true;
+            formGroup.appendChild(input);
+
+            emailInputsContainer.appendChild(formGroup);
+        }
+    });
+
+    // Optional: Function to toggle the sidebar (if needed)
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            sidebar.classList.toggle('open');
+        }
+    }
+});
+</script>
+
 
 </script>
 

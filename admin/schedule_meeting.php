@@ -291,7 +291,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="schedule_meeting.php">
                         <i class="fas fa-users"></i>
                         <span> Meeting</span>
                     </a>
@@ -325,9 +325,7 @@
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
+   
     <main class="main-container">
         <div class="sidebar-container">
             <div class="card-body scrollable-notifications">
