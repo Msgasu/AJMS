@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        html,
-        body {
+        html, body {
             font-size: .875rem;
             background-color: #A44C4C;
-            overflow: hidden;
-            /* Prevent general scrollbar */
+            overflow: hidden; /* Prevent general scrollbar */
             height: 100%;
         }
 
@@ -74,32 +73,18 @@
             margin-right: 10px;
         }
 
-        .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-
-            margin-left: 10px;
-        }
-
         .sidebar {
             position: fixed;
-            top: 72px;
+            top: 55px;
             bottom: 0;
-            left: -220px;
-            /* Initially hidden */
-            z-index: 1050;
+            left: 20px;
+            z-index: 100;
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
             background-color: white;
             border-radius: 15px;
-            transition: left 0.3s ease;
-        }
-
-        .sidebar.open {
-            left: 15px;
-            /* Show sidebar */
         }
 
         .sidebar-sticky {
@@ -137,121 +122,146 @@
         }
 
         .sidebar .nav-link span {
-            font-size: 1.1rem;
-            /* Increase font size */
+            font-size: 1.1rem; /* Increase font size */
         }
 
 
-        .sidebar-container {
+        .content {
+            margin-top: 110px;
+            margin-left: 255px;
+            margin-right: 280px;
+            padding: 20px 0;
+            height: calc(89.2vh - 25px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .notifications {
             position: fixed;
-            top: 90px;
+            top: 55px;
             bottom: 0;
-            left: 20px;
+            right: 20px;
             z-index: 100;
             padding: 10px;
-            width: 290px;
+            width: 250px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
-            background-color: white;
-            border-radius: 15px;
-            overflow-y: auto;
         }
 
-        .sidebar-container h3 {
+        
+        .notifications h2 {
             font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
+            margin-bottom: 1rem;
         }
 
-        .sidebar-container .meeting-item {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .notifications .list-group-item {
+           border: none;
+           padding: 0.5rem 0;
         }
 
-        .sidebar-container .meeting-item h5 {
-            font-size: 1rem;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .notifications .list-group-item strong {
+           display: block;
+           margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item span {
+           display: block;
+           font-size: 0.875rem;
+           margin-bottom: 0.5rem;
+        }
+
+        .notifications .list-group-item i {
+            margin-right: 5px;
+            color: #555;
         }
 
         .scrollable-notifications {
-            height: calc(97vh - 110px);
+            height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
 
-        .content {
-            margin-top: 90px;
-            margin-left: 330px;
-            margin-right: 20px;
-            padding: 20px;
-            background-color: white;
+        .card-custom {
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: calc(89.2vh - 25px);
-
+            margin-bottom: 50px;
         }
 
-        .content h3 {
-            font-size: 1.3rem;
+        .card-special {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+
+        
+
+        .list-group-item {
+            border: none;
+        }
+
+        .list-group-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .equal-space {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        
+
+        .case-card-header {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
+            font-size: 1.2rem;
+            position: relative;
         }
 
-        .calendar-container {
-            margin-bottom: 20px;
-
+        .case-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
-
-        .time-slots h4 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 30px;
-            margin-left: 122px;
-            width: 200px;
+        .case-card-header span {
+            position: relative;
+            z-index: 2;
         }
 
-        .time-slots button {
-            margin-bottom: 10px;
-            width: 230px;
+        .case-card-body {
+            padding: 10px;
         }
 
-        .btn-outline-primary {
-            margin-top: 10px;
-            margin-left: 100px;
-            margin-bottom: 10px;
-            color: #b42f2f;
-            border-color: #b42f2f;
-            width: 200px;
+        .case-card-body p {
+            margin: 5px 0;
         }
 
-        .btn-outline-primary:hover {
-            background-color: #b42f2f;
-            color: #ffffff;
-        }
-
-        .btn-primary {
-            background-color: #b42f2f;
-            border-color: #b42f2f;
-            width: 200px;
-            margin-left: 100px;
-        }
-
-        .btn-primary:hover {
-            background-color: #a02626;
-            border-color: #a02626;
+        .case-card-body button {
+            width: 100%;
         }
     </style>
 </head>
+
 <body>
-<div class="header">
+    <!-- Header -->
+    <div class="header">
         <div class="left">
-            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
@@ -264,7 +274,8 @@
         </div>
     </div>
 
-    <div class="card sidebar" id="sidebar">
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -274,141 +285,81 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="case_submission.php">
                         <i class="fas fa-users"></i>
-                        <span> Meeting</span>
+                        <span> Submit Case</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
-                        <span> Case statements</span>
+                        <i class="fas fa-file-alt"> </i>
+                        
+                        <span> Submit statements</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-lightbulb"></i>
-                        <span> Recommender</span>
+                    <a class="nav-link" href="../login/logout.php">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span> Logout</span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-
-    <main class="main-container">
-        <div class="sidebar-container">
-            <div class="card-body scrollable-notifications">
-                <h3>Upcoming Meetings</h3>
-                <!-- <div id="upcomingCalendar" class="calendar-container"></div> -->
-                <div class="meeting-item">
-                    <h5>Meeting 1</h5>
-                    <p>Date: 2023-07-25</p>
-                    <p>Time: 10:00 AM - 11:00 AM</p>
-                </div>
-                <div class="meeting-item">
-                    <h5>Meeting 2</h5>
-                    <p>Date: 2023-07-26</p>
-                    <p>Time: 2:00 PM - 3:00 PM</p>
-                </div>
-                <div class="meeting-item">
-                    <h5>Meeting 3</h5>
-                    <p>Date: 2023-07-27</p>
-                    <p>Time: 9:00 AM - 10:00 AM</p>
-                </div>
+    <br>
+    <br>
+    <br>
+    
+    <!-- Main Content in a Card -->
+    <main role="main" class="content card card-special">
+        <div class="card-body equal-space scrollable-notifications">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Your Cases</h1>
             </div>
-        </div>
-        <div class="content">
-            <div class="card-body scrollable-notifications">
-                <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
-                <div style="display: flex; width: 100%; margin-bottom:0;">
-                    <div id="bookingCalendar" class="calendar-container"></div>
-                    <div class="time-slots" id="timeslots">
-                        <h4>Available Time Slots</h4>
-                        <!-- Calendly inline widget begin -->
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/janetteakua/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=a44c4c" style="min-width:320px;height:700px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                        <!-- Calendly inline widget end -->
+
+            <!-- Cards -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm card-custom">
+                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
+
+                        </div>
+                        <div class="case-card-body">
+                            <h5 class="card-title">Case of theft</h5>
+                            <p>Victim: Female</p>
+                            <p>Year: Class of 2026</p>
+                            <p>Suspect: Male</p>
+                            <p>Year: 2026</p>
+                            <button class="btn btn-success" onclick="location.href='book_meeting.php'">Book </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                
         </div>
-
-        <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="bookingModalLabel">Select Available Time Slots</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="../action/schedule_meeting_action.php" method="POST" id="bookingForm">
-                            <div class="form-group">
-                                <label for="appointmentDate">Date</label>
-                                <input type="text" class="form-control" id="appointmentDate" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="appointmentTime">Time</label>
-                                <input type="text" class="form-control" id="appointmentTime">
-                            </div>
-                            <div class="form-group">
-                                <label for="appointmentLoc">Location</label>
-                                <input type="text" class="form-control" id="appointmentLoc">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Confirm</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script>
-            function toggleSidebar() {
-                $('.sidebar').toggleClass('open');
-            }
-
-            $(document).ready(function() {
-                // Fetch available time slots from the Calendly API
-                $.ajax({
-                    url: 'fetch_timeslots.php',
-                    method: 'GET',
-                    success: function(response) {
-                        var timeSlots = JSON.parse(response);
-                        // Populate the time slots into the HTML
-                        timeSlots.forEach(function(slot) {
-                            $('#timeslots').append('<button class="btn btn-outline-primary">' + slot.start_time + ' - ' + slot.end_time + '</button>');
-                        });
-                    },
-                    error: function(error) {
-                        console.log('Error fetching time slots:', error);
-                    }
-                });
-
-                // Handle form submission
-                $('#bookingForm').submit(function(e) {
-                    e.preventDefault();
-                    var date = $('#appointmentDate').val();
-                    var time = $('#appointmentTime').val();
-                    var location = $('#appointmentLoc').val();
-
-                    // Append the new appointment to the timeslots
-                    $('#timeslots').append(
-                        '<div class="meeting-item">' +
-                        '<p><strong>Date:</strong> ' + date + '</p>' +
-                        '<p><strong>Time:</strong> ' + time + '</p>' +
-                        '<p><strong>Location:</strong> ' + location + '</p>' +
-                        '</div>'
-                    );
-
-                    // Hide the modal
-                    $('#bookingModal').modal('hide');
-                });
-            });
-        </script>
     </main>
+
+    <div class="card notifications card-special">
+        <div class="card-body scrollable-notifications">
+            <h2>Notifications</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>Today</strong>
+                    <span><i class="fas fa-user-friends"></i> Meetings with with the dean</span><br>
+                </li>
+                <li class="list-group-item">
+                    <strong>Yesterday</strong>
+                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
+                    <span>Details<br>Student ID 83342025</span><br>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
 </html>
+
