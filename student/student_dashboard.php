@@ -365,4 +365,50 @@
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            function toggleSidebar() {
+                $('.sidebar').toggleClass('open');
+            }
+
+            $(document).ready(function() {
+                // Fetch available time slots from the Calendly API
+                $.ajax({
+                    url: 'fetch_timeslots.php',
+                    method: 'GET',
+                    success: function(response) {
+                        var timeSlots = JSON.parse(response);
+                        // Populate the time slots into the HTML
+                        timeSlots.forEach(function(slot) {
+                            $('#timeslots').append('<button class="btn btn-outline-primary">' + slot.start_time + ' - ' + slot.end_time + '</button>');
+                        });
+                    },
+                    error: function(error) {
+                        console.log('Error fetching time slots:', error);
+                    }
+                });
+
+                // Handle form submission
+                $('#bookingForm').submit(function(e) {
+                    e.preventDefault();
+                    var date = $('#appointmentDate').val();
+                    var time = $('#appointmentTime').val();
+                    var location = $('#appointmentLoc').val();
+
+                    // Append the new appointment to the timeslots
+                    $('#timeslots').append(
+                        '<div class="meeting-item">' +
+                        '<p><strong>Date:</strong> ' + date + '</p>' +
+                        '<p><strong>Time:</strong> ' + time + '</p>' +
+                        '<p><strong>Location:</strong> ' + location + '</p>' +
+                        '</div>'
+                    );
+
+                    // Hide the modal
+                    $('#bookingModal').modal('hide');
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>
