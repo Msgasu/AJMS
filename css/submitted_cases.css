@@ -45,20 +45,27 @@ html, body {
 
 .header .user-info img {
     margin-right: 10px;
-    border-radius: 50%;
+    border-radius: 30%;
     height: 40px;
-    width: 40px;
-    object-fit: cover;
+    width: 80px;
+    padding: 0;
+}
+
+.header .user-info .line {
+    height: 40px;
+    border-left: 1px solid grey;
+    margin: 0 15px;
 }
 
 .header .user-info span {
     font-weight: bold;
     color: grey;
+    margin-right: 10px;
 }
 
 .sidebar {
     position: fixed;
-    top: 70px;
+    top: 55px;
     bottom: 0;
     left: 20px;
     z-index: 100;

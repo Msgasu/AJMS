@@ -14,27 +14,27 @@
 
 <body>
     <!-- Header -->
+
     <div class="header">
         <div class="left">
-            
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
             </div>
         </div>
         <div class="user-info">
+            <div class="line"></div>
             <span>John Doe</span>
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
-    <br>
-    <br>
+
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../admin/admin_dashboard.php"">
+                    <a class="nav-link active" href="../admin/admin_dashboard.php">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
@@ -48,6 +48,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/submitted_cases.php">
                         <i class="fas fa-file-alt"> </i>
+                        
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -73,6 +74,7 @@
             </ul>
         </div>
     </div>
+
     
 
     <!-- Main Content -->
