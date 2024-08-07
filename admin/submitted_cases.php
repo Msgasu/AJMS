@@ -93,11 +93,12 @@
         <!-- Submitted Cases Card -->
         <div class="card">
             <div class="card-header">
-                <h4>Submitted Cases</h4>
+                
             </div>
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
+                        <h4>Submitted Cases</h4>
                         <tr>
                             <th>Case ID</th>
                             <th>Date</th>
