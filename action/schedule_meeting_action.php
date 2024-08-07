@@ -15,5 +15,5 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $con->error;
 }
 
-$conn->close();
+$con->close();
 ?>
