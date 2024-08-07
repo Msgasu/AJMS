@@ -9,20 +9,21 @@
     <title>Submitted Cases - AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href ="../css//submitted_cases.css">
+    <link rel="stylesheet" href ="../css/submitted_cases.css">
 </head>
 
 <body>
     <!-- Header -->
+
     <div class="header">
         <div class="left">
-            
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
             </div>
         </div>
         <div class="user-info">
+            <div class="line"></div>
             <span>John Doe</span>
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
@@ -33,7 +34,7 @@
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../admin/admin_dashboard.php"">
+                    <a class="nav-link active" href="../admin/admin_dashboard.php">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
@@ -47,6 +48,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/submitted_cases.php">
                         <i class="fas fa-file-alt"> </i>
+                        
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -72,6 +74,7 @@
             </ul>
         </div>
     </div>
+
     
 
     <!-- Main Content -->
