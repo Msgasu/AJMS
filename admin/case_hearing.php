@@ -277,10 +277,10 @@
             gap: 20px;
         }
         .card-custom {
-            height:100px;
+            height:120px;
             border-radius: 15px;
             background-color: #e9ecef;
-            padding: 20px;
+            padding: 40px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
