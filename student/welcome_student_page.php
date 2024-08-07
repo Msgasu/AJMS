@@ -66,8 +66,8 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
                     
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                        
+                  
                 </div>
                 <div class="modal-body">
                     <form id="welcomeForm">
