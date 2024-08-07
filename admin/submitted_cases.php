@@ -2,6 +2,7 @@
 <html lang="en">
 <?php include '../functions/fetch_submitted_cases.php'?>
 <?php include '../settings/core.php'?>
+<?php include "../functions/get_username_fxn.php"; ?>
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +25,20 @@
         </div>
         <div class="user-info">
             <div class="line"></div>
-            <span>John Doe</span>
+            <span>
+            <?php
+          if (isset($_SESSION['user_id'])) {
+              $userId = $_SESSION['user_id'];
+              $userName = getUserName($userId, $con);
+              $role= getRole($userId, $con);
+              echo '<div class="user-icon"><i class="material-icons">account_circle</i></div>';
+              echo '<div class="user-name">' . $userName . '</div>';
+              echo '<div class="user-name">' . $role . '</div>';
+          } else {
+              echo "Error: User ID not set in session";
+          }
+          ?>
+            </span>
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
