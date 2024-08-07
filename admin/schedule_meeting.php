@@ -280,11 +280,12 @@
         </div>
     </div>
 
-    <div class="card sidebar" id="sidebar">
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar card-special">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="../admin/admin_dashboard.php">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
@@ -296,21 +297,37 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
+                    <a class="nav-link" href="../admin/submitted_cases.php">
+                        <i class="fas fa-file-alt"> </i>
+                        
                         <span> Case statements</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="../admin/recommender_system.php">
                         <i class="fas fa-lightbulb"></i>
                         <span> Recommender</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile_page.php">
+                        <i class="fas fa-user"></i>
+                        <span> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/logout.php">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span> Logout</span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-
+    <br>
+    <br>
+    <br>
     <main class="main-container">
         <div class="sidebar-container">
             <div class="card-body scrollable-notifications">
