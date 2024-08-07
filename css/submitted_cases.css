@@ -212,6 +212,13 @@ html, body {
     border-color: #004085;
 }
 
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    
+    margin-left: 10px;
+}
+
 .case-widget {
     border: 1px solid #dee2e6;
     border-radius: 10px;
