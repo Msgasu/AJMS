@@ -338,6 +338,33 @@
                 </div>
             </div>
         </div>
+
+            <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Appointment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="appointmentDate">Date</label>
+                            <input type="text" class="form-control" id="appointmentDate" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Time</label>
+                            <input type="text" class="form-control" id="appointmentTime" readonly>
+                        </div>
+                        <!-- Add more form fields as needed -->
+                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -369,6 +396,38 @@
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
         }
+
+        $(document).ready(function () {
+            // Initialize the calendar
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'month',
+                selectable: true,
+                selectHelper: true,
+                select: function (start, end) {
+                    var selectedDate = moment(start).format('YYYY-MM-DD');
+                    $('#appointmentDate').val(selectedDate);
+                    $('#bookingModal').modal('show');
+                }
+            });
+
+            // Toggle sidebar
+            function toggleSidebar() {
+                document.getElementById('sidebar').classList.toggle('open');
+            }
+
+            // Handle form submission
+            $('#bookingForm').submit(function (e) {
+                e.preventDefault();
+                // Process booking here
+                alert('Booking confirmed for ' + $('#appointmentDate').val() + ' at ' + $('#appointmentTime').val());
+                $('#bookingModal').modal('hide');
+            });
+        });
     </script>
 </body>
 
