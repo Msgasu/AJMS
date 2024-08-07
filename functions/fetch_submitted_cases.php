@@ -5,7 +5,7 @@ function fetchSubmittedCases($con) {
     $query = 'SELECT s.id AS statement_id, s.statement_description, s.document_url, s.created_at, 
                      CONCAT(u.f_name, " ", u.l_name) AS user_name, 
                      s.status_id, st.status_name
-              FROM statements s
+              FROM cases s
               JOIN users u ON s.user_id = u.pid
               JOIN status st ON s.status_id = st.status_id
               ORDER BY s.created_at DESC';
