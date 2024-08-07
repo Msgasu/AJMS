@@ -40,7 +40,7 @@
         .modal-title {
             font-size: 1.7rem;
             color: #333;
-            margin-bottom
+            
         }
 
         .modal-body {
@@ -103,7 +103,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</span>
-                    <br>
+                    
                 </div>
                 <div class="modal-body">
                     <p>Please enter your details.</p>
