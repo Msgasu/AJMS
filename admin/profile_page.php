@@ -323,7 +323,7 @@
             </div>
             <div class="user-info-container">
                 <div class="user-info-item">
-                    <label for="emailVerification">Username</label>
+                    <label for="emailVerification">First Name</label>
                     <span class="pending">John Doe</span>
                 </div>
                 <div class="user-info-item">
