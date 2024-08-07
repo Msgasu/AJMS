@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../functions/fetch_submitted_cases.php'?>
+<?php include '../settings/core.php'?>
 
 <head>
     <meta charset="UTF-8">
