@@ -10,7 +10,7 @@ CREATE TABLE roles (
 );
 
 -- Insert predefined roles (e.g., 'admin', 'user')
-INSERT INTO roles (rid, role_name) VALUES (1, 'admin'), (2, 'user');
+INSERT INTO roles (rid, role_name) VALUES (1, 'admin'), (2, 'student');
 
 -- Create a table for users
 CREATE TABLE users (
