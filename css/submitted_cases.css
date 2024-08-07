@@ -194,15 +194,7 @@ html, body {
     margin-bottom: 20px;
 }
 
-.card-header {
-    background-color: #e9ecef;
-    border-bottom: 1px solid #dee2e6;
-    padding: 15px;
-    font-size: 1.25rem;
-    color: #333;
-    border-top-left-radius: 15px; /* Curves the top-left border */
-    border-top-right-radius: 15px; /* Curves the top-right border */
-}
+
 
 .card-body {
     padding: 20px;
