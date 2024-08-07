@@ -105,8 +105,9 @@
                     <h3 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h3>
                     
                 </div>
+                <p style= "margin-left:10px;">Please enter your details.</p>
                 <div class="modal-body">
-                    <p style= "margin-left:10px;">Please enter your details.</p>
+                    
                     <form id="welcomeForm">
                         <div class="form-group">
                             <label for="roleSelect">Are you a Witness or a Victim?</label>
