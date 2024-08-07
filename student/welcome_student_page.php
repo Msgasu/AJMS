@@ -9,7 +9,7 @@
     <style>
         html, body {
             font-size: .875rem;
-            background-color: red;
+            background-color: #B35B5B;
             height: 100%;
             margin: 0;
             overflow: hidden;
