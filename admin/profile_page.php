@@ -327,6 +327,10 @@
                     <span class="pending">John Doe</span>
                 </div>
                 <div class="user-info-item">
+                    <label for="emailVerification">Last Name</label>
+                    <span class="pending">John Doe</span>
+                </div>
+                <div class="user-info-item">
                     <label for="contact">Contact:</label>
                     <span>+987 6789 9876 456</span>
                 </div>
