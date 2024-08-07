@@ -19,7 +19,7 @@
         .modal-dialog {
             display: flex;
             align-items: center;
-            min-height: calc(100% - 1rem);
+            min-height: calc(120% - 1rem);
             background-color: #A44C4C;
         }
 
