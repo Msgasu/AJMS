@@ -264,4 +264,72 @@
                         <span> Case statements</span>
                     </a>
                 </li>
-                <li class="nav-item
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-lightbulb"></i>
+                        <span> Recommender</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile_page.php">
+                        <i class="fas fa-user"></i>
+                        <span> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/logout.php">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span> Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main role="main" class="content">
+        <!-- Profile Header -->
+        <div class="profile-header card">
+            <div class="card-header">
+                <h3 class="card-title">User Profile</h3>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+                <!-- Profile Picture -->
+                <div class="profile-picture mb-3">
+                    <img src="../images/user_profile.jpg" alt="User Profile Picture" class="img-fluid rounded-circle">
+                </div>
+                <!-- User Details -->
+                <div class="user-details text-center mb-4">
+                    <h2 class="mb-1">John Doe</h2>
+                    <p class="text-muted">Email: johndoe45@gmail.com</p>
+                    <p class="text-muted">Role: User</p>
+                </div>
+                <!-- Additional Profile Information -->
+                <div class="user-info-container">
+                    <div class="user-info-item">
+                        <label for="emailVerification">Email Verification:</label>
+                        <span class="pending">Pending</span>
+                    </div>
+                    <div class="user-info-item">
+                        <label for="contact">Contact:</label>
+                        <span>+987 6789 9876 456</span>
+                    </div>
+                    <div class="user-info-item">
+                        <label for="mobileVerification">Mobile Verification:</label>
+                        <span class="active">Active</span>
+                    </div>
+                    <div class="user-info-item">
+                        <label for="status">Status:</label>
+                        <span class="active">Active</span>
+                    </div>
+                </div>
+                <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
