@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
     }
 
     // Prepare and execute SQL query using MySQLi
-    $stmt = $con->prepare('INSERT INTO statements (user_id, statement_description, document_url, status_id) VALUES (?, ?, ?, ?)');
+    $stmt = $con->prepare('INSERT INTO cases (user_id, statement_description, document_url, status_id) VALUES (?, ?, ?, ?)');
     $status_id = 1; // Default status ID for 'pending'
     $stmt->bind_param('issi', $user_id, $statement_description, $document_url, $status_id);
 
