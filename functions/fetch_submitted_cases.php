@@ -2,8 +2,7 @@
 include "../settings/connection.php";
 
 function fetchSubmittedCases($con) {
-    // Define the query with the correct column names
-    $query = 'SELECT s.id, s.statement_description, s.document_url, s.created_at, 
+    $query = 'SELECT s.id AS statement_id, s.statement_description, s.document_url, s.created_at, 
                      CONCAT(u.f_name, " ", u.l_name) AS user_name, 
                      s.status_id, st.status_name
               FROM statements s
@@ -11,13 +10,11 @@ function fetchSubmittedCases($con) {
               JOIN status st ON s.status_id = st.status_id
               ORDER BY s.created_at DESC';
     
-    // Execute the query
     $result = $con->query($query);
     
-    // Check if there are results
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $case_id = htmlspecialchars($row['id']);
+            $statement_id = htmlspecialchars($row['statement_id']);
             $description = htmlspecialchars($row['statement_description']);
             $document_url = htmlspecialchars($row['document_url']);
             $created_at = htmlspecialchars($row['created_at']);
@@ -25,13 +22,11 @@ function fetchSubmittedCases($con) {
             $status_id = htmlspecialchars($row['status_id']);
             $status_name = htmlspecialchars($row['status_name']);
 
-            // Prepare case description and attachments
             $short_description = substr($description, 0, 100); // Show first 100 chars
             $full_description = $description;
             $is_long_text = strlen($description) > 100;
             $document_preview = '';
 
-            // Determine file type and generate preview
             if (preg_match('/\.(jpeg|jpg|png)$/i', $document_url)) {
                 $document_preview = '<img src="' . $document_url . '" alt="Attached File" class="document-preview">';
             } elseif (preg_match('/\.(mp4|avi|mov)$/i', $document_url)) {
@@ -40,9 +35,8 @@ function fetchSubmittedCases($con) {
                 $document_preview = '<p>No files submitted</p>';
             }
 
-            // Prepare status dropdown
             $status_options = '';
-            $status_query = 'SELECT * FROM status'; // Assuming the status table has all statuses
+            $status_query = 'SELECT * FROM status';
             $status_result = $con->query($status_query);
             if ($status_result->num_rows > 0) {
                 while ($status_row = $status_result->fetch_assoc()) {
@@ -53,9 +47,8 @@ function fetchSubmittedCases($con) {
                 }
             }
 
-            // Output case as table row
             echo '<tr>';
-            echo '<td>' . $case_id . '</td>';
+            echo '<td>' . $statement_id . '</td>';
             echo '<td>' . $created_at . '</td>';
             echo '<td>';
             echo $short_description;
@@ -64,9 +57,13 @@ function fetchSubmittedCases($con) {
                 echo '<a href="#" class="read-more" onclick="toggleText(this); return false;">Read More</a>';
             }
             echo '</td>';
-            echo '<td>' . $document_preview . '</td>';
             echo '<td>';
-            echo '<select name="status" onchange="updateStatus(this, ' . $case_id . ');">';
+            echo '<div class="document-container" id="doc-' . $statement_id . '" style="display: none;">' . $document_preview . '</div>';
+            echo '<button onclick="toggleDocument(' . $statement_id . ');" class="btn btn-primary">View Attached</button>';
+            echo '<button onclick="toggleDocument(' . $statement_id . ');" class="btn btn-secondary" style="display: none;">Hide Attached</button>';
+            echo '</td>';
+            echo '<td>';
+            echo '<select name="status" onchange="updateStatus(this, ' . $statement_id . ');">';
             echo $status_options;
             echo '</select>';
             echo '</td>';
@@ -76,27 +73,4 @@ function fetchSubmittedCases($con) {
         echo '<tr><td colspan="5">No cases submitted yet.</td></tr>';
     }
 }
-
-// Call the function
-// fetchSubmittedCases($con);
 ?>
-
-
-<script>
-function updateStatus(selectElement, caseId) {
-    var statusId = selectElement.value;
-    
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "../settings/update_status.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("case_id=" + caseId + "&status_id=" + statusId);
-    
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            alert("Status updated successfully.");
-        } else {
-            alert("Failed to update status.");
-        }
-    };
-}
-</script>
