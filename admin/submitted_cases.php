@@ -71,9 +71,7 @@
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
+    
 
     <!-- Main Content -->
     <main role="main" class="content">
