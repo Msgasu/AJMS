@@ -38,7 +38,7 @@
         }
 
         .modal-title {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: #333;
         }
 
@@ -89,6 +89,7 @@
             color: #555;
             text-align: center;
             margin-bottom: 1rem;
+            font-size:14px;
         }
 
     </style>
@@ -101,9 +102,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h2>
+                    <p>Please enter your details.</p>
                 </div>
                 <div class="modal-body">
-                    <p>Please enter your details.</p>
+                    
                     <form id="welcomeForm">
                         <div class="form-group">
                             <label for="roleSelect">Are you a Witness or a Victim?</label>
