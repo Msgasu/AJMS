@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../settings/core.php'?>
-<?php include '../settings/core.php'; ?>
-<?php include '../actions/profile_page_action.php'; ?>
+<?php include '../action/profile_page_action.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
