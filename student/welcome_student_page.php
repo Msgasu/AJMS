@@ -26,8 +26,8 @@
         .modal-content {
             border-radius: 15px;
             margin: auto;
-            padding: 60px;
-            
+            padding: 20px;
+            height: 100%;
         }
         
         .modal-header {
