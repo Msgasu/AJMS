@@ -196,6 +196,11 @@
             height: calc(90vh - 110px); /* Adjusted height */
             overflow-y: auto;
         }
+        .equal-space {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
       
         
