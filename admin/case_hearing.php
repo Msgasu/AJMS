@@ -264,11 +264,11 @@
 
         .back-button {
             color: #A44C4C; /* Red color */
-            font-size: 1rem; /* Larger font size */
+            font-size: 1.2rem; /* Larger font size */
             text-decoration: none; /* Remove underline */
         }
         .back-button:hover {
-            color: #fff; /* White text on hover */
+            color: grey; /* White text on hover */
         }
         
     </style>
