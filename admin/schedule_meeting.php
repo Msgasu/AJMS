@@ -325,9 +325,7 @@
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
+   
     <main class="main-container">
         <div class="sidebar-container">
             <div class="card-body scrollable-notifications">
