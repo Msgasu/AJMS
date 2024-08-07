@@ -120,12 +120,14 @@
 
         .content {
             margin-left: 240px;
+            margin-top: 200px;
             padding: 20px;
             height: calc(100vh - 55px);
             overflow-y: auto;
         }
 
         .profile-header {
+            margin-top: 20px;
             background-color: #fff;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
