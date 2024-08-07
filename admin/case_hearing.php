@@ -250,7 +250,7 @@
             padding: 20px;
         }
 
-        .card-custom h3 {
+        .card-custom h4 {
             margin: 0;
             font-weight: bold;
         }
@@ -326,7 +326,7 @@
                         <h3>View report of accused party</h3>
                     </div>
                     <div class="card-custom">
-                        <h3>View report of witness</h3>
+                        <h4>View report of witness</h4>
                     </div>
                 </div>
             </div>  
