@@ -323,7 +323,7 @@
         <div class="card-body equal-space scrollable-notifications">
             <a href="#" class="back-button">&larr; back</a>
             <h2>CASE: (NAME OF CASE FROM DB)</h2>
-            <h5 style="font-weight: bolder"><em>Find below the statements of the involved parties.</em></h5>
+            <h5 ><em>Find below the statements of the involved parties.</em></h5>
             <div class="container">
                 <div class="card-container">
                     <div class="card-custom">
