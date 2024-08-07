@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
                 if ($_SESSION["user_role"] == 1) {
                     header("Location: ../admin/admin_dashboard.php");
                 } else {
-                    header("Location: ../admin/student_dashboard.php"); // Adjust as necessary
+                    header("Location: ../student/student_dashboard.php"); // Adjust as necessary
                 }
                 exit();
             } else {
@@ -45,6 +45,6 @@ if (isset($_POST['submit'])) {
     }
 }
 
-header("Location: ../login/login_admin.php");
+header("Location: ../login/login.php");
 exit();
 ?>
