@@ -197,55 +197,8 @@
             overflow-y: auto;
         }
 
-        .submit-button{
-            background-color: #28a745;
-            color: white;
-            font-size: medium;
-            width: 95%;
-            border: none;
-            padding: 5px 5px;
-            margin-left: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+      
         
-        .report-form {
-            background-color: transparent;
-            border-radius: 15px;
-            padding: 20px;
-            
-        }
-
-        .report-form textarea {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            background-color: lightgrey;
-            border: 1px solid #ccc;
-            padding: 10px;
-            
-        }
-        .textarea-wrapper {
-            position: relative; /* Positioning context for child elements */
-        }
-        .report-form .submit-button {
-            background-color: #28a745;
-            color: white;
-            font-size: medium;
-            width: 30%;
-            border: none;
-            padding: 10px 20px;
-            margin-left: 350px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .report-form .note {
-            color: red;
-            margin-top: 10px;
-            margin-left: 150px;
-            
-        }
-
 
         .card-custom {
             border-radius: 15px;
@@ -262,20 +215,7 @@
 
         
 
-        .list-group-item {
-            border: none;
-        }
-
-        .list-group-item strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .equal-space {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+       
         .card-custom {
             height: 120px;
             border-radius: 15px;
@@ -294,7 +234,7 @@
             left: 0;
             width: 100%;
             height: 5px; /* Red line design */
-            background-color: #ff4d4d; /* Red color */
+            background-color: #A44C4C; /* Red color */
             border-radius: 15px 15px 0 0; /* Rounded corners for the line */
         }
 
@@ -310,7 +250,7 @@
             padding: 20px;
         }
 
-        .card-custom p {
+        .card-custom h3 {
             margin: 0;
             font-weight: bold;
         }
@@ -380,13 +320,13 @@
             <div class="container">
                 <div class="card-container">
                     <div class="card-custom">
-                        <p>View report of complainant</p>
+                        <h3>View report of complainant</h3>
                     </div>
                     <div class="card-custom">
-                        <p>View report of accused party</p>
+                        <h3>View report of accused party</h3>
                     </div>
                     <div class="card-custom">
-                        <p>View report of witness</p>
+                        <h3>View report of witness</h3>
                     </div>
                 </div>
             </div>  
