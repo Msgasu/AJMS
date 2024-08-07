@@ -200,7 +200,8 @@ html, body {
     padding: 15px;
     font-size: 1.25rem;
     color: #333;
-    border-radius: 15px;
+    border-top-left-radius: 15px; /* Curves the top-left border */
+    border-top-right-radius: 15px; /* Curves the top-right border */
 }
 
 .card-body {
