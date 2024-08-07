@@ -7,6 +7,7 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+
         html, body {
             font-size: .875rem;
             background-color: #B35B5B;
@@ -25,24 +26,34 @@
         .modal-content {
             border-radius: 15px;
             margin: auto;
-            
+            padding: 20px;
         }
         
         .modal-header {
             border-bottom: none;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 0;
         }
-        
-        .modal-footer {
-            border-top: none;
-            display: flex;
-            justify-content: center;
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: #333;
         }
 
         .modal-body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 200px; /* Adjust based on content */
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-control {
+            border-radius: 15px;
         }
 
         .text-center {
@@ -50,28 +61,47 @@
             justify-content: center;
         }
 
-        .form-group {
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+            border-radius: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .modal-footer {
+            border-top: none;
+            display: flex;
+            justify-content: center;
+            padding-top: 0;
+        }
+
+        .modal-body p {
+            font-style: italic;
+            color: #555;
+            text-align: center;
             margin-bottom: 1rem;
         }
 
-        .modal-footer .btn {
-            margin: 0 5px;
-        }
     </style>
 </head>
 
 <body>
     <!-- Modal HTML -->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true" style="background-color: #B35B5B;">
+    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
-                    
-                        
-                  
+                    <h5 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h5>
                 </div>
                 <div class="modal-body">
+                    <p>Please enter your details.</p>
                     <form id="welcomeForm">
                         <div class="form-group">
                             <label for="roleSelect">Are you a Witness or a Victim?</label>
@@ -90,7 +120,6 @@
                         </div>
                     </form>
                 </div>
-                
             </div>
         </div>
     </div>
