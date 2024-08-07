@@ -105,7 +105,7 @@
                     <h3 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h3>
                     
                 </div>
-                <p style= "margin-left:10px;">Please enter your details.</p>
+                <p style= "margin-left:15px;"><em>Please enter your details.</em></p>
                 <div class="modal-body">
                     
                     <form id="welcomeForm">
