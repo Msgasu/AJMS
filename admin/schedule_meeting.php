@@ -340,6 +340,7 @@
         </div>
 
             <!-- Booking Modal -->
+    <!-- Booking Modal -->
     <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -365,41 +366,22 @@
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#upcomingCalendar').fullCalendar({
-                defaultView: 'month',
-                events: [{
-                        title: 'Meeting with Party C',
-                        start: '2024-12-09T10:00:00'
-                    },
-                    {
-                        title: 'Meeting with Party D',
-                        start: '2024-12-10T14:00:00'
-                    }
-                ]
-            });
-
-            $('#bookingCalendar').fullCalendar({
-                defaultView: 'month'
-            });
-        });
-         // Function to toggle the sidebar
-         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
-
         $(document).ready(function () {
-            // Initialize the calendar
-            $('#calendar').fullCalendar({
+            // Initialize the booking calendar
+            $('#bookingCalendar').fullCalendar({
                 header: {
                     left: 'prev,next today',
                     center: 'title',
@@ -415,20 +397,28 @@
                 }
             });
 
-            // Toggle sidebar
-            function toggleSidebar() {
-                document.getElementById('sidebar').classList.toggle('open');
-            }
+            // Initialize the upcoming meetings calendar
+            $('#upcomingCalendar').fullCalendar({
+                defaultView: 'month',
+                events: [
+                    {
+                        title: 'Meeting with Party C',
+                        start: '2024-12-09T10:00:00'
+                    },
+                    {
+                        title: 'Meeting with Party D',
+                        start: '2024-12-10T14:00:00'
+                    }
+                ]
+            });
 
             // Handle form submission
             $('#bookingForm').submit(function (e) {
                 e.preventDefault();
-                // Process booking here
                 alert('Booking confirmed for ' + $('#appointmentDate').val() + ' at ' + $('#appointmentTime').val());
                 $('#bookingModal').modal('hide');
             });
         });
     </script>
 </body>
-
 </html>
