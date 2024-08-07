@@ -97,9 +97,10 @@
                     <thead>
                         <tr>
                             <th>Case ID</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Date Submitted</th>
+                            <th>Date</th>
+                            <th>Case Description</th>
+                            <th>Attachments</th>
+                            
                             <th>Status</th>
                         </tr>
                     </thead>
