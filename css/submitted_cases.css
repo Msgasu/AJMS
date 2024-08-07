@@ -200,6 +200,7 @@ html, body {
     padding: 15px;
     font-size: 1.25rem;
     color: #333;
+    border-radius: 15px;
 }
 
 .card-body {
