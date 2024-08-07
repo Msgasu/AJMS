@@ -40,6 +40,7 @@
         .modal-title {
             font-size: 1.7rem;
             color: #333;
+            
         }
 
         .modal-body {
@@ -101,11 +102,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h2>
-                    <p>Please enter your details.</p>
+                    <span class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</span>
+                    
                 </div>
                 <div class="modal-body">
-                    
+                    <p>Please enter your details.</p>
                     <form id="welcomeForm">
                         <div class="form-group">
                             <label for="roleSelect">Are you a Witness or a Victim?</label>
