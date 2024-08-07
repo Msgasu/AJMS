@@ -358,7 +358,9 @@
         .form-group {
             margin-bottom: 15px;
         }
-        
+        .form-control {
+            border-radius: 15px;
+        }
     </style>
 </head>
 
@@ -446,13 +448,10 @@
                 </button>
             </div>
         </div>
-
-       
-        
-       
+        <br>
             <div class="form-group">
-                <label for="emailCount"><em>Enter the number of emails for involved parties.</em></label>
-                <input type="number" class="form-control" id="emailCount" min="1" placeholder="Enter number of emails" required>
+                <label for="emailCount" style="font-weight: bolder"><em>Enter the number of emails for involved parties.</em></label>
+                <input type="number" class="form-control" id="emailCount" min="1" placeholder="Number of emails" required>
             </div>
             <div id="emailInputs"></div>
             
