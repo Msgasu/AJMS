@@ -23,6 +23,17 @@ CREATE TABLE users (
     FOREIGN KEY (role_id) REFERENCES roles(rid)
 );
 
+
+-- Create a table for statuses
+CREATE TABLE status (
+    status_id INT PRIMARY KEY AUTO_INCREMENT,
+    status_name VARCHAR(50) UNIQUE
+);
+
+-- Insert predefined statuses
+INSERT INTO status (status_name) VALUES ('pending'), ('completed'), ('dismissed');
+
+
 -- Create a table for statements with a reference to the users table
 CREATE TABLE statements (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -30,7 +41,9 @@ CREATE TABLE statements (
     statement_description TEXT, -- For text descriptions
     document_url VARCHAR(255), -- For storing URLs of documents
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(pid) -- Add foreign key constraint
+    status_id INT, -- Foreign key to reference the status
+    FOREIGN KEY (user_id) REFERENCES users(pid),
+    FOREIGN KEY (status_id) REFERENCES status(status_id) -- Add foreign key constraint
 );
 
 -- Create a table for admins
@@ -39,16 +52,16 @@ CREATE TABLE admins (
     email VARCHAR(100) UNIQUE -- Store admin emails
 );
 
--- CREATE TABLE meetings (
---     id INT PRIMARY KEY AUTO_INCREMENT,
---     title VARCHAR(255),
---     user_id INT, -- Foreign key to reference the user who schedules the meeting
---     date DATE,
---     time TIME,
---     location VARCHAR(255),
---     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---     FOREIGN KEY (user_id) REFERENCES users(pid)
--- );
+CREATE TABLE meetings (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255),
+    user_id INT, -- Foreign key to reference the user who schedules the meeting
+    date DATE,
+    time TIME,
+    location VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(pid)
+);
 
 -- Insert admin users 
 INSERT INTO admins (email) VALUES

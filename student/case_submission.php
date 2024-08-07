@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include '../settings/core.php'?>
 
 <head>
     <meta charset="UTF-8">

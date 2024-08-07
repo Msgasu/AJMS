@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../functions/fetch_submitted_cases.php'?>
-
+<?php include '../settings/core.php'?>
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,7 @@
     <!-- Header -->
     <div class="header">
         <div class="left">
+            
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
@@ -46,7 +47,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/submitted_cases.php">
                         <i class="fas fa-file-alt"> </i>
-                        
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -72,9 +72,7 @@
             </ul>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
+    
 
     <!-- Main Content -->
     <main role="main" class="content">
@@ -92,12 +90,26 @@
         <!-- Submitted Cases Card -->
         <div class="card">
             <div class="card-header">
-                Submitted Cases
+                <h4>Submitted Cases</h4>
             </div>
-            
-            <?php
-              fetchSubmittedCases($con);
-              ?>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Case ID</th>
+                            <th>Date</th>
+                            <th>Case Description</th>
+                            <th>Attachments</th>
+                            
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        fetchSubmittedCases($con);
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
@@ -110,3 +122,4 @@
 </body>
 
 </html>
+

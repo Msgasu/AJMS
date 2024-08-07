@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include '../settings/core.php'?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -330,7 +330,7 @@
                             <p>Year: Class of 2026</p>
                             <p>Suspect: Male</p>
                             <p>Year: 2026</p>
-                            <button class="btn btn-success" onclick="location.href='view_progress.php'">View Progress</button>
+                            <button class="btn btn-success" onclick="location.href='book_meeting.php'">Book Meeting</button>
                         </div>
                     </div>
                 </div>
