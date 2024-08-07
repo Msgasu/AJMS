@@ -331,7 +331,7 @@
                     <span>+987 6789 9876 456</span>
                 </div>
                 <div class="user-info-item">
-                    <label for="mobileVerification">Mobile Verification:</label>
+                    <label for="mobileVerification">Email</label>
                     <span class="active">Active</span>
                 </div>
                 <div class="user-info-item">
