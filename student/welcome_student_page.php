@@ -51,6 +51,7 @@
 
         .form-group {
             margin-bottom: 1rem;
+            width: 100%;
         }
 
         .form-control {
