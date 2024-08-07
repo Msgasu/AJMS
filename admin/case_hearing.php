@@ -222,7 +222,7 @@
 
        
         .card-custom {
-            height: 120px;
+            height: 125px;
             border-radius: 15px;
             background-color: #f5f5f5; /* Greyish white background */
             padding: 40px;
@@ -258,6 +258,7 @@
         .card-custom h4 {
             margin: 0;
             font-weight: bold;
+            font-size: 10px;
         }
         
     </style>
@@ -325,13 +326,13 @@
             <div class="container">
                 <div class="card-container">
                     <div class="card-custom">
-                        <h4>View report of complainant</h4>
+                        <p>View report of complainant</p>
                     </div>
                     <div class="card-custom">
-                        <h4>View report of accused party</h4>
+                        <p>View report of accused party</p>
                     </div>
                     <div class="card-custom">
-                        <h4>View report of witness</h4>
+                        <p>View report of witness</p>
                     </div>
                 </div>
             </div>  
