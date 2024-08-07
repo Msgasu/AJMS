@@ -73,20 +73,19 @@
             color: grey;
             margin-right: 10px;
         }
+
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
-            
             margin-left: 10px;
         }
-        
 
         .sidebar {
             position: fixed;
             top: 72px;
             bottom: 0;
             left: -220px; /* Initially hidden */
-            z-index: 1050; 
+            z-index: 1050;
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
@@ -137,13 +136,12 @@
         .sidebar .nav-link span {
             font-size: 1.1rem; /* Increase font size */
         }
-        
-    
+
         .sidebar-container {
             position: fixed;
             top: 90px;
             bottom: 0;
-            left: 20px; 
+            left: 20px;
             z-index: 100;
             padding: 10px;
             width: 290px;
@@ -188,8 +186,8 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: calc(89.2vh - 25px);
-           
+            height: calc(90vh - 25px); /* Adjusted height to prevent overflow */
+            overflow: hidden; /* Prevent overflow */
         }
 
         .content h3 {
@@ -197,14 +195,13 @@
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
-
         }
 
         .calendar-container {
             margin-bottom: 20px;
-            
+            height: 100%; /* Ensure the calendar uses available space */
+            overflow: hidden; /* Prevent calendar overflow */
         }
-        
 
         .time-slots h4 {
             font-size: 1.25rem;
@@ -231,7 +228,6 @@
         .btn-outline-primary:hover {
             background-color: #b42f2f;
             color: #ffffff;
-
         }
 
         .btn-primary {
@@ -245,12 +241,19 @@
             background-color: #a02626;
             border-color: #a02626;
         }
-      
+
+        .fc-view-container {
+            height: 100% !important; /* Ensure the calendar container respects the height */
+        }
+
+        .fc-view-container .fc-scroller {
+            height: 100% !important; /* Ensure the calendar scrolls internally if needed */
+        }
     </style>
 </head>
 
 <body>
-<div class="header">
+    <div class="header">
         <div class="left">
             <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
@@ -265,8 +268,8 @@
         </div>
     </div>
 
-        <!-- Sidebar in a Card -->
-        <div class="card sidebar" id="sidebar">
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar" id="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -289,86 +292,108 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-lightbulb"></i>
-                        <span> Recommender</span>
+                        <i class="fas fa-calendar"></i>
+                        <span> Calendar</span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-   
-    
 
+    <div class="sidebar-container">
+        <h3>Upcoming Meetings</h3>
+        <div class="scrollable-notifications">
+            <div class="meeting-item">
+                <h5>Meeting 1</h5>
+                <p>Date: 2024-08-07</p>
+            </div>
+            <div class="meeting-item">
+                <h5>Meeting 2</h5>
+                <p>Date: 2024-08-10</p>
+            </div>
+            <!-- Add more meeting items as needed -->
+        </div>
+    </div>
 
-    <main class="main-container">
-        <div class="sidebar-container">
-            <div class="card-body scrollable-notifications">
-               <h3>Upcoming Meetings</h3>
-               <div id="upcomingCalendar" class="calendar-container"></div>
-                    <div class="meeting-item">
-                      <h5>Meeting with Party C</h5>
-                     <p>Student ID: 123456789</p>
-                     <p>December 9, 2024</p>
-                     <button class="btn btn-success btn-sm">Send out meeting invitation</button>
-                    </div>
-                
-            
-                <div class="meeting-item">
-                    <h5>Meeting with Party D</h5>
-                    <p>Student ID: 123456789</p>
-                    <p>December 10, 2024</p>
-                    <button class="btn btn-success btn-sm">Send out meeting invitation</button>
+    <div class="content">
+        <h3>Calendar</h3>
+        <div class="calendar-container">
+            <div id="calendar"></div>
+        </div>
+        <div class="time-slots">
+            <h4>Available Slots</h4>
+            <button class="btn btn-outline-primary">9:00 AM - 10:00 AM</button>
+            <button class="btn btn-outline-primary">10:00 AM - 11:00 AM</button>
+            <button class="btn btn-outline-primary">11:00 AM - 12:00 PM</button>
+            <button class="btn btn-primary">Book Appointment</button>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Appointment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="appointmentDate">Date</label>
+                            <input type="text" class="form-control" id="appointmentDate" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Time</label>
+                            <input type="text" class="form-control" id="appointmentTime" readonly>
+                        </div>
+                        <!-- Add more form fields as needed -->
+                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="content">
-            <div class="card-body scrollable-notifications">
-                <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
-                <div style="display: flex; width: 100%; margin-bottom:0;  ">
-                    <div id="bookingCalendar" class="calendar-container"></div>
-                    <div class="time-slots">
-                        <h4>Available Time Slots</h4>
-                        <button class="btn btn-outline-primary">8:00am - 9:00am</button>
-                        <button class="btn btn-outline-primary">9:00pm - 10:00am</button>
-                        <button class="btn btn-outline-primary">10:00am - 11:00am</button>
-                        <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
-                        <button class="btn btn-outline-primary">12:00pm - 1:00pm</button>
-                        <button class="btn btn-primary confirm-btn">Confirm</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#upcomingCalendar').fullCalendar({
+        $(document).ready(function () {
+            // Initialize the calendar
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
                 defaultView: 'month',
-                events: [{
-                        title: 'Meeting with Party C',
-                        start: '2024-12-09T10:00:00'
-                    },
-                    {
-                        title: 'Meeting with Party D',
-                        start: '2024-12-10T14:00:00'
-                    }
-                ]
+                selectable: true,
+                selectHelper: true,
+                select: function (start, end) {
+                    var selectedDate = moment(start).format('YYYY-MM-DD');
+                    $('#appointmentDate').val(selectedDate);
+                    $('#bookingModal').modal('show');
+                }
             });
 
-            $('#bookingCalendar').fullCalendar({
-                defaultView: 'month'
+            // Toggle sidebar
+            function toggleSidebar() {
+                document.getElementById('sidebar').classList.toggle('open');
+            }
+
+            // Handle form submission
+            $('#bookingForm').submit(function (e) {
+                e.preventDefault();
+                // Process booking here
+                alert('Booking confirmed for ' + $('#appointmentDate').val() + ' at ' + $('#appointmentTime').val());
+                $('#bookingModal').modal('hide');
             });
         });
-         // Function to toggle the sidebar
-         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
     </script>
 </body>
 
