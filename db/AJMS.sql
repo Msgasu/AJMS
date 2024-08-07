@@ -39,16 +39,16 @@ CREATE TABLE admins (
     email VARCHAR(100) UNIQUE -- Store admin emails
 );
 
-CREATE TABLE meetings (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(255),
-    user_id INT, -- Foreign key to reference the user who schedules the meeting
-    date DATE,
-    time TIME,
-    location VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(pid)
-);
+-- CREATE TABLE meetings (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     title VARCHAR(255),
+--     user_id INT, -- Foreign key to reference the user who schedules the meeting
+--     date DATE,
+--     time TIME,
+--     location VARCHAR(255),
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     FOREIGN KEY (user_id) REFERENCES users(pid)
+-- );
 
 -- Insert admin users 
 INSERT INTO admins (email) VALUES
