@@ -324,7 +324,7 @@
             <div class="user-info-container">
                 <div class="user-info-item">
                     <label for="emailVerification">Username</label>
-                    <span class="pending">Joh</span>
+                    <span class="pending">John Doe</span>
                 </div>
                 <div class="user-info-item">
                     <label for="contact">Contact:</label>
