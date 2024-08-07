@@ -100,7 +100,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h5>
+                    <h4 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h4>
                 </div>
                 <div class="modal-body">
                     <p>Please enter your details.</p>
