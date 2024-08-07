@@ -27,7 +27,8 @@
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
-
+    <br>
+    <br>
     <!-- Sidebar in a Card -->
     <div class="card sidebar card-special">
         <div class="sidebar-sticky">
