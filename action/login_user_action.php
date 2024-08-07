@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-echo ("It worked but ermmmm");
+
 // header("Location: ../login/login.php");
 exit();
 ?>
