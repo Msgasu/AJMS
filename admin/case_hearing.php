@@ -199,7 +199,7 @@
         .equal-space {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 30px;
         }
 
       
@@ -209,6 +209,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
+            margin-top: 50px;
         }
 
         .card-special {
