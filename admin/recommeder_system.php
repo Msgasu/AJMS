@@ -89,7 +89,7 @@
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(90vh - 30px);
+            height: calc(100vh - 70px); /* Adjusted height to match full viewport */
             background-color: white;
             border-radius: 15px;
             transition: left 0.3s ease;
@@ -142,10 +142,10 @@
             margin-left: 20px;
             margin-right: 20px;
             padding: 20px 0;
-            height: calc(100vh - 70px);
-            overflow-y: auto;
+            height: calc(100vh - 70px); /* Adjusted height to fill viewport */
             display: flex;
             justify-content: center;
+            align-items: stretch; /* Ensure children fill available height */
             gap: 10px; /* Reduced gap between boxes */
         }
 
@@ -154,17 +154,19 @@
             border-radius: 15px;
             padding: 20px;
             width: 48%; /* Made box longer */
-            height: 110%; /* Adjusted height to make it longer */
+            height: 102%; /* Fill available height */
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
+            box-sizing: border-box;
+            padding-bottom: 10px; /* Added padding to make room for bottom elements */
         }
 
         .report-form .back-button {
             align-self: flex-start;
             color: #D00C0C;
-            margin-bottom: 10px;
+            margin-bottom: 5px; /* Reduced margin */
             cursor: pointer;
             font-size: 18px;
             text-decoration: none;
@@ -172,7 +174,7 @@
 
         .report-form .note {
             color: red; /* Changed color to red */
-            margin-top: 10px;
+            margin-top: 5px; /* Reduced margin */
             text-align: center;
             font-size: 16px;
         }
@@ -184,16 +186,16 @@
         .report-form .textarea-wrapper {
             position: relative;
             width: 100%;
+            margin-top: 10px; /* Reduced margin */
         }
 
         .report-form textarea {
-            width: calc(100% - 20px); /* Fit to container */
+            width: 100%;
             height: 200px; /* Adjusted height */
             border-radius: 10px;
             background-color: lightgrey;
             border: 1px solid #ccc;
             padding: 10px;
-            margin-top: 10px;
             font-size: 16px;
             resize: none; /* Prevent resizing */
             box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -206,7 +208,7 @@
             width: 40%; /* Made slightly smaller */
             border: none;
             padding: 8px; /* Adjusted padding for smaller size */
-            margin: 20px auto 0 auto; /* Centering button and reducing extra bottom margin */
+            margin: 10px auto 0 auto; /* Reduced margin */
             border-radius: 10px;
             cursor: pointer;
             display: block; /* Ensure the button is a block element for centering */
@@ -224,19 +226,28 @@
             border-radius: 15px;
             padding: 20px;
             width: 48%; /* Made box longer */
-            height: 110%; /* Adjusted height to make it longer */
+            height: 102%; /* Fill available height */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             font-size: 1.5rem;
             position:relative;
+            box-sizing: border-box;
         }
         
+        .textarea-icons {
+            position: absolute;
+            bottom: 10px; /* Align icons at the bottom of the textarea */
+            right: 10px; /* Align icons to the right of the textarea */
+            display: flex;
+            gap: 10px; /* Space between icons */
+        }
 
-        .suggested-verdict h2 {
-            margin: 0;
-            padding: 0 0 20px 0;
+        .textarea-icons i {
+            font-size: 18px;
+            cursor: pointer;
+            color: #333;
         }
     </style>
 </head>
@@ -302,6 +313,10 @@
             </div>
             <div class="textarea-wrapper">
                 <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
+                <div class="textarea-icons">
+                    <i class="fas fa-file-signature"></i> <!-- Updated icon to curly-like -->
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
             <button class="submit-button">Submit</button>
             <div class="white-space"></div> <!-- For white space at the bottom -->
