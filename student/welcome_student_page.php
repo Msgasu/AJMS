@@ -19,7 +19,7 @@
         .modal-dialog {
             display: flex;
             align-items: center;
-            min-height: calc(120% - 1rem);
+            min-height: calc(100% - 1rem);
             background-color: #A44C4C;
         }
 
@@ -27,6 +27,7 @@
             border-radius: 15px;
             margin: auto;
             padding: 20px;
+            width:100%;
         }
         
         .modal-header {
