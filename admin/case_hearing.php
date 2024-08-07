@@ -261,6 +261,21 @@
             font-weight: bold;
             font-size: 15px;
         }
+
+        .back-button {
+            color: #ff4d4d; /* Red color */
+            font-size: 1.5rem; /* Larger font size */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Allow padding */
+            padding: 10px 20px; /* Add some padding */
+            border: 2px solid #ff4d4d; /* Red border */
+            border-radius: 5px; /* Slightly rounded corners */
+            transition: background-color 0.2s, color 0.2s; /* Smooth transition */
+        }
+        .back-button:hover {
+            background-color: #ff4d4d; /* Red background on hover */
+            color: #fff; /* White text on hover */
+        }
         
     </style>
 </head>
