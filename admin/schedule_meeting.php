@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include '../settings/core.php'?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJMS Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <style>
         html,
         body {
@@ -251,9 +249,8 @@
         }
     </style>
 </head>
-
 <body>
-    <div class="header">
+<div class="header">
         <div class="left">
             <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
@@ -268,9 +265,6 @@
         </div>
     </div>
 
-    <!-- Sidebar in a Card -->
-    <div class="card sidebar" id="sidebar">
-    <!-- Sidebar in a Card -->
     <div class="card sidebar" id="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
@@ -302,9 +296,6 @@
         </div>
     </div>
 
-
-
-
     <main class="main-container">
         <div class="sidebar-container">
             <div class="card-body scrollable-notifications">
@@ -327,32 +318,19 @@
                 </div>
             </div>
         </div>
-
         <div class="content">
             <div class="card-body scrollable-notifications">
                 <h2 style="text-align: center; font-weight: bold;">Schedule a meeting</h2>
-                <div style="display: flex; width: 100%; margin-bottom:0;  ">
+                <div style="display: flex; width: 100%; margin-bottom:0;">
                     <div id="bookingCalendar" class="calendar-container"></div>
                     <div class="time-slots" id="timeslots">
                         <h4>Available Time Slots</h4>
-                        <!-- <button class="btn btn-outline-primary">8:00am - 9:00am</button>
-                        <button class="btn btn-outline-primary">9:00am - 10:00am</button>
-                        <button class="btn btn-outline-primary">10:00am - 11:00am</button>
-                        <button class="btn btn-outline-primary">11:00am - 12:00pm</button>
-                        <button class="btn btn-outline-primary">12:00pm - 1:00pm</button> 
-                        <button class="btn btn-primary confirm-btn">Confirm</button>-->
-
-                        <!-- <div id="confirmedSlots">
-                            <h4>Confirmed Appointments</h4>
-                        </div> -->
+                        <!-- Time slots will be dynamically populated here -->
                     </div>
-
                 </div>
             </div>
         </div>
 
-        <!-- Booking Modal -->
-        <!-- Booking Modal -->
         <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -373,53 +351,44 @@
                                 <input type="text" class="form-control" id="appointmentTime">
                             </div>
                             <div class="form-group">
-                                <label for="appointmentTime">Location</label>
+                                <label for="appointmentLoc">Location</label>
                                 <input type="text" class="form-control" id="appointmentLoc">
                             </div>
-                            <!-- Add more form fields as needed -->
-                            <button type="submit" class="btn btn-primary">Confirm </button>
+                            <button type="submit" class="btn btn-primary">Confirm</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
         <script>
             function toggleSidebar() {
                 $('.sidebar').toggleClass('open');
             }
 
             $(document).ready(function() {
-                // Initialize the booking calendar
-                $('#bookingCalendar').fullCalendar({
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
+                // Fetch available time slots from the Calendly API
+                $.ajax({
+                    url: '../action/fetch_timeslots.php',
+                    method: 'GET',
+                    success: function(response) {
+                        var timeSlots = JSON.parse(response);
+                        // Populate the time slots into the HTML
+                        timeSlots.forEach(function(slot) {
+                            $('#timeslots').append('<button class="btn btn-outline-primary">' + slot.start_time + ' - ' + slot.end_time + '</button>');
+                        });
                     },
-                    defaultView: 'month',
-                    selectable: true,
-                    selectHelper: true,
-                    select: function(start, end) {
-                        var selectedDate = moment(start).format('YYYY-MM-DD');
-                        $('#appointmentDate').val(selectedDate);
-                        $('#bookingModal').modal('show');
+                    error: function(error) {
+                        console.log('Error fetching time slots:', error);
                     }
                 });
 
                 // Handle form submission
                 $('#bookingForm').submit(function(e) {
-                    //e.preventDefault();
+                    e.preventDefault();
                     var date = $('#appointmentDate').val();
                     var time = $('#appointmentTime').val();
                     var location = $('#appointmentLoc').val();
@@ -427,7 +396,7 @@
                     // Append the new appointment to the timeslots
                     $('#timeslots').append(
                         '<div class="meeting-item">' +
-                        '<p><strong>Date:</strong> ' + date + '</p>'+
+                        '<p><strong>Date:</strong> ' + date + '</p>' +
                         '<p><strong>Time:</strong> ' + time + '</p>' +
                         '<p><strong>Location:</strong> ' + location + '</p>' +
                         '</div>'
@@ -438,6 +407,6 @@
                 });
             });
         </script>
+    </main>
 </body>
-
 </html>
