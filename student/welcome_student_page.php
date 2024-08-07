@@ -85,12 +85,12 @@
             padding-top: 0;
         }
 
-        .modal-body p {
+        .text {
             font-style: italic;
             color: #555;
-            text-align: center;
+            text-align: left;
             margin-bottom: 1rem;
-            font-size:20px;
+            font-size:15px;
         }
 
     </style>
@@ -105,7 +105,7 @@
                     <h3 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h3>
                     
                 </div>
-                <p style= "margin-left:15px;"><em>Please enter your details.</em></p>
+                <p style= "margin-left:15px;" class="text"><em>Please enter your details.</em></p>
                 <div class="modal-body">
                     
                     <form id="welcomeForm">
