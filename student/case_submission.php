@@ -358,7 +358,9 @@
         .form-group {
             margin-bottom: 15px;
         }
-        
+        .form-control {
+            border-radius: 15px;
+        }
     </style>
 </head>
 
