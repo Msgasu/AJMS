@@ -28,8 +28,8 @@ if (isset($_POST['submit'])) {
                 // Redirect based on user role
                 if ($_SESSION["user_role"] == 1) {
                     header("Location: ../admin/admin_dashboard.php");
-                } else {
-                    header("Location: ../student/student_dashboard.php"); // Adjust as necessary
+                } else  {
+                    header("Location: ../student/student_dashboard.php"); 
                 }
                 exit();
             } else {
@@ -45,6 +45,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
+echo ("It worked but ermmmm");
 // header("Location: ../login/login.php");
 exit();
 ?>
