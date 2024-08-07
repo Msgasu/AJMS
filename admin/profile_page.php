@@ -332,7 +332,7 @@
                 </div>
                 <div class="user-info-item">
                     <label for="mobileVerification">Email</label>
-                    <span class="active">Active</span>
+                    <span class="active">johndoe45@gmail.com</span>
                 </div>
                 <div class="user-info-item">
                     <label for="status">Status:</label>
