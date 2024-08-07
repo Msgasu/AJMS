@@ -258,7 +258,7 @@
         .card-custom h4 {
             margin: 0;
             font-weight: bold;
-            font-size: 10px;
+            font-size: 30px;
         }
         
     </style>
