@@ -47,7 +47,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 30px;
+            padding: 10px;
         }
 
         .form-group {
