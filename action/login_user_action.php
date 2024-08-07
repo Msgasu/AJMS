@@ -2,8 +2,6 @@
 session_start();
 include "../settings/connection.php"; 
 
-$errors = array();
-
 if (isset($_POST['submit'])) {
     // Retrieve inputs
     $username = $_POST["email"];
@@ -24,28 +22,38 @@ if (isset($_POST['submit'])) {
             if (password_verify($password, $q_result["passwd"])) {
                 $_SESSION["user_id"] = $q_result["pid"];
                 $_SESSION["user_role"] = $q_result["role_id"];
-                
-                // Redirect based on user role
-                if ($_SESSION["user_role"] == 1) {
-                    header("Location: ../admin/admin_dashboard.php");
-                } else  {
-                    header("Location: ../student/student_dashboard.php"); 
+                $_SESSION["first_login"] = $q_result["first_login"];
+
+                // Check if it's the first login and user is a student
+                if ($q_result["first_login"] && $_SESSION["user_role"] == 2) {
+                    // Mark the user as not new
+                    $updateStmt = $con->prepare("UPDATE users SET first_login = FALSE WHERE email = ?");
+                    $updateStmt->bind_param("s", $username);
+                    $updateStmt->execute();
+                    $updateStmt->close();
+                    
+                    // Redirect to welcome page for students on first login
+                    header("Location: ../student/welcome_student_page.php"); 
+                    exit();
+                } else {
+                    // Redirect based on user role
+                    if ($_SESSION["user_role"] == 1) {
+                        header("Location: ../admin/admin_dashboard.php");
+                    } else if ($_SESSION["user_role"] == 2) {
+                        header("Location: ../student/student_dashboard.php");
+                    }
+                    exit();
                 }
-                exit();
             } else {
                 $_SESSION["error_message"] = "Incorrect password. Please try again.";
             }
         } else {
             $_SESSION["error_message"] = "User not found. Please register.";
         }
-        
+
         $stmt->close();
     } else {
         $_SESSION["error_message"] = "Error: " . $con->error;
     }
 }
-
-
-// header("Location: ../login/login.php");
-exit();
 ?>
