@@ -124,7 +124,7 @@
         }
 
         .profile-header {
-            background-color: white;
+            background-color: #fff;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -136,28 +136,37 @@
             top: 80px;
         }
 
-        .profile-header img {
-            border-radius: 50%;
+        .profile-header .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            width: 100%;
+            border-radius: 15px 15px 0 0;
+            padding: 15px;
+        }
+
+        .profile-header .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .profile-header .profile-picture img {
             width: 150px;
             height: 150px;
             object-fit: cover;
-            margin-bottom: 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 50%;
         }
 
-        .profile-header h2 {
-            margin-top: 0;
-            margin-bottom: 10px;
+        .profile-header .user-details h2 {
             font-size: 2rem;
             color: #333;
+            margin-bottom: 10px;
         }
 
-        .profile-header p {
+        .profile-header .user-details p {
             margin: 0;
             color: #555;
-        }
-
-        .profile-header .btn {
-            margin-top: 10px;
         }
 
         .profile-header .form-group {
@@ -175,13 +184,45 @@
             border-radius: 5px;
         }
 
-        .profile-header .card-header {
-            background-color: #f8f9fa;
-            font-weight: bold;
+        .profile-header .btn-primary {
+            margin-top: 15px;
+            padding: 10px 20px;
         }
 
-        .profile-header .card-body {
-            padding: 20px;
+        /* Additional CSS for the new layout */
+        .user-info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .user-info-container .user-info-item {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 10px;
+            width: 48%;
+            margin-bottom: 15px;
+        }
+
+        .user-info-container .user-info-item label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .user-info-container .user-info-item span {
+            display: block;
+            color: #555;
+        }
+
+        .user-info-container .user-info-item.pending span {
+            color: #e74c3c; /* Red color for pending items */
+        }
+
+        .user-info-container .user-info-item.active span {
+            color: #2ecc71; /* Green color for active items */
         }
     </style>
 </head>
@@ -201,12 +242,12 @@
         </div>
     </div>
 
-    <!-- Sidebar in a Card -->
-    <div class="card sidebar card-special">
+    <!-- Sidebar -->
+    <div class="sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../admin/admin_dashboard.php"">
+                    <a class="nav-link active" href="../admin/admin_dashboard.php">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
@@ -219,73 +260,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/submitted_cases.php">
-                        <i class="fas fa-file-alt"> </i>
-                        
+                        <i class="fas fa-file-alt"></i>
                         <span> Case statements</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-lightbulb"></i>
-                        <span> Recommender</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile_page.php">
-                        <i class="fas fa-user"></i>
-                        <span> Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                <li class="nav-item">
-                    <a class="nav-link" href="../login/logout.php">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span> Logout</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-
-
-    <!-- Main Content -->
-    <main role="main" class="content">
-        <!-- Profile Header -->
-        <div class="profile-header card">
-            <div class="card-header">User Profile</div>
-            <div class="card-body">
-                <img src="../images/user_profile.jpg" alt="User Profile Picture">
-                <h2>John Doe</h2>
-                <p>Email: john.doe@example.com</p>
-                <p>Role: Administrator</p>
-                
-                <!-- Additional Profile Information -->
-                <div class="form-group">
-                    <label for="bio">Bio</label>
-                    <textarea class="form-control" id="bio" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" value="123 Main Street, Hometown, USA">
-                </div>
-                
-                <div class="form-group">
-                    <label for="profilePicture">Upload Profile Picture</label>
-                    <input type="file" class="form-control-file" id="profilePicture">
-                </div>
-                
-                <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
-            </div>
-        </div>
-    </main>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+                <li class="nav-item
