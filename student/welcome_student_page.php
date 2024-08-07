@@ -35,7 +35,6 @@
             text-align: center;
             width: 100%;
             padding-bottom: 0;
-            margin-left: 40px;
         }
 
         .modal-title {
