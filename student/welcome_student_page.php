@@ -103,10 +103,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h3>
-                    
+                    <p><em>Please enter your details.</em></p>
                 </div>
                 <div class="modal-body">
-                    <p>Please enter your details.</p>
+                    
                     <form id="welcomeForm">
                         <div class="form-group">
                             <label for="roleSelect">Are you a Witness or a Victim?</label>
