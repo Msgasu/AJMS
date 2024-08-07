@@ -324,11 +324,11 @@
             <div class="user-info-container">
                 <div class="user-info-item">
                     <label for="emailVerification">First Name</label>
-                    <span class="pending">John Doe</span>
+                    <span class="pending">John</span>
                 </div>
                 <div class="user-info-item">
                     <label for="emailVerification">Last Name</label>
-                    <span class="pending">John Doe</span>
+                    <span class="pending">Doe</span>
                 </div>
                 <div class="user-info-item">
                     <label for="contact">Contact:</label>
@@ -338,10 +338,7 @@
                     <label for="mobileVerification">Email</label>
                     <span class="active">johndoe45@gmail.com</span>
                 </div>
-                <div class="user-info-item">
-                    <label for="status">Status:</label>
-                    <span class="active">Active</span>
-                </div>
+                
             </div>
             <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
         </div>
