@@ -31,6 +31,23 @@ if (isset($_POST['submit'])){
     $file = $_FILES['profileImage'];
 
     $fileName = $_FILES['profileImage']['name'];
+    $fileTmpName = $_FILES['profileImage']['tmp_name'];
+    $fileSize = $_FILES['profileImage']['size'];
+    $fileError = $_FILES['profileImage']['error'];
+    $fileType = $_FILES['profileImage']['type'];
+
+
+    $fileExt = explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
+
+    $allowed = array('jpg', 'jpeg', 'png');
+
+    if(in_array($fileActualExt, $allowed)){
+        
+
+    }else{
+        echo "You cannot upload files of this type!";
+    }
 }
 
 ?>
