@@ -312,13 +312,13 @@
                 </li>
             <?php endif; ?>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="statement_submission.php">
                     <i class="fas fa-file-alt"></i>
                     <span> Submit Statements</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.php">
+                <a class="nav-link" href="profile_page_students.php">
                     <i class="fas fa-user"></i>
                     <span> Profile</span>
                 </a>
