@@ -333,8 +333,9 @@
             </div>
 
             <!-- Hidden form for uploading a new profile picture -->
-            <form id="profileImageForm" enctype="multipart/form-data" action="upload_profile_image.php" method="POST">
+            <form id="profileImageForm" enctype="multipart/form-data" action="../action/upload_profile_image.php" method="POST">
                 <input type="file" name="profileImage" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
+                <button type="submit" name="submit">Upload</button>
             </form>
             <div class="user-details text-center mb-4">
                 <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
