@@ -2,6 +2,7 @@
 <html lang="en">
 <?php include '../settings/core.php'?>
 <?php include "../functions/get_username_fxn.php"; ?>
+<?php include "../functions/fetch_statements.php";?>
 
 <head>
     <meta charset="UTF-8">
@@ -356,24 +357,16 @@
 
 
     <main role="main" class="content card card-special">
-        <div class="card-body equal-space scrollable-notifications">
-            <a href="#" class="back-button">&larr; back</a>
-            <h2>CASE: (NAME OF CASE FROM DB)</h2>
-            <h5 ><em>Find below the statements of the involved parties.</em></h5>
-            <div class="container">
-                <div class="card-container">
-                    <div class="card-custom">
-                        <p>View report of complainant</p>
-                    </div>
-                    <div class="card-custom">
-                        <p>View report of accused party</p>
-                    </div>
-                    <div class="card-custom">
-                        <p>View report of witness</p>
-                    </div>
-                </div>
-            </div>  
-                
+  <?php  $case_id = isset($_GET['case_id']) ? $_GET['case_id'] : 0;
+
+            // Ensure case_id is valid
+            if ($case_id) {
+                // Call the function to fetch and display statements
+                fetchAndDisplayStatements($case_id);
+            } else {
+                echo '<p>Invalid case ID.</p>';
+            }
+          ?>      
            
          
         </div>
