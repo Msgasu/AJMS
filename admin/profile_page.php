@@ -321,15 +321,23 @@
         <div class="profile-header">
             <div class="profile-picture">
                 <img src="../images/ashesi_logo.jpeg" alt="User Profile Image" id="profileImage">
-                <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
+                <!-- <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
                     <i class="fas fa-camera"></i>
                 </div>
                 <input type="file" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
+            </div> -->
+            <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
+                <i class="fas fa-camera"></i>
             </div>
+
+            <!-- Hidden form for uploading a new profile picture -->
+            <form id="profileImageForm" enctype="multipart/form-data" action="upload_profile_image.php" method="POST">
+                <input type="file" name="profileImage" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
+            </form>
             <div class="user-details text-center mb-4">
                 <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
                 <p class="text-muted">Email: <?php echo htmlspecialchars($email); ?></p>
-                <p class="text-muted">Role: User</p>
+                <p class="text-muted">Role: Administrator</p>
             </div>
             <div class="user-info-container">
                 <div class="user-info-item">
