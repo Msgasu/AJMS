@@ -23,6 +23,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION["user_id"] = $q_result["pid"];
                 $_SESSION["user_role"] = $q_result["role_id"];
                 $_SESSION["first_login"] = $q_result["first_login"];
+                $_SESSION["email"] = $q_result["email"];
 
                 // Check if it's the first login and user is a student
                 if ($q_result["first_login"] && $_SESSION["user_role"] == 2) {
