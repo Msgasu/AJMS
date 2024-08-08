@@ -417,8 +417,7 @@
     </div>
 </div>
 <br>
-    <br>
-    <br>
+    
     <!-- Main Content in a Card -->
 
 
