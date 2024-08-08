@@ -16,7 +16,7 @@ function generateAndDisplayCards() {
         // Fetch participants for each case
         $participant_stmt = $con->prepare("SELECT u.f_name, u.l_name, u.participant, cp.student_email
                                            FROM case_parties cp
-                                           JOIN users u ON cp.student_email = u.email
+                                           LEFT JOIN users u ON cp.student_email = u.email
                                            WHERE cp.case_id = ?");
         $participant_stmt->bind_param("i", $case['id']);
         $participant_stmt->execute();
@@ -46,7 +46,11 @@ function generateAndDisplayCards() {
                         <p>Involved Parties:</p>';
         
         foreach ($participants as $participant) {
-            echo '<p>' . htmlspecialchars($participant['f_name'] . ' ' . $participant['l_name']) . ' (' . htmlspecialchars($participant['student_email']) . ') <br>Role: ' . htmlspecialchars($participant['participant']) . '</p>';
+            if (!empty($participant['f_name']) && !empty($participant['l_name'])) {
+                echo '<p>' . htmlspecialchars($participant['f_name'] . ' ' . $participant['l_name']) . ' (' . htmlspecialchars($participant['student_email']) . ') <br>Role: ' . htmlspecialchars($participant['participant']) . '</p>';
+            } else {
+                echo '<p>' . htmlspecialchars($participant['student_email']) . '</p>';
+            }
         }
         
         echo '   <button class="btn btn-success">Schedule meeting</button>
@@ -58,7 +62,6 @@ function generateAndDisplayCards() {
     $con->close();
 }
 ?>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // Toggle description visibility
