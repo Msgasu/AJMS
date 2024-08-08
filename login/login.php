@@ -159,17 +159,7 @@
     <script>
 
 
-        <?php
-        session_start();
-        if (isset($_SESSION["error_message"])) {
-            echo "Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: '{$_SESSION["error_message"]}'
-            });";
-            unset($_SESSION["error_message"]); // Clear the error message after displaying
-        }
-        ?>
+    
    
         document.getElementById('registerForm').addEventListener('submit', function (event) {
             const password = document.getElementById('password').value;

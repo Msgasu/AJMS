@@ -25,7 +25,7 @@
         </div>
         <div class="user-info">
             <div class="line"></div>
-            <span>
+            
             <span>
                 <?php
                 if (isset($_SESSION['user_id'])) {
@@ -145,4 +145,3 @@
 </body>
 
 </html>
-

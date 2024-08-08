@@ -24,8 +24,8 @@ if (isset($_POST['submit'])) {
                 $_SESSION["user_role"] = $q_result["role_id"];
                 $_SESSION["first_login"] = $q_result["first_login"];
                 $_SESSION["email"] = $q_result["email"];
-                $participant_role = $q_result["participant"];
-                $_SESSION["participant"] = $participant_role;
+                $participant_role = $q_result["participant"]; // Fetch participant role
+                $_SESSION["participant"] = $q_result["participant"];
 
                 // Check if it's the first login and user is a student
                 if ($q_result["first_login"] && $_SESSION["user_role"] == 2) {
@@ -56,20 +56,14 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 $_SESSION["error_message"] = "Incorrect password. Please try again.";
-                header("Location: ../login/alert.php");
-                exit();
             }
         } else {
             $_SESSION["error_message"] = "User not found. Please register.";
-            header("Location: ../login/alert.php");
-            exit();
         }
 
         $stmt->close();
     } else {
         $_SESSION["error_message"] = "Error: " . $con->error;
-        header("Location: ../login/alert.php");
-        exit();
     }
 }
 ?>
