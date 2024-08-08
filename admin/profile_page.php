@@ -358,7 +358,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="post" id="editProfileForm">
+                <form method="post" action="../action/profile_page_action.php" id="editProfileForm">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="f_name">First Name</label>
