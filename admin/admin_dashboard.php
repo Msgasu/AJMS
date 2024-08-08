@@ -490,38 +490,38 @@
     </a>
 
     <!-- Modal Structure -->
-    <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="notificationModalLabel">Add New Notification</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="notificationDate">Date</label>
-                            <input type="date" class="form-control" id="notificationDate" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="notificationTime">Time</label>
-                            <input type="time" class="form-control" id="notificationTime" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="notificationMessage">Message</label>
-                            <textarea class="form-control" id="notificationMessage" rows="3" required></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Add Notification</button>
-                </div>
+<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalLabel">Add New Notification</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="reminder" method="POST" action="../action/add_a_reminder_action.php">
+                    <div class="form-group">
+                        <label for="notificationDate">Date</label>
+                        <input type="date" class="form-control" id="notificationDate" name="reminder_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notificationTime">Time</label>
+                        <input type="time" class="form-control" id="notificationTime" name="reminder_time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notificationMessage">Message</label>
+                        <textarea class="form-control" id="notificationMessage" name="message" rows="3" required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="submit" class="btn btn-success">Add Notification</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
