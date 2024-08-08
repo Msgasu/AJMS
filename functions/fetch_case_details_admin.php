@@ -1,6 +1,6 @@
 <?php
 function generateAndDisplayCards() {
-    include "../settings/connection.php"; // Update with the correct path to your connection file
+    include "../settings/connection.php"; 
 
     // Fetch all cases with user details
     $cases_stmt = $con->prepare("SELECT c.id, c.statement_description, c.document_url, s.status_name, u.f_name AS user_f_name, u.l_name AS user_l_name, u.email AS user_email
