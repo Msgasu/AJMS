@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
         body {
             background-color: #A44C4C;
         }
+
         .container {
             max-width: 700px;
             margin-top: 95px;
@@ -17,20 +19,24 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .header {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .btn-custom {
             background-color: #A44C4C;
             color: white;
             width: 300px;
             font-size: medium;
         }
+
         .btn-container {
             display: flex;
             justify-content: center;
         }
+
         .footer {
             background: #000;
             color: white;
@@ -42,38 +48,46 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .footer img {
-            height:75px;
+            height: 75px;
             width: 110px;
             margin: 0;
         }
+
         .footer .left {
             display: flex;
             align-items: center;
             padding: 0;
             margin: 0;
         }
+
         .footer .title {
             margin-left: 10px;
-            
+
         }
+
         .footer .right {
             display: flex;
             align-items: center;
             margin-right: 20px;
         }
+
         .footer .right .line {
             height: 60px;
             border-left: 1px solid white;
             margin: 0 10px;
         }
+
         .invalid-feedback {
             display: none;
             color: red;
         }
-        .is-invalid ~ .invalid-feedback {
+
+        .is-invalid~.invalid-feedback {
             display: block;
         }
+
         .sign-up-link {
             text-align: center;
             margin-top: 20px;
@@ -89,12 +103,13 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h2>Register</h2>
         </div>
-        <form action="../action/register_user_action.php" method="POST" id="registerForm">
+        <form action="../action/register_user_action.php" method="POST" id="registerForm" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -130,11 +145,14 @@
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
                         <div class="invalid-feedback">Passwords do not match.</div>
                     </div>
-                    
                 </div>
+                <div class="mb-3">
+                        <label class="form-label">Profile Picture</label>
+                        <input type="file" class="form-control" name="profile_picture">
+                    </div>
             </div>
             <div class="btn-container">
-                <button type="submit" name= "submit" class="btn btn-custom">Sign Up</button>
+                <button type="submit" name="submit" class="btn btn-custom">Sign Up</button>
             </div>
         </form>
         <div class="sign-up-link">
@@ -144,11 +162,15 @@
     <div class="footer">
         <div class="left">
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title"><h1 style="font-size:x-large;">AJMS</h1></div>
+            <div class="title">
+                <h1 style="font-size:x-large;">AJMS</h1>
+            </div>
         </div>
         <div class="right">
             <div class="line"></div>
-            <div class="text"><h1 style="font-size:x-large; font-style:italic;font-weight: 400;">Ashesi Judicial <br>Committee</h1></div>
+            <div class="text">
+                <h1 style="font-size:x-large; font-style:italic;font-weight: 400;">Ashesi Judicial <br>Committee</h1>
+            </div>
         </div>
     </div>
 
@@ -156,7 +178,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- <script src="../js/register.js"></script> -->
-   
+
     <script>
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             const password = document.getElementById('password').value;
@@ -171,4 +193,5 @@
         });
     </script>
 </body>
+
 </html>

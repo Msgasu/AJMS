@@ -27,41 +27,36 @@
 //     echo "No file uploaded or an error occurred during the upload.";
 // }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profileImage'])) {
+if (isset($_POST['submit'])){
     $file = $_FILES['profileImage'];
-    $fileName = basename($file['name']);
-    $fileTmpName = $file['tmp_name'];
-    $fileSize = $file['size'];
-    $fileError = $file['error'];
-    $fileType = $file['type'];
+    $fileName = $_FILES['profileImage']['name'];
+    $fileTmpName = $_FILES['profileImage']['tmp_name'];
+    $fileSize = $_FILES['profileImage']['size'];
+    $fileError = $_FILES['profileImage']['error'];
+    $fileType = $_FILES['profileImage']['type'];
 
-    // Define allowed file extensions and max file size (5MB)
-    $allowed = array('jpg', 'jpeg', 'png', 'gif');
-    $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-    if (in_array($fileExt, $allowed) && $fileSize < 5000000 && $fileError === 0) {
-        $newFileName = uniqid('', true) . "." . $fileExt;
-        $fileDestination = '../uploads/' . $newFileName;
+    $fileExt = explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
 
-        if (move_uploaded_file($fileTmpName, $fileDestination)) {
-            // Update database
-            $userId = $_SESSION['user_id']; // Assumes user ID is stored in session
-            $sql = "UPDATE users SET profile_picture = ? WHERE pid = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("si", $newFileName, $userId);
+    $allowed = array('jpg', 'jpeg', 'png');
 
-            if ($stmt->execute()) {
-                header("Location: ../profile_page.php?uploadsuccess");
-            } else {
-                echo "Database error: " . $stmt->error;
+    if(in_array($fileActualExt, $allowed)){
+        if($fileError === 0){
+            if($fileSize < 1000000){
+                $fileNameNew = uniqid('', true).".".$fileActualExt;
+                $fileDestination = '../uploads/'.$fileNameNew;
+                move_uploaded_file($fileTmpName,$fileDestination );
+                header("Location: ../admin/profile_page.php");
+            }else{
+                echo "Your file is too big";
             }
-        } else {
-            echo "Failed to upload file.";
+        }else{
+        echo "There was an error uploading your file";
         }
-    } else {
-        echo "Invalid file type or size.";
+    }else{
+        echo "You cannot upload files of this type!";
     }
-} else {
-    echo "No file uploaded.";
 }
+
 ?>
