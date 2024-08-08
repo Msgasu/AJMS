@@ -1,5 +1,4 @@
 <?php
-session_start();
 include '../settings/connection.php';
 include '../settings/core.php';
 
