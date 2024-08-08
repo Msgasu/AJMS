@@ -300,22 +300,10 @@
 
     <!-- Getting particpnat role to hide some nav bar features -->
 
-<!-- Sidebar in a Card -->
 <div class="card sidebar card-special">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
         
-                <li class="nav-item">
-                    <a class="nav-link active" href="student_dashboard.php">
-                        <i class="fas fa-home"></i>
-                        <span> Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="case_submission.php">
-                        <i class="fas fa-users"></i>
-                        <span> Submit Case</span>
-                    </a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="statement_submission.php">
@@ -335,7 +323,6 @@
                     <span> Logout</span>
                 </a>
             </li>
-           
         </ul>
     </div>
 </div>
@@ -349,9 +336,7 @@
                 <h1 class="h2">Your Cases</h1>
             </div>
 
-            <!-- Cards -->
-          <?php $user_id= $_SESSION["user_id"] ?>
-        <?php fetchAndDisplayCaseDetails($user_id, $con);?>
+          
                 
         </div>
     </main>
