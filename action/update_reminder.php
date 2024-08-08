@@ -13,12 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($stmt->execute()) {
         // Redirect with success message
-        header("Location: ../your_page.php?success=1");
+        header("Location: ../admin/admin_dashboard.php?success=1");
         exit();
     } else {
         // Redirect with error message
-        header("Location: ../your_page.php?error=" . urlencode($con->error));
-        exit();
+        header("Location: ../../admin/admin_dashboard.php?error=" . urlencode($con->error));
     }
 
     $stmt->close();
