@@ -438,27 +438,22 @@
                 $.ajax({
                     type: 'POST',
                     url: '../action/edit_profile_action.php',
-                    data: $(this).serialize(),
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
                     success: function(response) {
-                        console.log(response); // Log the response for debugging
-                        try {
-                            const responseData = JSON.parse(response);
-                            if (responseData.success) {
-                                $('#editProfileModal').modal('hide');
-                                $('#userFullName').text(responseData.full_name);
-                                $('#userEmail').text('Email: ' + responseData.email);
-                                $('#userName').text(responseData.full_name);
-                            } else {
-                                alert('Failed to update profile.');
-                            }
-                        } catch (e) {
-                            alert('Error parsing response.');
-                            console.error(e);
+                        $('#editProfileModal').modal('hide');
+                        const responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            // Update the UI with the new profile details
+                            $('.user-details h2').text(responseData.full_name);
+                            $('.user-details p.email').text('Email: ' + responseData.email);
+                        } else {
+                            alert('Failed to update profile: ' + responseData.message);
                         }
                     },
                     error: function(xhr, status, error) {
-                        console.error('AJAX error: ', status, error);
-                        alert('An error occurred while updating the profile.');
+                        alert('An error occurred: ' + xhr.responseText);
                     }
                 });
             });
