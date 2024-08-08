@@ -404,7 +404,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: 'profile_page_action.php',
+                    url: 'edit_profile_action.php',
                     data: $(this).serialize(),
                     success: function(response) {
                         $('#editProfileModal').modal('hide');
