@@ -337,7 +337,7 @@
             <div class="user-details text-center mb-4">
                 <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
                 <p class="text-muted">Email: <?php echo htmlspecialchars($email); ?></p>
-                <p class="text-muted">Role: User</p>
+                <p class="text-muted">Role: Administrator</p>
             </div>
             <div class="user-info-container">
                 <div class="user-info-item">
