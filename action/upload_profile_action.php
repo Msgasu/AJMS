@@ -43,7 +43,7 @@ if (isset($_POST['submit'])){
     $allowed = array('jpg', 'jpeg', 'png');
 
     if(in_array($fileActualExt, $allowed)){
-        
+        if($fileError === 0)
 
     }else{
         echo "You cannot upload files of this type!";
