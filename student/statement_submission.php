@@ -378,10 +378,10 @@
         </div>
     </div>
 
-    <!-- Sidebar in a Card -->
-    <div class="card sidebar" id="sidebar">
-        <div class="sidebar-sticky">
-            <ul class="nav flex-column">
+    <div class="card sidebar card-special">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <?php if ($participant_role == 'witness' && $participant_role == 'accused'): ?>
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
                         <i class="fas fa-home"></i>
@@ -389,27 +389,34 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="case_submission.php">
                         <i class="fas fa-users"></i>
-                        <span> Meeting</span>
+                        <span> Submit Case</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-file-alt"></i>
-                        <span> Case statements</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-lightbulb"></i>
-                        <span> Recommender</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <?php endif; ?>
+            <li class="nav-item">
+                <a class="nav-link" href="statement_submission.php">
+                    <i class="fas fa-file-alt"></i>
+                    <span> Submit Statements</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile_page_students.php">
+                    <i class="fas fa-user"></i>
+                    <span> Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login/logout.php">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span> Logout</span>
+                </a>
+            </li>
+        </ul>
     </div>
-    <br>
+</div>
+<br>
     <br>
     <br>
     <!-- Main Content in a Card -->
