@@ -26,6 +26,7 @@ CREATE TABLE users (
 ALTER TABLE users ADD COLUMN first_login BOOLEAN DEFAULT TRUE;
 ALTER TABLE users ADD COLUMN student_id VARCHAR(20) DEFAULT NULL;
 ALTER TABLE users ADD COLUMN participant VARCHAR(20) DEFAULT NULL;
+ALTER TABLE users ADD COLUMN profile_picture VARCHAR(20) DEFAULT NULL;
 
 
 -- Create a table for statuses
