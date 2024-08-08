@@ -10,10 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("i", $id);
     
     if ($stmt->execute()) {
-        echo "Reminder deleted successfully!";
-        // Optionally redirect back or show a success message
+        // Redirect with success message
+        header("Location: ../admin/admin_dashboard.php?success=1");
+        exit();
     } else {
-        echo "Error deleting reminder: " . $con->error;
+        // Redirect with error message
+        header("Location: ../../admin/admin_dashboard.php?error=" . urlencode($con->error));
     }
 
     $stmt->close();
