@@ -386,6 +386,32 @@
             </ul>
         </div>
     </div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var readMoreButtons = document.querySelectorAll('.read-more');
+    
+    readMoreButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var targetId = button.getAttribute('data-target');
+            var fullDescId = button.getAttribute('data-toggle');
+            
+            var shortDesc = document.getElementById(targetId);
+            var fullDesc = document.getElementById(fullDescId);
+            
+            if (fullDesc.style.display === 'none') {
+                fullDesc.style.display = 'block';
+                shortDesc.style.display = 'none';
+                button.textContent = 'Show Less'; // Change button text
+            } else {
+                fullDesc.style.display = 'none';
+                shortDesc.style.display = 'block';
+                button.textContent = 'Read More'; // Change button text
+            }
+        });
+    });
+});
+</script>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
