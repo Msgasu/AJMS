@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "../functions/get_username_fxn.php"; ?>
-<?php include '../settings/core.php'?>
-
+  <?php include "../functions/get_username_fxn.php"; ?>
+  <?php  include "../functions/fetch_case_details.php"; ?>
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,19 +74,12 @@
             color: grey;
             margin-right: 10px;
         }
-        .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-            
-            margin-left: 10px;
-        }
-        
 
         .sidebar {
             position: fixed;
-            top: 50px;
+            top: 55px;
             bottom: 0;
-            left: -220px; /* Initially hidden */
+            left: 20px;
             z-index: 100;
             padding: 0;
             width: 220px;
@@ -94,11 +87,6 @@
             height: calc(90vh - 30px);
             background-color: white;
             border-radius: 15px;
-            transition: left 0.3s ease;
-        }
-
-        .sidebar.open {
-            left: 15px; /* Show sidebar */
         }
 
         .sidebar-sticky {
@@ -138,13 +126,12 @@
         .sidebar .nav-link span {
             font-size: 1.1rem; /* Increase font size */
         }
-        
-    
+
 
         .content {
             margin-top: 110px;
-            margin-left: 20px;
-            margin-right: 300px;
+            margin-left: 255px;
+            margin-right: 280px;
             padding: 20px 0;
             height: calc(89.2vh - 25px);
             overflow-y: auto;
@@ -160,7 +147,7 @@
             right: 20px;
             z-index: 100;
             padding: 10px;
-            width: 260px;
+            width: 250px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             height: calc(90vh - 30px);
         }
@@ -198,56 +185,6 @@
             overflow-y: auto;
         }
 
-        .submit-button{
-            background-color: #28a745;
-            color: white;
-            font-size: medium;
-            width: 95%;
-            border: none;
-            padding: 5px 5px;
-            margin-left: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        
-        .report-form {
-            background-color: transparent;
-            border-radius: 15px;
-            padding: 20px;
-            
-        }
-
-        .report-form textarea {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            background-color: lightgrey;
-            border: 1px solid #ccc;
-            padding: 10px;
-            
-        }
-        .textarea-wrapper {
-            position: relative; /* Positioning context for child elements */
-        }
-        .report-form .submit-button {
-            background-color: #28a745;
-            color: white;
-            font-size: medium;
-            width: 30%;
-            border: none;
-            padding: 10px 20px;
-            margin-left: 335px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .report-form .note {
-            color: red;
-            margin-top: 10px;
-            margin-left: 150px;
-            
-        }
-
-
         .card-custom {
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -277,76 +214,49 @@
             flex-direction: column;
             gap: 20px;
         }
-        .icon-container {
-            position: absolute;
-            bottom: 10px; /* Adjust as needed */
-            right: 10px; /* Adjust as needed */
-            display: flex;
-            gap: 10px; /* Space between icons */
-        }
 
+        
 
-
-        /* Style for the label to act as a button */
-        .attach-label {
+        .case-card-header {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: #007bff; /* Icon color */
-            padding: 10px;
-            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
         }
 
-        /* Hide the file input but make it accessible */
-        .file-input {
+        .case-card-header::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0;
-            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
-
-        .icon-delete, .icon-url {
-           color: #333;
-           font-size: 1.7rem; /* Adjust size as needed */
-           cursor: pointer;
+        .case-card-header span {
+            position: relative;
+            z-index: 2;
         }
 
-        .icon-delete:hover, .icon-url:hover {
-           color: #007bff; /* Change color on hover */
+        .case-card-body {
+            padding: 10px;
         }
 
-     
-
-        .image-preview-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
+        .case-card-body p {
+            margin: 5px 0;
         }
 
-        .image-preview-container img {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 10px;
-            margin-bottom: 10px;
+        .case-card-body button {
+            width: 100%;
         }
-
-        .delete-button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            display: none; /* Initially hidden */
-        }
-        
     </style>
 </head>
 
@@ -354,7 +264,6 @@
     <!-- Header -->
     <div class="header">
         <div class="left">
-            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
             <img src="../images/ashesi_logo.jpeg" alt="Ashesi University Logo">
             <div class="title">
                 <h1 style="font-weight: bolder">AJMS</h1>
@@ -383,30 +292,18 @@
                 }
                 ?>
             </span>
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
+            <!-- <img src="../images/ashesi_logo.jpeg" alt="User Profile Image"> -->
         </div>
     </div>
 
-    <!-- Getting particpnat role to hide some nav bar features -->
-    <?php $participant_role = isset($_SESSION['participant_role']) ? $_SESSION['participant_role'] : '';
-?>
+   
 
-<!-- Sidebar in a Card -->
+    <!-- Getting particpnat role to hide some nav bar features -->
+
 <div class="card sidebar card-special">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
-       
-                <li class="nav-item">
-                    <a class="nav-link active" href="student_dashboard.php">
-                        <i class="fas fa-home"></i>
-                        <span> Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="case_submission.php">
-                        <i class="fas fa-users"></i>
-                        <span> Submit Case</span>
-                    </a>
+        
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="statement_submission.php">
@@ -426,8 +323,6 @@
                     <span> Logout</span>
                 </a>
             </li>
-               
-          
         </ul>
     </div>
 </div>
@@ -435,99 +330,58 @@
     
     
     <!-- Main Content in a Card -->
-
-
     <main role="main" class="content card card-special">
         <div class="card-body equal-space scrollable-notifications">
-            <form class="report-form" method="post" action="../action/statement_submission_action.php" enctype="multipart/form-data">
-                <h2>DO YOU HAVE ANY STATEMENTS TO SUBMIT?</h2>
-                <p style="font-weight: bolder"><em>Type out your statement in the text box below. You can also add images and audio.</em></p>
-                    
-                <div class="textarea-wrapper">
-            <textarea name="report" placeholder="Type your statement here..." required></textarea>
-            <div class="icon-container">
-                <label for="file-upload" class="attach-label"><i class="fas fa-link icon-url"></i>
-</label>
-                <input type="file" id="file-upload" class="file-input" name="document">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Your Cases</h1>
             </div>
-            <div class="image-preview-container" id="image-preview" style="display: none;">
-                <img id="preview-img" src="" alt="Image Preview">
-                <button type="button" class="delete-button" id="delete-file">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </div>
-        </div>
 
-                <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
-                <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
-            </form>
+          
+                
         </div>
     </main>
 
-
     <div class="card notifications card-special">
         <div class="card-body scrollable-notifications">
-            <h2>Know Your Rights👇🏽</h2>
-            
+            <h2>Notifications</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>Today</strong>
+                    <span><i class="fas fa-user-friends"></i> Meetings with with the dean</span><br>
+                </li>
+                <li class="list-group-item">
+                    <strong>Yesterday</strong>
+                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
+                    <span>Details<br>Student ID 83342025</span><br>
+                </li>
                 
-                    
-            <span style="font-size:16 px">
-                "Know your rights... <br>
-                <span style="color: red; font-weight: bold;">Ignorance isn't an excuse!</span><br>
-                Ever found yourself thinking,<br>
-                'But I didn't know it was against the rules'?<br>
-                It's time to <span style="color: red; font-weight: bold;">take charge</span>.<br>
-                Your student handbook holds the key to understanding what's expected of you and what's not.<br>
-                Don't wait until you're caught off guard—view your handbook now and empower yourself with knowledge. <br>
-                It's your guide to making informed choices and staying on the right side of the rules"<br>
-            </span>
-            <a href="https://www.ashesi.edu.gh/wp-content/uploads/2010/11/Ashesi_StudentHandbook_2019-2020-compressed.pdf" class="submit-button-wrapper">
-                <button class="submit-button mt-3">View Handbook</button>
-            </a>
-                
-            
-               
-              
-          
+            </ul>
         </div>
     </div>
-
     <script>
-         function toggleSidebar() {
-                $('.sidebar').toggleClass('open');
-            }
-   
-    document.addEventListener('DOMContentLoaded', function () {
-        // Handle file input click
-        document.querySelector('.attach-label').addEventListener('click', function () {
-            document.getElementById('file-upload').click();
-        });
-
-        // Handle file selection and image preview
-        document.getElementById('file-upload').addEventListener('change', function () {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const previewImg = document.getElementById('preview-img');
-                    previewImg.src = e.target.result;
-                    document.getElementById('image-preview').style.display = 'flex';
-                    document.getElementById('delete-file').style.display = 'block';
-                };
-                reader.readAsDataURL(file);
+document.addEventListener('DOMContentLoaded', function() {
+    var readMoreButtons = document.querySelectorAll('.read-more');
+    
+    readMoreButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var targetId = button.getAttribute('data-target');
+            var fullDescId = button.getAttribute('data-toggle');
+            
+            var shortDesc = document.getElementById(targetId);
+            var fullDesc = document.getElementById(fullDescId);
+            
+            if (fullDesc.style.display === 'none') {
+                fullDesc.style.display = 'block';
+                shortDesc.style.display = 'none';
+                button.textContent = 'Show Less'; // Change button text
+            } else {
+                fullDesc.style.display = 'none';
+                shortDesc.style.display = 'block';
+                button.textContent = 'Read More'; // Change button text
             }
         });
-
-        // Handle image deletion
-        document.getElementById('delete-file').addEventListener('click', function () {
-            document.getElementById('file-upload').value = ''; // Clear the file input
-            document.getElementById('preview-img').src = ''; // Clear the image source
-            document.getElementById('image-preview').style.display = 'none'; // Hide the image preview
-            this.style.display = 'none'; // Hide the delete button
-        });
-
-        
     });
+});
 </script>
 
 
@@ -535,7 +389,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <!-- <script src="../js/case_submission.js" ></script> -->
 </body>
-
 </html>
+

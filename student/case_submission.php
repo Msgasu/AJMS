@@ -84,7 +84,7 @@
 
         .sidebar {
             position: fixed;
-            top: 72px;
+            top: 50px;
             bottom: 0;
             left: -220px; /* Initially hidden */
             z-index: 100;
@@ -540,8 +540,10 @@
     </div>
 
     <script>
-
-document.addEventListener('DOMContentLoaded', function () {
+         function toggleSidebar() {
+                $('.sidebar').toggleClass('open');
+            }
+    document.addEventListener('DOMContentLoaded', function () {
     // Handle file input click
     document.querySelector('.attach-label').addEventListener('click', function () {
         document.getElementById('file-upload').click();
@@ -656,13 +658,7 @@ reportForm.addEventListener('submit', function(event) {
 
 
 
-    // Optional: Function to toggle the sidebar (if needed)
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        if (sidebar) {
-            sidebar.classList.toggle('open');
-        }
-    }
+    
 });
 </script>
 
