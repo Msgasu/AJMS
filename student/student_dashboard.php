@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "../functions/get_username_fxn.php"; ?>
+  <?php include "../functions/get_username_fxn.php"; ?>
+  <?php  include "../functions/fetch_case_details.php"; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -318,8 +319,8 @@
         </div>
     </div>
     <br>
-    <br>
-    <br>
+    
+    
     
     <!-- Main Content in a Card -->
     <main role="main" class="content card card-special">
@@ -329,22 +330,7 @@
             </div>
 
             <!-- Cards -->
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
-
-                        </div>
-                        <div class="case-card-body">
-                            <h5 class="card-title">Case of theft</h5>
-                            <p>Victim: Female</p>
-                            <p>Year: Class of 2026</p>
-                            <p>Suspect: Male</p>
-                            <p>Year: 2026</p>
-                            <button class="btn btn-success" onclick="location.href='book_meeting.php'">Book </button>
-                        </div>
-                    </div>
-                </div>
+        <?php fetchAndDisplayCaseDetails($user_id, $con);?>
                 
         </div>
     </main>
