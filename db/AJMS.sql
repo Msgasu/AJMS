@@ -90,6 +90,18 @@ CREATE TABLE statements (
     FOREIGN KEY (user_id) REFERENCES users(pid) -- Reference to the users table
 );
 
+-- Create a table for reminders
+CREATE TABLE reminders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT, -- Foreign key to reference the user who created the reminder
+    reminder_date DATE,
+    reminder_time TIME,
+    message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(pid) -- Reference to the users table
+);
+
+
 
 -- Insert admin users 
 INSERT INTO admins (email) VALUES
