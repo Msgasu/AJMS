@@ -496,6 +496,7 @@
                 <?php fetchReminders(); // Initially show top 3 reminders 
                 ?>
             </div>
+            
 
             <!-- "See More" Button -->
             <!-- <div class="text-center">
@@ -548,7 +549,7 @@
             // Check if button text is "See More"
             if (seeMoreButton.textContent.trim() === 'See More') {
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', '../funtion/fetch_eeminders.php', true); // Fetch all reminders
+                xhr.open('GET', '../funtion/fetch_reminders.php', true); // Fetch all reminders
                 xhr.onload = function() {
                     if (xhr.status === 200) {
                         container.innerHTML = xhr.responseText; // Update container with all reminders

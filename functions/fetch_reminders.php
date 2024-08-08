@@ -21,23 +21,24 @@ function fetchReminders() {
             // Output reminder card with icons
             echo '
             <br>
-            <div class="card mb-3 shadow-sm rounded" style="max-width: 400px; height: auto; overflow: hidden;">
+            <div class="card mb-3 shadow-sm rounded" style="max-width: 400px; height: auto; overflow: hidden; position: relative;">
                 <div class="card-body" style="padding: 1rem;">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        
-                        <div class="btn-group btn-group-sm">
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#updateModal' . $id . '"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-danger" onclick="deleteReminder(' . $id . ')"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </div>
                     <h6 class="card-subtitle mb-2 text-muted" style="font-size: 0.875rem;">Date: ' . $reminder_date . ' at ' . $reminder_time . '</h6>
                     <p class="card-text" style="font-size: 0.875rem;">
                         ' . $shortMessage . '
                         ' . (strlen($message) > $maxLength ? '<a href="#" class="btn btn-primary btn-sm">Read More</a>' : '') . '
                     </p>
                     <small class="text-muted" style="font-size: 0.75rem;">Date Created: ' . $created_at . '</small>
+                    
+                    <!-- Buttons in bottom-right corner -->
+                    <div class="card-buttons">
+                        <button class="btn btn-edit" data-toggle="modal" data-target="#updateModal' . $id . '"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-delete" onclick="deleteReminder(' . $id . ')"><i class="fas fa-trash"></i></button>
+                    </div>
                 </div>
             </div>';
+
+            
             
             // // Update Modal
             // echo '
@@ -75,6 +76,8 @@ function fetchReminders() {
             //     </div>
             // </div>';
         }
+
+        
     } else {
         echo '<p>No reminders found.</p>';
     }
