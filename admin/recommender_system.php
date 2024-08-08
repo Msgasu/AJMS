@@ -343,7 +343,7 @@
                 }
                 ?>
             </span>
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
+            <!-- <img src="../images/ashesi_logo.jpeg" alt="User Profile Image"> -->
         </div>
     </div>
 
