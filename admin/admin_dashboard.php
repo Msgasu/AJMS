@@ -264,6 +264,56 @@
         .case-card-body button {
             width: 100%;
         }
+
+        .modal-content {
+            border-radius: 15px;
+        }
+
+        .modal-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-title {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .modal-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+    .notifications .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.notifications .btn-primary {
+    margin-left: 0; /* Remove any left margin */
+    margin-right: 0;
+    background-color: #28a745;
+     /* Remove any right margin */
+}
+
+        
     </style>
 </head>
 
@@ -421,29 +471,55 @@
         </div>
     </main>
 
-    <div class="card notifications card-special">
-        <div class="card-body scrollable-notifications">
-            <h2>Notifications</h2>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <strong>Today</strong>
-                    <span><i class="fas fa-user-friends"></i> Meetings with involved parties</span><br>
-                    <span><i class="fas fa-calendar-alt"></i> Committee Meeting</span><br>
-                    <span><i class="fas fa-clock"></i> Deliberation meeting</span>
-                </li>
-                <li class="list-group-item">
-                    <strong>Yesterday</strong>
-                    <span><i class="fas fa-upload"></i> Submitted Case to Dean</span>
-                    <span>Details<br>Student ID 83342025</span><br>
-                </li>
-                <li class="list-group-item">
-                    <strong>December 22, 2024</strong>
-                    <span><i class="fas fa-gavel"></i> Case Verdict</span>
-                    <span>Details<br>Student ID 83342025</span><br>
-                    <span><i class="fas fa-envelope"></i> Sending out email</span>
-                    <span>Details<br>Student ID 83342025</span>
-                </li>
-            </ul>
+<!-- Notifications Card with Plus Icon -->
+<div class="card notifications card-special">
+    <div class="card-body scrollable-notifications">
+        <h2>Notifications</h2>
+        <div class="btn-container">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#notificationModal">
+                <i class="fas fa-plus"></i> Add Notification
+            </button>
+        </div>
+        
+    </div>
+</div>
+
+    <!-- Add this link to trigger the modal -->
+    <a href="#" data-toggle="modal" data-target="#notificationModal">
+        <i class="fas fa-plus"></i>
+    </a>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">Add New Notification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="notificationDate">Date</label>
+                            <input type="date" class="form-control" id="notificationDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="notificationTime">Time</label>
+                            <input type="time" class="form-control" id="notificationTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="notificationMessage">Message</label>
+                            <textarea class="form-control" id="notificationMessage" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Add Notification</button>
+                </div>
+            </div>
         </div>
     </div>
 
