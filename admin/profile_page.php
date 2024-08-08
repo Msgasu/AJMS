@@ -326,8 +326,8 @@
                 <input type="file" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
             </div>
             <div class="user-details text-center mb-4">
-                <h2 class="mb-1">John Doe</h2>
-                <p class="text-muted">Email: johndoe45@gmail.com</p>
+                <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
+                <p class="text-muted">Email: <?php echo htmlspecialchars($email); ?></p>
                 <p class="text-muted">Role: User</p>
             </div>
             <div class="user-info-container">
