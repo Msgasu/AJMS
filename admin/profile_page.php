@@ -339,7 +339,21 @@
     <main class="content">
         <div class="profile-header">
             <div class="profile-picture">
-                <img src="../images/ashesi_logo.jpeg" alt="User Profile Image" id="profileImage">
+            <span>
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+                    $profilePicture = getProfilePicture($userId, $con);
+
+                    echo '<div class="user-icon">';
+                    if ($profilePicture) {
+                        echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">';
+                    } else {
+                        echo '<i class="material-icons">account_circle</i>';
+                    }
+                }
+                ?>
+            </span>
                 <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
                     <i class="fas fa-camera"></i>
                 </div>
