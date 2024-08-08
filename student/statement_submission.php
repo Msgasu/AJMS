@@ -91,7 +91,7 @@
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(90vh - 30px);
+            height: calc(90vh - 25px);
             background-color: white;
             border-radius: 15px;
             transition: left 0.3s ease;
