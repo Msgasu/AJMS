@@ -431,7 +431,7 @@
 
     <main role="main" class="content card card-special">
         <div class="card-body equal-space scrollable-notifications">
-            <form class="report-form" method="post" action="../action/submit_case_action.php" enctype="multipart/form-data">
+            <form class="report-form" id= "reportform" method="POST" action="../action/submit_case_action.php" enctype="multipart/form-data">
                 <h2>DO YOU HAVE ANY COMPLAINTS OR CASES TO REPORT?</h2>
                 <p style="font-weight: bolder"><em>Type out your report or complaint in the text box below. You can also add images and audio.</em></p>
                     
@@ -454,14 +454,20 @@
                 <input type="number" class="form-control" id="emailCount" min="1" placeholder="Number of emails" required>
             </div>
             <div id="emailInputs"></div>
-            
-        
     
                 <h5 style="font-weight: bolder" class="note">NOTE: YOU WILL BE HELD ACCOUNTABLE FOR ANYTHING YOU SUBMIT HERE</h5>
                 <button type="submit" name="submit" class="submit-button mt-3">Submit</button>
             </form>
-        </div>
-    </main>
+
+        <!-- Hidden Form for Email Sending -->
+        <form id="email-form" method="post" action="../action/add_case_participants_action.php" style="display: none;">
+            <input type="hidden" name="emails" id="email-form-emails">
+            <!-- <button type="submit" name="submit" class="submit-button mt-3">Submit</button> -->
+            
+        </form>
+    </div>
+</main>
+
 
 
     <div class="card notifications card-special">
@@ -522,37 +528,91 @@ document.addEventListener('DOMContentLoaded', function () {
         this.style.display = 'none'; // Hide the delete button
     });
 
-    // Handle email inputs dynamically
-    const emailCountInput = document.getElementById('emailCount');
-    const emailInputsContainer = document.getElementById('emailInputs');
+const emailCountInput = document.getElementById('emailCount');
+const emailInputsContainer = document.getElementById('emailInputs');
+const reportForm = document.getElementById('reportform');
+const emailForm = document.getElementById('email-form');
+const emailFormEmailsInput = document.getElementById('email-form-emails');
 
-    emailCountInput.addEventListener('input', function() {
-        const emailCount = parseInt(this.value);
-        emailInputsContainer.innerHTML = '';
+emailCountInput.addEventListener('input', function() {
+    const emailCount = parseInt(this.value);
+    emailInputsContainer.innerHTML = '';
 
-        if (isNaN(emailCount) || emailCount < 1) {
-            return; // Do nothing if the count is not a valid number or less than 1
+    if (isNaN(emailCount) || emailCount < 1) {
+        return; // Do nothing if the count is not a valid number or less than 1
+    }
+
+    for (let i = 1; i <= emailCount; i++) {
+        const formGroup = document.createElement('div');
+        formGroup.className = 'form-group';
+
+        const label = document.createElement('label');
+        label.innerText = `Email ${i}`;
+        formGroup.appendChild(label);
+
+        const input = document.createElement('input');
+        input.type = 'email';
+        input.name = 'emails[]'; // Use array notation to handle multiple values
+        input.className = 'form-control';
+        input.placeholder = `Email ${i}`;
+        input.required = true;
+        formGroup.appendChild(input);
+
+        emailInputsContainer.appendChild(formGroup);
+    }
+});
+
+reportForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Gather email addresses from the report form
+    const emailInputs = emailInputsContainer.querySelectorAll('input[type="email"]');
+    const emails = Array.from(emailInputs).map(input => input.value);
+
+    // Set the email data in the hidden form
+    emailFormEmailsInput.value = JSON.stringify(emails);
+
+    // Submit the report form using XMLHttpRequest
+    const reportFormData = new FormData(reportForm);
+
+    for (const [key, value] of reportFormData.entries()) {
+        console.log(`${key}: ${value}`);
+    }
+    const xhrReport = new XMLHttpRequest();
+    xhrReport.open('POST', '../action/submit_case_action.php', true);
+
+    xhrReport.onload = function() {
+        if (xhrReport.status >= 200 && xhrReport.status < 300) {
+            console.log('Report form submitted successfully');
+
+            // Now submit the email form
+            const xhrEmail = new XMLHttpRequest();
+            xhrEmail.open('POST', '../action/add_case_participants_action.php', true);
+           
+            xhrEmail.onload = function() {
+                if (xhrEmail.status >= 200 && xhrEmail.status < 300) {
+                    window.location.href = '../student/student_dashboard.php'; 
+                    console.log('Email form submitted successfully');
+                    alert('Your report and email data have been submitted successfully.');
+                } else {
+                    console.error('Failed to submit the email form:', xhrEmail.statusText);
+                    alert('There was a problem submitting your email data.');
+                }
+            };
+              
+            xhrEmail.send(new FormData(emailForm));
+        } else {
+            console.error('Failed to submit the report form:', xhrReport.statusText);
+            alert('There was a problem submitting your report.');
         }
+    };
 
-        for (let i = 1; i <= emailCount; i++) {
-            const formGroup = document.createElement('div');
-            formGroup.className = 'form-group';
+    xhrReport.send(reportFormData);
+});
 
-            const label = document.createElement('label');
-            label.innerText = `Email ${i}`;
-            formGroup.appendChild(label);
 
-            const input = document.createElement('input');
-            input.type = 'email';
-            input.name = 'emails[]'; // Use array notation to handle multiple values
-            input.className = 'form-control';
-            input.placeholder = `Email ${i}`;
-            input.required = true;
-            formGroup.appendChild(input);
 
-            emailInputsContainer.appendChild(formGroup);
-        }
-    });
+
 
     // Optional: Function to toggle the sidebar (if needed)
     function toggleSidebar() {
