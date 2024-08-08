@@ -397,6 +397,32 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         }
+
+        $(document).ready(function() {
+            $('#editProfileForm').on('submit', function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'profile_page_action.php',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#editProfileModal').modal('hide');
+                        const responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            $('#userFullName').text(responseData.full_name);
+                            $('#userEmail').text('Email: ' + responseData.email);
+                            $('#userName').text(responseData.full_name);
+                        } else {
+                            alert('Failed to update profile.');
+                        }
+                    },
+                    error: function() {
+                        alert('An error occurred while updating the profile.');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
