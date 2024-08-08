@@ -116,7 +116,7 @@
                                 <option value="" disabled selected>Select Role</option>
                                 <option value="witness">Witness</option>
                                 <option value="victim">Victim</option>
-                                <option value="victim">Accused</option>
+                                <option value="accused">Accused</option>
                             </select>
                         </div>
                         <div class="form-group">
