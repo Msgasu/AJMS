@@ -84,14 +84,14 @@
 
         .sidebar {
             position: fixed;
-            top: 72px;
+            top: 50px;
             bottom: 0;
             left: -220px; /* Initially hidden */
             z-index: 100;
             padding: 0;
             width: 220px;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            height: calc(90vh - 25px);
+            height: calc(90vh - 30px);
             background-color: white;
             border-radius: 15px;
             transition: left 0.3s ease;
