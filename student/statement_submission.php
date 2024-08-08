@@ -378,12 +378,17 @@
         </div>
     </div>
 
-    <div class="card sidebar card-special">
+    <!-- Getting particpnat role to hide some nav bar features -->
+    <?php $participant_role = isset($_SESSION['participant_role']) ? $_SESSION['participant_role'] : '';
+?>
+
+<!-- Sidebar in a Card -->
+<div class="card sidebar card-special">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
-            <?php if ($participant_role == 'witness' && $participant_role == 'accused'): ?>
+        <?php if ($participant_role !== 'witness' || $participant_role !== 'accused'): ?>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="student_dashboard.php">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
@@ -394,7 +399,26 @@
                         <span> Submit Case</span>
                     </a>
                 </li>
-            <?php endif; ?>
+                <li class="nav-item">
+                <a class="nav-link" href="statement_submission.php">
+                    <i class="fas fa-file-alt"></i>
+                    <span> Submit Statements</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile_page_students.php">
+                    <i class="fas fa-user"></i>
+                    <span> Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login/logout.php">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span> Logout</span>
+                </a>
+            </li>
+                <?php endif; ?>
+            <?php if ($participant_role == 'witness' || $participant_role == 'accused'): ?>
             <li class="nav-item">
                 <a class="nav-link" href="statement_submission.php">
                     <i class="fas fa-file-alt"></i>
@@ -413,17 +437,19 @@
                     <span> Logout</span>
                 </a>
             </li>
+            <?php endif; ?>
         </ul>
     </div>
 </div>
 <br>
+    
     
     <!-- Main Content in a Card -->
 
 
     <main role="main" class="content card card-special">
         <div class="card-body equal-space scrollable-notifications">
-            <form class="report-form" method="post" action="../action/submit_case_action.php" enctype="multipart/form-data">
+            <form class="report-form" method="post" action="../action/statement_submission_action.php" enctype="multipart/form-data">
                 <h2>DO YOU HAVE ANY STATEMENTS TO SUBMIT?</h2>
                 <p style="font-weight: bolder"><em>Type out your statement in the text box below. You can also add images and audio.</em></p>
                     
