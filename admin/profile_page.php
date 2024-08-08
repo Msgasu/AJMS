@@ -262,7 +262,7 @@
             </div>
         </div>
         <div class="user-info">
-            <span>John Doe</span>
+            <span><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></span>
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
