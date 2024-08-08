@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION["user_role"] = $q_result["role_id"];
                 $_SESSION["first_login"] = $q_result["first_login"];
                 $_SESSION["email"] = $q_result["email"];
+                $participant_role = $q_result["participant"]; // Fetch participant role
 
                 // Check if it's the first login and user is a student
                 if ($q_result["first_login"] && $_SESSION["user_role"] == 2) {
@@ -41,7 +42,14 @@ if (isset($_POST['submit'])) {
                     if ($_SESSION["user_role"] == 1) {
                         header("Location: ../admin/admin_dashboard.php");
                     } else if ($_SESSION["user_role"] == 2) {
-                        header("Location: ../student/student_dashboard.php");
+                        if ($participant_role == 'victim') {
+                            header("Location: ../student/student_dashboard.php");
+                        } else {
+                            header("Location: ../student/statement_submission.php");
+                        }
+                    } else {
+                        // Handle other roles if needed
+                        header("Location: ../student/statement_submission.php");
                     }
                     exit();
                 }
