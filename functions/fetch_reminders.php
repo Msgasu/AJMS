@@ -36,32 +36,65 @@ function fetchReminders() {
                         <button class="btn btn-delete" data-toggle="modal" data-target="#deleteConfirmationModal' . $id . '"><i class="fas fa-trash"></i></button>
                     </div>
                 </div>
-            </div>';
-
+            </div>
             
-            // Delete Confirmation Modal
-            echo '
-            <div class="modal fade" id="deleteConfirmationModal' . $id . '" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel' . $id . '" aria-hidden="true">
+            <!-- Edit Modal -->
+            <div class="modal fade" id="updateModal' . $id . '" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel' . $id . '" aria-hidden="true" data-backdrop="false" overflow: hidden; position: relative;>
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="deleteConfirmationModalLabel' . $id . '">Confirm Deletion</h5>
+                            <h5 class="modal-title" id="updateModalLabel' . $id . '">Edit Reminder</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            Are you sure you want to delete this reminder?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success" data-id="' . $id . '" onclick="confirmDelete(this)">Delete</button>
+                            <form method="post" action="update_reminder.php">
+                                <input type="hidden" name="id" value="' . $id . '">
+                                <div class="form-group">
+                                    <label for="reminderDate">Reminder Date</label>
+                                    <input type="date" class="form-control" id="reminderDate' . $id . '" name="reminder_date" value="' . $reminder_date . '">
+                                </div>
+                                <div class="form-group">
+                                    <label for="reminderTime">Reminder Time</label>
+                                    <input type="time" class="form-control" id="reminderTime' . $id . '" name="reminder_time" value="' . $reminder_time . '">
+                                </div>
+                                <div class="form-group">
+                                    <label for="reminderMessage">Message</label>
+                                    <textarea class="form-control" id="reminderMessage' . $id . '" name="message">' . $message . '</textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>';
-        }
+            </div>
 
+            <!-- Delete Confirmation Modal -->
+            <div class="modal fade" id="deleteConfirmationModal' . $id . '" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel' . $id . '" aria-hidden="true" data-backdrop="false" overflow: hidden; position: relative;>
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel' . $id . '">Delete Reminder</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete this reminder?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <form method="post" action="delete_reminder.php">
+                                <input type="hidden" name="id" value="' . $id . '">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ';
+        }
     } else {
         echo '<p>No reminders found.</p>';
     }
