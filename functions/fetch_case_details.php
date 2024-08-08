@@ -33,12 +33,7 @@ function fetchAndDisplayCaseDetails($user_id, $con) {
     // Fetch all cases
     $cases = $result->fetch_all(MYSQLI_ASSOC);
     
-    // Debug: output fetched cases
-    echo '<pre>';
-    echo 'Fetched cases: ';
-    print_r($cases);
-    echo '</pre>';
-    
+
     $stmt->close();
     
     // Output the HTML directly
