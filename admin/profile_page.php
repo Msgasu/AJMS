@@ -2,6 +2,7 @@
 <html lang="en">
 <?php include '../settings/core.php'?>
 <?php include '../action/profile_page_action.php'; ?>
+<?php include '../action/edit_profile_action.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -344,7 +345,44 @@
                     <span class="active"><?php echo htmlspecialchars($email); ?></span>
                 </div>
             </div>
-            <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#editProfileModal">Edit Profile</button>
+        </div>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="../action/edit_profile_action.php" id="editProfileForm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="f_name">First Name</label>
+                            <input type="text" class="form-control" id="f_name" name="f_name" value="<?php echo htmlspecialchars($f_name); ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="l_name">Last Name</label>
+                            <input type="text" class="form-control" id="l_name" name="l_name" value="<?php echo htmlspecialchars($l_name); ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
         </div>
     </main>
 
@@ -360,6 +398,34 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         }
+
+        $(document).ready(function() {
+            $('#editProfileForm').on('submit', function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '../action/edit_profile_action.php',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        console.log('AJAX response:', response); // Log response
+                        const responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            $('#editProfileModal').modal('hide');
+                            $('#userFullName').text(responseData.full_name);
+                            $('#userEmail').text('Email: ' + responseData.email);
+                            $('#userName').text(responseData.full_name);
+                        } else {
+                            alert('Failed to update profile.');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX error:', status, error); // Log error
+                        alert('An error occurred while updating the profile.');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
