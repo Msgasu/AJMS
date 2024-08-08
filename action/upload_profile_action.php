@@ -29,6 +29,8 @@
 
 if (isset($_POST['submit'])){
     $file = $_FILES['profileImage'];
+
+    $fileName = $_FILES['profileImage']['name'];
 }
 
 ?>
