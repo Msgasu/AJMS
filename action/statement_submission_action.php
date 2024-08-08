@@ -83,6 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Store the statement ID in a session variable
         $_SESSION['statement_id'] = $statement_id;
         $participant_role=  $_SESSION["participant"];
+        
         if ($participant_role == 'victim') {
             header("Location: ../student/student_dashboard.php");
         } else {
