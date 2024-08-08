@@ -333,18 +333,16 @@
             <div class="user-info-container">
                 <div class="user-info-item">
                     <label for="emailVerification">First Name</label>
-                    <span class="pending">John</span>
+                    <span class="pending"><?php echo htmlspecialchars($f_name); ?></span>
                 </div>
                 <div class="user-info-item">
                     <label for="emailVerification">Last Name</label>
-                    <span class="pending">Doe</span>
+                    <span class="pending"><?php echo htmlspecialchars($l_name); ?></span>
                 </div>
-
                 <div class="user-info-item">
                     <label for="mobileVerification">Email</label>
-                    <span class="active">johndoe45@gmail.com</span>
+                    <span class="active"><?php echo htmlspecialchars($email); ?></span>
                 </div>
-                
             </div>
             <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
         </div>
