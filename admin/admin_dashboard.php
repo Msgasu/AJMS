@@ -318,7 +318,7 @@
 
             .add-reminder {
                 color: green;
-                margin-left: 10px;
+                margin-left: 45px;
                 /* Adjust the value to control the space */
                 text-decoration: none;
                 /* Removes underline if present */
