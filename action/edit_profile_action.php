@@ -5,7 +5,7 @@ include '../settings/core.php';
 // Ensure the user is logged in
 login();
 
-$response = ['success' => false];
+//$response = ['success' => false];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = $_SESSION['user_id'];
@@ -35,5 +35,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $con->close();
 
-echo json_encode($response);
+//echo json_encode($response);
 ?>

@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include '../settings/core.php' ?>
+<?php include '../settings/core.php'?>
 <?php include '../action/profile_page_action.php'; ?>
 <?php include '../action/edit_profile_action.php'; ?>
-<?php include '../action/upload_profile_action.php'; ?>
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        html,
-        body {
+        html, body {
             font-size: .875rem;
             background-color: #A44C4C;
             margin: 0;
@@ -121,8 +117,7 @@
         }
 
         .sidebar .nav-link span {
-            font-size: 1.1rem;
-            /* Increase font size */
+            font-size: 1.1rem; /* Increase font size */
         }
 
         .content {
@@ -245,13 +240,11 @@
         }
 
         .user-info-container .user-info-item.pending span {
-            color: #e74c3c;
-            /* Red color for pending items */
+            color: #e74c3c; /* Red color for pending items */
         }
 
         .user-info-container .user-info-item.active span {
-            color: #2ecc71;
-            /* Green color for active items */
+            color: #2ecc71; /* Green color for active items */
         }
 
         .profile-picture input[type="file"] {
@@ -294,7 +287,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/submitted_cases.php">
                         <i class="fas fa-file-alt"> </i>
-
+                        
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -333,31 +326,27 @@
                 </div>
                 <input type="file" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
             </div>
-                <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
-                    <i class="fas fa-camera"></i>
-                </div>
-
-                <div class="user-details text-center mb-4">
-                    <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
-                    <p class="text-muted">Email: <?php echo htmlspecialchars($email); ?></p>
-                    <p class="text-muted">Role: Administrator</p>
-                </div>
-                <div class="user-info-container">
-                    <div class="user-info-item">
-                        <label for="emailVerification">First Name</label>
-                        <span class="pending"><?php echo htmlspecialchars($f_name); ?></span>
-                    </div>
-                    <div class="user-info-item">
-                        <label for="emailVerification">Last Name</label>
-                        <span class="pending"><?php echo htmlspecialchars($l_name); ?></span>
-                    </div>
-                    <div class="user-info-item">
-                        <label for="mobileVerification">Email</label>
-                        <span class="active"><?php echo htmlspecialchars($email); ?></span>
-                    </div>
-                </div>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#editProfileModal">Edit Profile</button>
+            <div class="user-details text-center mb-4">
+                <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
+                <p class="text-muted">Email: <?php echo htmlspecialchars($email); ?></p>
+                <p class="text-muted">Role: Administrator</p>
             </div>
+            <div class="user-info-container">
+                <div class="user-info-item">
+                    <label for="emailVerification">First Name</label>
+                    <span class="pending"><?php echo htmlspecialchars($f_name); ?></span>
+                </div>
+                <div class="user-info-item">
+                    <label for="emailVerification">Last Name</label>
+                    <span class="pending"><?php echo htmlspecialchars($l_name); ?></span>
+                </div>
+                <div class="user-info-item">
+                    <label for="mobileVerification">Email</label>
+                    <span class="active"><?php echo htmlspecialchars($email); ?></span>
+                </div>
+            </div>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#editProfileModal">Edit Profile</button>
+        </div>
     </main>
 
     <!-- Edit Profile Modal -->
@@ -394,7 +383,7 @@
         </div>
     </div>
 
-    </div>
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -419,10 +408,9 @@
                     url: '../action/edit_profile_action.php',
                     data: $(this).serialize(),
                     success: function(response) {
-                        console.log('AJAX response:', response); // Log response
+                        $('#editProfileModal').modal('hide');
                         const responseData = JSON.parse(response);
                         if (responseData.success) {
-                            $('#editProfileModal').modal('hide');
                             $('#userFullName').text(responseData.full_name);
                             $('#userEmail').text('Email: ' + responseData.email);
                             $('#userName').text(responseData.full_name);
@@ -430,8 +418,7 @@
                             alert('Failed to update profile.');
                         }
                     },
-                    error: function(xhr, status, error) {
-                        console.error('AJAX error:', status, error); // Log error
+                    error: function() {
                         alert('An error occurred while updating the profile.');
                     }
                 });
@@ -439,5 +426,4 @@
         });
     </script>
 </body>
-
 </html>

@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <?php include '../settings/core.php'?>
+    <?php include '../settings/core.php' ?>
     <?php include "../functions/get_username_fxn.php"; ?>
     <?php include "../functions/fetch_case_details_admin.php";?>
 
     <style>
-        html, body {
+        html,
+        body {
             font-size: .875rem;
             background-color: #A44C4C;
-            overflow: hidden; /* Prevent general scrollbar */
+            overflow: hidden;
+            /* Prevent general scrollbar */
             height: 100%;
         }
 
@@ -127,7 +129,8 @@
         }
 
         .sidebar .nav-link span {
-            font-size: 1.1rem; /* Increase font size */
+            font-size: 1.1rem;
+            /* Increase font size */
         }
 
 
@@ -155,7 +158,7 @@
             height: calc(90vh - 30px);
         }
 
-        
+
         .notifications h2 {
             font-size: 1.25rem;
             font-weight: bold;
@@ -163,19 +166,19 @@
         }
 
         .notifications .list-group-item {
-           border: none;
-           padding: 0.5rem 0;
+            border: none;
+            padding: 0.5rem 0;
         }
 
         .notifications .list-group-item strong {
-           display: block;
-           margin-bottom: 0.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .notifications .list-group-item span {
-           display: block;
-           font-size: 0.875rem;
-           margin-bottom: 0.5rem;
+            display: block;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
         }
 
         .notifications .list-group-item i {
@@ -184,7 +187,8 @@
         }
 
         .scrollable-notifications {
-            height: calc(90vh - 110px); /* Adjusted height */
+            height: calc(90vh - 110px);
+            /* Adjusted height */
             overflow-y: auto;
         }
 
@@ -201,7 +205,7 @@
             margin-top: 30px;
         }
 
-        
+
 
         .list-group-item {
             border: none;
@@ -218,7 +222,7 @@
             gap: 20px;
         }
 
-        
+
 
         .case-card-header {
             height: 150px;
@@ -274,20 +278,30 @@
         </div>
         <div class="user-info">
             <div class="line"></div>
-            <span> <?php
-          if (isset($_SESSION['user_id'])) {
-              $userId = $_SESSION['user_id'];
-              $userName = getUserName($userId, $con);
-              $role= getRole($userId, $con);
-              echo '<div class="user-icon"><i class="material-icons">account_circle</i></div>';
-              echo '<div class="user-name">' . $userName . '</div>';
-              //echo '<div class="user-name">' . $role . '</div>';
-          } else {
-              echo "Error: User ID not set in session";
-          }
-          ?></span>
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
+            <span>
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+                    $userName = getUserName($userId, $con);
+                    $profilePicture = getProfilePicture($userId, $con);
+
+                    echo '<div class="user-icon">';
+                    if ($profilePicture) {
+                        echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">';
+                    } else {
+                        echo '<i class="material-icons">account_circle</i>';
+                    }
+                    echo '</div>';
+
+                    echo '<div class="user-name">' . htmlspecialchars($userName) . '</div>';
+                } else {
+                    echo "Error: User ID not set in session";
+                }
+                ?>
+            </span>
+            <!-- <img src="../images/ashesi_logo.jpeg" alt="User Profile Image"> -->
         </div>
+
     </div>
 
     <!-- Sidebar in a Card -->
@@ -309,7 +323,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/submitted_cases.php">
                         <i class="fas fa-file-alt"> </i>
-                        
+
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -338,7 +352,7 @@
     <br>
     <br>
     <br>
-    
+
     <!-- Main Content in a Card -->
     <main role="main" class="content card card-special">
         <div class="card-body equal-space scrollable-notifications">
@@ -438,5 +452,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
-</html>
 
+</html>
