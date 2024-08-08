@@ -15,7 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $student_id, $role, $user_id);
 
     if ($stmt->execute()) {
-        header("Location: ../student/student_dashboard.php");
+        $participant_role=  $_SESSION["participant"];
+        if ($participant_role == 'victim') {
+            header("Location: ../student/student_dashboard.php");
+        } else {
+            header("Location: ../student/statement_submission.php");
+        }
         exit();
     } else {
         echo "Error: " . $stmt->error;
