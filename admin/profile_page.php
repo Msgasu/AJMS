@@ -418,7 +418,7 @@
     </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
@@ -440,17 +440,24 @@
                     url: '../action/edit_profile_action.php',
                     data: $(this).serialize(),
                     success: function(response) {
-                        $('#editProfileModal').modal('hide');
-                        const responseData = JSON.parse(response);
-                        if (responseData.success) {
-                            $('#userFullName').text(responseData.full_name);
-                            $('#userEmail').text('Email: ' + responseData.email);
-                            $('#userName').text(responseData.full_name);
-                        } else {
-                            alert('Failed to update profile.');
+                        console.log(response); // Log the response for debugging
+                        try {
+                            const responseData = JSON.parse(response);
+                            if (responseData.success) {
+                                $('#editProfileModal').modal('hide');
+                                $('#userFullName').text(responseData.full_name);
+                                $('#userEmail').text('Email: ' + responseData.email);
+                                $('#userName').text(responseData.full_name);
+                            } else {
+                                alert('Failed to update profile.');
+                            }
+                        } catch (e) {
+                            alert('Error parsing response.');
+                            console.error(e);
                         }
                     },
-                    error: function() {
+                    error: function(xhr, status, error) {
+                        console.error('AJAX error: ', status, error);
                         alert('An error occurred while updating the profile.');
                     }
                 });
