@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include '../settings/core.php'?>
 <?php include '../action/profile_page_action.php'; ?>
 <?php include '../action/edit_profile_action.php'; ?>
+<?php include '../functions/get_username_fxn.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -263,8 +263,27 @@
             </div>
         </div>
         <div class="user-info">
-            <span><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></span>
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
+        <span>
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+                    $userName = getUserName($userId, $con);
+                    $profilePicture = getProfilePicture($userId, $con);
+
+                    echo '<div class="user-icon">';
+                    if ($profilePicture) {
+                        echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">';
+                    } else {
+                        echo '<i class="material-icons">account_circle</i>';
+                    }
+                    echo '</div>';
+
+                    echo '<div class="user-name">' . htmlspecialchars($userName) . '</div>';
+                } else {
+                    echo "Error: User ID not set in session";
+                }
+                ?>
+            </span>
         </div>
     </div>
 

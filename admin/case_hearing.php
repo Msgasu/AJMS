@@ -288,18 +288,26 @@
         </div>
         <div class="user-info">
             <div class="line"></div>
-            <span><?php
-          if (isset($_SESSION['user_id'])) {
-              $userId = $_SESSION['user_id'];
-              $userName = getUserName($userId, $con);
-              $role= getRole($userId, $con);
-              echo '<div class="user-icon"><i class="material-icons">account_circle</i></div>';
-              echo '<div class="user-name">' . $userName . '</div>';
-              echo '<div class="user-name">' . $role . '</div>';
-          } else {
-              echo "Error: User ID not set in session";
-          }
-          ?>
+            <span>
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+                    $userName = getUserName($userId, $con);
+                    $profilePicture = getProfilePicture($userId, $con);
+
+                    echo '<div class="user-icon">';
+                    if ($profilePicture) {
+                        echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">';
+                    } else {
+                        echo '<i class="material-icons">account_circle</i>';
+                    }
+                    echo '</div>';
+
+                    echo '<div class="user-name">' . htmlspecialchars($userName) . '</div>';
+                } else {
+                    echo "Error: User ID not set in session";
+                }
+                ?>
             </span>
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
