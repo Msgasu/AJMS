@@ -26,6 +26,7 @@
         <div class="user-info">
             <div class="line"></div>
             
+            <span>
                 <?php
                 if (isset($_SESSION['user_id'])) {
                     $userId = $_SESSION['user_id'];
