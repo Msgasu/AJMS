@@ -353,8 +353,8 @@
                 }
                 ?>
                 </span>
-                <!-- <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();"> -->
-                    <!-- <i class="fas fa-camera"></i> -->
+                <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
+                    <i class="fas fa-camera"></i>
                 </div>
                 <input type="file" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
             </div>
