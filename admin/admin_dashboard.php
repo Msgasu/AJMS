@@ -280,7 +280,7 @@
               $role= getRole($userId, $con);
               echo '<div class="user-icon"><i class="material-icons">account_circle</i></div>';
               echo '<div class="user-name">' . $userName . '</div>';
-              echo '<div class="user-name">' . $role . '</div>';
+              //echo '<div class="user-name">' . $role . '</div>';
           } else {
               echo "Error: User ID not set in session";
           }
