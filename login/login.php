@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -153,8 +154,23 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
     <!-- <script src="../js/login.js"></script> -->
     <script>
+
+
+        <?php
+        session_start();
+        if (isset($_SESSION["error_message"])) {
+            echo "Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{$_SESSION["error_message"]}'
+            });";
+            unset($_SESSION["error_message"]); // Clear the error message after displaying
+        }
+        ?>
+   
         document.getElementById('registerForm').addEventListener('submit', function (event) {
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
