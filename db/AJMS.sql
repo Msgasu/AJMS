@@ -101,6 +101,19 @@ CREATE TABLE reminders (
     FOREIGN KEY (user_id) REFERENCES users(pid) -- Reference to the users table
 );
 
+-- Create the updated archive table with statement_id
+CREATE TABLE archive (
+    archive_id INT PRIMARY KEY AUTO_INCREMENT, -- Unique identifier for the archive record
+    case_id INT, -- Case ID being archived
+    case_statement TEXT, -- Case statement description
+    party_email VARCHAR(100), -- Email of the party involved
+    party_role VARCHAR(50), -- Role of the party involved
+    statement_id INT, -- Unique identifier for each individual statement
+    statement TEXT, -- Individual statement
+    archived_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp for when the case is archived
+    FOREIGN KEY (case_id) REFERENCES cases(id), -- Foreign key to ensure the case exists
+    FOREIGN KEY (statement_id) REFERENCES statements(id) -- Foreign key to ensure the statement exists
+);
 
 
 -- Insert admin users 
