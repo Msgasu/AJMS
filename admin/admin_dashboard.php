@@ -10,6 +10,7 @@
 
     <?php include '../settings/core.php'?>
     <?php include "../functions/get_username_fxn.php"; ?>
+    <?php include "../functions/fetch_case_details_admin.php";?>
 
     <style>
         html, body {
@@ -347,23 +348,11 @@
 
             <!-- Cards -->
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm card-custom">
-                        <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
+            <?php generateAndDisplayCards()?>
 
-                            <span>URGENT</span>
-                        </div>
-                        <div class="case-card-body">
-                            <h5 class="card-title">Meeting with Victim</h5>
-                            <p>Case of theft,</p>
-                            <p>Victim: Female</p>
-                            <p>Year: Class of 2026</p>
-                            <p>Suspect: Male</p>
-                            <p>Year: 2026</p>
-                            <button class="btn btn-success" onclick="location.href='schedule_meeting.php'">Schedule meeting</button>
-                        </div>
-                    </div>
                 </div>
+
+<!--                 
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
                         <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
@@ -412,7 +401,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+
         </div>
     </main>
 
