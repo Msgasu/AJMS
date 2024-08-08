@@ -5,7 +5,7 @@ include "../settings/connection.php";
 session_start();
 
 // Check if the form is submitted
-if (isset($_POST['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
     $statement_description = $_POST['report'];
 
@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
         die('User not logged in.');
     }
 
-    // Handle file uploads
+    // Initialize document URL
     $document_url = null;
     $targetDir = '../assets/';
 
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    // Handle video upload
+    // Handle video upload (if applicable)
     if (isset($_FILES['video']) && $_FILES['video']['error'] == 0) {
         $video = $_FILES['video'];
         $videoName = basename($video['name']);
@@ -62,5 +62,7 @@ if (isset($_POST['submit'])) {
 
     $stmt->close();
     $con->close();
+} else {
+    echo 'Invalid request method.';
 }
 ?>
