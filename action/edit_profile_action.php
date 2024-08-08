@@ -6,30 +6,17 @@ include '../settings/core.php';
 // Ensure the user is logged in
 login();
 
-// Fetch user data
-$user_id = $_SESSION['user_id'];
-$sql = "SELECT f_name, l_name, email FROM users WHERE pid = ?";
-$stmt = $conn->prepare($sql);
+$response = ['success' => false];
 
-if ($stmt === false) {
-    die('Prepare failed: ' . $con->error);
-}
-
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$stmt->bind_result($f_name, $l_name, $email);
-$stmt->fetch();
-$stmt->close();
-
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $user_id = $_SESSION['user_id'];
     $new_f_name = $_POST['f_name'];
     $new_l_name = $_POST['l_name'];
     $new_email = $_POST['email'];
 
     // Update user data
     $update_sql = "UPDATE users SET f_name = ?, l_name = ?, email = ? WHERE pid = ?";
-    $update_stmt = $conn->prepare($update_sql);
+    $update_stmt = $con->prepare($update_sql);
 
     if ($update_stmt === false) {
         die('Prepare failed: ' . $con->error);
@@ -39,10 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $update_stmt->execute();
     $update_stmt->close();
 
-    // Redirect to profile page after update
-    header('Location: profile.php');
-    exit();
+    $_SESSION['user_full_name'] = $new_f_name . ' ' . $new_l_name;
+    $_SESSION['user_email'] = $new_email;
+
+    $response['success'] = true;
+    $response['full_name'] = $new_f_name . ' ' . $new_l_name;
+    $response['email'] = $new_email;
 }
 
 $con->close();
+
+echo json_encode($response);
 ?>
