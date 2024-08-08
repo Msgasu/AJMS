@@ -27,5 +27,8 @@
 //     echo "No file uploaded or an error occurred during the upload.";
 // }
 
+if (isset($_POST['submit'])){
+    $file = $_FILES['profileImage'];
+}
 
 ?>
