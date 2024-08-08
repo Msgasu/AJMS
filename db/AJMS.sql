@@ -15,9 +15,9 @@ INSERT INTO roles (rid, role_name) VALUES (1, 'admin'), (2, 'student');
 -- Create a table for users
 CREATE TABLE users (
     pid INT PRIMARY KEY AUTO_INCREMENT,
-    f_name VARCHAR(50),
+    f_name VARCHAR(50) ,
     l_name VARCHAR(50),
-    email VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
     passwd VARCHAR(255),
     role_id INT DEFAULT 2, -- Default role is 'user'
     FOREIGN KEY (role_id) REFERENCES roles(rid)
@@ -66,6 +66,17 @@ CREATE TABLE meetings (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(pid)
 );
+
+-- Create a table for case parties
+CREATE TABLE case_parties (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    case_id INT, -- Foreign key to reference the case
+    student_email VARCHAR(100), -- To store the email of the student
+    FOREIGN KEY (case_id) REFERENCES cases(id) -- Reference to the cases table
+    -- FOREIGN KEY (student_email) REFERENCES users(email) -- Reference to the users table
+);
+
+-- Note: Ensure that the `email` column in the `users` table is unique or indexed.
 
 -- Insert admin users 
 INSERT INTO admins (email) VALUES
