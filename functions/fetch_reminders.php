@@ -39,7 +39,7 @@ function fetchReminders() {
             </div>
             
             <!-- Edit Modal -->
-            <div class="modal fade" id="updateModal' . $id . '" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel' . $id . '" aria-hidden="true" data-backdrop="false" overflow: hidden; position: relative;>
+            <div class="modal fade" id="updateModal' . $id . '" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel' . $id . '" aria-hidden="true" data-backdrop="false">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -71,7 +71,7 @@ function fetchReminders() {
             </div>
 
             <!-- Delete Confirmation Modal -->
-            <div class="modal fade" id="deleteConfirmationModal' . $id . '" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel' . $id . '" aria-hidden="true" data-backdrop="false" overflow: hidden; position: relative;>
+            <div class="modal fade" id="deleteConfirmationModal' . $id . '" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel' . $id . '" aria-hidden="true" data-backdrop="false">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
