@@ -11,6 +11,7 @@
     <?php include '../settings/core.php' ?>
     <?php include "../functions/get_username_fxn.php"; ?>
     <?php include "../functions/fetch_case_details_admin.php";?>
+    <?php include "../functions/fetch_reminders.php";?>
 
     <style>
         html,
@@ -412,6 +413,7 @@
 
             <!-- Cards -->
             <div class="row">
+            <br>
             <?php generateAndDisplayCards()?>
 
                 </div>
@@ -481,8 +483,12 @@
             </button>
         </div>
         
+        <!-- Call the function to fetch and display reminders -->
+        <?php fetchReminders(); ?>
+        
     </div>
 </div>
+
 
     <!-- Add this link to trigger the modal -->
     <a href="#" data-toggle="modal" data-target="#notificationModal">
