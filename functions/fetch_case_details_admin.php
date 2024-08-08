@@ -16,7 +16,7 @@ function generateAndDisplayCards() {
         // Fetch participants for each case
         $participant_stmt = $con->prepare("SELECT u.f_name, u.l_name, u.participant, cp.student_email
                                            FROM case_parties cp
-                                           JOIN users u ON cp.student_email = u.email
+                                           LEFT JOIN users u ON cp.student_email = u.email
                                            WHERE cp.case_id = ?");
         $participant_stmt->bind_param("i", $case['id']);
         $participant_stmt->execute();
@@ -28,6 +28,7 @@ function generateAndDisplayCards() {
         $fullDescription = htmlspecialchars($case['statement_description']);
         $shortDescription = strlen($fullDescription) > 100 ? substr($fullDescription, 0, 100) . '...' : $fullDescription;
         $id = htmlspecialchars($case['id']);
+        $documentUrl = htmlspecialchars($case['document_url']);
         
         echo '<div class="col-md-4">
                 <div class="card mb-4 shadow-sm card-custom">
@@ -40,13 +41,23 @@ function generateAndDisplayCards() {
                         </a>
                         <p id="desc' . $id . '" class="case-description">' . $shortDescription . '</p>
                         <p id="fullDesc' . $id . '" class="case-description" style="display:none;">' . $fullDescription . '</p>
-                        <button class="btn btn-link read-more" data-target="desc' . $id . '" data-toggle="fullDesc' . $id . '">Read More</button>
-                        <p>Document: <a href="' . htmlspecialchars($case['document_url']) . '" target="_blank">View Document</a></p>
-                        <p>Victim: ' . htmlspecialchars($case['user_f_name']) . ' ' . htmlspecialchars($case['user_l_name']) . ' (' . htmlspecialchars($case['user_email']) . ')</p>
-                        <p>Involved Parties:</p>';
+                        <button class="btn btn-link read-more" data-target="desc' . $id . '" data-toggle="fullDesc' . $id . '">Read More</button>';
+        
+        if (!empty($documentUrl)) {
+            echo '<p>Document: <a href="' . $documentUrl . '" target="_blank">View Document</a></p>';
+        } else {
+            echo '<p>No document available</p>';
+        }
+
+        echo '<p>Victim: ' . htmlspecialchars($case['user_f_name']) . ' ' . htmlspecialchars($case['user_l_name']) . ' (' . htmlspecialchars($case['user_email']) . ')</p>
+              <p>Involved Parties:</p>';
         
         foreach ($participants as $participant) {
-            echo '<p>' . htmlspecialchars($participant['f_name'] . ' ' . $participant['l_name']) . ' (' . htmlspecialchars($participant['student_email']) . ') <br>Role: ' . htmlspecialchars($participant['participant']) . '</p>';
+            if (!empty($participant['f_name']) && !empty($participant['l_name'])) {
+                echo '<p>' . htmlspecialchars($participant['f_name'] . ' ' . $participant['l_name']) . ' (' . htmlspecialchars($participant['student_email']) . ') <br>Role: ' . htmlspecialchars($participant['participant']) . '</p>';
+            } else {
+                echo '<p>' . htmlspecialchars($participant['student_email']) . '</p>';
+            }
         }
         
         echo '   <button class="btn btn-success">Schedule meeting</button>
@@ -58,28 +69,3 @@ function generateAndDisplayCards() {
     $con->close();
 }
 ?>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Toggle description visibility
-    document.querySelectorAll('button.read-more').forEach(button => {
-        button.addEventListener('click', function() {
-            var targetId = this.getAttribute('data-target');
-            var toggleId = this.getAttribute('data-toggle');
-            
-            var shortDesc = document.getElementById(targetId);
-            var fullDesc = document.getElementById(toggleId);
-            
-            if (fullDesc.style.display === 'none') {
-                fullDesc.style.display = 'block';
-                shortDesc.style.display = 'none';
-                this.textContent = 'Read Less';
-            } else {
-                fullDesc.style.display = 'none';
-                shortDesc.style.display = 'block';
-                this.textContent = 'Read More';
-            }
-        });
-    });
-});
-</script>

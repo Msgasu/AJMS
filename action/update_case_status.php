@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if statement_id and status_id are set and valid
     if ($statement_id !== null && $status_id !== null && filter_var($statement_id, FILTER_VALIDATE_INT) && filter_var($status_id, FILTER_VALIDATE_INT)) {
         // Prepare and execute the update query
-        $stmt = $con->prepare("UPDATE statements SET status_id = ? WHERE id = ?");
+        $stmt = $con->prepare("UPDATE cases SET status_id = ? WHERE id = ?");
         if ($stmt) {
             $stmt->bind_param("ii", $status_id, $statement_id);
 
