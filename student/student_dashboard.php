@@ -2,6 +2,7 @@
 <html lang="en">
   <?php include "../functions/get_username_fxn.php"; ?>
   <?php  include "../functions/fetch_case_details.php"; ?>
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -330,6 +331,7 @@
             </div>
 
             <!-- Cards -->
+          <?php $user_id=   $_SESSION["user_id"] ?>
         <?php fetchAndDisplayCaseDetails($user_id, $con);?>
                 
         </div>

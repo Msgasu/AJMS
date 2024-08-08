@@ -74,6 +74,19 @@
         .is-invalid ~ .invalid-feedback {
             display: block;
         }
+        .sign-up-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sign-up-link a {
+            color: #A44C4C;
+            font-weight: bold;
+        }
+
+        .sign-up-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -124,6 +137,9 @@
                 <button type="submit" name= "submit" class="btn btn-custom">Sign Up</button>
             </div>
         </form>
+        <div class="sign-up-link">
+            <p>Already have an account? <a href="login.php">Sign in</a></p>
+        </div>
     </div>
     <div class="footer">
         <div class="left">
