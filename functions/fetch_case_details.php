@@ -44,6 +44,7 @@ function fetchAndDisplayCaseDetails($user_id, $con) {
         $shortDescription = strlen($fullDescription) > 100 ? substr($fullDescription, 0, 100) . '...' : $fullDescription;
         $id = htmlspecialchars($case['id']);
         
+        
         echo '<div class="col-md-4">';
         echo '    <div class="card mb-4 shadow-sm card-custom">';
         echo '        <div class="case-card-header" style="background-image: url(\'../images/Ashesi.jpg\');">';
@@ -52,8 +53,7 @@ function fetchAndDisplayCaseDetails($user_id, $con) {
         echo '            <h5 class="card-title">Case ID: ' . $id . '</h5>';
         echo '            <p id="desc' . $id . '" class="case-description">' . $shortDescription . '</p>';
         echo '            <p id="fullDesc' . $id . '" class="case-description" style="display:none;">' . $fullDescription . '</p>';
-        echo '            <button class="btn btn-link read-more" data-target="desc' . $id . '" data-toggle="fullDesc' . $id . '">Read More</button>';
-        echo '            <p>Document: <a href="' . htmlspecialchars($case['document_url']) . '" target="_blank">View Document</a></p>';
+        echo '            <p>Document: ' . (!empty($case['document_url']) ? '<a href="' . htmlspecialchars($case['document_url']) . '" target="_blank">View Document</a>' : 'N/A') . '</p>';
         echo '            <p>Email: ' . htmlspecialchars($case['student_email']) . '</p>';
         echo '            <button class="btn btn-success" onclick="location.href=\'View_progress.php\'">View Progress</button>';
 
