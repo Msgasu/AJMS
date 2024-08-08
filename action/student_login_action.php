@@ -15,13 +15,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $student_id, $role, $user_id);
 
     if ($stmt->execute()) {
-        // Redirect based on participant role
-        $participant_role = $_SESSION["participant"];
-        if ($participant_role == 'victim') {
-            header("Location: ../student/student_dashboard.php");
-        } else {
+        // Retrieve the updated role to determine redirection
+        $checkRoleStmt = $con->prepare("SELECT participant FROM users WHERE pid = ?");
+        $checkRoleStmt->bind_param("s", $user_id);
+        $checkRoleStmt->execute();
+        $checkRoleStmt->bind_result($updated_role);
+        $checkRoleStmt->fetch();
+        $checkRoleStmt->close();
+
+        // Debugging: Check the retrieved role
+        error_log("Updated role: " . $updated_role);
+
+        
             header("Location: ../student/statement_submission.php");
-        }
+    
         exit();
     } else {
         echo "Error: " . $stmt->error;
