@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Login Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             background-color: #A44C4C;
-            
         }
 
         .container {
@@ -65,7 +64,6 @@
 
         .footer .title {
             margin-left: 10px;
-
         }
 
         .footer .right {
@@ -83,10 +81,8 @@
         label,
         input {
             display: block;
-
             color: rgb(110, 106, 106);
             font-weight: bold;
-
             text-align: left;
         }
 
@@ -94,7 +90,20 @@
         input[type="password"] {
             width: 100%;
             height: 65px;
+        }
 
+        .sign-up-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sign-up-link a {
+            color: #A44C4C;
+            font-weight: bold;
+        }
+
+        .sign-up-link a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -102,35 +111,29 @@
 <body>
     <div class="container">
         <br>
-
         <div class="header">
             <h2>Welcome to AJMS</h2>
         </div>
         <br>
 
         <form action="../action/login_user_action.php" method="POST" id="loginForm">
-
-
             <div class="form-group">
                 <label for="email">Enter your details below</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
-                    required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
             </div>
             <br>
             <div class="form-group">
-
-                <input type="password" class="form-control" id="password" name="password"
-                    placeholder="Enter your password" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
             </div>
-
-
             <div class="btn-container">
                 <button type="submit" name="submit" class="btn btn-custom">Login</button>
             </div>
         </form>
+
+        <div class="sign-up-link">
+            <p>Don't have an account? <a href="register_view.php">Sign up</a></p>
+        </div>
     </div>
-
-
 
     <div class="footer">
         <div class="left">
