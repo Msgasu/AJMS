@@ -333,7 +333,7 @@
             </div>
 
             <!-- Hidden form for uploading a new profile picture -->
-            <form id="profileImageForm" enctype="multipart/form-data" action="upload_profile_image.php" method="POST">
+            <form id="profileImageForm" enctype="multipart/form-data" action="../action/upload_profile_image.php" method="POST">
                 <input type="file" name="profileImage" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
             </form>
             <div class="user-details text-center mb-4">
