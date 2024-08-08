@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $student_id, $role, $user_id);
 
     if ($stmt->execute()) {
-        $participant_role=  $_SESSION["participant"];
+        // Redirect based on participant role
+        $participant_role = $_SESSION["participant"];
         if ($participant_role == 'victim') {
             header("Location: ../student/student_dashboard.php");
         } else {
