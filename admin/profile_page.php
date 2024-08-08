@@ -3,6 +3,7 @@
 <?php include '../action/profile_page_action.php'; ?>
 <?php include '../action/edit_profile_action.php'; ?>
 <?php include '../functions/get_username_fxn.php'; ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        html, body {
+        html,
+        body {
             font-size: .875rem;
             background-color: #A44C4C;
             margin: 0;
@@ -117,7 +119,8 @@
         }
 
         .sidebar .nav-link span {
-            font-size: 1.1rem; /* Increase font size */
+            font-size: 1.1rem;
+            /* Increase font size */
         }
 
         .content {
@@ -240,11 +243,13 @@
         }
 
         .user-info-container .user-info-item.pending span {
-            color: #e74c3c; /* Red color for pending items */
+            color: #e74c3c;
+            /* Red color for pending items */
         }
 
         .user-info-container .user-info-item.active span {
-            color: #2ecc71; /* Green color for active items */
+            color: #2ecc71;
+            /* Green color for active items */
         }
 
         .profile-picture input[type="file"] {
@@ -263,7 +268,7 @@
             </div>
         </div>
         <div class="user-info">
-        <span>
+            <span>
                 <?php
                 if (isset($_SESSION['user_id'])) {
                     $userId = $_SESSION['user_id'];
@@ -306,7 +311,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/submitted_cases.php">
                         <i class="fas fa-file-alt"> </i>
-                        
+
                         <span> Case statements</span>
                     </a>
                 </li>
@@ -339,21 +344,15 @@
     <main class="content">
         <div class="profile-header">
             <div class="profile-picture">
-            <span>
                 <?php
                 if (isset($_SESSION['user_id'])) {
                     $userId = $_SESSION['user_id'];
                     $profilePicture = getProfilePicture($userId, $con);
 
-                    echo '<div class="user-icon">';
-                    if ($profilePicture) {
-                        echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">';
-                    } else {
-                        echo '<i class="material-icons">account_circle</i>';
-                    }
+                    echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture">';
                 }
                 ?>
-            </span>
+                </span>
                 <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
                     <i class="fas fa-camera"></i>
                 </div>
@@ -416,7 +415,7 @@
         </div>
     </div>
 
-        </div>
+    </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -459,4 +458,5 @@
         });
     </script>
 </body>
+
 </html>
