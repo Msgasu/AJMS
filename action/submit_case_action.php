@@ -54,6 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param('issi', $user_id, $statement_description, $document_url, $status_id);
 
     if ($stmt->execute()) {
+        $case_id = $stmt->insert_id;
+
+        // Store the case ID in a session variable
+        $_SESSION['case_id'] = $case_id;
+
         header("Location: ../student/student_dashboard.php");
         exit();
     } else {
