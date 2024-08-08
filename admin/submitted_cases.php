@@ -25,9 +25,8 @@
         </div>
         <div class="user-info">
             <div class="line"></div>
-            <span>
-            <span>
-                <?php
+            
+            <?php
                 if (isset($_SESSION['user_id'])) {
                     $userId = $_SESSION['user_id'];
                     $userName = getUserName($userId, $con);
