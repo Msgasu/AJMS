@@ -266,13 +266,17 @@
     <?php $participant_role = isset($_SESSION['participant_role']) ? $_SESSION['participant_role'] : '';
 ?>
 
+    <!-- Getting particpnat role to hide some nav bar features -->
+    <?php $participant_role = isset($_SESSION['participant_role']) ? $_SESSION['participant_role'] : '';
+?>
+
 <!-- Sidebar in a Card -->
 <div class="card sidebar card-special">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
-            <?php if ($participant_role == 'witness' && $participant_role == 'accused'): ?>
+        <?php if ($participant_role !== 'witness' || $participant_role !== 'accused'): ?>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="student_dashboard.php">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
@@ -283,7 +287,26 @@
                         <span> Submit Case</span>
                     </a>
                 </li>
-            <?php endif; ?>
+                <li class="nav-item">
+                <a class="nav-link" href="statement_submission.php">
+                    <i class="fas fa-file-alt"></i>
+                    <span> Submit Statements</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile_page_students.php">
+                    <i class="fas fa-user"></i>
+                    <span> Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login/logout.php">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span> Logout</span>
+                </a>
+            </li>
+                <?php endif; ?>
+            <?php if ($participant_role == 'witness' || $participant_role == 'accused'): ?>
             <li class="nav-item">
                 <a class="nav-link" href="statement_submission.php">
                     <i class="fas fa-file-alt"></i>
@@ -302,9 +325,12 @@
                     <span> Logout</span>
                 </a>
             </li>
+            <?php endif; ?>
         </ul>
     </div>
 </div>
+
+    
 
     <!-- Main Content -->
     <main class="content">
