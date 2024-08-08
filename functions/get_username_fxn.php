@@ -14,6 +14,19 @@ function getUserName($userId, $con) {
     }
 }
 
+function getProfilePicture($userId, $con) {
+    $query = "SELECT profile_picture FROM users WHERE pid = $userId";
+    $result_picture = mysqli_query($con, $query);
+    if ($result_picture && mysqli_num_rows($result_picture) > 0) {
+        $row = mysqli_fetch_assoc($result_picture);
+        return $row['profile_picture']; 
+    } else {
+        return "User not found";
+    }
+}
+
+
+
 
 function getRole($userId, $con) {
     $query_r = "SELECT r.role_name FROM users p JOIN roles r ON p.role_id = r.rid WHERE p.pid = $userId";
