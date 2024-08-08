@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $checkAdminStmt->close();
 
     // Prepare and bind parameters for user insertion
-    $stmt = $con->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`, `first_login`) VALUES (?, ?, ?, ?, ?, TRUE)");
+    $stmt = $con->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssi", $first_name, $last_name, $email, $hash, $role_id);
 
     // Execute the statement

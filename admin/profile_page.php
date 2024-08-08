@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../settings/core.php'?>
+<?php include '../action/profile_page_action.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,7 +69,7 @@
 
         .sidebar {
             position: fixed;
-            top: 55px;
+            top: 85px;
             bottom: 0;
             left: 20px;
             z-index: 100;
@@ -120,12 +121,14 @@
 
         .content {
             margin-left: 240px;
+            margin-top: -87px;
             padding: 20px;
             height: calc(100vh - 55px);
             overflow-y: auto;
         }
 
         .profile-header {
+            margin-top: 20px;
             background-color: #fff;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -259,7 +262,7 @@
             </div>
         </div>
         <div class="user-info">
-            <span>John Doe</span>
+            <span><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></span>
             <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
         </div>
     </div>
@@ -323,25 +326,23 @@
                 <input type="file" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
             </div>
             <div class="user-details text-center mb-4">
-                <h2 class="mb-1">John Doe</h2>
-                <p class="text-muted">Email: johndoe45@gmail.com</p>
+                <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
+                <p class="text-muted">Email: <?php echo htmlspecialchars($email); ?></p>
                 <p class="text-muted">Role: User</p>
             </div>
             <div class="user-info-container">
                 <div class="user-info-item">
                     <label for="emailVerification">First Name</label>
-                    <span class="pending">John</span>
+                    <span class="pending"><?php echo htmlspecialchars($f_name); ?></span>
                 </div>
                 <div class="user-info-item">
                     <label for="emailVerification">Last Name</label>
-                    <span class="pending">Doe</span>
+                    <span class="pending"><?php echo htmlspecialchars($l_name); ?></span>
                 </div>
-
                 <div class="user-info-item">
                     <label for="mobileVerification">Email</label>
-                    <span class="active">johndoe45@gmail.com</span>
+                    <span class="active"><?php echo htmlspecialchars($email); ?></span>
                 </div>
-                
             </div>
             <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
         </div>
