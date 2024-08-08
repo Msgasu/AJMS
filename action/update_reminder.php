@@ -12,10 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sssi", $reminder_date, $reminder_time, $message, $id);
     
     if ($stmt->execute()) {
-        echo "Reminder updated successfully!";
-        // Optionally redirect back or show a success message
+        // Redirect with success message
+        header("Location: ../your_page.php?success=1");
+        exit();
     } else {
-        echo "Error updating reminder: " . $con->error;
+        // Redirect with error message
+        header("Location: ../your_page.php?error=" . urlencode($con->error));
+        exit();
     }
 
     $stmt->close();
