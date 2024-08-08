@@ -359,7 +359,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="post" action="../action/profile_page_action.php" id="editProfileForm">
+                <form method="post" action="../action/edit_profile_action.php" id="editProfileForm">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="f_name">First Name</label>
@@ -405,12 +405,13 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: 'edit_profile_action.php',
+                    url: '../action/edit_profile_action.php',
                     data: $(this).serialize(),
                     success: function(response) {
-                        $('#editProfileModal').modal('hide');
+                        console.log('AJAX response:', response); // Log response
                         const responseData = JSON.parse(response);
                         if (responseData.success) {
+                            $('#editProfileModal').modal('hide');
                             $('#userFullName').text(responseData.full_name);
                             $('#userEmail').text('Email: ' + responseData.email);
                             $('#userName').text(responseData.full_name);
@@ -418,7 +419,8 @@
                             alert('Failed to update profile.');
                         }
                     },
-                    error: function() {
+                    error: function(xhr, status, error) {
+                        console.error('AJAX error:', status, error); // Log error
                         alert('An error occurred while updating the profile.');
                     }
                 });
