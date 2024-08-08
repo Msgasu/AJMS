@@ -66,7 +66,6 @@ document.getElementById('deleteFile').addEventListener('click', function() {
 });
 
 function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');
+    $('.sidebar').toggleClass('open');
 }
 

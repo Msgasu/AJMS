@@ -41,3 +41,7 @@ function updateStatus(selectElement, statementId) {
         }
     };
 }
+
+function toggleSidebar() {
+    $('.sidebar').toggleClass('open');
+}
