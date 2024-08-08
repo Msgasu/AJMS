@@ -476,18 +476,26 @@
 <!-- Notifications Card with Plus Icon -->
 <div class="card notifications card-special">
     <div class="card-body scrollable-notifications">
-        <h2>Notifications</h2>
+        <h2>Your reminders</h2>
         <div class="btn-container">
             <button class="btn btn-primary" data-toggle="modal" data-target="#notificationModal">
-                <i class="fas fa-plus"></i> Add Notification
+                <i class="fas fa-plus"></i> Add Reminders
             </button>
         </div>
+
+        <!-- Container for reminders -->
+        <div id="remindersContainer">
+            <?php fetchReminders(); // Initially show top 3 reminders ?>
+        </div>
         
-        <!-- Call the function to fetch and display reminders -->
-        <?php fetchReminders(); ?>
-        
+        <!-- "See More" Button -->
+        <!-- <div class="text-center">
+            <button id="seeMoreButton" class="btn btn-primary">See More</button>
+        </div> -->
     </div>
 </div>
+
+
 
 
     <!-- Add this link to trigger the modal -->
@@ -521,7 +529,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="submit" class="btn btn-success">Add Notification</button>
+                        <button type="submit" name="submit" class="btn btn-success">Add Reminder</button>
                     </div>
                 </form>
             </div>
@@ -529,6 +537,46 @@
     </div>
 </div>
 
+<script>
+document.getElementById('seeMoreButton').addEventListener('click', function() {
+    var container = document.getElementById('remindersContainer');
+    var seeMoreButton = document.getElementById('seeMoreButton');
+    
+    // Check if button text is "See More"
+    if (seeMoreButton.textContent.trim() === 'See More') {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '../funtion/fetch_eeminders.php', true); // Fetch all reminders
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                container.innerHTML = xhr.responseText; // Update container with all reminders
+                seeMoreButton.textContent = 'Show Less'; // Update button text
+            } else {
+                console.error('Failed to load reminders: ' + xhr.statusText);
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Network error while fetching reminders.');
+        };
+        xhr.send();
+    } else {
+        // Fetch and show top 3 reminders again
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '../action/fetch_reminders.php?limit=3', true); // Fetch top 3 reminders
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                container.innerHTML = xhr.responseText; // Update container with top 3 reminders
+                seeMoreButton.textContent = 'See More'; // Update button text
+            } else {
+                console.error('Failed to load reminders: ' + xhr.statusText);
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Network error while fetching reminders.');
+        };
+        xhr.send();
+    }
+});
+</script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
