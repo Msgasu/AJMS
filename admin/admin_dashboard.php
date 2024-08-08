@@ -10,8 +10,8 @@
 
     <?php include '../settings/core.php' ?>
     <?php include "../functions/get_username_fxn.php"; ?>
-    <?php include "../functions/fetch_case_details_admin.php";?>
-    <?php include "../functions/fetch_reminders.php";?>
+    <?php include "../functions/fetch_case_details_admin.php"; ?>
+    <?php include "../functions/fetch_reminders.php"; ?>
 
     <style>
         html,
@@ -301,18 +301,28 @@
             border-radius: 10px;
         }
 
-    .notifications .btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Adjust as needed */
-}
+        .notifications .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            /* Adjust as needed */
+        }
 
-.notifications .btn-primary {
-    margin-left: 0; /* Remove any left margin */
-    margin-right: 0;
-    background-color: #28a745;
-     /* Remove any right margin */
-}
+        .notifications .btn-primary {
+            margin-left: 0;
+            /* Remove any left margin */
+            margin-right: 0;
+            background-color: #28a745;
+            /* Remove any right margin */
+        }
+
+            .add-reminder {
+                color: green;
+                margin-left: 45px;
+                /* Adjust the value to control the space */
+                text-decoration: none;
+                /* Removes underline if present */
+            }
 
         
     </style>
@@ -413,12 +423,12 @@
 
             <!-- Cards -->
             <div class="row">
-            <br>
-            <?php generateAndDisplayCards()?>
+                <br>
+                <?php generateAndDisplayCards() ?>
 
-                </div>
+            </div>
 
-<!--                 
+            <!--                 
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm card-custom">
                         <div class="case-card-header" style="background-image: url('../images/Ashesi.jpg');">
@@ -473,112 +483,103 @@
         </div>
     </main>
 
-<!-- Notifications Card with Plus Icon -->
-<div class="card notifications card-special">
-    <div class="card-body scrollable-notifications">
-        <h2>Your reminders</h2>
-        <div class="btn-container">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#notificationModal">
-                <i class="fas fa-plus"></i> Add Reminders
-            </button>
-        </div>
+    <div class="card notifications card-special">
+        <div class="card-body scrollable-notifications">
+            <h2>Your reminders
+                <a href="#" data-toggle="modal" data-target="#notificationModal" class="add-reminder">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </h2>
 
-        <!-- Container for reminders -->
-        <div id="remindersContainer">
-            <?php fetchReminders(); // Initially show top 3 reminders ?>
-        </div>
-        
-        <!-- "See More" Button -->
-        <!-- <div class="text-center">
+            <!-- Container for reminders -->
+            <div id="remindersContainer">
+                <?php fetchReminders(); // Initially show top 3 reminders 
+                ?>
+            </div>
+
+            <!-- "See More" Button -->
+            <!-- <div class="text-center">
             <button id="seeMoreButton" class="btn btn-primary">See More</button>
         </div> -->
+        </div>
     </div>
-</div>
-
-
-
-
-    <!-- Add this link to trigger the modal -->
-    <a href="#" data-toggle="modal" data-target="#notificationModal">
-        <i class="fas fa-plus"></i>
-    </a>
 
     <!-- Modal Structure -->
-<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="notificationModalLabel">Add New Notification</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="reminder" method="POST" action="../action/add_a_reminder_action.php">
-                    <div class="form-group">
-                        <label for="notificationDate">Date</label>
-                        <input type="date" class="form-control" id="notificationDate" name="reminder_date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="notificationTime">Time</label>
-                        <input type="time" class="form-control" id="notificationTime" name="reminder_time" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="notificationMessage">Message</label>
-                        <textarea class="form-control" id="notificationMessage" name="message" rows="3" required></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="submit" class="btn btn-success">Add Reminder</button>
-                    </div>
-                </form>
+    <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">Add New Reminder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="reminder" method="POST" action="../action/add_a_reminder_action.php">
+                        <div class="form-group">
+                            <label for="notificationDate">Date</label>
+                            <input type="date" class="form-control" id="notificationDate" name="reminder_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="notificationTime">Time</label>
+                            <input type="time" class="form-control" id="notificationTime" name="reminder_time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="notificationMessage">Message</label>
+                            <textarea class="form-control" id="notificationMessage" name="message" rows="3" required></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" class="btn btn-success">Add Reminder</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-document.getElementById('seeMoreButton').addEventListener('click', function() {
-    var container = document.getElementById('remindersContainer');
-    var seeMoreButton = document.getElementById('seeMoreButton');
-    
-    // Check if button text is "See More"
-    if (seeMoreButton.textContent.trim() === 'See More') {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '../funtion/fetch_eeminders.php', true); // Fetch all reminders
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                container.innerHTML = xhr.responseText; // Update container with all reminders
-                seeMoreButton.textContent = 'Show Less'; // Update button text
+
+
+    <script>
+        document.getElementById('seeMoreButton').addEventListener('click', function() {
+            var container = document.getElementById('remindersContainer');
+            var seeMoreButton = document.getElementById('seeMoreButton');
+
+            // Check if button text is "See More"
+            if (seeMoreButton.textContent.trim() === 'See More') {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../funtion/fetch_eeminders.php', true); // Fetch all reminders
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        container.innerHTML = xhr.responseText; // Update container with all reminders
+                        seeMoreButton.textContent = 'Show Less'; // Update button text
+                    } else {
+                        console.error('Failed to load reminders: ' + xhr.statusText);
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error('Network error while fetching reminders.');
+                };
+                xhr.send();
             } else {
-                console.error('Failed to load reminders: ' + xhr.statusText);
+                // Fetch and show top 3 reminders again
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../action/fetch_reminders.php?limit=3', true); // Fetch top 3 reminders
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        container.innerHTML = xhr.responseText; // Update container with top 3 reminders
+                        seeMoreButton.textContent = 'See More'; // Update button text
+                    } else {
+                        console.error('Failed to load reminders: ' + xhr.statusText);
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error('Network error while fetching reminders.');
+                };
+                xhr.send();
             }
-        };
-        xhr.onerror = function() {
-            console.error('Network error while fetching reminders.');
-        };
-        xhr.send();
-    } else {
-        // Fetch and show top 3 reminders again
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '../action/fetch_reminders.php?limit=3', true); // Fetch top 3 reminders
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                container.innerHTML = xhr.responseText; // Update container with top 3 reminders
-                seeMoreButton.textContent = 'See More'; // Update button text
-            } else {
-                console.error('Failed to load reminders: ' + xhr.statusText);
-            }
-        };
-        xhr.onerror = function() {
-            console.error('Network error while fetching reminders.');
-        };
-        xhr.send();
-    }
-});
-
-
-</script>
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -418,7 +418,7 @@
     </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
@@ -438,20 +438,22 @@
                 $.ajax({
                     type: 'POST',
                     url: '../action/edit_profile_action.php',
-                    data: $(this).serialize(),
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
                     success: function(response) {
                         $('#editProfileModal').modal('hide');
                         const responseData = JSON.parse(response);
                         if (responseData.success) {
-                            $('#userFullName').text(responseData.full_name);
-                            $('#userEmail').text('Email: ' + responseData.email);
-                            $('#userName').text(responseData.full_name);
+                            // Update the UI with the new profile details
+                            $('.user-details h2').text(responseData.full_name);
+                            $('.user-details p.email').text('Email: ' + responseData.email);
                         } else {
-                            alert('Failed to update profile.');
+                            alert('Failed to update profile: ' + responseData.message);
                         }
                     },
-                    error: function() {
-                        alert('An error occurred while updating the profile.');
+                    error: function(xhr, status, error) {
+                        alert('An error occurred: ' + xhr.responseText);
                     }
                 });
             });
