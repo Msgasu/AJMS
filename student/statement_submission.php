@@ -493,10 +493,10 @@
     </div>
 
     <script>
-    // Function to toggle the sidebar
-    function toggleSidebar() {
-        $('.sidebar').toggleClass('open');
-    }
+         function toggleSidebar() {
+                $('.sidebar').toggleClass('open');
+            }
+   
     document.addEventListener('DOMContentLoaded', function () {
         // Handle file input click
         document.querySelector('.attach-label').addEventListener('click', function () {
