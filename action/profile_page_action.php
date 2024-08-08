@@ -13,4 +13,4 @@ $stmt->execute();
 $stmt->bind_result($f_name, $l_name, $email);
 $stmt->fetch();
 $stmt->close();
-$conn->close();
+$con->close();
