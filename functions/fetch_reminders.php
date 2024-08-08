@@ -85,7 +85,7 @@ function fetchReminders() {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <form method="post" action="delete_reminder.php">
+                            <form method="post" action="../action/delete_reminder.php">
                                 <input type="hidden" name="id" value="' . $id . '">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
