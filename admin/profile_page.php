@@ -3,6 +3,8 @@
 <?php include '../settings/core.php'?>
 <?php include '../action/profile_page_action.php'; ?>
 <?php include '../action/edit_profile_action.php'; ?>
+<?php include '../action/edit_profile_action.php'; ?>
+<?php include '../action/edit_profile_action.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
