@@ -1,6 +1,7 @@
 <?php
-include '../settings/core.php';
-include '../config/db_connect.php';
+//include '../settings/core.php';
+include '../settings/connection.php';
+
 
 if(isset($_FILES['profileImage']) && $_FILES['profileImage']['error'] === UPLOAD_ERR_OK){
     $userId = $_SESSION['user_id'];
