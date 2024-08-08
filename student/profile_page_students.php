@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include '../settings/core.php'?>
+<?php include '../action/profile_page_action.php'; ?>
+<?php include '../action/edit_profile_action.php'; ?>
+<?php include '../functions/get_username_fxn.php'; ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        html, body {
+        html,
+        body {
             font-size: .875rem;
             background-color: #A44C4C;
             margin: 0;
@@ -68,23 +72,25 @@
 
         .sidebar {
             position: fixed;
-            top: 55px;
+            top: 85px;
             bottom: 0;
-            left: 0;
+            left: 20px;
+            z-index: 100;
+            padding: 0;
             width: 220px;
-            height: calc(100vh - 55px);
-            background-color: white;
-            border-right: 1px solid #dee2e6;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            border-radius: 0 0 15px 15px;
-            padding: 10px;
-            box-sizing: border-box;
+            height: calc(90vh - 30px);
+            background-color: white;
+            border-radius: 15px;
         }
 
         .sidebar-sticky {
             position: relative;
+            top: 0;
             height: 100%;
             padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         .sidebar .nav-link {
@@ -94,7 +100,7 @@
             align-items: center;
             padding: 10px 15px;
             border-radius: 10px;
-            margin: 5px 0;
+            margin: 5px 10px;
         }
 
         .sidebar .nav-link:hover {
@@ -114,16 +120,19 @@
 
         .sidebar .nav-link span {
             font-size: 1.1rem;
+            /* Increase font size */
         }
 
         .content {
             margin-left: 240px;
+            margin-top: -87px;
             padding: 20px;
             height: calc(100vh - 55px);
             overflow-y: auto;
         }
 
         .profile-header {
+            margin-top: 20px;
             background-color: #fff;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -234,11 +243,13 @@
         }
 
         .user-info-container .user-info-item.pending span {
-            color: #e74c3c; /* Red color for pending items */
+            color: #e74c3c;
+            /* Red color for pending items */
         }
 
         .user-info-container .user-info-item.active span {
-            color: #2ecc71; /* Green color for active items */
+            color: #2ecc71;
+            /* Green color for active items */
         }
 
         .profile-picture input[type="file"] {
@@ -257,113 +268,154 @@
             </div>
         </div>
         <div class="user-info">
-            <span>John Doe</span>
-            <img src="../images/ashesi_logo.jpeg" alt="User Profile Image">
+            <span>
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+                    $userName = getUserName($userId, $con);
+                    $profilePicture = getProfilePicture($userId, $con);
+
+                    echo '<div class="user-icon">';
+                    if ($profilePicture) {
+                        echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">';
+                    } else {
+                        echo '<i class="material-icons">account_circle</i>';
+                    }
+                    echo '</div>';
+
+                    echo '<div class="user-name">' . htmlspecialchars($userName) . '</div>';
+                } else {
+                    echo "Error: User ID not set in session";
+                }
+                ?>
+            </span>
         </div>
     </div>
 
-    <!-- Getting particpnat role to hide some nav bar features -->
-    <?php $participant_role = isset($_SESSION['participant_role']) ? $_SESSION['participant_role'] : '';
-?>
-
-    <!-- Getting particpnat role to hide some nav bar features -->
-    <?php $participant_role = isset($_SESSION['participant_role']) ? $_SESSION['participant_role'] : '';
-?>
-
-<!-- Sidebar in a Card -->
-<div class="card sidebar card-special">
-    <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-        <?php if ($participant_role !== 'witness' || $participant_role !== 'accused'): ?>
+    <!-- Sidebar in a Card -->
+    <div class="card sidebar card-special">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="student_dashboard.php">
+                    <a class="nav-link active" href="../admin/admin_dashboard.php">
                         <i class="fas fa-home"></i>
                         <span> Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="case_submission.php">
+                    <a class="nav-link" href="schedule_meeting.php">
                         <i class="fas fa-users"></i>
-                        <span> Submit Case</span>
+                        <span> Meeting</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="statement_submission.php">
-                    <i class="fas fa-file-alt"></i>
-                    <span> Submit Statements</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="profile_page_students.php">
-                    <i class="fas fa-user"></i>
-                    <span> Profile</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../login/logout.php">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span> Logout</span>
-                </a>
-            </li>
-                <?php endif; ?>
-            <?php if ($participant_role == 'witness' || $participant_role == 'accused'): ?>
-            <li class="nav-item">
-                <a class="nav-link" href="statement_submission.php">
-                    <i class="fas fa-file-alt"></i>
-                    <span> Submit Statements</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="profile_page_students.php">
-                    <i class="fas fa-user"></i>
-                    <span> Profile</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../login/logout.php">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span> Logout</span>
-                </a>
-            </li>
-            <?php endif; ?>
-        </ul>
+                    <a class="nav-link" href="../admin/submitted_cases.php">
+                        <i class="fas fa-file-alt"> </i>
+
+                        <span> Case statements</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../admin/recommender_system.php">
+                        <i class="fas fa-lightbulb"></i>
+                        <span> Recommender</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile_page.php">
+                        <i class="fas fa-user"></i>
+                        <span> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/logout.php">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span> Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-
-    
-
+    <br>
+    <br>
+    <br>
     <!-- Main Content -->
     <main class="content">
         <div class="profile-header">
             <div class="profile-picture">
-                <img src="../images/ashesi_logo.jpeg" alt="User Profile Image" id="profileImage">
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+                    $profilePicture = getProfilePicture($userId, $con);
+
+                    echo '<img src="../uploads/' . htmlspecialchars($profilePicture) . '" alt="User Profile Picture">';
+                }
+                ?>
+                </span>
                 <div class="camera-icon" onclick="document.getElementById('profileImageInput').click();">
                     <i class="fas fa-camera"></i>
                 </div>
                 <input type="file" id="profileImageInput" accept="image/*" onchange="previewImage(event)">
             </div>
             <div class="user-details text-center mb-4">
-                <h2 class="mb-1">John Doe</h2>
-                <p class="text-muted">Email: johndoe45@gmail.com</p>
-                <p class="text-muted">Role: User</p>
+                <h2 class="mb-1"><?php echo htmlspecialchars($f_name . ' ' . $l_name); ?></h2>
+                <p class="text-muted">Email: <?php echo htmlspecialchars($email); ?></p>
+                <p class="text-muted">Role: Student</p>
             </div>
             <div class="user-info-container">
                 <div class="user-info-item">
                     <label for="emailVerification">First Name</label>
-                    <span class="pending">John</span>
+                    <span class="pending"><?php echo htmlspecialchars($f_name); ?></span>
                 </div>
                 <div class="user-info-item">
                     <label for="emailVerification">Last Name</label>
-                    <span class="pending">Doe</span>
+                    <span class="pending"><?php echo htmlspecialchars($l_name); ?></span>
                 </div>
                 <div class="user-info-item">
                     <label for="mobileVerification">Email</label>
-                    <span class="active">johndoe45@gmail.com</span>
+                    <span class="active"><?php echo htmlspecialchars($email); ?></span>
                 </div>
-                
             </div>
-            <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#editProfileModal">Edit Profile</button>
         </div>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="../action/edit_profile_action.php" id="editProfileForm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="f_name">First Name</label>
+                            <input type="text" class="form-control" id="f_name" name="f_name" value="<?php echo htmlspecialchars($f_name); ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="l_name">Last Name</label>
+                            <input type="text" class="form-control" id="l_name" name="l_name" value="<?php echo htmlspecialchars($l_name); ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -378,6 +430,33 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         }
+
+        $(document).ready(function() {
+            $('#editProfileForm').on('submit', function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '../action/edit_profile_action.php',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#editProfileModal').modal('hide');
+                        const responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            $('#userFullName').text(responseData.full_name);
+                            $('#userEmail').text('Email: ' + responseData.email);
+                            $('#userName').text(responseData.full_name);
+                        } else {
+                            alert('Failed to update profile.');
+                        }
+                    },
+                    error: function() {
+                        alert('An error occurred while updating the profile.');
+                    }
+                });
+            });
+        });
     </script>
 </body>
+
 </html>
