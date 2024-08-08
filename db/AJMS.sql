@@ -24,6 +24,8 @@ CREATE TABLE users (
 );
 
 -- ALTER TABLE users ADD COLUMN first_login BOOLEAN DEFAULT TRUE;
+
+ALTER TABLE users ADD COLUMN first_login BOOLEAN DEFAULT TRUE;
 ALTER TABLE users ADD COLUMN student_id VARCHAR(20) DEFAULT NULL;
 ALTER TABLE users ADD COLUMN participant VARCHAR(20) DEFAULT NULL;
 ALTER TABLE users ADD COLUMN profile_picture VARCHAR(255);
@@ -77,7 +79,17 @@ CREATE TABLE case_parties (
     -- FOREIGN KEY (student_email) REFERENCES users(email) -- Reference to the users table
 );
 
--- Note: Ensure that the `email` column in the `users` table is unique or indexed.
+CREATE TABLE statements (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    case_id INT, -- Foreign key to reference the case
+    user_id INT, -- Foreign key to reference the user who made the statement
+    statement_description TEXT, -- For text descriptions
+    document_url VARCHAR(255), -- For storing URLs of documents
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (case_id) REFERENCES cases(id),
+    FOREIGN KEY (user_id) REFERENCES users(pid) -- Reference to the users table
+);
+
 
 -- Insert admin users 
 INSERT INTO admins (email) VALUES

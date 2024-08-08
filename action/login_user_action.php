@@ -25,6 +25,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION["first_login"] = $q_result["first_login"];
                 $_SESSION["email"] = $q_result["email"];
                 $participant_role = $q_result["participant"]; // Fetch participant role
+                $_SESSION["participant"] = $q_result["participant"];
 
                 // Check if it's the first login and user is a student
                 if ($q_result["first_login"] && $_SESSION["user_role"] == 2) {
