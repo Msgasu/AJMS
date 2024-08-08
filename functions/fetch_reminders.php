@@ -49,7 +49,7 @@ function fetchReminders() {
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="update_reminder.php">
+                            <form method="post" action="../action/update_reminder.php">
                                 <input type="hidden" name="id" value="' . $id . '">
                                 <div class="form-group">
                                     <label for="reminderDate">Reminder Date</label>
