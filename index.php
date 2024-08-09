@@ -59,91 +59,137 @@
             border-radius: 15px;
         }
 
-        .text-center {
-            display: flex;
-            justify-content: center;
-        }
 
-        .btn-primary {
-            background-color: #28a745;
-            border-color: #28a745;
-            border-radius: 15px;
-            padding: 10px 20px;
-            font-size: 1rem;
-            transition: background-color 0.2s, border-color 0.2s;
-        }
 
-        .btn-primary:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
-
-        .modal-footer {
-            border-top: none;
-            display: flex;
-            justify-content: center;
-            padding-top: 0;
-        }
-
-        .text {
-            font-style: italic;
-            color: #555;
-            text-align: left;
-            margin-bottom: 1rem;
-            font-size:15px;
-        }
-        
-
-    </style>
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: white;
+  }
+  
+  .hero button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hero button:hover {
+    background-color: #45a049;
+  }
+  
+  section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  section h2 {
+    margin-bottom: 30px;
+  }
+  
+  footer {
+    background-color: #A44C4C;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  footer ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .social-media a {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 1.5em;
+  }
+  </style>
 </head>
 
 <body>
-    <!-- Modal HTML -->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true" style="background-color: #A44C4C;">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h3>
-                    
-                </div>
-                <p style= "margin-left:15px;" class="text"><em>Please enter your details.</em></p>
-                <div class="modal-body">
-                    
-                    <form id="welcomeForm">
-                        <div class="form-group">
-                            <label for="roleSelect" style="font-size:12px;"><em>Are you a Witness, Victim or the accused?</em></label>
-                            <select class="form-control" id="roleSelect" required>
-                                <option value="" disabled selected>Select Role</option>
-                                <option value="witness">Witness</option>
-                                <option value="victim">Victim</option>
-                                <option value="accused">Accused</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="studentId"style="font-size:12px;">Student ID</label>
-                            <input type="text" class="form-control" id="studentId" placeholder="Enter your student ID" required>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#welcomeModal').modal({
-                backdrop: 'static', 
-                keyboard: false 
-            }).modal('show');
-        });
-    </script>
+<header>
+<div class="top-left-buttons">
+  <h2 onclick="window.location.href='../AJMS/login/register_view.php'">AJMS</h2>
+  
+</div>
+<div class="logo">
+  
+  </div>
+  <nav>
+    <ul>
+      <li><a onclick="window.location.href='../AJMS/login/login.php'">Login</a></li>
+      <li><a onclick="window.location.href='../AJMS/login/register_view.php'">Sign Up</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to AJMS</h1>
+    <h2 style="color: white; "><em>Streamlining Judicial Management for Efficiency</em></h2>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Welcome to AJMS, the Ashesi Judicial Management System designed to enhance judicial processes and improve efficiency.</p>
+  <br>
+  <p>At AJMS, we recognize the importance of effective judicial management in ensuring justice and maintaining order.</p>
+  <br>
+  <p>Whether you need to manage cases, track proceedings, or access judicial records,</p>
+  <p> our platform offers the tools and resources you need to handle these tasks effectively.</p>
+  <br>
+  <p>With a user-friendly interface and robust features, AJMS empowers you to:</p>
+  <ul>
+    <li>Efficiently manage judicial cases</li>
+    <li>Track legal proceedings with precision</li>
+    <li>Access and organize judicial records seamlessly</li>
+  </ul>
+  <br>
+  <p>Join the AJMS community today and transform your approach to judicial management.</p>
+  <br>
+  <p>Let's make judicial processes more streamlined, accurate, and efficient than ever before!</p>
+</section>
+
+<section id="services">
+  <h2>AJMS Features</h2>
+  
+  <ul>
+    <li><strong>Case Management:</strong> 
+     Efficiently manage and track judicial cases from initiation to resolution, ensuring all proceedings are properly documented.</li>
+    <br>
+    <li><strong>Record Tracking:</strong> Access and organize judicial records and case files easily, providing quick and accurate retrieval of information.</li>
+    <br>
+    <li><strong>Progress Monitoring:</strong> Monitor the progress of cases and legal processes, with tools to set and track milestones and deadlines.</li>
+    <br>
+    <li><strong>Reporting:</strong> Generate comprehensive reports on case statuses, court proceedings, and judicial metrics to support informed decision-making.</li>
+  </ul>
+</section>
+
+   
+  </ul>
+
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Feel free to reach out to us with any questions or inquiries.</p>
+  <p><i class="material-icons">phone</i> +233-20-911-6445</p>
+
+</section>
+
+
+
 </body>
 
 </html>

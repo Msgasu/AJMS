@@ -106,6 +106,13 @@
         .sign-up-link a:hover {
             text-decoration: underline;
         }
+        .is-invalid {
+            border-color: red;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -150,12 +157,31 @@
             </div>
         </div>
     </div>
+    <div id="errorContainer" class="error-message">
+        <?php if (isset($_SESSION["error_message"])): ?>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const errorMessage = "<?php echo $_SESSION['error_message']; ?>";
+                    const errorContainer = document.getElementById('errorContainer');
+                    errorContainer.textContent = errorMessage;
+
+                    if (errorMessage.includes("Incorrect password")) {
+                        document.getElementById('password').classList.add('is-invalid');
+                    }
+                    if (errorMessage.includes("User not found")) {
+                        document.getElementById('username').classList.add('is-invalid');
+                    }
+                });
+            </script>
+            <?php unset($_SESSION["error_message"]); ?>
+        <?php endif; ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-    <!-- <script src="../js/login.js"></script> -->
+    
+    
+
     
 </body>
 

@@ -65,5 +65,7 @@ if (isset($_POST['submit'])) {
     } else {
         $_SESSION["error_message"] = "Error: " . $con->error;
     }
+    header("Location: ../login/login.php");
+    exit();
 }
 ?>

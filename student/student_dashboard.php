@@ -129,7 +129,7 @@
 
 
         .content {
-            margin-top: 110px;
+            margin-top: 90px;
             margin-left: 255px;
             margin-right: 280px;
             padding: 20px 0;
