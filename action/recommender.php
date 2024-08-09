@@ -5,6 +5,8 @@ include "../settings/connection.php";
 
 if (isset($_POST['submit'])) {
     $report = mysqli_real_escape_string($con, $_POST['report']);
+    echo "this works";
+    exit();
     
     // Keyword matching logic
     $keywords = explode(' ', $report);  // Split report into words
@@ -28,8 +30,7 @@ if (isset($_POST['submit'])) {
         $caseQuery = "SELECT Case_Description, Advice FROM pastCases WHERE Violation_type LIKE '%$keyword%'";
         $caseResult = $con->query($caseQuery);
 
-        echo $caseResult;
-        exit();
+
 
         if ($caseResult->num_rows > 0) {
             while ($row = $caseResult->fetch_assoc()) {
