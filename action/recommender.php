@@ -5,8 +5,7 @@ include "../settings/connection.php";
 
 if (isset($_POST['submit'])) {
     $report = mysqli_real_escape_string($con, $_POST['report']);
-    echo "this works";
-    exit();
+   
     
     // Keyword matching logic
     $keywords = explode(' ', $report);  // Split report into words
@@ -18,6 +17,8 @@ if (isset($_POST['submit'])) {
         // Find matching sanctions
         $sanctionQuery = "SELECT Violation_Description, Sanction_Description FROM sanctions WHERE Violation_Description LIKE '%$keyword%'";
         $sanctionResult = $con->query($sanctionQuery);
+        echo $sanctionResult;
+        exit();
 
         if ($sanctionResult->num_rows > 0) {
             while ($row = $sanctionResult->fetch_assoc()) {
