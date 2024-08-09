@@ -132,7 +132,7 @@
         </form>
 
         <div class="sign-up-link">
-            <p>Don't have an account? <a href="register_view.php">Sign up</a></p>
+            <p>Don't have an account? <a href="../AJMS/register_view.php">Sign up</a></p>
         </div>
     </div>
 
