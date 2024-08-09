@@ -29,9 +29,7 @@ if (isset($_POST['submit'])) {
         $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%'";
        
         $caseResult = $con->query($caseQuery);
-        if ($caseResult === false) {
-            echo "Error: " . $con->error;
-        }
+       
 
         
         if ($caseResult->num_rows > 0) {
