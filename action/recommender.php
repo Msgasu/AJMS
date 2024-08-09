@@ -15,13 +15,13 @@ if (isset($_POST['submit'])) {
     $adviceToCommunity = '';
 
     foreach ($keywords as $keyword) {
-        // Find matching sanctions
-        $sanctionQuery = "SELECT Violation_Description, Sanction_Description FROM sanctions WHERE Violation_Description LIKE '%$keyword%'";
+        // Find matching sanctions including the Section column
+        $sanctionQuery = "SELECT Violation_Description, Sanction_Description, Section FROM sanctions WHERE Violation_Description LIKE '%$keyword%'";
         $sanctionResult = $con->query($sanctionQuery);
 
         if ($sanctionResult->num_rows > 0) {
             while ($row = $sanctionResult->fetch_assoc()) {
-                $suggestedSanctions[] = $row['Sanction_Description'];
+                $suggestedSanctions[] = $row['Sanction_Description'] . " (Section: " . $row['Section'] . ")";
                 $adviceToCommunity .= $row['Violation_Description'] . ": " . $row['Sanction_Description'] . ". ";
             }
         }
@@ -59,5 +59,6 @@ if (isset($_POST['submit'])) {
     $con->close();
 }
 ?>
+
 
 

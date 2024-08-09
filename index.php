@@ -156,20 +156,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
     <!-- <script src="../js/login.js"></script> -->
-    <script>
-
-
     
-   
-        document.getElementById('registerForm').addEventListener('submit', function (event) {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            if (password !== confirmPassword) {
-                alert('Passwords do not match.');
-                event.preventDefault();
-            }
-        });
-    </script>
 </body>
 
 </html>
