@@ -45,8 +45,7 @@ if (isset($_POST['submit'])) {
     $suggestedVerdict .= "<br><br><strong>Related Cases:</strong><br>" . implode('<br>', $relatedCases);
     $suggestedVerdict .= "<br><br><strong>Advice to the Community:</strong><br>" . $adviceToCommunity;
     
-    echo $suggestedVerdict;
-    exit();
+   
     
 
     // Close connection
