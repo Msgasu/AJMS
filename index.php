@@ -25,6 +25,7 @@
     top: 20px;
     left: 20px;
     z-index: 1;
+    cursor: pointer;
   }
   
   .top-left-buttons button {
