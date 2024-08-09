@@ -69,7 +69,7 @@
     position: relative;
     text-align: center;
     padding: 650px 0; 
-    background-image: url("../images/Ashesi.jpg"); 
+    background-image: url("../AJMS/images/Ashesi.jpg"); 
     background-size: cover;
     background-position: center;
   }
