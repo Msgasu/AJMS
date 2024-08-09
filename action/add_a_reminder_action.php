@@ -28,5 +28,5 @@ if (isset($_POST['submit'])) {
     }
 }
 
-$mysqli->close();
+$con->close();
 ?>

@@ -156,7 +156,7 @@
             </div>
         </form>
         <div class="sign-up-link">
-            <p>Already have an account? <a href="login.php">Sign in</a></p>
+            <p>Already have an account? <a href="../AJMS_MEGA/index.php">Sign in</a></p>
         </div>
     </div>
     <div class="footer">

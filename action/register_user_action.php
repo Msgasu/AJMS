@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 
     // Execute the statement
     if ($stmt->execute()) {
-        header("Location: ../login/login.php");
+        header("Location: ..AJMS_MEGA/index.php");
         exit();
     } else {
         echo "User not registered, something went wrong: " . $stmt->error;
