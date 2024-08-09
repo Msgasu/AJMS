@@ -177,7 +177,7 @@
 <section class="hero">
   <div class="hero-content">
     <h1>Welcome to AJMS</h1>
-    <h2 style="color: grey; ">Streamlining Judicial Management for Efficiency</h2>
+    <h2 style="color: #A44C4C; "><em>Streamlining Judicial Management for Efficiency</em></h2>
   </div>
 </section>
 
