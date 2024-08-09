@@ -391,7 +391,7 @@ unset($_SESSION['suggestedVerdict']);
                 </div>
                 <button class="submit-button" type="submit" name="submit">Submit</button>
             </form>
-            <div class="white-space"></div> <!-- For white space at the bottom -->
+            
         </div>
         <div class="suggested-verdict">
             <h2>Suggested Verdict</h2>
