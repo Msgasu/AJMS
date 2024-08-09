@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
     $suggestedVerdict .= "<br><br><strong>Related Cases:</strong><br>" . implode('<br>', $relatedCases);
     $suggestedVerdict .= "<br><br><strong>Advice to the Community:</strong><br>" . $adviceToCommunity;
     
-    header("Location: ../admin/recommender_system.php?success=1");
+    header("Location: ../admin/recommender_system.php");
     
 
     // Close connection
