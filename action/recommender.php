@@ -26,13 +26,15 @@ if (isset($_POST['submit'])) {
             }
         }
        
-        // Find related past cases
-        $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%'";
+        // Find related past cases (limit to top 5)
+        $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%' LIMIT 5";
         $caseResult = $con->query($caseQuery);
 
         if ($caseResult->num_rows > 0) {
+            $caseNumber = 1;
             while ($row = $caseResult->fetch_assoc()) {
-                $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice_to_Community'];
+                $relatedCases[] = "#Case " . $caseNumber . ": " . $row['Case_Description'] . " - " . $row['Advice_to_Community'];
+                $caseNumber++;
             }
         }
     }
@@ -54,4 +56,3 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-?>
