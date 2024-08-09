@@ -23,6 +23,8 @@ if (isset($_POST['submit'])) {
                 $adviceToCommunity .= $row['Violation_Description'] . ": " . $row['Sanction_Description'] . ". ";
             }
         }
+        echo "this works";
+        exit();
 
         // Find related past cases
         $caseQuery = "SELECT Case_Description, Advice FROM pastCases WHERE Violation_type LIKE '%$keyword%'";
