@@ -191,7 +191,7 @@
         }
 
         .report-form textarea {
-            width: 100%;
+            width: 200%;
             height: 200px; /* Adjusted height */
             border-radius: 10px;
             background-color: lightgrey;
