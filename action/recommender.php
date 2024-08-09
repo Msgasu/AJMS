@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
         
         if ($caseResult->num_rows > 0) {
             while ($row = $caseResult->fetch_assoc()) {
-                $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice'];
+                $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice_to_Community'];
             }
         }
        
