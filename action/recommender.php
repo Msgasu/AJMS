@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 
         // Find related past cases
         $caseQuery = "SELECT Case_Description, Advice FROM pastCases WHERE Violation_type LIKE '%$keyword%'";
-        $caseResult = $conn->query($caseQuery);
+        $caseResult = $con->query($caseQuery);
 
         if ($caseResult->num_rows > 0) {
             while ($row = $caseResult->fetch_assoc()) {
