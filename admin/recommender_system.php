@@ -165,7 +165,7 @@ unset($_SESSION['suggestedVerdict']);
             height: 102%; /* Fill available height */
             display: flex;
             flex-direction: column;
-           
+            
             position: relative;
             box-sizing: border-box;
             padding-bottom: 10px; /* Added padding to make room for bottom elements */
@@ -196,7 +196,7 @@ unset($_SESSION['suggestedVerdict']);
       
 
         .report-form textarea {
-            width: 200%;
+            width: 100%;
             height: 200px; /* Adjusted height */
             border-radius: 10px;
             background-color: lightgrey;
