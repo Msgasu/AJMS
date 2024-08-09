@@ -20,7 +20,7 @@ unset($_SESSION['suggestedVerdict']);
         html, body {
             font-size: .875rem;
             background-color: #A44C4C;
-            overflow: hidden; /* Prevent general scrollbar */
+            overflow: y auto; /* Prevent general scrollbar */
             height: 100%;
             margin: 0;
             padding: 0;
