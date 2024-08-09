@@ -28,6 +28,9 @@ if (isset($_POST['submit'])) {
         $caseQuery = "SELECT Case_Description, Advice FROM pastCases WHERE Violation_type LIKE '%$keyword%'";
         $caseResult = $con->query($caseQuery);
 
+        echo $caseResult;
+        exit();
+
         if ($caseResult->num_rows > 0) {
             while ($row = $caseResult->fetch_assoc()) {
                 $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice'];
