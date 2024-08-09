@@ -37,7 +37,7 @@
   }
   
   .top-left-buttons button:hover {
-    background-color: #45a049;
+    background-color: #A44C4C;
   }
   
   header {
@@ -72,7 +72,7 @@
     background-image: url("../AJMS/images/Ashesi.jpg"); 
     background-size: cover;
     background-position: center;
-    height:50%
+   
   }
    
   .hero::after {
@@ -81,7 +81,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 50%;
     background-color: rgba(78, 78, 78, 0.5); 
     z-index: 1; 
   }
@@ -157,23 +157,20 @@
 
 <body>
 
-<div class="top-left-buttons">
-  <nav>
-    <ul>
-      <li onclick="window.location.href='../AJMS/login/login.php'">AJMS</li>
+
       
-    </ul>
-  </nav>
+  
 
 <header>
-<div class="logo">
-  
-  </div>
+  <div class="logo">
+    <div class="top-left-buttons">
+      <h4>AJMS</h4>
+    </div>
   <nav>
     <ul>
-      <li><a onclick="window.location.href='../AJMS/login/login.php'">About</a></li>
-      <li><a onclick="window.location.href='../AJMS/login/register_view.php'">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a onclick="window.location.href='../AJMS/login/login.php'">Login</a></li>
+      <li><a onclick="window.location.href='../AJMS/login/register_view.php'">Signup</a></li>
+      
     </ul>
   </nav>
 </header>
