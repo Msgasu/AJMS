@@ -26,19 +26,23 @@ if (isset($_POST['submit'])) {
             }
         }
        
-        // Find related past cases (limit to top 5)
-        $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%' LIMIT 5";
+        // Find related past cases
+        $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%'";
         $caseResult = $con->query($caseQuery);
 
         if ($caseResult->num_rows > 0) {
-            $caseNumber = 1;
             while ($row = $caseResult->fetch_assoc()) {
-                $relatedCases[] = "#Case " . $caseNumber . ": " . $row['Case_Description'] . " - " . $row['Advice_to_Community'];
-                $caseNumber++;
+                $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice_to_Community'];
             }
         }
     }
-    
+
+    // Limit to top 5 related cases and number them
+    $relatedCases = array_slice($relatedCases, 0, 5);
+    $relatedCases = array_map(function($case, $index) {
+        return "#Case " . ($index + 1) . ": " . $case;
+    }, $relatedCases, array_keys($relatedCases));
+
     // Construct the suggested verdict
     $suggestedVerdict = "<strong>Sanctions:</strong><br>" . implode('<br>', $suggestedSanctions);
     $suggestedVerdict .= "<br><br><strong>Related Cases:</strong><br>" . implode('<br>', $relatedCases);
@@ -55,4 +59,5 @@ if (isset($_POST['submit'])) {
     $con->close();
 }
 ?>
+
 
