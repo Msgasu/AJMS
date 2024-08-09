@@ -220,12 +220,7 @@ unset($_SESSION['suggestedVerdict']);
             display: block; /* Ensure the button is a block element for centering */
         }
 
-        .white-space {
-            height: 100px; /* Adjusted to make the background show more */
-            width: 100%;
-            background-color: white;
-            border-radius: 0 0 15px 15px;
-        }
+       
 
         .suggested-verdict {
             background-color: white;
@@ -245,7 +240,7 @@ unset($_SESSION['suggestedVerdict']);
         
         .textarea-wrapper {
             position: relative;
-            width: 200%;
+            width: 100%;
         }
 
         .textarea-wrapper .icon-container {
