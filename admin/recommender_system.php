@@ -184,11 +184,7 @@
             font-style: italic; /* Italicized the text */
         }
 
-        .report-form .textarea-wrapper {
-            position: relative;
-            width: 100%;
-            margin-top: 10px; /* Reduced margin */
-        }
+      
 
         .report-form textarea {
             width: 200%;
