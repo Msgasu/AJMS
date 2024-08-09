@@ -384,26 +384,23 @@
                     or attach a copy of statement
                 </span>
             </div>
-            <div class="textarea-wrapper">
-                <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
-                <div class="icon-container">
-                    <label for="file-upload" class="attach-label">
-                        <i class="fas fa-link icon-url"></i>
-                    </label>
-                    <input type="file" id="file-upload" class="file-input" name="document">
+            <form method="post" action="recommender.php">
+                <div class="textarea-wrapper">
+                    <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
                 </div>
-                <div class="image-preview-container" id="image-preview" style="display: none;">
-                    <img id="preview-img" src="" alt="Image Preview">
-                    <button type="button" class="delete-button" id="delete-file">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </div>
-            </div>
-            <button class="submit-button" type="submit" name="submit">Submit</button>
+                <button class="submit-button" type="submit" name="submit">Submit</button>
+            </form>
             <div class="white-space"></div> <!-- For white space at the bottom -->
         </div>
         <div class="suggested-verdict">
             <h2>Suggested Verdict</h2>
+            <div id="verdict-output">
+                <?php
+                if (isset($suggestedVerdict)) {
+                    echo $suggestedVerdict;
+                }
+                ?>
+            </div>
         </div>
     </div>
 
