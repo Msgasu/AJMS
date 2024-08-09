@@ -1,7 +1,7 @@
 <?php
 // Define constants for database connection
 if (!defined('HOST')) {
-    define("HOST", "localhost");
+    define("HOST", "127.0.0.1");
 }
 if (!defined('DB_NAME')) {
     define("DB_NAME", "ajms");
@@ -10,7 +10,7 @@ if (!defined('USERNAME')) {
     define("USERNAME", "root");
 }
 if (!defined('PASSWORD')) {
-    define("PASSWORD", "");
+    define("PASSWORD", "ZKtHRK=w/Nb8");
 }
 
 // Create connection using constants
