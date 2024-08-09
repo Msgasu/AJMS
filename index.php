@@ -1,246 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
 
+        html, body {
+            font-size: .875rem;
+            background-color: #A44C4C;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
 
-  <link rel="stylesheet" href="../final_project/css/dashboard.css">
-  <link rel="stylesheet" href="../final_project/css/landinpage.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style>body {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-  }
-  
-  .top-left-buttons {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-  }
-  
-  .top-left-buttons button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .top-left-buttons button:hover {
-    background-color: #45a049;
-  }
-  
-  header {
-    background-color: #A44C4C;
-    color: white;
-    padding: 40px 20px; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  .hero {
-    position: relative;
-    text-align: center;
-    padding: 650px 0; 
-    background-image: url("../AJMS/images/Ashesi.jpg"); 
-    background-size: cover;
-    background-position: center;
-  }
-   
-  .hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(78, 78, 78, 0.5); 
-    z-index: 1; 
-  }
-  
-  .hero-content {
-    height:100%
-    position: relative;
-    z-index: 2; 
-  }
-  
-  .hero h1 {
-    margin-top: 40px !important; 
-    margin: 0;
-    margin-bottom: 20px;
-    font-size: 3em;
-    color: white; 
-}
+        .modal-dialog {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - 1rem);
+            background-color: #A44C4C;
+        }
 
+        .modal-content {
+            border-radius: 15px;
+            margin: auto;
+            padding: 20px;
+            height: 100%;
+        }
+        
+        .modal-header {
+            border-bottom: none;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 0;
+        }
 
+        .modal-title {
+            font-size: 1.9rem;
+            color: #333;
+            
+        }
 
-  .hero p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    color: white;
-  }
-  
-  .hero button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .hero button:hover {
-    background-color: #45a049;
-  }
-  
-  section {
-    padding: 50px 0;
-    text-align: center;
-  }
-  
-  section h2 {
-    margin-bottom: 30px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  footer ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-  
-  footer ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  .social-media a {
-    color: #fff;
-    margin-left: 10px;
-    font-size: 1.5em;
-  }
-  </style>
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .form-control {
+            border-radius: 15px;
+        }
+
+        .text-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+            border-radius: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .modal-footer {
+            border-top: none;
+            display: flex;
+            justify-content: center;
+            padding-top: 0;
+        }
+
+        .text {
+            font-style: italic;
+            color: #555;
+            text-align: left;
+            margin-bottom: 1rem;
+            font-size:15px;
+        }
+        
+
+    </style>
 </head>
 
 <body>
+    <!-- Modal HTML -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true" style="background-color: #A44C4C;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="welcomeModalLabel">Welcome to the AJMS!</h3>
+                    
+                </div>
+                <p style= "margin-left:15px;" class="text"><em>Please enter your details.</em></p>
+                <div class="modal-body">
+                    
+                    <form id="welcomeForm">
+                        <div class="form-group">
+                            <label for="roleSelect" style="font-size:12px;"><em>Are you a Witness, Victim or the accused?</em></label>
+                            <select class="form-control" id="roleSelect" required>
+                                <option value="" disabled selected>Select Role</option>
+                                <option value="witness">Witness</option>
+                                <option value="victim">Victim</option>
+                                <option value="accused">Accused</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentId"style="font-size:12px;">Student ID</label>
+                            <input type="text" class="form-control" id="studentId" placeholder="Enter your student ID" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="top-left-buttons">
-  <li onclick="window.location.href='../AJMS/login/login.php'">Login</li>
-  <li onclick="window.location.href='../AJMS/login/register.php'">Sign Up</li>
-</div>
-
-<header>
-<div class="logo">
-  
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>Welcome to AJMS</h1>
-    <h2>Streamlining Judicial Management for Efficiency</h2>
-  </div>
-</section>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>Welcome to AJMS, the Ashesi Judicial Management System designed to enhance judicial processes and improve efficiency.</p>
-  <br>
-  <p>At AJMS, we recognize the importance of effective judicial management in ensuring justice and maintaining order.</p>
-  <br>
-  <p>Whether you need to manage cases, track proceedings, or access judicial records,</p>
-  <p> our platform offers the tools and resources you need to handle these tasks effectively.</p>
-  <br>
-  <p>With a user-friendly interface and robust features, AJMS empowers you to:</p>
-  <ul>
-    <li>Efficiently manage judicial cases</li>
-    <li>Track legal proceedings with precision</li>
-    <li>Access and organize judicial records seamlessly</li>
-  </ul>
-  <br>
-  <p>Join the AJMS community today and transform your approach to judicial management.</p>
-  <br>
-  <p>Let's make judicial processes more streamlined, accurate, and efficient than ever before!</p>
-</section>
-
-<section id="services">
-  <h2>AJMS Features</h2>
-  
-  <ul>
-    <li><strong>Case Management:</strong> 
-     Efficiently manage and track judicial cases from initiation to resolution, ensuring all proceedings are properly documented.</li>
-    <br>
-    <li><strong>Record Tracking:</strong> Access and organize judicial records and case files easily, providing quick and accurate retrieval of information.</li>
-    <br>
-    <li><strong>Progress Monitoring:</strong> Monitor the progress of cases and legal processes, with tools to set and track milestones and deadlines.</li>
-    <br>
-    <li><strong>Reporting:</strong> Generate comprehensive reports on case statuses, court proceedings, and judicial metrics to support informed decision-making.</li>
-  </ul>
-</section>
-
-   
-  </ul>
-
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Feel free to reach out to us with any questions or inquiries.</p>
-  <p><i class="material-icons">phone</i> +233-20-911-6445</p>
-
-</section>
-
-<footer>
-  <ul>
-    <li><a href="#">Privacy Policy</a></li>
-    <li><a href="#">Terms of Service</a></li>
-    <li><a href="#">Contact Us</a></li>
-  </ul>
-  <div class="social-media">
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
-</footer>
-
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#welcomeModal').modal({
+                backdrop: 'static', 
+                keyboard: false 
+            }).modal('show');
+        });
+    </script>
 </body>
+
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('welcomeForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        var role = document.getElementById('roleSelect').value;
+        var studentId = document.getElementById('studentId').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../action/student_login_action.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Handle successful response
+                console.log('Response:', xhr.responseText); 
+                window.location.href = '../student/student_dashboard.php'; 
+                $('#welcomeModal').modal('hide'); 
+            } else {
+                // Handle error response
+                console.error('Error:', xhr.statusText); // Log error for debugging
+                alert('An error occurred. Please try again.');
+            }
+        };
+
+        // Send data in URL-encoded format
+        var data = 'role=' + encodeURIComponent(role) + '&studentId=' + encodeURIComponent(studentId);
+        xhr.send(data);
+    });
+});
+
+</script>
