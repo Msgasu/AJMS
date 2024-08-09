@@ -160,7 +160,7 @@ unset($_SESSION['suggestedVerdict']);
         .report-form {
             background-color: white;
             border-radius: 15px;
-            padding: 20px;
+            padding: 0px;
             width: 95%; /* Increased width to fill page nicely */
             height: 102%; /* Fill available height */
             display: flex;
