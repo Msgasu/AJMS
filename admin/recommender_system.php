@@ -380,7 +380,7 @@
                     or attach a copy of statement
                 </span>
             </div>
-            <form method="post" action="recommender.php">
+            <form method="post" action="../action/recommender.php">
                 <div class="textarea-wrapper">
                     <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
                 </div>
