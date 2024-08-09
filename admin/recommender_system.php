@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "../functions/get_username_fxn.php";
-include "../action/recommender.php" ?>
+include "../action/recommender.php";?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
