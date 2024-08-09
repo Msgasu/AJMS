@@ -162,7 +162,7 @@
   
 
 <header>
-  <div class="logo">
+  
     <div class="top-left-buttons">
       <h4>AJMS</h4>
     </div>
