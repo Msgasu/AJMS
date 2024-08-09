@@ -29,14 +29,15 @@ if (isset($_POST['submit'])) {
         $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastCases WHERE Violation_type LIKE '%$keyword%'";
         $caseResult = $con->query($caseQuery);
 
+        echo $caseResult;
+        exit();
         if ($caseResult->num_rows > 0) {
             while ($row = $caseResult->fetch_assoc()) {
                 $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice'];
             }
         }
     }
-    echo "this works";
-        exit();
+    
 
     // Construct the suggested verdict
     $suggestedVerdict = "<strong>Sanctions:</strong><br>" . implode('<br>', $suggestedSanctions);
