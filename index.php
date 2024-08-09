@@ -29,7 +29,7 @@
   
   .top-left-buttons button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #A44C4C;
     color: white;
     border: none;
     cursor: pointer;
@@ -157,8 +157,8 @@
 <body>
 
 <div class="top-left-buttons">
-  <li onclick="window.location.href='../AJMS/login/login.php'">Login</li>
-  <li onclick="window.location.href='../AJMS/login/register.php'">Sign Up</li>
+  <button onclick="window.location.href='../AJMS/login/login.php'">Login</button>
+  <button onclick="window.location.href='../AJMS/login/register.php'">Sign Up</button>
 </div>
 
 <header>
