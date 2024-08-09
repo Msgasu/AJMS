@@ -245,7 +245,7 @@ unset($_SESSION['suggestedVerdict']);
         
         .textarea-wrapper {
             position: relative;
-            width: 100%;
+            width: 200%;
         }
 
         .textarea-wrapper .icon-container {
