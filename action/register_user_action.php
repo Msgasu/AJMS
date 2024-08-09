@@ -1,5 +1,5 @@
 <?php
-include "../settings/connection.php";
+include '../settings/connection.php';
 session_start(); // Ensure session is started
 
 if (isset($_POST['submit'])) {
@@ -57,8 +57,13 @@ if (isset($_POST['submit'])) {
     $checkAdminStmt->close();
 
     // Prepare and bind parameters for user insertion
-    $stmt = $con->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssis", $first_name, $last_name, $email, $hash, $role_id, $profile_picture);
+    if ($profile_picture) {
+        $stmt = $con->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`, `profile_picture`) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssis", $first_name, $last_name, $email, $hash, $role_id, $profile_picture);
+    } else {
+        $stmt = $con->prepare("INSERT INTO users (`f_name`, `l_name`, `email`, `passwd`, `role_id`) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssi", $first_name, $last_name, $email, $hash, $role_id);
+    }
 
     // Execute the statement
     if ($stmt->execute()) {
