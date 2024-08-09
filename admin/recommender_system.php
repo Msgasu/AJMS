@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "../functions/get_username_fxn.php"; ?>
+<?php include "../functions/get_username_fxn.php";
+include "../action/recommender.php";
+
+// Retrieve the suggested verdict from the session
+$suggestedVerdict = isset($_SESSION['suggestedVerdict']) ? $_SESSION['suggestedVerdict'] : '';
+
+// Clear the suggested verdict from the session after displaying it
+unset($_SESSION['suggestedVerdict']);
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +20,7 @@
         html, body {
             font-size: .875rem;
             background-color: #A44C4C;
-            overflow: hidden; /* Prevent general scrollbar */
+            overflow:hidden; /* Prevent general scrollbar */
             height: 100%;
             margin: 0;
             padding: 0;
@@ -137,7 +146,7 @@
         }
 
         .content {
-            margin-top: 70px;
+            margin-top: 30px;
             margin-left: 10px; /* Reduced margin */
             margin-right: 10px; /* Reduced margin */
             padding: 20px 0;
@@ -156,7 +165,7 @@
             height: 102%; /* Fill available height */
             display: flex;
             flex-direction: column;
-            align-items: center;
+            
             position: relative;
             box-sizing: border-box;
             padding-bottom: 10px; /* Added padding to make room for bottom elements */
@@ -184,11 +193,7 @@
             font-style: italic; /* Italicized the text */
         }
 
-        .report-form .textarea-wrapper {
-            position: relative;
-            width: 100%;
-            margin-top: 10px; /* Reduced margin */
-        }
+      
 
         .report-form textarea {
             width: 100%;
@@ -215,12 +220,7 @@
             display: block; /* Ensure the button is a block element for centering */
         }
 
-        .white-space {
-            height: 100px; /* Adjusted to make the background show more */
-            width: 100%;
-            background-color: white;
-            border-radius: 0 0 15px 15px;
-        }
+       
 
         .suggested-verdict {
             background-color: white;
@@ -235,6 +235,7 @@
             font-size: 1.5rem;
             position:relative;
             box-sizing: border-box;
+            overflow-y:auto;
         }
         
         .textarea-wrapper {
@@ -384,26 +385,25 @@
                     or attach a copy of statement
                 </span>
             </div>
-            <div class="textarea-wrapper">
-                <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
-                <div class="icon-container">
-                    <label for="file-upload" class="attach-label">
-                        <i class="fas fa-link icon-url"></i>
-                    </label>
-                    <input type="file" id="file-upload" class="file-input" name="document">
+            <form method="post" action="../action/recommender.php">
+                <div class="textarea-wrapper">
+                    <textarea name="report" placeholder="Type your complaint or report here..." required></textarea>
                 </div>
-                <div class="image-preview-container" id="image-preview" style="display: none;">
-                    <img id="preview-img" src="" alt="Image Preview">
-                    <button type="button" class="delete-button" id="delete-file">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </div>
-            </div>
-            <button class="submit-button" type="submit" name="submit">Submit</button>
-            <div class="white-space"></div> <!-- For white space at the bottom -->
+                <button class="submit-button" type="submit" name="submit">Submit</button>
+            </form>
+            
         </div>
         <div class="suggested-verdict">
             <h2>Suggested Verdict</h2>
+            <div id="verdict-output">
+                <?php
+                 if (isset($suggestedVerdict)) {
+                    echo $suggestedVerdict;
+                } else {
+                    echo "<p>No suggested verdict available.</p>";
+                }
+                ?>
+            </div>
         </div>
     </div>
 
