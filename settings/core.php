@@ -6,7 +6,7 @@ if (!function_exists('login')) {
     function login() {
         if (!isset($_SESSION['user_id'])) {
             // If session is not set then redirect to Login Page
-            header('Location: ../AJMS_MEGA/index.php');
+            header('Location: ../login/login.php');
             exit();
         }
     }
