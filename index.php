@@ -70,7 +70,7 @@
     text-align: center;
     padding: 650px 0; 
     background-image: url("../AJMS/images/Ashesi.jpg"); 
-    background-size: cover;
+    background-size: 100px;
     background-position: center;
     height:50px;
   }
@@ -130,8 +130,8 @@
   }
   
   footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #A44C4C;
+    color: white;
     padding: 20px 0;
     text-align: center;
   }
