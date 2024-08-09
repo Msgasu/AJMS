@@ -23,14 +23,13 @@ if (isset($_POST['submit'])) {
                 $adviceToCommunity .= $row['Violation_Description'] . ": " . $row['Sanction_Description'] . ". ";
             }
         }
-        
-
+        echo "this works";
+        exit();
         // Find related past cases
         $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%'";
         $caseResult = $con->query($caseQuery);
 
-        echo $caseResult;
-        exit();
+        
         if ($caseResult->num_rows > 0) {
             while ($row = $caseResult->fetch_assoc()) {
                 $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice'];
