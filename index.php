@@ -72,6 +72,7 @@
     background-image: url("../AJMS/images/Ashesi.jpg"); 
     background-size: cover;
     background-position: center;
+    height:50%
   }
    
   .hero::after {
@@ -86,7 +87,7 @@
   }
   
   .hero-content {
-    height:100%
+    
     position: relative;
     z-index: 2; 
   }
@@ -157,9 +158,12 @@
 <body>
 
 <div class="top-left-buttons">
-  <button onclick="window.location.href='../AJMS/login/login.php'">Login</button>
-  <button onclick="window.location.href='../AJMS/login/register.php'">Sign Up</button>
-</div>
+  <nav>
+    <ul>
+      <li onclick="window.location.href='../AJMS/login/login.php'">AJMS</li>
+      
+    </ul>
+  </nav>
 
 <header>
 <div class="logo">
@@ -167,8 +171,8 @@
   </div>
   <nav>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a onclick="window.location.href='../AJMS/login/login.php'">About</a></li>
+      <li><a onclick="window.location.href='../AJMS/login/register_view.php'">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
