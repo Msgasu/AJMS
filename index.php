@@ -1,162 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #A44C4C;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
 
-        .container {
-            max-width: 800px;
-            margin-top: 80px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
 
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+  <link rel="stylesheet" href="../final_project/css/dashboard.css">
+  <link rel="stylesheet" href="../final_project/css/landinpage.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        .btn-custom {
-            background-color: #A44C4C;
-            color: white;
-            width: 300px;
-            font-size: large;
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .footer {
-            background: #000;
-            color: white;
-            padding: 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer img {
-            height: 75px;
-            width: 110px;
-            margin: 0;
-        }
-
-        .footer .left {
-            display: flex;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer .title {
-            margin-left: 10px;
-        }
-
-        .footer .right {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
-
-        .footer .right .line {
-            height: 60px;
-            border-left: 1px solid white;
-            margin: 0 10px;
-        }
-
-        label,
-        input {
-            display: block;
-            color: rgb(110, 106, 106);
-            font-weight: bold;
-            text-align: left;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            height: 65px;
-        }
-
-        .sign-up-link {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .sign-up-link a {
-            color: #A44C4C;
-            font-weight: bold;
-        }
-
-        .sign-up-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
-
 <body>
-    <div class="container">
-        <br>
-        <div class="header">
-            <h2>Welcome to AJMS</h2>
-        </div>
-        <br>
 
-        <form action="../AJMS/action/login_user_action.php" method="POST" id="loginForm">
-            <div class="form-group">
-                <label for="email">Enter your details below</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <br>
-            <div class="form-group">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <div class="btn-container">
-                <button type="submit" name="submit" class="btn btn-custom">Login</button>
-            </div>
-        </form>
+<div class="top-left-buttons">
+  <button onclick="window.location.href='../final_project/login/login.php'">Login</button>
+  <button onclick="window.location.href='../final_project/login/register.php'">Sign Up</button>
+</div>
 
-        <div class="sign-up-link">
-            <p>Don't have an account? <a href="../AJMS/login/register_view.php">Sign up</a></p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="left">
-            <img src="../AJMS/images/ashesi_logo.jpeg" alt="Ashesi University Logo">
-            <div class="title">
-                <h1 style="font-size:x-large;">AJMS</h1>
-            </div>
-        </div>
-        <div class="right">
-            <div class="line"></div>
-            <div class="text">
-                <h1 style="font-size:x-large; font-style:italic;font-weight: 400;">Ashesi Judicial <br>Committee</h1>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<header>
+<div class="logo">
   
-    <!-- <script src="../js/login.js"></script> -->
-    
-</body>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to AJMS</h1>
+    <h2>Streamlining Judicial Management for Efficiency</h2>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Welcome to AJMS, the Ashesi Judicial Management System designed to enhance judicial processes and improve efficiency.</p>
+  <br>
+  <p>At AJMS, we recognize the importance of effective judicial management in ensuring justice and maintaining order.</p>
+  <br>
+  <p>Whether you need to manage cases, track proceedings, or access judicial records,</p>
+  <p> our platform offers the tools and resources you need to handle these tasks effectively.</p>
+  <br>
+  <p>With a user-friendly interface and robust features, AJMS empowers you to:</p>
+  <ul>
+    <li>Efficiently manage judicial cases</li>
+    <li>Track legal proceedings with precision</li>
+    <li>Access and organize judicial records seamlessly</li>
+  </ul>
+  <br>
+  <p>Join the AJMS community today and transform your approach to judicial management.</p>
+  <br>
+  <p>Let's make judicial processes more streamlined, accurate, and efficient than ever before!</p>
+</section>
+
+<section id="services">
+  <h2>Web App Features</h2>
+  
+  <ul>
+    <li><strong>Plan Meals:</strong> 
+     Create customized meal plans tailored to your dietary preferences, allergies, and nutritional requirements.</li>
+    <br>
+    <li><strong>Search Recipes:</strong> Find inspiration for every occasion and discover new flavors to spice up your kitchen routine.</li>
+    <br>
+    <li><strong>Set Goals:</strong> Define your health and fitness goals, whether it's weight loss, muscle gain, or overall well-being. Set realistic targets and track your progress over time.</li>
+     <br>   
+   
+  </ul>
+
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Feel free to reach out to us with any questions or inquiries.</p>
+  <p><i class="material-icons">phone</i> +233-20-911-6445</p>
+
+</section>
+
+<footer>
+  <ul>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Service</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="social-media">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+</body>
 </html>
