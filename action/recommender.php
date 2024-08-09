@@ -44,8 +44,10 @@ if (isset($_POST['submit'])) {
     $suggestedVerdict = "<strong>Sanctions:</strong><br>" . implode('<br>', $suggestedSanctions);
     $suggestedVerdict .= "<br><br><strong>Related Cases:</strong><br>" . implode('<br>', $relatedCases);
     $suggestedVerdict .= "<br><br><strong>Advice to the Community:</strong><br>" . $adviceToCommunity;
-    echo "this works";
+    
+    header("Location: ..admin/recommender_system.php");
     exit();
+    
 
     // Close connection
     $con->close();
