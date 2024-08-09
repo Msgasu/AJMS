@@ -393,8 +393,10 @@ include "../action/recommender.php" ?>
             <h2>Suggested Verdict</h2>
             <div id="verdict-output">
                 <?php
-                if (isset($suggestedVerdict)) {
+                 if (isset($suggestedVerdict)) {
                     echo $suggestedVerdict;
+                } else {
+                    echo "<p>No suggested verdict available.</p>";
                 }
                 ?>
             </div>
