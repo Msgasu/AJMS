@@ -1,63 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
 
-        html, body {
-            font-size: .875rem;
-            background-color: #A44C4C;
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-        }
 
-        .modal-dialog {
-            display: flex;
-            align-items: center;
-            min-height: calc(100% - 1rem);
-            background-color: #A44C4C;
-        }
+  <link rel="stylesheet" href="../final_project/css/dashboard.css">
+  <link rel="stylesheet" href="../final_project/css/landinpage.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .top-left-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .top-left-buttons button {
+    padding: 10px 20px;
+    background-color: #A44C4C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .top-left-buttons button:hover {
+    background-color: #45a049;
+  }
+  
+  header {
+    background-color: #A44C4C;
+    color: white;
+    padding: 40px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 100px 0; /* Adjust this value to reduce the height */
+    background-image: url("../AJMS/images/Ashesi.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
-        .modal-content {
-            border-radius: 15px;
-            margin: auto;
-            padding: 20px;
-            height: 100%;
-        }
-        
-        .modal-header {
-            border-bottom: none;
-            text-align: center;
-            width: 100%;
-            padding-bottom: 0;
-        }
-
-        .modal-title {
-            font-size: 1.9rem;
-            color: #333;
-            
-        }
-
-        .modal-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-            width: 100%;
-        }
-
-        .form-control {
-            border-radius: 15px;
-        }
+   
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(78, 78, 78, 0.5); 
+    z-index: 1; 
+  }
+  
+  .hero-content {
+    
+    position: relative;
+    z-index: 2; 
+  }
+  
+  .hero h1 {
+    margin-top: 40px !important; 
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 3em;
+    color: white; 
+}
 
 
 
@@ -191,38 +234,4 @@
 
 
 </body>
-
 </html>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('welcomeForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
-
-        var role = document.getElementById('roleSelect').value;
-        var studentId = document.getElementById('studentId').value;
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '../action/student_login_action.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                // Handle successful response
-                console.log('Response:', xhr.responseText); 
-                window.location.href = '../student/student_dashboard.php'; 
-                $('#welcomeModal').modal('hide'); 
-            } else {
-                // Handle error response
-                console.error('Error:', xhr.statusText); // Log error for debugging
-                alert('An error occurred. Please try again.');
-            }
-        };
-
-        // Send data in URL-encoded format
-        var data = 'role=' + encodeURIComponent(role) + '&studentId=' + encodeURIComponent(studentId);
-        xhr.send(data);
-    });
-});
-
-</script>
