@@ -10,7 +10,7 @@ if (!defined('USERNAME')) {
     define("USERNAME", "root");
 }
 if (!defined('PASSWORD')) {
-    define("PASSWORD", " ");
+    define("PASSWORD", "");
 }
 
 // Create connection using constants
