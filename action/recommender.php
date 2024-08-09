@@ -1,7 +1,9 @@
 <?php
-// including the connection file
-include "../settings/connection.php";
+// Start the session
+session_start();
 
+// Include the connection file
+include "../settings/connection.php";
 
 if (isset($_POST['submit'])) {
     $report = mysqli_real_escape_string($con, $_POST['report']);
@@ -15,7 +17,6 @@ if (isset($_POST['submit'])) {
     foreach ($keywords as $keyword) {
         // Find matching sanctions
         $sanctionQuery = "SELECT Violation_Description, Sanction_Description FROM sanctions WHERE Violation_Description LIKE '%$keyword%'";
-        
         $sanctionResult = $con->query($sanctionQuery);
 
         if ($sanctionResult->num_rows > 0) {
@@ -27,17 +28,13 @@ if (isset($_POST['submit'])) {
        
         // Find related past cases
         $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%'";
-       
         $caseResult = $con->query($caseQuery);
-       
 
-        
         if ($caseResult->num_rows > 0) {
             while ($row = $caseResult->fetch_assoc()) {
                 $relatedCases[] = $row['Case_Description'] . " - " . $row['Advice_to_Community'];
             }
         }
-       
     }
     
     // Construct the suggested verdict
@@ -45,10 +42,16 @@ if (isset($_POST['submit'])) {
     $suggestedVerdict .= "<br><br><strong>Related Cases:</strong><br>" . implode('<br>', $relatedCases);
     $suggestedVerdict .= "<br><br><strong>Advice to the Community:</strong><br>" . $adviceToCommunity;
     
-    header("Location: ../admin/recommender_system.php");
+    // Store the suggested verdict in session
+    $_SESSION['suggestedVerdict'] = $suggestedVerdict;
     
-
+    // Redirect to the recommender system page
+    header("Location: ../admin/recommender_system.php");
+    exit();
+    
     // Close connection
     $con->close();
 }
+?>
+
 ?>

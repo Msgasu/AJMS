@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "../functions/get_username_fxn.php";
-include "../action/recommender.php";?>
+include "../action/recommender.php";
+
+// Retrieve the suggested verdict from the session
+$suggestedVerdict = isset($_SESSION['suggestedVerdict']) ? $_SESSION['suggestedVerdict'] : '';
+
+// Clear the suggested verdict from the session after displaying it
+unset($_SESSION['suggestedVerdict']);
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
