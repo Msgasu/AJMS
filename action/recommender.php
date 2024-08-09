@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
         $caseResult = $con->query($caseQuery);
         if ($caseResult === false) {
             echo "Error: " . $con->error;
-        }=
+        }
 
         
         if ($caseResult->num_rows > 0) {
