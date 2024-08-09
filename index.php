@@ -65,6 +65,7 @@
   nav ul li a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
   }
   .hero {
     position: relative;
