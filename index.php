@@ -177,7 +177,7 @@
 <section class="hero">
   <div class="hero-content">
     <h1>Welcome to AJMS</h1>
-    <h2>Streamlining Judicial Management for Efficiency</h2>
+    <h2 style="color: white; ">Streamlining Judicial Management for Efficiency</h2>
   </div>
 </section>
 
@@ -229,18 +229,7 @@
 
 </section>
 
-<footer>
-  <ul>
-    <li><a href="#">Privacy Policy</a></li>
-    <li><a href="#">Terms of Service</a></li>
-    <li><a href="#">Contact Us</a></li>
-  </ul>
-  <div class="social-media">
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
-</footer>
+
 
 </body>
 </html>
