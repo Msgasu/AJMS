@@ -159,7 +159,7 @@
 
 <header>
 <div class="top-left-buttons">
-  <h2 onclick="window.location.href='../AJMS/login/login.php'">AJMS</h2>
+  <h2 onclick="window.location.href='../AJMS/login/register_view.php'">AJMS</h2>
   
 </div>
 <div class="logo">
