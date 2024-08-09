@@ -15,6 +15,8 @@ if (isset($_POST['submit'])) {
     foreach ($keywords as $keyword) {
         // Find matching sanctions
         $sanctionQuery = "SELECT Violation_Description, Sanction_Description FROM sanctions WHERE Violation_Description LIKE '%$keyword%'";
+        echo $sanctionQuery;
+        exit();
         $sanctionResult = $con->query($sanctionQuery);
 
         if ($sanctionResult->num_rows > 0) {
@@ -26,8 +28,7 @@ if (isset($_POST['submit'])) {
        
         // Find related past cases
         $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastcases WHERE Violation_type LIKE '%$keyword%'";
-        echo $caseQuery;
-        exit();
+        
         $caseResult = $con->query($caseQuery);
 
         
