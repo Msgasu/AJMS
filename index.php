@@ -68,7 +68,7 @@
   .hero {
     position: relative;
     text-align: center;
-    padding: 300px 0; /* Adjust this value to reduce the height */
+    padding: 100px 0; /* Adjust this value to reduce the height */
     background-image: url("../AJMS/images/Ashesi.jpg");
     background-size: cover;
     background-position: center;
