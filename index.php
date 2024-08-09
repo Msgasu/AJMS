@@ -41,7 +41,7 @@
   }
   
   header {
-    background-color: #333;
+    background-color: #A44C4C;
     color: white;
     padding: 40px 20px; 
     display: flex;
@@ -86,7 +86,7 @@
   }
   
   .hero-content {
-  
+    height:100%
     position: relative;
     z-index: 2; 
   }
@@ -96,7 +96,7 @@
     margin: 0;
     margin-bottom: 20px;
     font-size: 3em;
-    color: #333; 
+    color: white; 
 }
 
 
@@ -104,7 +104,7 @@
   .hero p {
     font-size: 1.2em;
     margin-bottom: 40px;
-    color: #333;
+    color: white;
   }
   
   .hero button {
@@ -157,8 +157,8 @@
 <body>
 
 <div class="top-left-buttons">
-  <button onclick="window.location.href='../AJMS/login/login.php'">Login</button>
-  <button onclick="window.location.href='../AJMS/login/register.php'">Sign Up</button>
+  <li onclick="window.location.href='../AJMS/login/login.php'">Login</li>
+  <li onclick="window.location.href='../AJMS/login/register.php'">Sign Up</li>
 </div>
 
 <header>
