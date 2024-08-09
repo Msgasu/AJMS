@@ -146,7 +146,7 @@ unset($_SESSION['suggestedVerdict']);
         }
 
         .content {
-            margin-top: 10px;
+            margin-top: 30px;
             margin-left: 10px; /* Reduced margin */
             margin-right: 10px; /* Reduced margin */
             padding: 20px 0;
