@@ -23,11 +23,10 @@ if (isset($_POST['submit'])) {
                 $adviceToCommunity .= $row['Violation_Description'] . ": " . $row['Sanction_Description'] . ". ";
             }
         }
-        echo "this works";
-        exit();
+        
 
         // Find related past cases
-        $caseQuery = "SELECT Case_Description, Advice FROM pastCases WHERE Violation_type LIKE '%$keyword%'";
+        $caseQuery = "SELECT Case_Description, Advice_to_Community FROM pastCases WHERE Violation_type LIKE '%$keyword%'";
         $caseResult = $con->query($caseQuery);
 
         if ($caseResult->num_rows > 0) {
@@ -36,6 +35,8 @@ if (isset($_POST['submit'])) {
             }
         }
     }
+    echo "this works";
+        exit();
 
     // Construct the suggested verdict
     $suggestedVerdict = "<strong>Sanctions:</strong><br>" . implode('<br>', $suggestedSanctions);
