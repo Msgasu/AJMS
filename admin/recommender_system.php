@@ -160,12 +160,12 @@ unset($_SESSION['suggestedVerdict']);
         .report-form {
             background-color: white;
             border-radius: 15px;
-            padding: 0px;
+            padding: 20px;
             width: 95%; /* Increased width to fill page nicely */
             height: 102%; /* Fill available height */
             display: flex;
             flex-direction: column;
-            align-items: center;
+           
             position: relative;
             box-sizing: border-box;
             padding-bottom: 10px; /* Added padding to make room for bottom elements */
