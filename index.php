@@ -12,13 +12,153 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .top-left-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+  }
+  
+  .top-left-buttons button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .top-left-buttons button:hover {
+    background-color: #45a049;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 650px 0; 
+    background-image: url("../images/Ashesi.jpg"); 
+    background-size: cover;
+    background-position: center;
+  }
+   
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(78, 78, 78, 0.5); 
+    z-index: 1; 
+  }
+  
+  .hero-content {
+  
+    position: relative;
+    z-index: 2; 
+  }
+  
+  .hero h1 {
+    margin-top: 40px !important; 
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 3em;
+    color: #333; 
+}
 
+
+
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .hero button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hero button:hover {
+    background-color: #45a049;
+  }
+  
+  section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  section h2 {
+    margin-bottom: 30px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  footer ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .social-media a {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 1.5em;
+  }
+  </style>
 </head>
+
 <body>
 
 <div class="top-left-buttons">
-  <button onclick="window.location.href='../final_project/login/login.php'">Login</button>
-  <button onclick="window.location.href='../final_project/login/register.php'">Sign Up</button>
+  <button onclick="window.location.href='../AJMS/login/login.php'">Login</button>
+  <button onclick="window.location.href='../AJMS/login/register.php'">Sign Up</button>
 </div>
 
 <header>
@@ -63,16 +203,20 @@
 </section>
 
 <section id="services">
-  <h2>Web App Features</h2>
+  <h2>AJMS Features</h2>
   
   <ul>
-    <li><strong>Plan Meals:</strong> 
-     Create customized meal plans tailored to your dietary preferences, allergies, and nutritional requirements.</li>
+    <li><strong>Case Management:</strong> 
+     Efficiently manage and track judicial cases from initiation to resolution, ensuring all proceedings are properly documented.</li>
     <br>
-    <li><strong>Search Recipes:</strong> Find inspiration for every occasion and discover new flavors to spice up your kitchen routine.</li>
+    <li><strong>Record Tracking:</strong> Access and organize judicial records and case files easily, providing quick and accurate retrieval of information.</li>
     <br>
-    <li><strong>Set Goals:</strong> Define your health and fitness goals, whether it's weight loss, muscle gain, or overall well-being. Set realistic targets and track your progress over time.</li>
-     <br>   
+    <li><strong>Progress Monitoring:</strong> Monitor the progress of cases and legal processes, with tools to set and track milestones and deadlines.</li>
+    <br>
+    <li><strong>Reporting:</strong> Generate comprehensive reports on case statuses, court proceedings, and judicial metrics to support informed decision-making.</li>
+  </ul>
+</section>
+
    
   </ul>
 
