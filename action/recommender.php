@@ -39,12 +39,13 @@ if (isset($_POST['submit'])) {
         }
        
     }
-    echo "this works";
-    exit();
+    
     // Construct the suggested verdict
     $suggestedVerdict = "<strong>Sanctions:</strong><br>" . implode('<br>', $suggestedSanctions);
     $suggestedVerdict .= "<br><br><strong>Related Cases:</strong><br>" . implode('<br>', $relatedCases);
     $suggestedVerdict .= "<br><br><strong>Advice to the Community:</strong><br>" . $adviceToCommunity;
+    echo "this works";
+    exit();
 
     // Close connection
     $con->close();
